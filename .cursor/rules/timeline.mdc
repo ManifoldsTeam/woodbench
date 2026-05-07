@@ -1,0 +1,35 @@
+---
+description: Quy trình bắt buộc cập nhật Agent.md và hệ thống Timeline Tracking sau mỗi thay đổi quan trọng.
+globs: 
+alwaysApply: true
+---
+
+# Quy trình Quản lý Dự án & Timeline
+
+## 1. Yêu cầu Tiền điều kiện
+- Agent **PHẢI LUÔN LUÔN** đọc file `Agent.md` khi bắt đầu phiên làm việc để nắm bắt ngữ cảnh và trạng thái hiện tại của dự án.
+
+## 2. Hệ thống Timeline Tracking (BẮT BUỘC)
+Sau khi hoàn thành bất kỳ hành động quan trọng nào (Thay đổi logic cốt lõi, fix bug, thêm tính năng, thay đổi hạ tầng), Agent **PHẢI** thực hiện đồng thời hai việc:
+
+### A. Cập nhật bảng tổng hợp tại `docs/timeline.md`
+Thêm một dòng mới theo định dạng:
+`| YYYY-MM-DD | HH:MM | Tiêu đề | Kết quả ngắn | [chi tiết](../../docs/timeline/DD-MM-YYYY.md) |`
+
+### B. Cập nhật chi tiết ngày tại `docs/timeline/DD-MM-YYYY.md`
+(Sử dụng giờ làm tiêu đề vì ngày đã nằm trong tên file). Định dạng:
+```markdown
+### HH:MM — [Tiêu đề]
+**Vấn đề:** ...  
+**Nguyên nhân:** ...  
+**Hành động:** ...  
+**Kết quả:** ...  
+**References:** ...
+```
+
+## 3. Định nghĩa "Hành động quan trọng"
+- Thay đổi code ảnh hưởng đến logic nghiệp vụ hoặc kiến trúc.
+- Di chuyển dữ liệu (bucket, database).
+- Sửa lỗi cần quá trình điều tra (investigation).
+- Triển khai tính năng hoặc endpoint mới.
+- Thay đổi cấu hình hoặc cơ sở hạ tầng.

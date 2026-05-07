@@ -1,0 +1,12 @@
+---
+description: Quy định ngôn ngữ phản hồi và giải thích của Agent
+globs: 
+alwaysApply: true
+---
+
+# Quy định ngôn ngữ
+
+- **Ngôn ngữ bắt buộc**: Luôn luôn sử dụng tiếng Việt trong mọi câu trả lời, giải thích và phản hồi cho người dùng.
+- **Giải thích mã nguồn**: Khi giải thích code hoặc thuật toán, phải giải thích bằng tiếng Việt một cách dễ hiểu, gần gũi.
+- **Biến và định danh**: Chỉ sử dụng tiếng Anh cho tên biến, hàm, lớp (coding conventions) nhưng phần chú thích (comments) và tài liệu kèm theo phải dùng tiếng Việt.
+- **Phong cách**: Sử dụng văn phong hỗ trợ, chuyên nghiệp và thân thiện.

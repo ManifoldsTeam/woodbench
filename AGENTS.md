@@ -1,7 +1,7 @@
 <!-- gitnexus:start -->
 # GitNexus — Code Intelligence
 
-This project is indexed by GitNexus as **woodbench** (93 symbols, 90 relationships, 0 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
+This project is indexed by GitNexus as **woodbench** (408 symbols, 401 relationships, 0 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
 
 > If any GitNexus tool warns the index is stale, run `npx gitnexus analyze` in terminal first.
 
@@ -41,3 +41,15 @@ This project is indexed by GitNexus as **woodbench** (93 symbols, 90 relationshi
 | Index, status, clean, wiki CLI commands | `.claude/skills/gitnexus/gitnexus-cli/SKILL.md` |
 
 <!-- gitnexus:end -->
+
+## Reference Documents (WoodID-S2-2026)
+
+Khi làm việc với các feature liên quan đến WoodID-S2-2026, **các tài liệu sau là tài liệu gốc và cần được đối chiếu** sau khi có kết quả experiment:
+
+| Document | Path | Purpose |
+|---------|------|---------|
+| WoodID Plan | `docs/references/WoodID_plan.md` | Project plan, experiment checklist, timeline |
+| WoodID Assignment S2 | `docs/references/WoodID_Assignment_S2.docx` | Research assignment specification |
+| Tree Reference | `docs/references/tree.txt` | IC4SD research assignment document |
+
+**Rule**: Sau khi hoàn thành experiment, **PHẢI đối chiếu kết quả** với các tài liệu gốc này để đảm bảo alignment với yêu cầu của đề tài.
