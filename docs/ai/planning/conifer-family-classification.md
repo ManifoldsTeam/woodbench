@@ -8,9 +8,9 @@ description: Task breakdown and timeline for family-level classification of 4 co
 
 ## Milestones
 
-- [ ] **M0: Dataset Exploration** — Understand raw data structure, species list, image quality
-- [ ] **M1: Phase 0 Complete** — Dataset organized, labels resolved, split created, notebook ready
-- [ ] **M2: Baseline Pipeline** — Code structure ready, one model trains successfully
+- [x] **M0: Dataset Exploration** — Understand raw data structure, species list, image quality
+- [x] **M1: Phase 0 Complete** — Dataset organized, labels resolved, split created, notebook ready
+- [x] **M2: Baseline Pipeline** — Code structure ready, one model trains successfully ✅ *Phase 1 Complete*
 - [ ] **M3: All 5 Models Trained** — Task A complete for all architectures (baseline aug)
 - [ ] **M4: Efficiency Analysis** — Inference time, FLOPs, model size measured
 - [ ] **M5: Ablation Complete** — 90° rotation augmentation tested
@@ -80,27 +80,27 @@ description: Task breakdown and timeline for family-level classification of 4 co
 
 **Phase 0 Notebook Deliverable**: Full documentation with fixed structure, all steps with outputs, ready for reproducibility.
 
-### Phase 1: Core Implementation (Tuần 2-3)
+### Phase 1: Core Implementation (Tuần 2-3) ✅ DONE
 
 | Task | Description | Effort | Dependency |
 |------|-------------|--------|------------|
-| **1.1** | Implement data module (`ConiferDataset`, `transforms`) | 2 days | 0.1-0.5 |
-| **1.2** | Implement model factory (`create_model`) | 1 day | 1.1 |
-| **1.3** | Implement training loop with frozen backbone | 2 days | 1.2 |
-| **1.4** | Implement evaluation metrics | 1 day | 1.1 |
-| **1.5** | Test pipeline with one model (ResNet-50) | 1 day | 1.3, 1.4 |
-| **1.6** | Add checkpointing and logging | 1 day | 1.5 |
+| **1.1** | Implement data module (`ConiferDataset`, `transforms`) | 2 days | 0.1-0.5 | ✅ |
+| **1.2** | Implement model factory (`create_model`) | 1 day | 1.1 | ✅ |
+| **1.3** | Implement training loop with frozen backbone | 2 days | 1.2 | ✅ |
+| **1.4** | Implement evaluation metrics | 1 day | 1.1 | ✅ |
+| **1.5** | Test pipeline with one model (ResNet-50) | 1 day | 1.3, 1.4 | ⏳ |
+| **1.6** | Add checkpointing and logging | 1 day | 1.5 | ✅ |
 
 ### Phase 2: Model Training (Tuần 3-4)
 
 | Task | Description | Effort | Dependency |
 |------|-------------|--------|------------|
-| **2.1** | Train ResNet-50 (Task A, seed=42) | 1 day | 1.6 |
-| **2.2** | Train EfficientNet-B3 (Task A, seed=42) | 1 day | 1.6 |
-| **2.3** | Train MobileNetV3-Large (Task A, seed=42) | 1 day | 1.6 |
-| **2.4** | Train ConvNeXt-Tiny (Task A, seed=42) | 1 day | 1.6 |
-| **2.5** | Train Swin-T (Task A, seed=42) | 1 day | 1.6 |
-| **2.6** | Generate results tables and confusion matrices | 1 day | 2.1-2.5 |
+| **2.1** | Train ResNet-50 (Task A, seed=42) | 1 day | 1.6 | ⏳ |
+| **2.2** | Train EfficientNet-B3 (Task A, seed=42) | 1 day | 1.6 | ⏳ |
+| **2.3** | Train MobileNetV3-Large (Task A, seed=42) | 1 day | 1.6 | ⏳ |
+| **2.4** | Train ConvNeXt-Tiny (Task A, seed=42) | 1 day | 1.6 | ⏳ |
+| **2.5** | Train Swin-T (Task A, seed=42) | 1 day | 1.6 | ⏳ |
+| **2.6** | Generate results tables and confusion matrices | 1 day | 2.1-2.5 | ⏳ |
 
 ### Phase 3: Efficiency & Ablation (Tuần 5-6)
 
