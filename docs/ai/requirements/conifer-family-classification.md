@@ -136,7 +136,7 @@ Task A is the **family-level classification subtask** of the WoodID-S2-2026 benc
 
 ### Training Configuration Constraints
 
-- Backbone: ImageNet pretrained, frozen (only head trained)
+- Backbone: ImageNet pretrained, **unfrozen** (fine-tuned with differential LR: backbone_lr=1e-5, head_lr=1e-4)
 - Optimizer: AdamW, lr=1e-4
 - Scheduler: CosineAnnealingLR, T_max=50
 - Epochs: 50

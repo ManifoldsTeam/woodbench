@@ -72,13 +72,15 @@ def parse_args():
         help="Use 90-degree rotation augmentation",
     )
 
-    # Fine-tuning (unfreeze backbone)
+    # Fine-tuning (unfreeze backbone) — this is the DEFAULT mode per WoodID_plan.md
+    # Use --linear_probe to fall back to frozen backbone (linear probing)
     parser.add_argument(
-        "--finetune",
+        "--linear_probe",
         action="store_true",
         help=(
-            "Unfreeze backbone and fine-tune all layers. "
-            "Uses differential learning rates: backbone_lr=1e-5, head_lr=1e-4."
+            "Freeze backbone and train only the classification head (linear probing). "
+            "Default is fine-tuning (backbone unfrozen) with differential LR: "
+            "backbone_lr=1e-5, head_lr=1e-4."
         ),
     )
     parser.add_argument(
@@ -86,8 +88,8 @@ def parse_args():
         type=float,
         default=1e-5,
         help=(
-            "Learning rate for backbone when finetune=True. "
-            "Head LR is controlled by --lr. Default: 1e-5 (1/10 of head LR)."
+            "Learning rate for backbone when fine-tuning (default: 1e-5). "
+            "Head LR is controlled by --lr (default: 1e-4)."
         ),
     )
 
@@ -147,15 +149,15 @@ def train_single_model(
     logger.info(f"Val samples: {len(val_loader.dataset)}")
     logger.info(f"Test samples: {len(test_loader.dataset)}")
     
-    # Create model
+    # Create model — fine-tuning (unfrozen backbone) is the default per WoodID_plan.md
     logger.info(f"Creating model: {backbone}")
-    freeze_backbone = not args.finetune
-    logger.info(f"  Mode: {'fine-tuning (backbone unfrozen)' if args.finetune else 'linear probing (backbone frozen)'}")
+    freeze_backbone = args.linear_probe
+    logger.info(f"  Mode: {'linear probing (backbone frozen)' if args.linear_probe else 'fine-tuning (backbone unfrozen)'}")
     model = create_model(backbone, num_classes=4, pretrained=True, freeze_backbone=freeze_backbone)
 
     # Create optimizer
-    backbone_lr = args.backbone_lr if args.finetune else None
-    if args.finetune:
+    backbone_lr = None if freeze_backbone else args.backbone_lr
+    if not freeze_backbone:
         logger.info(f"  Head LR: {args.lr}, Backbone LR: {backbone_lr}")
     optimizer = create_optimizer(model, lr=args.lr, weight_decay=args.weight_decay, backbone_lr=backbone_lr)
     
@@ -202,9 +204,10 @@ def train_single_model(
         "num_workers": args.num_workers,
         "use_amp": not args.no_amp,
         # Fine-tuning
-        "finetune": args.finetune,
-        "freeze_backbone": not args.finetune,
-        "backbone_lr": args.backbone_lr if args.finetune else None,
+        "linear_probe": args.linear_probe,
+        "finetune": not args.linear_probe,
+        "freeze_backbone": args.linear_probe,
+        "backbone_lr": args.backbone_lr if not args.linear_probe else None,
         "results": results,
     }
     

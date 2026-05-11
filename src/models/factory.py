@@ -2,11 +2,18 @@
 
 Creates pretrained backbones with classification heads.
 Supports both frozen-backbone (linear probing) and full fine-tuning.
+
+Training Strategy (per WoodID_plan.md):
+    Fine-tuning with unfrozen backbone + differential learning rates
+    (backbone_lr=1e-5, head_lr=1e-4) is the recommended approach.
+    This adapts pretrained ImageNet features to the wood cross-section
+    domain while preserving low-level texture features.
 """
 
 from typing import Dict
 
 import timm
+import torch
 import torch.nn as nn
 
 
@@ -24,7 +31,7 @@ def create_model(
     backbone_name: str,
     num_classes: int = 4,
     pretrained: bool = True,
-    freeze_backbone: bool = True,
+    freeze_backbone: bool = False,
 ) -> nn.Module:
     """Create model with pretrained backbone and classification head.
 
@@ -37,7 +44,8 @@ def create_model(
         num_classes: Number of output classes (4 for Task A family, 20 for Task B species)
         pretrained: Use ImageNet pretrained weights
         freeze_backbone: If True, freeze all backbone parameters (linear probing).
-            If False, all parameters are trainable (fine-tuning).
+            If False (default), all parameters are trainable (fine-tuning).
+            Fine-tuning with differential LR is recommended per WoodID_plan.md.
 
     Returns:
         Model with backbone + classification head
@@ -62,26 +70,57 @@ def create_model(
     # Get feature dimension from backbone
     in_features = model.num_features
 
-    # Create new classification head
-    model.head = nn.Linear(in_features, num_classes)
+    # Create new classification head.
+    # IMPORTANT: Different timm architectures use different forward paths:
+    # - ResNet, EfficientNet, MobileNet: forward calls model.head
+    # - ConvNeXt: forward calls model.head.fc (model.head is a Sequential)
+    # - Swin Transformer: forward calls model.head (model.head is a Sequential)
+    # So we must attach the head at the correct attribute for each architecture.
+    if "convnext" in timm_name:
+        # ConvNeXt: head is a Sequential([norm, flatten, fc])
+        # Replace just the final fc layer to keep the norm/flatten chain
+        model.head.fc = nn.Linear(in_features, num_classes)
+    elif "swin" in timm_name:
+        # Swin-T: head is a Sequential([flatten, norm, fc])
+        # Replace the final fc layer
+        model.head.fc = nn.Linear(in_features, num_classes)
+    else:
+        # ResNet, EfficientNet, MobileNet: head is just nn.Linear
+        model.head = nn.Linear(in_features, num_classes)
+
+    # Verify the head is in the forward path with a quick forward pass
+    dummy_input = torch.randn(1, 3, 224, 224)
+    with torch.no_grad():
+        try:
+            out = model(dummy_input)
+            assert out.shape[-1] == num_classes, (
+                f"Model output shape mismatch: expected ({num_classes},), got {out.shape}"
+            )
+        except Exception as e:
+            raise RuntimeError(
+                f"Model forward pass failed for '{backbone_name}' ({timm_name}). "
+                f"Check that the classification head is correctly attached. Error: {e}"
+            ) from e
 
     # Freeze backbone if specified (linear probing mode)
     if freeze_backbone:
         for param in model.parameters():
             param.requires_grad = False
-        # Ensure head is trainable
-        for param in model.head.parameters():
-            param.requires_grad = True
+        # Ensure head is trainable (unfreeze it)
+        for module in model.head.modules():
+            for param in module.parameters():
+                param.requires_grad = True
 
     return model
 
 
-def get_model_info(backbone_name: str, freeze_backbone: bool = True) -> Dict:
+def get_model_info(backbone_name: str, freeze_backbone: bool = False) -> Dict:
     """Get model information including parameter counts.
 
     Args:
         backbone_name: Model name
-        freeze_backbone: Whether backbone is frozen (affects trainable count)
+        freeze_backbone: Whether backbone is frozen (affects trainable count).
+            Default False (fine-tuning).
 
     Returns:
         Dictionary with model info
@@ -97,5 +136,5 @@ def get_model_info(backbone_name: str, freeze_backbone: bool = True) -> Dict:
         "total_params": total_params,
         "trainable_params": trainable_params,
         "frozen_params": total_params - trainable_params,
-        "mode": "linear_probing" if freeze_backbone else "fine-tuning",
+        "mode": "fine-tuning" if not freeze_backbone else "linear_probing",
     }

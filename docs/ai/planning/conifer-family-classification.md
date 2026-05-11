@@ -10,7 +10,7 @@ description: Task breakdown and timeline for family-level classification of 4 co
 
 - [x] **M0: Dataset Exploration** — Understand raw data structure, species list, image quality
 - [x] **M1: Phase 0 Complete** — Dataset organized, labels resolved, split created, notebook ready
-- [x] **M2: Baseline Pipeline** — Code structure ready, one model trains successfully ✅ *Phase 1 Complete*
+- [x] **M2: Baseline Pipeline** — Code structure ready, one model trains successfully ✅ *Phase 1 Complete* (model head fixed May 2026)
 - [ ] **M3: All 5 Models Trained** — Task A complete for all architectures (fine-tuning, differential LR)
 - [ ] **M4: Efficiency Analysis** — Inference time, FLOPs, model size measured
 - [ ] **M5: Ablation Complete** — 90° rotation augmentation tested
@@ -91,11 +91,11 @@ description: Task breakdown and timeline for family-level classification of 4 co
 | **1.5** | Test pipeline with one model (ResNet-50) | 1 day | 1.3, 1.4 | ⏳ |
 | **1.6** | Add checkpointing and logging | 1 day | 1.5 | ✅ |
 
-> **Training Strategy**: Fine-tuning with unfrozen backbone + differential learning rates (backbone LR = 1e-5, head LR = 1e-4) is the recommended approach per WoodID_plan.md. This adapts pretrained ImageNet features to the wood cross-section domain while preserving low-level texture features.
+> **Training Strategy**: Fine-tuning with unfrozen backbone + differential learning rates (backbone LR = 1e-5, head LR = 1e-4) is the **default mode** per WoodID_plan.md. This adapts pretrained ImageNet features to the wood cross-section domain while preserving low-level texture features. Use `--linear_probe` flag to fall back to frozen backbone (linear probing) for ablation comparison.
 
 ### Phase 2: Model Training (Tuần 3-4)
 
-> **Note**: All Phase 2 training uses fine-tuning mode (`--finetune` flag, backbone_lr=1e-5).
+> **Note**: Fine-tuning (unfrozen backbone) is the default mode. Use `--linear_probe` to fall back to frozen backbone (linear probing).
 
 | Task | Description | Effort | Dependency |
 |------|-------------|--------|------------|
@@ -177,37 +177,46 @@ Phase 5 (Documentation)
 | Dependency | Owner | Status |
 |------------|-------|--------|
 | IC4SD-Wood-Conifer20v1 Dataset | IC4SD Lab | Delivered |
-| GPU Resources | PTIT Lab | Pending confirmation |
+| GPU Resources | PTIT Lab / Colab | Available (Colab T4) |
 | Supervisor review (sp. labels) | PGS.TS. Nguyễn Trọng Khánh | Pending |
 
 ---
 
 ## Timeline & Estimates
 
+> **Current status**: May 11, 2026. Phase -1, 0, 1 (core implementation) are complete. Phase 2 (training) is in progress. Remaining ~12-16 weeks until target submit 9-10/2026.
+
 ### Week-by-Week Schedule
 
 | Week | Phase | Tasks | Deliverables |
 |------|-------|-------|--------------|
-| Week 1 | Phase 0 | 0.1-0.5 | Dataset ready, split created |
-| Week 2 | Phase 0 + 1 | 0.6-0.9, 1.1-1.3 | Environment ready, core code |
-| Week 3 | Phase 1 + 2 | 1.4-1.6, 2.1-2.3 | Pipeline tested, 3 models done |
-| Week 4 | Phase 2 + 3 | 2.4-2.6, 3.1-3.3 | All 5 models trained, efficiency data |
-| Week 5 | Phase 3 | 3.4-3.6 | Ablation complete |
-| Week 6 | Phase 4 | 4.1-4.3 | Multi-seed results |
-| Week 7 | Phase 4 | 4.4-4.7 | Visualizations ready |
-| Week 8 | Phase 5 | 5.1-5.5 | Documentation complete |
+| Week 1-2 | Phase 0 | 0.1-0.9 | Dataset ready, split created, environment setup |
+| Week 3-4 | Phase 1 | 1.1-1.6 | Core code, training pipeline |
+| Week 5-6 | Phase 2 | 2.1-2.6 | Task A: All 5 models trained, results tables |
+| Week 7 | Phase 2 | 2.7-2.9 | Task B: All 5 models trained (20-class species) |
+| Week 8 | Phase 3 | 3.1-3.4 | Efficiency: inference time, FLOPs, model size |
+| Week 9 | Phase 3 | 3.5-3.6 | Ablation: 90 degree rotation augmentation |
+| Week 10-11 | Phase 4 | 4.1-4.7 | Multi-seed (3 seeds), visualizations, Grad-CAM |
+| Week 12 | Phase 5 | 5.1-5.5 | Methods section, results analysis |
+| Week 13-14 | Phase 5 | 5.6 | Paper writing, supervisor review |
+| Week 15-16 | Phase 5 | 5.7 | Final revisions, format, submit |
 
-### Total Effort
+### Training Time Estimates (T4/Colab)
 
-| Phase | Tasks | Estimated Hours |
-|-------|-------|-----------------|
-| Phase 0 | 9 tasks | ~72 hours |
-| Phase 1 | 6 tasks | ~56 hours |
-| Phase 2 | 6 tasks | ~40 hours |
-| Phase 3 | 6 tasks | ~48 hours |
-| Phase 4 | 7 tasks | ~64 hours |
-| Phase 5 | 5 tasks | ~40 hours |
-| **Total** | **39 tasks** | **~320 hours (~8 weeks)** |
+Fine-tuning with data augmentation, 50 epochs, batch=64. Colab T4 throttles after ~2h.
+
+| Task | Model | Est. Time (T4) | Note |
+|------|-------|----------------|------|
+| Task A | ResNet-50 | ~5-7h | Fastest to converge |
+| Task A | EfficientNet-B3 | ~8-10h | Larger model, slower |
+| Task A | MobileNetV3-L | ~3-4h | Lightweight |
+| Task A | ConvNeXt-Tiny | ~6-8h | ConvNeXt overhead |
+| Task A | Swin-T | ~7-9h | Transformer overhead |
+| Task B | All 5 models | 2-3x Task A | 20 classes, harder task |
+
+**Total GPU-hours (seed=42)**: ~250-300h. **All 3 seeds**: ~750-900h.
+
+**Recommendation**: Use Colab Pro (~100h/month) or local GPU to meet timeline.
 
 ---
 
@@ -228,7 +237,7 @@ Phase 5 (Documentation)
 | Risk | Likelihood | Impact | Mitigation |
 |------|------------|--------|------------|
 | GPU unavailable/busy | Medium | High | Use cloud GPU (Colab Pro, Lambda Labs) |
-| Training too slow (>4h/model) | Low | Medium | Use mixed precision, reduce epochs if needed |
+| Training too slow (>4h/model) | Medium | High | Colab T4 throttles after ~2h; use Colab Pro or local GPU; reduce epochs if needed |
 | Disk space for checkpoints | Low | Low | Store only best + final checkpoint |
 
 ### Schedule Risks
@@ -288,13 +297,15 @@ Phase 5 (Documentation)
 
 | Metric | Target | Actual | Status |
 |--------|--------|--------|--------|
-| All 5 models trained | 5/5 | - | Pending |
+| Phase 0 & -1 completed | Yes | Yes | ✅ Complete |
+| Phase 1 code pipeline | Yes | Yes (fixed) | ✅ Complete |
+| All 5 models trained (Task A) | 5/5 | - | Pending |
 | Accuracy >97% | >97% | - | Pending |
 | F1-macro >96% | >96% | - | Pending |
 | Multi-seed std <1% | <1% | - | Pending |
 | Ablation documented | Yes | - | Pending |
 | Grad-CAM generated | Yes | - | Pending |
-| Documentation complete | Yes | - | In Progress |
+| Paper submitted | Yes | - | Pending |
 
 ---
 
@@ -329,23 +340,23 @@ Options:
 
 ### On Training Strategy: Fine-tuning vs. Linear Probing
 
-Per WoodID_plan.md, all training should use **fine-tuning** (backbone unfrozen) with differential learning rates, not frozen-backbone linear probing. The two modes:
+Per WoodID_plan.md, **fine-tuning** (backbone unfrozen) with differential learning rates is the **default** mode. The two modes:
 
 | Mode | Backbone | Head LR | Backbone LR | Trainable Params | Use Case |
 |------|----------|---------|-------------|-----------------|----------|
-| Linear probing | Frozen | 1e-4 | — | ~2K (head only) | Fast baseline experiment |
-| **Fine-tuning** | Unfrozen | 1e-4 | 1e-5 | All (~25M) | **Recommended** — better accuracy |
+| **Fine-tuning (default)** | Unfrozen | 1e-4 | 1e-5 | All (~25M) | **Recommended** — better accuracy |
+| Linear probing | Frozen | 1e-4 | — | ~2K (head only) | Fast baseline, ablation reference |
 
 The lower backbone LR (1/10th of head LR) prevents catastrophic forgetting of pretrained ImageNet features while still allowing adaptation to the wood cross-section domain.
 
 CLI usage:
 ```bash
-# Fine-tuning (recommended)
-python scripts/train_taskA.py --backbone resnet50 --epochs 50 --finetune
+# Fine-tuning (default — no flag needed)
+python scripts/train_taskA.py --backbone resnet50 --epochs 50
 
 # With custom backbone LR
-python scripts/train_taskA.py --backbone resnet50 --epochs 50 --finetune --backbone_lr 5e-6
+python scripts/train_taskA.py --backbone resnet50 --epochs 50 --backbone_lr 5e-6
 
-# Linear probing (fast baseline)
-python scripts/train_taskA.py --backbone resnet50 --epochs 50
+# Linear probing (frozen backbone)
+python scripts/train_taskA.py --backbone resnet50 --epochs 50 --linear_probe
 ```

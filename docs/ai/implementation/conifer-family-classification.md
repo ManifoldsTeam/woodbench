@@ -323,8 +323,8 @@ def get_val_transforms(img_size: int = 224) -> transforms.Compose:
 
 The `create_model()` function supports two modes via the `freeze_backbone` parameter:
 
-- **Linear probing** (`freeze_backbone=True`): Backbone frozen, only the linear head trains. Fast baseline.
-- **Fine-tuning** (`freeze_backbone=False`): All parameters trainable. **Recommended** per WoodID_plan.md.
+- **Fine-tuning** (`freeze_backbone=False`, default): All parameters trainable with differential LR. Recommended per WoodID_plan.md.
+- **Linear probing** (`freeze_backbone=True`): Backbone frozen, only the linear head trains. Use `--linear_probe` CLI flag.
 
 ```python
 # src/models/factory.py
@@ -360,14 +360,7 @@ def create_model(
 
 The `TrainingEngine` class handles the training loop. Two modes are supported:
 
-#### Mode A: Linear Probing (frozen backbone)
-
-```python
-model = create_model("resnet50", freeze_backbone=True)
-optimizer = create_optimizer(model, lr=1e-4)
-```
-
-#### Mode B: Fine-tuning (unfrozen backbone) — Recommended
+#### Mode A: Fine-tuning (unfrozen backbone) — Default per WoodID_plan.md
 
 ```python
 model = create_model("resnet50", freeze_backbone=False)
@@ -375,7 +368,14 @@ model = create_model("resnet50", freeze_backbone=False)
 optimizer = create_optimizer(model, lr=1e-4, backbone_lr=1e-5)
 ```
 
-Both modes use the same `TrainingEngine` — the difference is entirely in model creation and optimizer configuration. Fine-tuning with differential LR is the recommended approach per WoodID_plan.md because it adapts pretrained ImageNet features to the wood cross-section domain while preserving low-level texture features.
+#### Mode B: Linear Probing (frozen backbone)
+
+```python
+model = create_model("resnet50", freeze_backbone=True)
+optimizer = create_optimizer(model, lr=1e-4)
+```
+
+Both modes use the same `TrainingEngine` — the difference is entirely in model creation and optimizer configuration. Fine-tuning with differential LR is the **default** because it adapts pretrained ImageNet features to the wood cross-section domain while preserving low-level texture features.
 
 class TrainingEngine:
     """Training engine for Task A."""
@@ -815,7 +815,7 @@ train_loader = DataLoader(
 
 ```yaml
 # configs/taskA_baseline.yaml
-# Fine-tuning config (recommended per WoodID_plan.md)
+# Fine-tuning config (default per WoodID_plan.md)
 experiment:
   name: "taskA_finetune"
   task: "taskA"
@@ -824,7 +824,7 @@ experiment:
 model:
   backbone: "resnet50"  # Change per model
   pretrained: true
-  freeze_backbone: false  # Fine-tuning mode (unfrozen)
+  freeze_backbone: false  # Fine-tuning mode (unfrozen) — DEFAULT
 
 data:
   data_root: "data"

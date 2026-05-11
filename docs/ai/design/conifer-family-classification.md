@@ -298,17 +298,25 @@ def profile_model(
 
 ## Design Decisions
 
-### 1. Frozen Backbone, Trainable Head
+### 1. Fine-tuning with Differential Learning Rates (Default)
 
-**Decision**: Freeze ImageNet pretrained backbone, only train classification head.
+**Decision**: Fine-tune all layers with differential learning rates (backbone_lr=1e-5, head_lr=1e-4). Frozen backbone (linear probing) is available via `--linear_probe` flag for ablation.
 
-**Rationale**:
-- Macroscopic wood textures are well-captured by ImageNet features
-- Faster training (no gradient computation through backbone)
-- Reduced GPU memory → larger batch size possible
-- Standard practice for transfer learning benchmarks
+**Rationale (per WoodID_plan.md)**:
+- Adapts pretrained ImageNet features to the wood cross-section domain
+- Lower backbone LR (1/10th of head LR) prevents catastrophic forgetting
+- Full fine-tuning typically achieves better accuracy than frozen backbone
+- Reasonable training time on modern GPUs with AMP
 
-**Trade-off**: May not fine-tune domain-specific features as well as full fine-tuning.
+**Trade-off**: More parameters to train (~25M vs ~2K), slightly slower convergence per epoch.
+
+### 1b. Linear Probing (Ablation Baseline)
+
+**Decision**: Frozen backbone, only the classification head is trained.
+
+**Use case**: Fast baseline experiment, ablation reference to measure contribution of backbone fine-tuning.
+
+**Trade-off**: May not fine-tune domain-specific features as well.
 
 ### 2. Standard 224×224 Input Size
 
