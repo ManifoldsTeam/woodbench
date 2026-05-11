@@ -21,7 +21,7 @@ thop>=0.1.1
 # ptflops>=0.6.10
 
 # Grad-CAM visualization
-pytorch-grad-cam>=1.4.0
+torchcam
 
 # Experiment tracking (optional)
 # wandb>=0.15.0
