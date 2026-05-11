@@ -74,8 +74,7 @@ woodbench/
 │   ├── data/
 │   │   ├── __init__.py
 │   │   ├── dataset.py      # ConiferDataset, get_dataloaders
-│   │   ├── transforms.py   # Augmentation pipelines
-│   │   └── splitter.py     # Stratified split logic
+│   │   └── transforms.py   # Augmentation pipelines
 │   ├── models/
 │   │   ├── __init__.py
 │   │   ├── factory.py      # create_model()
@@ -322,6 +321,11 @@ def get_val_transforms(img_size: int = 224) -> transforms.Compose:
 
 ### 3. Model Factory
 
+The `create_model()` function supports two modes via the `freeze_backbone` parameter:
+
+- **Linear probing** (`freeze_backbone=True`): Backbone frozen, only the linear head trains. Fast baseline.
+- **Fine-tuning** (`freeze_backbone=False`): All parameters trainable. **Recommended** per WoodID_plan.md.
+
 ```python
 # src/models/factory.py
 import timm
@@ -333,60 +337,45 @@ def create_model(
     pretrained: bool = True,
     freeze_backbone: bool = True,
 ) -> nn.Module:
-    """
-    Create model with pretrained backbone and classification head.
-    
-    Args:
-        backbone_name: timm model name
-        num_classes: Number of output classes
-        pretrained: Use ImageNet pretrained weights
-        freeze_backbone: Freeze backbone parameters
-    
-    Returns:
-        Model with backbone + head
-    """
-    # Create model
     model = timm.create_model(
         backbone_name,
         pretrained=pretrained,
-        num_classes=0,  # Remove classifier
+        num_classes=0,  # Remove default classifier
     )
-    
-    # Get feature dimension
+
     in_features = model.num_features
-    
-    # Create new classifier head
     model.head = nn.Linear(in_features, num_classes)
-    
-    # Freeze backbone if specified
+
     if freeze_backbone:
         for param in model.parameters():
             param.requires_grad = False
-        # Ensure head is trainable
         for param in model.head.parameters():
             param.requires_grad = True
-    
-    return model
+    # When freeze_backbone=False, all params remain trainable
 
-# Backbone name mapping
-BACKBONE_NAMES = {
-    "resnet50": "resnet50",
-    "efficientnet_b3": "tf_efficientnet_b3",
-    "mobilenetv3_large": "mobilenetv3_large_100",
-    "convnext_tiny": "convnext_tiny",
-    "swin_tiny": "swin_tiny_patch4_window7_224",
-}
+    return model
 ```
 
 ### 4. Training Loop
 
+The `TrainingEngine` class handles the training loop. Two modes are supported:
+
+#### Mode A: Linear Probing (frozen backbone)
+
 ```python
-# src/train/trainer.py
-from typing import Dict, Optional
-from pathlib import Path
-import torch
-import torch.nn as nn
-from torch.cuda.amp import autocast, GradScaler
+model = create_model("resnet50", freeze_backbone=True)
+optimizer = create_optimizer(model, lr=1e-4)
+```
+
+#### Mode B: Fine-tuning (unfrozen backbone) — Recommended
+
+```python
+model = create_model("resnet50", freeze_backbone=False)
+# Differential LR: backbone=1e-5, head=1e-4
+optimizer = create_optimizer(model, lr=1e-4, backbone_lr=1e-5)
+```
+
+Both modes use the same `TrainingEngine` — the difference is entirely in model creation and optimizer configuration. Fine-tuning with differential LR is the recommended approach per WoodID_plan.md because it adapts pretrained ImageNet features to the wood cross-section domain while preserving low-level texture features.
 
 class TrainingEngine:
     """Training engine for Task A."""
@@ -826,15 +815,16 @@ train_loader = DataLoader(
 
 ```yaml
 # configs/taskA_baseline.yaml
+# Fine-tuning config (recommended per WoodID_plan.md)
 experiment:
-  name: "taskA_baseline"
+  name: "taskA_finetune"
   task: "taskA"
   num_classes: 4
 
 model:
   backbone: "resnet50"  # Change per model
   pretrained: true
-  freeze_backbone: true
+  freeze_backbone: false  # Fine-tuning mode (unfrozen)
 
 data:
   data_root: "data"
@@ -849,7 +839,8 @@ data:
 
 training:
   epochs: 50
-  lr: 0.0001
+  lr: 0.0001          # Head learning rate
+  backbone_lr: 0.00001  # Backbone learning rate (differential LR)
   weight_decay: 0.0001
   scheduler: "cosine"
   T_max: 50
@@ -873,11 +864,10 @@ profiling:
 
 ```yaml
 # configs/taskA_90rotation.yaml
-# Same as baseline but with 90° rotation augmentation
+# Fine-tuning with 90° rotation augmentation
 augmentation:
   horizontal_flip: 0.5
   vertical_flip: 0.5
-  rotation_90: true  # Key difference
-  rotation_degrees: 0  # Not used when rotation_90 is true
+  rotation_90: true  # Key difference: discrete 90° rotation
   color_jitter: true
 ```

@@ -1,4 +1,9 @@
-"""Optimizer and scheduler factories for Conifer Family Classification."""
+"""Optimizer and scheduler factories for Conifer Family Classification.
+
+Supports differential learning rates for fine-tuning: the backbone uses a
+lower learning rate (typically 1/10th of the head LR) to preserve pretrained
+features while the classifier head learns task-specific patterns.
+"""
 
 import torch
 import torch.nn as nn
@@ -8,22 +13,48 @@ def create_optimizer(
     model: nn.Module,
     lr: float = 1e-4,
     weight_decay: float = 1e-4,
+    backbone_lr: float | None = None,
 ) -> torch.optim.Optimizer:
-    """Create AdamW optimizer.
-    
+    """Create AdamW optimizer with optional differential learning rates.
+
+    When backbone_lr is provided, the optimizer uses two parameter groups:
+    - "head": learning rate = lr (higher, task-specific)
+    - "backbone": learning rate = backbone_lr (lower, pretrained features)
+
+    When backbone_lr is None, all parameters use the same learning rate.
+
     Args:
-        model: PyTorch model
-        lr: Learning rate
+        model: PyTorch model (must have .named_parameters())
+        lr: Learning rate for the classifier head
         weight_decay: Weight decay
-    
+        backbone_lr: Optional lower learning rate for the backbone.
+            If None, all parameters use `lr`. Recommended: lr / 10 (e.g., 1e-5).
+
     Returns:
-        AdamW optimizer
+        AdamW optimizer with param groups
     """
-    return torch.optim.AdamW(
-        model.parameters(),
-        lr=lr,
-        weight_decay=weight_decay,
-    )
+    if backbone_lr is not None and backbone_lr != lr:
+        head_params = []
+        backbone_params = []
+
+        for name, param in model.named_parameters():
+            if param.requires_grad:
+                if "head" in name:
+                    head_params.append(param)
+                else:
+                    backbone_params.append(param)
+
+        param_groups = [
+            {"params": head_params, "lr": lr, "name": "head"},
+            {"params": backbone_params, "lr": backbone_lr, "name": "backbone"},
+        ]
+        return torch.optim.AdamW(param_groups, lr=lr, weight_decay=weight_decay)
+    else:
+        return torch.optim.AdamW(
+            model.parameters(),
+            lr=lr,
+            weight_decay=weight_decay,
+        )
 
 
 def create_scheduler(

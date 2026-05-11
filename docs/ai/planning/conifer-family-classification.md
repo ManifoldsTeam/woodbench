@@ -11,7 +11,7 @@ description: Task breakdown and timeline for family-level classification of 4 co
 - [x] **M0: Dataset Exploration** — Understand raw data structure, species list, image quality
 - [x] **M1: Phase 0 Complete** — Dataset organized, labels resolved, split created, notebook ready
 - [x] **M2: Baseline Pipeline** — Code structure ready, one model trains successfully ✅ *Phase 1 Complete*
-- [ ] **M3: All 5 Models Trained** — Task A complete for all architectures (baseline aug)
+- [ ] **M3: All 5 Models Trained** — Task A complete for all architectures (fine-tuning, differential LR)
 - [ ] **M4: Efficiency Analysis** — Inference time, FLOPs, model size measured
 - [ ] **M5: Ablation Complete** — 90° rotation augmentation tested
 - [ ] **M6: Multi-seed Validation** — 3 seeds run, mean ± std reported
@@ -86,20 +86,24 @@ description: Task breakdown and timeline for family-level classification of 4 co
 |------|-------------|--------|------------|
 | **1.1** | Implement data module (`ConiferDataset`, `transforms`) | 2 days | 0.1-0.5 | ✅ |
 | **1.2** | Implement model factory (`create_model`) | 1 day | 1.1 | ✅ |
-| **1.3** | Implement training loop with frozen backbone | 2 days | 1.2 | ✅ |
+| **1.3** | Implement training loop with **unfrozen backbone + differential LR** | 2 days | 1.2 | ✅ |
 | **1.4** | Implement evaluation metrics | 1 day | 1.1 | ✅ |
 | **1.5** | Test pipeline with one model (ResNet-50) | 1 day | 1.3, 1.4 | ⏳ |
 | **1.6** | Add checkpointing and logging | 1 day | 1.5 | ✅ |
 
+> **Training Strategy**: Fine-tuning with unfrozen backbone + differential learning rates (backbone LR = 1e-5, head LR = 1e-4) is the recommended approach per WoodID_plan.md. This adapts pretrained ImageNet features to the wood cross-section domain while preserving low-level texture features.
+
 ### Phase 2: Model Training (Tuần 3-4)
+
+> **Note**: All Phase 2 training uses fine-tuning mode (`--finetune` flag, backbone_lr=1e-5).
 
 | Task | Description | Effort | Dependency |
 |------|-------------|--------|------------|
-| **2.1** | Train ResNet-50 (Task A, seed=42) | 1 day | 1.6 | ⏳ |
-| **2.2** | Train EfficientNet-B3 (Task A, seed=42) | 1 day | 1.6 | ⏳ |
-| **2.3** | Train MobileNetV3-Large (Task A, seed=42) | 1 day | 1.6 | ⏳ |
-| **2.4** | Train ConvNeXt-Tiny (Task A, seed=42) | 1 day | 1.6 | ⏳ |
-| **2.5** | Train Swin-T (Task A, seed=42) | 1 day | 1.6 | ⏳ |
+| **2.1** | Train ResNet-50 (Task A, seed=42, fine-tuning) | 1 day | 1.6 | ⏳ |
+| **2.2** | Train EfficientNet-B3 (Task A, seed=42, fine-tuning) | 1 day | 1.6 | ⏳ |
+| **2.3** | Train MobileNetV3-Large (Task A, seed=42, fine-tuning) | 1 day | 1.6 | ⏳ |
+| **2.4** | Train ConvNeXt-Tiny (Task A, seed=42, fine-tuning) | 1 day | 1.6 | ⏳ |
+| **2.5** | Train Swin-T (Task A, seed=42, fine-tuning) | 1 day | 1.6 | ⏳ |
 | **2.6** | Generate results tables and confusion matrices | 1 day | 2.1-2.5 | ⏳ |
 
 ### Phase 3: Efficiency & Ablation (Tuần 5-6)
@@ -322,3 +326,26 @@ Options:
 3. Exclude from dataset for cleaner experiment
 
 **Note**: Q4 cannot be answered until Phase -1 (Dataset Exploration) is complete.
+
+### On Training Strategy: Fine-tuning vs. Linear Probing
+
+Per WoodID_plan.md, all training should use **fine-tuning** (backbone unfrozen) with differential learning rates, not frozen-backbone linear probing. The two modes:
+
+| Mode | Backbone | Head LR | Backbone LR | Trainable Params | Use Case |
+|------|----------|---------|-------------|-----------------|----------|
+| Linear probing | Frozen | 1e-4 | — | ~2K (head only) | Fast baseline experiment |
+| **Fine-tuning** | Unfrozen | 1e-4 | 1e-5 | All (~25M) | **Recommended** — better accuracy |
+
+The lower backbone LR (1/10th of head LR) prevents catastrophic forgetting of pretrained ImageNet features while still allowing adaptation to the wood cross-section domain.
+
+CLI usage:
+```bash
+# Fine-tuning (recommended)
+python scripts/train_taskA.py --backbone resnet50 --epochs 50 --finetune
+
+# With custom backbone LR
+python scripts/train_taskA.py --backbone resnet50 --epochs 50 --finetune --backbone_lr 5e-6
+
+# Linear probing (fast baseline)
+python scripts/train_taskA.py --backbone resnet50 --epochs 50
+```

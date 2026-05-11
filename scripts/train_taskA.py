@@ -71,7 +71,26 @@ def parse_args():
         action="store_true",
         help="Use 90-degree rotation augmentation",
     )
-    
+
+    # Fine-tuning (unfreeze backbone)
+    parser.add_argument(
+        "--finetune",
+        action="store_true",
+        help=(
+            "Unfreeze backbone and fine-tune all layers. "
+            "Uses differential learning rates: backbone_lr=1e-5, head_lr=1e-4."
+        ),
+    )
+    parser.add_argument(
+        "--backbone_lr",
+        type=float,
+        default=1e-5,
+        help=(
+            "Learning rate for backbone when finetune=True. "
+            "Head LR is controlled by --lr. Default: 1e-5 (1/10 of head LR)."
+        ),
+    )
+
     # Hardware
     parser.add_argument("--device", type=str, default="cuda", help="Device")
     parser.add_argument("--num_workers", type=int, default=4, help="DataLoader workers")
@@ -130,10 +149,15 @@ def train_single_model(
     
     # Create model
     logger.info(f"Creating model: {backbone}")
-    model = create_model(backbone, num_classes=4, pretrained=True, freeze_backbone=True)
-    
+    freeze_backbone = not args.finetune
+    logger.info(f"  Mode: {'fine-tuning (backbone unfrozen)' if args.finetune else 'linear probing (backbone frozen)'}")
+    model = create_model(backbone, num_classes=4, pretrained=True, freeze_backbone=freeze_backbone)
+
     # Create optimizer
-    optimizer = create_optimizer(model, lr=args.lr, weight_decay=args.weight_decay)
+    backbone_lr = args.backbone_lr if args.finetune else None
+    if args.finetune:
+        logger.info(f"  Head LR: {args.lr}, Backbone LR: {backbone_lr}")
+    optimizer = create_optimizer(model, lr=args.lr, weight_decay=args.weight_decay, backbone_lr=backbone_lr)
     
     # Create scheduler
     scheduler = create_scheduler(optimizer, epochs=args.epochs, scheduler_type=args.scheduler)
@@ -177,6 +201,10 @@ def train_single_model(
         "img_size": args.img_size,
         "num_workers": args.num_workers,
         "use_amp": not args.no_amp,
+        # Fine-tuning
+        "finetune": args.finetune,
+        "freeze_backbone": not args.finetune,
+        "backbone_lr": args.backbone_lr if args.finetune else None,
         "results": results,
     }
     
