@@ -1,0 +1,59 @@
+# =============================================================================
+# Training Configuration — Hyperparameters & Strategy
+# =============================================================================
+
+# Number of epochs
+epochs: 50
+
+# Optimizer
+optimizer:
+  type: AdamW
+  lr: 1e-4          # Head learning rate (used when backbone_lr not set)
+  weight_decay: 1e-4
+
+# Learning rate scheduler
+scheduler:
+  type: cosine       # cosine | step | plateau
+  T_max: 50         # Period for CosineAnnealing
+  step_size: 20     # For StepLR
+  gamma: 0.1        # For StepLR
+  patience: 5        # For ReduceLROnPlateau
+  factor: 0.1        # For ReduceLROnPlateau
+
+# Mixed precision training
+amp: true
+
+# Reproducibility
+seed: 42
+num_seeds: 3  # Number of seeds to run (42, 123, 456)
+
+# Augmentation — Training only
+augmentation:
+  # Horizontal and vertical flips (isotropic for cross-section images)
+  horizontal_flip: 0.5
+  vertical_flip: 0.5
+
+  # Rotation strategy
+  rotation:
+    type: continuous  # continuous | discrete_90
+    degrees: 30       # For continuous type: max rotation angle
+    # discrete_90: uses 0, 90, 180, 270 randomly
+
+  # Color jitter
+  color_jitter:
+    brightness: 0.2
+    contrast: 0.2
+
+# Checkpointing
+checkpoint:
+  save_best_only: true
+  metric: val_acc
+  mode: max
+
+# Early stopping
+early_stopping:
+  enabled: false
+  patience: 10
+  min_delta: 0.0
+  metric: val_acc
+  mode: max

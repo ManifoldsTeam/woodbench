@@ -1,0 +1,36 @@
+# =============================================================================
+# Experiment Configuration — Task A: Family-level Classification
+# =============================================================================
+
+# Experiment identifier
+experiment_name: taskA_family_classification
+
+# Task definition
+task:
+  id: taskA
+  name: Family Classification
+  description: 4-class family-level classification (Cupressaceae, Pinaceae, Podocarpaceae, Taxaceae)
+  num_classes: 4
+
+# Data config overrides
+data:
+  _target_: data.base
+  num_classes: 4
+
+# Model config overrides
+model:
+  _target_: model.base
+  num_classes: 4
+  family_classes: [Cupressaceae, Pinaceae, Podocarpaceae, Taxaceae]
+
+# Training config
+train:
+  _target_: train.base
+  epochs: 50
+
+# Evaluation
+evaluation:
+  test_evaluation: true
+  per_class_metrics: true
+  confusion_matrix: true
+  save_predictions: false

@@ -11,6 +11,11 @@ from torchvision import transforms
 def get_train_transforms(
     img_size: int = 224,
     use_90rotation: bool = False,
+    degrees: float = 30.0,
+    hflip_prob: float = 0.5,
+    vflip_prob: float = 0.5,
+    brightness: float = 0.2,
+    contrast: float = 0.2,
 ) -> transforms.Compose:
     """Get training augmentation pipeline.
 
@@ -23,18 +28,22 @@ def get_train_transforms(
         use_90rotation: Use discrete 90-degree rotation instead of continuous.
             Recommended: True for fine-tuning (larger datasets), False for
             small datasets where heavy augmentation could hurt.
+        degrees: Max rotation angle for continuous rotation.
+        hflip_prob: Probability of horizontal flip.
+        vflip_prob: Probability of vertical flip.
+        brightness: ColorJitter brightness range.
+        contrast: ColorJitter contrast range.
 
     Returns:
         Composed training transforms
     """
     aug_list = [
         transforms.Resize((img_size, img_size)),
-        transforms.RandomHorizontalFlip(p=0.5),
-        transforms.RandomVerticalFlip(p=0.5),
+        transforms.RandomHorizontalFlip(p=hflip_prob),
+        transforms.RandomVerticalFlip(p=vflip_prob),
     ]
 
     if use_90rotation:
-        # Discrete 90-degree rotation — 4 orientations preserve all features
         aug_list.append(transforms.RandomChoice([
             transforms.Lambda(lambda x: transforms.functional.rotate(x, 0)),
             transforms.Lambda(lambda x: transforms.functional.rotate(x, 90)),
@@ -42,10 +51,10 @@ def get_train_transforms(
             transforms.Lambda(lambda x: transforms.functional.rotate(x, 270)),
         ]))
     else:
-        aug_list.append(transforms.RandomRotation(degrees=30))
+        aug_list.append(transforms.RandomRotation(degrees=degrees))
 
     aug_list.extend([
-        transforms.ColorJitter(brightness=0.2, contrast=0.2),
+        transforms.ColorJitter(brightness=brightness, contrast=contrast),
         transforms.ToTensor(),
         transforms.Normalize(
             mean=[0.485, 0.456, 0.406],
