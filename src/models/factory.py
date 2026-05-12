@@ -60,56 +60,41 @@ def create_model(
     else:
         timm_name = backbone_name
 
-    # Create model with no classifier (num_classes=0)
+    # Create model with the correct number of output classes.
+    # timm includes the classification head in the forward path when num_classes > 0.
+    # We then replace it with our own linear head via reset_classifier().
     model = timm.create_model(
         timm_name,
         pretrained=pretrained,
-        num_classes=0,  # Remove default classifier
+        num_classes=num_classes,
     )
 
-    # Get feature dimension from backbone
+    # Get feature dimension
     in_features = model.num_features
 
-    # Create new classification head.
-    # IMPORTANT: Different timm architectures use different forward paths:
-    # - ResNet, EfficientNet, MobileNet: forward calls model.head
-    # - ConvNeXt: forward calls model.head.fc (model.head is a Sequential)
-    # - Swin Transformer: forward calls model.head (model.head is a Sequential)
-    # So we must attach the head at the correct attribute for each architecture.
-    if "convnext" in timm_name:
-        # ConvNeXt: head is a Sequential([norm, flatten, fc])
-        # Replace just the final fc layer to keep the norm/flatten chain
-        model.head.fc = nn.Linear(in_features, num_classes)
-    elif "swin" in timm_name:
-        # Swin-T: head is a Sequential([flatten, norm, fc])
-        # Replace the final fc layer
-        model.head.fc = nn.Linear(in_features, num_classes)
-    else:
-        # ResNet, EfficientNet, MobileNet: head is just nn.Linear
-        model.head = nn.Linear(in_features, num_classes)
+    # Replace the classifier with a simple linear head.
+    # timm.reset_classifier() correctly replaces the final classification layer
+    # regardless of the internal attribute name (fc / head / classifier).
+    model.reset_classifier(num_classes=num_classes)
 
-    # Verify the head is in the forward path with a quick forward pass
+    # Verify output shape
     dummy_input = torch.randn(1, 3, 224, 224)
     with torch.no_grad():
-        try:
-            out = model(dummy_input)
-            assert out.shape[-1] == num_classes, (
-                f"Model output shape mismatch: expected ({num_classes},), got {out.shape}"
-            )
-        except Exception as e:
-            raise RuntimeError(
-                f"Model forward pass failed for '{backbone_name}' ({timm_name}). "
-                f"Check that the classification head is correctly attached. Error: {e}"
-            ) from e
+        out = model(dummy_input)
+        assert out.shape == (1, num_classes), (
+            f"Expected output shape (1, {num_classes}), got {out.shape}"
+        )
 
     # Freeze backbone if specified (linear probing mode)
     if freeze_backbone:
         for param in model.parameters():
             param.requires_grad = False
-        # Ensure head is trainable (unfreeze it)
-        for module in model.head.modules():
-            for param in module.parameters():
-                param.requires_grad = True
+        # Unfreeze the final classifier — find the Linear with out_features == num_classes
+        for module in model.modules():
+            if isinstance(module, nn.Linear) and module.out_features == num_classes:
+                for param in module.parameters():
+                    param.requires_grad = True
+                break
 
     return model
 
