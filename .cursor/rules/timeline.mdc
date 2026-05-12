@@ -27,7 +27,65 @@ Thêm một dòng mới theo định dạng:
 **References:** ...
 ```
 
-## 3. Định nghĩa "Hành động quan trọng"
+## 4. Colab Notebook Setup (BẮT BUỘC cho mọi notebook training/evaluation)
+
+Mỗi notebook trong `notebooks/` phải chạy được trên Colab mà không cần chỉnh sửa thủ công.
+
+### A. Root Detection — Cell đầu tiên bắt buộc
+
+```python
+import sys
+from pathlib import Path
+
+# Auto-detect: Colab (/content/) vs local
+if Path('/content').exists():
+    ROOT = Path('/content/woodbench')   # Colab
+else:
+    ROOT = Path.cwd()                   # Local
+
+sys.path.insert(0, str(ROOT))
+
+import torch
+print(f"PyTorch: {torch.__version__}")
+print(f"CUDA: {torch.cuda.is_available()}")
+```
+
+### B. Mọi path phải dùng ROOT, tuyệt đối không hard-code
+
+```python
+# Sai — hard-coded relative path
+DATA_ROOT = Path('../data/split')
+EXP_DIR   = Path('../experiments/...')
+
+# Đúng — dùng ROOT
+DATA_DIR = ROOT / "data" / "split"
+EXP_DIR  = ROOT / "experiments" / "taskA" / "resnet50"
+```
+
+### C. Cấu trúc notebook chuẩn cho Colab
+
+| Cell | Nội dung | Colab-only? |
+|------|----------|-------------|
+| 1 | Setup + Root Detection | Không |
+| 2 | Install dependencies | **Có** (`if Path('/content').exists(): ...`) |
+| 3 | Download dataset (HuggingFace) | **Có** (chỉ download nếu chưa có) |
+| 4+ | Training / Evaluation logic | Không |
+
+### D. Khi tạo notebook mới hoặc refactor notebook cũ
+
+1. Thêm Cell 1 (Root Detection) làm cell đầu tiên
+2. Thay tất cả `Path('../...')` bằng `ROOT / '...'`
+3. Thêm cell install dependencies với guard `if Path('/content').exists()`
+4. Thêm cell download dataset từ HuggingFace (repo `ny0g507h3p/woodbench_A`)
+5. Đảm bảo `from src import ...` hoạt động sau khi `sys.path.insert(0, str(ROOT))`
+
+### E. Định nghĩa "Hành động quan trọng" (bổ sung)
+
+- Tạo notebook training/evaluation mới cho bất kỳ phase nào
+- Refactor / cấu trúc lại notebook hiện có
+- Thay đổi cách notebook resolve paths hoặc load data
+
+## 5. Định nghĩa "Hành động quan trọng"
 - Thay đổi code ảnh hưởng đến logic nghiệp vụ hoặc kiến trúc.
 - Di chuyển dữ liệu (bucket, database).
 - Sửa lỗi cần quá trình điều tra (investigation).
