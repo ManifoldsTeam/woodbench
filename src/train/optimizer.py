@@ -92,7 +92,7 @@ def create_scheduler(
     if warmup_epochs > 0 and scheduler_type in ("cosine", "step"):
         warmup_scheduler = torch.optim.lr_scheduler.LinearLR(
             optimizer,
-            start_factor=0.0,
+            start_factor=1e-8,
             end_factor=1.0,
             total_iters=warmup_epochs,
         )
