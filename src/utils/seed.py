@@ -23,13 +23,15 @@ def set_seed(seed: int = 42):
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
-    torch.cuda.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
-    
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)
+
     # Deterministic options (slower but reproducible)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
-    torch.use_deterministic_algorithms(True)
+    if hasattr(torch, "use_deterministic_algorithms"):
+        torch.use_deterministic_algorithms(True, warn_only=True)
     
     # Also set environment variable for PyTorch
     os.environ["PYTHONHASHSEED"] = str(seed)

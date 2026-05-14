@@ -1,6 +1,6 @@
 """Training engine for Conifer Family Classification.
 
-Handles the training loop with mixed precision support.
+Handles the training loop with mixed precision support and tqdm progress bars.
 """
 
 from pathlib import Path
@@ -8,7 +8,8 @@ from typing import Dict, Optional
 
 import torch
 import torch.nn as nn
-from torch.cuda.amp import autocast, GradScaler
+from torch.amp import autocast, GradScaler
+from tqdm import tqdm
 
 
 class TrainingEngine:
@@ -44,7 +45,7 @@ class TrainingEngine:
         self.criterion = criterion or nn.CrossEntropyLoss()
         self.device = device
         self.use_amp = use_amp
-        self.scaler = GradScaler() if use_amp else None
+        self.scaler = GradScaler(self.device) if use_amp else None
         
         # Training state
         self.current_epoch = 0
@@ -52,9 +53,13 @@ class TrainingEngine:
         self.train_history = []
         self.val_history = []
     
-    def train_one_epoch(self) -> Dict[str, float]:
-        """Train for one epoch.
-        
+    def train_one_epoch(self, epoch: int = 0, total_epochs: int = 1) -> Dict[str, float]:
+        """Train for one epoch with tqdm progress bar.
+
+        Args:
+            epoch: Current epoch number (for tqdm display)
+            total_epochs: Total number of epochs (for tqdm display)
+
         Returns:
             Dictionary with training metrics
         """
@@ -62,18 +67,24 @@ class TrainingEngine:
         total_loss = 0
         correct = 0
         total = 0
-        
-        for batch_idx, (images, labels) in enumerate(self.train_loader):
+
+        pbar = tqdm(
+            self.train_loader,
+            desc=f"Epoch {epoch+1}/{total_epochs} [Train]",
+            unit="batch",
+            leave=False,
+        )
+        for images, labels in pbar:
             images = images.to(self.device, non_blocking=True)
             labels = labels.to(self.device, non_blocking=True)
-            
+
             self.optimizer.zero_grad()
-            
+
             if self.use_amp:
-                with autocast():
+                with autocast(self.device):
                     outputs = self.model(images)
                     loss = self.criterion(outputs, labels)
-                
+
                 self.scaler.scale(loss).backward()
                 self.scaler.step(self.optimizer)
                 self.scaler.update()
@@ -82,23 +93,34 @@ class TrainingEngine:
                 loss = self.criterion(outputs, labels)
                 loss.backward()
                 self.optimizer.step()
-            
+
             total_loss += loss.item()
             _, predicted = outputs.max(1)
             total += labels.size(0)
             correct += predicted.eq(labels).sum().item()
-        
+
+            pbar.set_postfix({
+                "loss": f"{loss.item():.4f}",
+                "acc": f"{100.0 * correct / total:.1f}%",
+            })
+
+        pbar.close()
+
         metrics = {
             "train_loss": total_loss / len(self.train_loader),
             "train_acc": 100.0 * correct / total,
         }
-        
+
         return metrics
     
     @torch.no_grad()
-    def validate(self) -> Dict[str, float]:
-        """Validate on validation set.
-        
+    def validate(self, epoch: int = 0, total_epochs: int = 1) -> Dict[str, float]:
+        """Validate on validation set with tqdm progress bar.
+
+        Args:
+            epoch: Current epoch number (for tqdm display)
+            total_epochs: Total number of epochs (for tqdm display)
+
         Returns:
             Dictionary with validation metrics
         """
@@ -106,25 +128,38 @@ class TrainingEngine:
         total_loss = 0
         correct = 0
         total = 0
-        
-        for images, labels in self.val_loader:
+
+        pbar = tqdm(
+            self.val_loader,
+            desc=f"Epoch {epoch+1}/{total_epochs} [Val  ]",
+            unit="batch",
+            leave=False,
+        )
+        for images, labels in pbar:
             images = images.to(self.device, non_blocking=True)
             labels = labels.to(self.device, non_blocking=True)
-            
-            with autocast(enabled=self.use_amp):
+
+            with autocast(self.device, enabled=self.use_amp):
                 outputs = self.model(images)
                 loss = self.criterion(outputs, labels)
-            
+
             total_loss += loss.item()
             _, predicted = outputs.max(1)
             total += labels.size(0)
             correct += predicted.eq(labels).sum().item()
-        
+
+            pbar.set_postfix({
+                "loss": f"{loss.item():.4f}",
+                "acc": f"{100.0 * correct / total:.1f}%",
+            })
+
+        pbar.close()
+
         metrics = {
             "val_loss": total_loss / len(self.val_loader),
             "val_acc": 100.0 * correct / total,
         }
-        
+
         return metrics
     
     def fit(
@@ -154,11 +189,11 @@ class TrainingEngine:
             self.current_epoch = epoch
             
             # Train
-            train_metrics = self.train_one_epoch()
+            train_metrics = self.train_one_epoch(epoch, epochs)
             self.train_history.append(train_metrics)
-            
+
             # Validate
-            val_metrics = self.validate()
+            val_metrics = self.validate(epoch, epochs)
             self.val_history.append(val_metrics)
             
             # Step scheduler

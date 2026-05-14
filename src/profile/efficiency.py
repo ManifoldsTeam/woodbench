@@ -154,14 +154,14 @@ def measure_inference_time_gpu(
     times = []
     with torch.no_grad():
         for _ in range(num_runs):
-            start = torch.cuda.Event(enable_timing=True)
-            end = torch.cuda.Event(enable_timing=True)
-            
+            start = torch.Event(enable_timing=True)
+            end = torch.Event(enable_timing=True)
+
             start.record()
             _ = model(dummy_input)
             end.record()
             torch.cuda.synchronize()
-            
+
             times.append(start.elapsed_time(end))
     
     mean_ms = np.mean(times)

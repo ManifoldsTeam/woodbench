@@ -118,11 +118,11 @@ def measure_inference_time(
     
     if device == "cuda":
         torch.cuda.synchronize()
-    
+
     # Timed runs
-    start = torch.cuda.Event(enable_timing=True)
-    end = torch.cuda.Event(enable_timing=True)
-    
+    start = torch.Event(enable_timing=True)
+    end = torch.Event(enable_timing=True)
+
     times = []
     for _ in range(num_runs):
         start.record()

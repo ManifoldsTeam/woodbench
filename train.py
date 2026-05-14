@@ -203,8 +203,8 @@ def main(cfg: DictConfig):
         )
 
         for epoch in range(train_cfg.get("epochs", 50)):
-            train_metrics = engine.train_one_epoch()
-            val_metrics = engine.validate()
+            train_metrics = engine.train_one_epoch(epoch, train_cfg.get("epochs", 50))
+            val_metrics = engine.validate(epoch, train_cfg.get("epochs", 50))
 
             if scheduler is not None:
                 scheduler.step()

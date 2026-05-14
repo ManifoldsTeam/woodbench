@@ -72,17 +72,47 @@ def create_scheduler(
     optimizer: torch.optim.Optimizer,
     epochs: int = 50,
     scheduler_type: str = "cosine",
+    warmup_epochs: int = 5,
 ) -> torch.optim.lr_scheduler._LRScheduler:
-    """Create learning rate scheduler.
+    """Create learning rate scheduler with optional linear warmup.
+
+    When warmup_epochs > 0, a linear warmup is applied before the main
+    scheduler (cosine/step). The warmup ramps LR from 0 to its initial value
+    over `warmup_epochs`, then the main scheduler takes over.
 
     Args:
         optimizer: PyTorch optimizer
         epochs: Number of training epochs
         scheduler_type: 'cosine', 'step', or 'plateau'
+        warmup_epochs: Number of warmup epochs (0 = no warmup)
 
     Returns:
-        Learning rate scheduler
+        Learning rate scheduler (possibly wrapped in SequentialLR)
     """
+    if warmup_epochs > 0 and scheduler_type in ("cosine", "step"):
+        warmup_scheduler = torch.optim.lr_scheduler.LinearLR(
+            optimizer,
+            start_factor=0.0,
+            end_factor=1.0,
+            total_iters=warmup_epochs,
+        )
+        if scheduler_type == "cosine":
+            main_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
+                optimizer,
+                T_max=epochs - warmup_epochs,
+            )
+        else:
+            main_scheduler = torch.optim.lr_scheduler.StepLR(
+                optimizer,
+                step_size=20,
+                gamma=0.1,
+            )
+        return torch.optim.lr_scheduler.SequentialLR(
+            optimizer,
+            schedulers=[warmup_scheduler, main_scheduler],
+            milestones=[warmup_epochs],
+        )
+
     if scheduler_type == "cosine":
         return torch.optim.lr_scheduler.CosineAnnealingLR(
             optimizer,

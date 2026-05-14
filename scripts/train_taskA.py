@@ -20,7 +20,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.data import get_dataloaders
 from src.models import create_model, BACKBONE_NAMES
-from src.train import TrainingEngine, create_optimizer, create_scheduler, create_criterion
+from src.train import TrainingEngine, create_optimizer, create_scheduler, create_loss_function
 from src.utils import set_seed, setup_logger
 
 
@@ -162,10 +162,10 @@ def train_single_model(
     optimizer = create_optimizer(model, lr=args.lr, weight_decay=args.weight_decay, backbone_lr=backbone_lr)
     
     # Create scheduler
-    scheduler = create_scheduler(optimizer, epochs=args.epochs, scheduler_type=args.scheduler)
+    scheduler = create_scheduler(optimizer, epochs=args.epochs, scheduler_type=args.scheduler, warmup_epochs=5)
     
     # Create criterion
-    criterion = create_criterion(label_smoothing=args.label_smoothing)
+    criterion = create_loss_function(label_smoothing=args.label_smoothing)
     
     # Create training engine
     engine = TrainingEngine(
