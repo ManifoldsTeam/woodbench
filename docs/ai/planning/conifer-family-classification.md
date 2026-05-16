@@ -10,7 +10,10 @@ description: Task breakdown and timeline for family-level classification of 4 co
 
 - [x] **M0: Dataset Exploration** — Understand raw data structure, species list, image quality
 - [x] **M1: Phase 0 Complete** — Dataset organized, labels resolved, split created, notebook ready
-- [x] **M2: Baseline Pipeline** — Code structure ready, one model trains successfully ✅ *Phase 1 Complete* (model head fixed May 2026)
+- [x] **M2: Baseline Pipeline** — Code structure ready, one model trains successfully
+  - ResNet-50 trained on imbalanced data (4,487 samples) → Taxaceae F1 = 70.27%
+  - ResNet-50 and EfficientNet-B3 results are INVALID — both need retrain on balanced `data/task-A/` (7,264 samples)
+  - Phase 1 code is complete; notebooks rewritten for balanced data
 - [ ] **M3: All 5 Models Trained** — Task A complete for all architectures (fine-tuning, differential LR)
 - [ ] **M4: Efficiency Analysis** — Inference time, FLOPs, model size measured
 - [ ] **M5: Ablation Complete** — 90° rotation augmentation tested
@@ -80,27 +83,31 @@ description: Task breakdown and timeline for family-level classification of 4 co
 
 **Phase 0 Notebook Deliverable**: Full documentation with fixed structure, all steps with outputs, ready for reproducibility.
 
-### Phase 1: Core Implementation (Tuần 2-3) ✅ DONE
+### Phase 1: Core Implementation (Tuần 2-3) — DONE (CODE), RETRAIN NEEDED
 
-| Task | Description | Effort | Dependency |
-|------|-------------|--------|------------|
-| **1.1** | Implement data module (`ConiferDataset`, `transforms`) | 2 days | 0.1-0.5 | ✅ |
-| **1.2** | Implement model factory (`create_model`) | 1 day | 1.1 | ✅ |
-| **1.3** | Implement training loop with **unfrozen backbone + differential LR** | 2 days | 1.2 | ✅ |
-| **1.4** | Implement evaluation metrics | 1 day | 1.1 | ✅ |
-| **1.5** | Test pipeline with one model (ResNet-50) | 1 day | 1.3, 1.4 | ⏳ |
-| **1.6** | Add checkpointing and logging | 1 day | 1.5 | ✅ |
+> **Known Issue**: Phase 1 code is complete. However, `phase_1_TaskA_resnet50.ipynb` and `phase_1_TaskA_efficientnet_b3.ipynb` were run against the **imbalanced** `data/split/` dataset (4,487 train samples, Podocarpaceae=217, Taxaceae=206). The resulting Taxaceae F1=70.27% reflects the class imbalance, NOT a model failure. Both notebooks have been rewritten to use the balanced `data/task-A/` dataset (7,264 train samples, Podocarpaceae=1,600, Taxaceae=1,600). Retrain is required.
+
+| Task | Description | Effort | Dependency | Status |
+|------|-------------|--------|------------|--------|
+| **1.1** | Implement data module (`ConiferDataset`, `transforms`) | 2 days | 0.1-0.5 | ✅ DONE |
+| **1.2** | Implement model factory (`create_model`) | 1 day | 1.1 | ✅ DONE |
+| **1.3** | Implement training loop with **unfrozen backbone + differential LR** | 2 days | 1.2 | ✅ DONE |
+| **1.4** | Implement evaluation metrics | 1 day | 1.1 | ✅ DONE |
+| **1.5** | Test pipeline with one model (ResNet-50) | 1 day | 1.3, 1.4 | ⚠️ TRAINED BUT INVALID (imbalanced data) |
+| **1.6** | Add checkpointing and logging | 1 day | 1.5 | ✅ DONE |
 
 > **Training Strategy**: Fine-tuning with unfrozen backbone + differential learning rates (backbone LR = 1e-5, head LR = 1e-4) is the **default mode** per WoodID_plan.md. This adapts pretrained ImageNet features to the wood cross-section domain while preserving low-level texture features. Use `--linear_probe` flag to fall back to frozen backbone (linear probing) for ablation comparison.
 
 ### Phase 2: Model Training (Tuần 3-4)
 
 > **Note**: Fine-tuning (unfrozen backbone) is the default mode. Use `--linear_probe` to fall back to frozen backbone (linear probing).
+> **Dataset**: Training now uses `data/task-A/` (7,264 samples, balanced via augmentation) instead of `data/split/` (4,487 samples, imbalanced).
+> **Baseline**: Old ResNet-50 training on imbalanced data showed Taxaceae F1=70.27%. Expected improvement with balanced data.
 
-| Task | Description | Effort | Dependency |
-|------|-------------|--------|------------|
-| **2.1** | Train ResNet-50 (Task A, seed=42, fine-tuning) | 1 day | 1.6 | ⏳ |
-| **2.2** | Train EfficientNet-B3 (Task A, seed=42, fine-tuning) | 1 day | 1.6 | ⏳ |
+| Task | Description | Effort | Dependency | Status |
+|------|-------------|--------|------------|--------|
+| **2.1** | Train ResNet-50 (Task A, seed=42, fine-tuning, balanced data) | 1 day | 1.6 | ⏳ READY TO RUN |
+| **2.2** | Train EfficientNet-B3 (Task A, seed=42, fine-tuning, balanced data) | 1 day | 1.6 | ⏳ READY TO RUN |
 | **2.3** | Train MobileNetV3-Large (Task A, seed=42, fine-tuning) | 1 day | 1.6 | ⏳ |
 | **2.4** | Train ConvNeXt-Tiny (Task A, seed=42, fine-tuning) | 1 day | 1.6 | ⏳ |
 | **2.5** | Train Swin-T (Task A, seed=42, fine-tuning) | 1 day | 1.6 | ⏳ |
@@ -298,10 +305,10 @@ Fine-tuning with data augmentation, 50 epochs, batch=64. Colab T4 throttles afte
 | Metric | Target | Actual | Status |
 |--------|--------|--------|--------|
 | Phase 0 & -1 completed | Yes | Yes | ✅ Complete |
-| Phase 1 code pipeline | Yes | Yes (fixed) | ✅ Complete |
-| All 5 models trained (Task A) | 5/5 | - | Pending |
-| Accuracy >97% | >97% | - | Pending |
-| F1-macro >96% | >96% | - | Pending |
+| Phase 1 code pipeline | Yes | Code complete, notebooks rewritten for balanced data | ✅ Complete |
+| All 5 models trained (Task A) | 5/5 | ResNet-50/EfficientNet-B3 trained but on imbalanced data — retrain needed | Pending (retrain) |
+| Accuracy >97% | >97% | ResNet-50 imbalanced: 96.64% overall, Taxaceae only 70.27% | Pending (retrain) |
+| F1-macro >96% | >96% | ResNet-50 imbalanced: F1-macro=90.23%, Taxaceae F1 only 70.27% | Pending (retrain) |
 | Multi-seed std <1% | <1% | - | Pending |
 | Ablation documented | Yes | - | Pending |
 | Grad-CAM generated | Yes | - | Pending |
