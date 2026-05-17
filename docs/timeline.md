@@ -8,5 +8,5 @@
 | 12-05-2026 | 15:50 | Refactor Phase 1 notebook for Colab portability | Done | [Details](timeline/12-05-2026.md) |
 | 14-05-2026 | 10:15 | Create EfficientNet-B3 notebook for Phase 1 | Done | [Details](timeline/14-05-2026.md) |
 | 14-05-2026 | 12:29 | Update all deprecated PyTorch 2.x APIs across codebase | Done | [Details](timeline/14-05-2026.md) |
-| 17-05-2026 | 10:43 | Cap nhat efficientnet_b3 va mobilenetv3_large notebook theo chuan Colab | Done | [Details](timeline/17-05-2026.md) |
+| 17-05-2026 | 12:18 | Recalculate batch sizes for Colab A100 40GB (not 80GB) | Done | [Details](timeline/17-05-2026.md) |
 
