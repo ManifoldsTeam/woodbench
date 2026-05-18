@@ -17,6 +17,7 @@ Pillow
 numpy
 pandas
 tqdm
+albumentations
 
 # Evaluation metrics
 scikit-learn

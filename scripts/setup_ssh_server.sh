@@ -4,9 +4,10 @@
 #
 # Flow:
 #   1. Connect to vast.ai via SSH
-#   2. Create /workspace directory
-#   3. Enter git token → clone the repo
-#   4. Enter HF token → login to HuggingFace + download dataset
+#   2. Enter git token → clone the repo
+#   3. Install project in editable mode (pip install -e .)
+#   4. Install huggingface_hub
+#   5. Enter HF token → login to HuggingFace + download dataset
 #
 # Usage:
 #   bash scripts/setup_ssh_server.sh
@@ -74,11 +75,24 @@ clone_repo() {
 }
 
 # =============================================================================
-# Step 2: Install huggingface_hub
+# Step 2: Install project in editable mode
+# =============================================================================
+
+install_project() {
+    log_step "Step 2 — Install woodbench Project"
+
+    log_info "Installing project in editable mode..."
+    pip install -e .
+
+    log_info "Project installed."
+}
+
+# =============================================================================
+# Step 3: Install huggingface_hub
 # =============================================================================
 
 install_huggingface_hub() {
-    log_step "Step 2 — Install huggingface_hub"
+    log_step "Step 3 — Install huggingface_hub"
 
     if command -v python &>/dev/null; then
         log_info "Python found: $(python --version)"
@@ -94,11 +108,11 @@ install_huggingface_hub() {
 }
 
 # =============================================================================
-# Step 3: Login to HuggingFace and download dataset
+# Step 4: Login to HuggingFace and download dataset
 # =============================================================================
 
 login_and_download() {
-    log_step "Step 3 — Login to HuggingFace and Download Dataset"
+    log_step "Step 4 — Login to HuggingFace and Download Dataset"
 
     echo "  You need a HuggingFace token to download the dataset."
     echo "  Get one at: https://huggingface.co/settings/tokens"
@@ -150,6 +164,8 @@ main() {
     echo ""
     cd "${PROJECT_ROOT}"
     log_info "Changed to project directory: ${PROJECT_ROOT}"
+
+    install_project
 
     install_huggingface_hub
 
