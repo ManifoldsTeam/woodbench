@@ -1,0 +1,20 @@
+# =============================================================================
+# Experiment Configuration — Task A with 90-degree Rotation Augmentation
+# Ablation study: isotropic augmentation hypothesis
+# =============================================================================
+
+# Inherit from Task A base
+defaults:
+  - experiment/taskA
+  - _self
+
+experiment_name: taskA_90rotation
+
+augmentation:
+  rotation:
+    type: discrete_90  # Override: 0, 90, 180, 270 instead of continuous 30deg
+
+description: |
+  Ablation experiment: discrete 90-degree rotation augmentation.
+  Hypothesis: cross-section images are isotropic (no natural orientation),
+  so 0, 90, 180, 270 rotations preserve semantic information.

@@ -1,0 +1,31 @@
+# =============================================================================
+# Experiment Configuration — Task B: Species-level Classification
+# =============================================================================
+
+# Experiment identifier
+experiment_name: taskB_species_classification
+
+# Task definition
+task:
+  id: taskB
+  name: Species Classification
+  description: 20-class species-level classification (all species in dataset)
+  num_classes: 20
+
+# Model config overrides
+model:
+  _target_: model.base
+  num_classes: 20
+  family_classes: null  # Not needed for Task B
+
+# Training config
+train:
+  _target_: train.base
+  epochs: 50
+
+# Evaluation
+evaluation:
+  test_evaluation: true
+  per_class_metrics: true
+  confusion_matrix: true
+  save_predictions: false

@@ -1,0 +1,28 @@
+# =============================================================================
+# Model Configuration — Backbone Architectures
+# =============================================================================
+
+# Available backbones (maps to timm model names)
+backbone: resnet50  # resnet50 | efficientnet_b3 | mobilenetv3_large | convnext_tiny | swin_tiny
+
+# Number of output classes
+num_classes: 4  # Override: 4 for Task A (family), 20 for Task B (species)
+
+# Pretrained weights
+pretrained: true
+
+# Fine-tuning strategy
+finetune:
+  # Linear probing: freeze backbone, train only head
+  freeze_backbone: false
+
+  # Differential learning rates (recommended per WoodID_plan.md)
+  backbone_lr: 1e-5   # Lower LR preserves pretrained features
+  head_lr: 1e-4        # Higher LR for task-specific head
+  # If backbone_lr == head_lr, all params use same LR
+
+# Label smoothing
+label_smoothing: 0.1
+
+# Family class names (Task A)
+family_classes: [Cupressaceae, Pinaceae, Podocarpaceae, Taxaceae]

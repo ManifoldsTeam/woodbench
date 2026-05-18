@@ -1,0 +1,14 @@
+# =============================================================================
+# Experiment Configuration — Task B with 90-degree Rotation Augmentation
+# =============================================================================
+
+# Inherit from Task B base
+defaults:
+  - experiment/taskB
+  - _self
+
+experiment_name: taskB_90rotation
+
+augmentation:
+  rotation:
+    type: discrete_90  # Override: 0, 90, 180, 270 instead of continuous 30deg

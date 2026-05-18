@@ -1,0 +1,104 @@
+---
+description: Quy trình bắt buộc cập nhật Agent.md và hệ thống Timeline Tracking sau mỗi thay đổi quan trọng.
+globs: 
+alwaysApply: true
+---
+
+# Quy trình Quản lý Dự án & Timeline
+
+## 1. Yêu cầu Tiền điều kiện
+- Agent **PHẢI LUÔN LUÔN** đọc file `Agent.md` khi bắt đầu phiên làm việc để nắm bắt ngữ cảnh và trạng thái hiện tại của dự án.
+
+## 2. Hệ thống Timeline Tracking (BẮT BUỘC)
+Sau khi hoàn thành bất kỳ hành động quan trọng nào (Thay đổi logic cốt lõi, fix bug, thêm tính năng, thay đổi hạ tầng), Agent **PHẢI** thực hiện đồng thời hai việc:
+
+### A. Cập nhật bảng tổng hợp tại `docs/timeline.md`
+Thêm một dòng mới theo định dạng:
+`| YYYY-MM-DD | HH:MM | Tiêu đề | Kết quả ngắn | [chi tiết](../../docs/timeline/DD-MM-YYYY.md) |`
+
+### B. Cập nhật chi tiết ngày tại `docs/timeline/DD-MM-YYYY.md`
+(Sử dụng giờ làm tiêu đề vì ngày đã nằm trong tên file). Định dạng:
+```markdown
+### HH:MM — [Tiêu đề]
+**Vấn đề:** ...  
+**Nguyên nhân:** ...  
+**Hành động:** ...  
+**Kết quả:** ...  
+**References:** ...
+```
+
+## 4. SSH Server Notebook Setup (BẮT BUỘC cho mọi notebook training/evaluation)
+
+Moi notebook training/evaluation trong `notebooks/` phai chay duoc tren SSH server.
+
+### A. Root Detection — Cell dau tien bat buoc
+
+```python
+from pathlib import Path
+import sys
+
+# SSH server: detect ROOT from notebook location
+ROOT = Path.cwd().parent.parent  # notebooks/phase-X/ -> woodbench/
+
+sys.path.insert(0, str(ROOT))
+
+import torch
+print(f"[ROOT] {ROOT}")
+print(f"PyTorch: {torch.__version__}")
+print(f"CUDA: {torch.cuda.is_available()}")
+if torch.cuda.is_available():
+    print(f"GPU: {torch.cuda.get_device_name(0)}")
+    print(f"VRAM: {torch.cuda.get_device_properties(0).total_mem / 1e9:.1f} GB")
+```
+
+### B. Moi path phai dung ROOT, tuyet doi khong hard-code
+
+```python
+# Sai — hard-coded relative path
+DATA_DIR = Path('../data/task-A')
+
+# Đung — dung ROOT
+DATA_DIR = ROOT / "data" / "task-A"
+
+# Đung — output direction tren server (~/experiments/woodbench/)
+EXP_DIR = Path.home() / "experiments" / "woodbench" / "task-A" / "convnext_tiny_balanced"
+```
+
+### C. Cau truc notebook chuan cho SSH Server
+
+| Cell | Noi dung |
+|------|----------|
+| 1 | Root Detection + PyTorch/CUDA check |
+| 2 | Dataset check (neu chua co, thong bao huong dan copy tu Drive) |
+| 3 | Model creation + forward pass test |
+| 4 | Training loop |
+| 5 | Evaluation + Confusion Matrix |
+
+### D. Output Direction tren Server
+
+- Luu checkpoint va metrics truc tiep vao `~/experiments/woodbench/`
+- Checkpoints duoc luu truc tiep, khong can backup
+
+### E. Dataset tren Server
+
+- Tai tu HuggingFace truoc khi training (chi can tai mot lan)
+- Dataset: `~/woodbench/data/task-A/` hoac `~/woodbench/data/task-B/`
+- Xem phan "Dataset Download from HuggingFace" trong CLAUDE.md
+
+### F. Khi tao notebook moi hoac refactor notebook cu
+
+1. Them Cell 1 (Root Detection) lam cell dau tien
+2. Thay tat ca `Path('../...')` bang `ROOT / '...'`
+3. Thay output direction thanh `Path.home() / 'experiments' / 'woodbench' / ...`
+4. Xoa tat ca cac Colab-only cells (HF login, Drive mount, pip install, git clone)
+5. Kiem tra notebook chay duoc tren SSH server ma khong can chinh sua
+
+## 5. Định nghĩa "Hành động quan trọng"
+- Thay đổi code ảnh hưởng đến logic nghiệp vụ hoặc kiến trúc.
+- Di chuyển dữ liệu (bucket, database).
+- Sửa lỗi cần quá trình điều tra (investigation).
+- Triển khai tính năng hoặc endpoint mới.
+- Thay đổi cấu hình hoặc cơ sở hạ tầng.
+- Tạo notebook training/evaluation mới cho bất kỳ phase nào.
+- Refactor / cấu trúc lại notebook hiện có.
+- Thay đổi cách notebook resolve paths hoặc load data.

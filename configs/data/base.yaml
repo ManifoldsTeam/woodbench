@@ -1,0 +1,28 @@
+# =============================================================================
+# Data Configuration — IC4SD-Wood-Conifer20v1 Dataset
+# =============================================================================
+
+# Dataset root path (relative to project root or absolute)
+data_root: data/
+
+# Split ratios (stratified by species, seed-based)
+splits:
+  train: 0.70
+  val: 0.15
+  test: 0.15
+
+# Image preprocessing
+image:
+  size: 224
+  normalize:
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+
+# DataLoader settings
+dataloader:
+  batch_size: 64
+  num_workers: 4
+  pin_memory: true
+  persistent_workers: true
+  prefetch_factor: 2
+  drop_last: true
