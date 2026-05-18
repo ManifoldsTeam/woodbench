@@ -5,12 +5,15 @@ import os
 import sys
 from pathlib import Path
 
+# Enable high-performance Xet backend (replaces deprecated hf_transfer)
+os.environ["HF_XET_HIGH_PERFORMANCE"] = "1"
+
 try:
-    from huggingface_hub import hf_hub_download, login
+    from huggingface_hub import login, snapshot_download
 except ImportError:
     print("Installing huggingface_hub...")
     os.system("pip install huggingface_hub -q")
-    from huggingface_hub import hf_hub_download, login
+    from huggingface_hub import login, snapshot_download
 
 HF_TASK_A_REPO = "ny0g507h3p/wood-task-A"
 PROJECT_ROOT = Path("/workspace/woodbench")
@@ -39,19 +42,11 @@ def main():
     # Download all files from the repo
     print(f"Downloading dataset to {DATA_DIR}...")
 
-    from huggingface_hub import snapshot_download
-
-    # Create data directory
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
-
-    # Download all files from the repo
-    print(f"Downloading dataset to {DATA_DIR}...")
-
     snapshot_download(
         repo_id=HF_TASK_A_REPO,
         repo_type="dataset",
         local_dir=DATA_DIR,
-        local_dir_use_symlinks=False,
+        max_workers=16,  # Increases parallel file downloads
     )
 
     print(f"\nDataset ready at {DATA_DIR}")
