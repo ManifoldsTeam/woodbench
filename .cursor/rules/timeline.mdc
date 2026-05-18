@@ -27,63 +27,71 @@ Thêm một dòng mới theo định dạng:
 **References:** ...
 ```
 
-## 4. Colab Notebook Setup (BẮT BUỘC cho mọi notebook training/evaluation)
+## 4. SSH Server Notebook Setup (BẮT BUỘC cho mọi notebook training/evaluation)
 
-Mỗi notebook trong `notebooks/` phải chạy được trên Colab mà không cần chỉnh sửa thủ công.
+Moi notebook training/evaluation trong `notebooks/` phai chay duoc tren SSH server.
 
-### A. Root Detection — Cell đầu tiên bắt buộc
+### A. Root Detection — Cell dau tien bat buoc
 
 ```python
-import sys
 from pathlib import Path
+import sys
 
-# Auto-detect: Colab (/content/) vs local
-if Path('/content').exists():
-    ROOT = Path('/content/woodbench')   # Colab
-else:
-    ROOT = Path.cwd()                   # Local
+# SSH server: detect ROOT from notebook location
+ROOT = Path.cwd().parent.parent  # notebooks/phase-X/ -> woodbench/
 
 sys.path.insert(0, str(ROOT))
 
 import torch
+print(f"[ROOT] {ROOT}")
 print(f"PyTorch: {torch.__version__}")
 print(f"CUDA: {torch.cuda.is_available()}")
+if torch.cuda.is_available():
+    print(f"GPU: {torch.cuda.get_device_name(0)}")
+    print(f"VRAM: {torch.cuda.get_device_properties(0).total_mem / 1e9:.1f} GB")
 ```
 
-### B. Mọi path phải dùng ROOT, tuyệt đối không hard-code
+### B. Moi path phai dung ROOT, tuyet doi khong hard-code
 
 ```python
 # Sai — hard-coded relative path
-DATA_ROOT = Path('../data/split')
-EXP_DIR   = Path('../experiments/...')
+DATA_DIR = Path('../data/task-A')
 
-# Đúng — dùng ROOT
-DATA_DIR = ROOT / "data" / "split"
-EXP_DIR  = ROOT / "experiments" / "taskA" / "resnet50"
+# Đung — dung ROOT
+DATA_DIR = ROOT / "data" / "task-A"
+
+# Đung — output direction tren server (~/experiments/woodbench/)
+EXP_DIR = Path.home() / "experiments" / "woodbench" / "task-A" / "convnext_tiny_balanced"
 ```
 
-### C. Cấu trúc notebook chuẩn cho Colab
+### C. Cau truc notebook chuan cho SSH Server
 
-| Cell | Nội dung | Colab-only? |
-|------|----------|-------------|
-| 1 | Setup + Root Detection | Không |
-| 2 | Install dependencies | **Có** (`if Path('/content').exists(): ...`) |
-| 3 | Download dataset (HuggingFace) | **Có** (chỉ download nếu chưa có) |
-| 4+ | Training / Evaluation logic | Không |
+| Cell | Noi dung |
+|------|----------|
+| 1 | Root Detection + PyTorch/CUDA check |
+| 2 | Dataset check (neu chua co, thong bao huong dan copy tu Drive) |
+| 3 | Model creation + forward pass test |
+| 4 | Training loop |
+| 5 | Evaluation + Confusion Matrix |
 
-### D. Khi tạo notebook mới hoặc refactor notebook cũ
+### D. Output Direction tren Server
 
-1. Thêm Cell 1 (Root Detection) làm cell đầu tiên
-2. Thay tất cả `Path('../...')` bằng `ROOT / '...'`
-3. Thêm cell install dependencies với guard `if Path('/content').exists()`
-4. Thêm cell download dataset từ HuggingFace (repo `ny0g507h3p/woodbench_A`)
-5. Đảm bảo `from src import ...` hoạt động sau khi `sys.path.insert(0, str(ROOT))`
+- Luu checkpoint va metrics truc tiep vao `~/experiments/woodbench/`
+- Checkpoints duoc luu truc tiep, khong can backup
 
-### E. Định nghĩa "Hành động quan trọng" (bổ sung)
+### E. Dataset tren Server
 
-- Tạo notebook training/evaluation mới cho bất kỳ phase nào
-- Refactor / cấu trúc lại notebook hiện có
-- Thay đổi cách notebook resolve paths hoặc load data
+- Tai tu HuggingFace truoc khi training (chi can tai mot lan)
+- Dataset: `~/woodbench/data/task-A/` hoac `~/woodbench/data/task-B/`
+- Xem phan "Dataset Download from HuggingFace" trong CLAUDE.md
+
+### F. Khi tao notebook moi hoac refactor notebook cu
+
+1. Them Cell 1 (Root Detection) lam cell dau tien
+2. Thay tat ca `Path('../...')` bang `ROOT / '...'`
+3. Thay output direction thanh `Path.home() / 'experiments' / 'woodbench' / ...`
+4. Xoa tat ca cac Colab-only cells (HF login, Drive mount, pip install, git clone)
+5. Kiem tra notebook chay duoc tren SSH server ma khong can chinh sua
 
 ## 5. Định nghĩa "Hành động quan trọng"
 - Thay đổi code ảnh hưởng đến logic nghiệp vụ hoặc kiến trúc.
@@ -91,3 +99,6 @@ EXP_DIR  = ROOT / "experiments" / "taskA" / "resnet50"
 - Sửa lỗi cần quá trình điều tra (investigation).
 - Triển khai tính năng hoặc endpoint mới.
 - Thay đổi cấu hình hoặc cơ sở hạ tầng.
+- Tạo notebook training/evaluation mới cho bất kỳ phase nào.
+- Refactor / cấu trúc lại notebook hiện có.
+- Thay đổi cách notebook resolve paths hoặc load data.
