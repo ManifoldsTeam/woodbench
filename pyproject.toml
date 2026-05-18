@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "woodbench"
 version = "0.1.0"
 description = "Wood species classification benchmark"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
     "torch",
     "torchvision",
