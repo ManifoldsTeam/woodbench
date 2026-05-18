@@ -39,19 +39,20 @@ def main():
     # Download all files from the repo
     print(f"Downloading dataset to {DATA_DIR}...")
 
-    from huggingface_hub import list_repo_files
+    from huggingface_hub import snapshot_download
 
-    files = list_repo_files(repo_id=HF_TASK_A_REPO, repo_type="dataset")
-    for i, file in enumerate(files):
-        print(f"  [{i+1}/{len(files)}] Downloading {file}...")
-        local_path = hf_hub_download(
-            repo_id=HF_TASK_A_REPO,
-            filename=file,
-            repo_type="dataset",
-            local_dir=DATA_DIR,
-            local_dir_use_symlinks=False,
-        )
-        print(f"         -> {local_path}")
+    # Create data directory
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Download all files from the repo
+    print(f"Downloading dataset to {DATA_DIR}...")
+
+    snapshot_download(
+        repo_id=HF_TASK_A_REPO,
+        repo_type="dataset",
+        local_dir=DATA_DIR,
+        local_dir_use_symlinks=False,
+    )
 
     print(f"\nDataset ready at {DATA_DIR}")
 
