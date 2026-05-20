@@ -175,15 +175,17 @@ class TrainingEngine:
         output_dir: Path,
         name: str = "model",
         save_best_only: bool = True,
+        early_stopping_patience: int = 0,
         verbose: bool = True,
     ) -> Dict[str, float]:
-        """Train for multiple epochs with checkpointing.
+        """Train for multiple epochs with checkpointing and optional early stopping.
 
         Args:
             epochs: Number of epochs to train
             output_dir: Directory to save checkpoints
             name: Base name for checkpoint files
             save_best_only: Only save best model
+            early_stopping_patience: Epochs to wait before stopping (0 = disabled)
             verbose: Print training progress
 
         Returns:
@@ -191,6 +193,9 @@ class TrainingEngine:
         """
         output_dir = Path(output_dir)
         output_dir.mkdir(parents=True, exist_ok=True)
+
+        early_stopping_counter = 0
+        early_stopped = False
 
         for epoch in range(epochs):
             self.current_epoch = epoch
@@ -212,16 +217,20 @@ class TrainingEngine:
             if is_best:
                 self.best_val_acc = val_metrics["val_acc"]
                 self.best_epoch = epoch
+                early_stopping_counter = 0
+            else:
+                early_stopping_counter += 1
 
             # Print progress with best epoch info
             if verbose:
                 lr = self.optimizer.param_groups[0]["lr"]
                 best_marker = "[Best]" if is_best else ""
+                early_marker = f"[EarlyStop {early_stopping_counter}/{early_stopping_patience}]" if early_stopping_patience > 0 else ""
                 print(
                     f"Epoch {epoch+1}/{epochs} | "
                     f"Train Loss: {train_metrics['train_loss']:.4f}, Acc: {train_metrics['train_acc']:.2f}% | "
                     f"Val Loss: {val_metrics['val_loss']:.4f}, Acc: {val_metrics['val_acc']:.2f}% | "
-                    f"LR: {lr:.2e}{best_marker}"
+                    f"LR: {lr:.2e}{best_marker}{early_marker}"
                 )
 
             # Save checkpoints
@@ -232,6 +241,10 @@ class TrainingEngine:
                         epoch=epoch,
                         metrics={**train_metrics, **val_metrics},
                     )
+                    if verbose:
+                        print(
+                            f"  ↳ New best! Saved to {name}_best.pth (Val Acc: {val_metrics['val_acc']:.2f}%)"
+                        )
             else:
                 # Always save epoch checkpoint
                 self.save_checkpoint(
@@ -239,21 +252,27 @@ class TrainingEngine:
                     epoch=epoch,
                     metrics={**train_metrics, **val_metrics},
                 )
-                # Also save best checkpoint when new best is found
                 if is_best:
                     self.save_checkpoint(
                         output_dir / f"{name}_best.pth",
                         epoch=epoch,
                         metrics={**train_metrics, **val_metrics},
                     )
-                    print(
-                        f"  ↳ New best! Saved to {name}_best.pth (Val Acc: {val_metrics['val_acc']:.2f}%)"
-                    )
+                    if verbose:
+                        print(
+                            f"  ↳ New best! Saved to {name}_best.pth (Val Acc: {val_metrics['val_acc']:.2f}%)"
+                        )
+
+            # Early stopping check
+            if early_stopping_patience > 0 and early_stopping_counter >= early_stopping_patience:
+                print(f"\n[EarlyStopping] No improvement for {early_stopping_patience} epochs. Stopping at epoch {epoch+1}.")
+                early_stopped = True
+                break
 
         # Save last checkpoint
         self.save_checkpoint(
             output_dir / f"{name}_last.pth",
-            epoch=epochs - 1,
+            epoch=self.current_epoch,
             metrics={**self.train_history[-1], **self.val_history[-1]},
         )
 
@@ -262,6 +281,8 @@ class TrainingEngine:
             "best_epoch": self.best_epoch + 1,  # 1-indexed for user display
             "final_train_acc": self.train_history[-1]["train_acc"],
             "final_val_acc": self.val_history[-1]["val_acc"],
+            "stopped_early": early_stopped,
+            "epochs_trained": self.current_epoch + 1,
         }
 
     def save_checkpoint(self, path: Path, epoch: int, metrics: Dict):
