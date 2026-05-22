@@ -1,9 +1,12 @@
+# @package _global_
 # =============================================================================
 # Experiment Configuration — Task B: Species-level Classification
 # =============================================================================
 
 # Experiment identifier
 experiment_name: taskB_species_classification
+
+data_root: data/task-B
 
 # Task definition
 task:
@@ -22,6 +25,8 @@ model:
 train:
   _target_: train.base
   epochs: 50
+  wandb:
+    project: woodbench-taskB
 
 # Evaluation
 evaluation:

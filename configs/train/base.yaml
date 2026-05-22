@@ -25,7 +25,14 @@ amp: true
 
 # Reproducibility
 seed: 42
-num_seeds: 3  # Number of seeds to run (42, 123, 456)
+num_seeds: 1  # Override for multi-seed: train.num_seeds=3
+
+# Experiment tracking (API key from env / wandb login)
+wandb:
+  enabled: true
+  project: woodbench-taskB
+  entity: null
+  tags: []
 
 # Augmentation — Training only
 augmentation:

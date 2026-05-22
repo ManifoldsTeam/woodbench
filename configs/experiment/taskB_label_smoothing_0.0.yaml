@@ -1,0 +1,14 @@
+# @package _global_
+# =============================================================================
+# Experiment Configuration — Task B with Label Smoothing = 0.0
+# =============================================================================
+
+# Inherit from Task B base
+defaults:
+  - taskB
+  - _self
+
+experiment_name: taskB_label_smoothing_0.0
+
+model:
+  label_smoothing: 0.0

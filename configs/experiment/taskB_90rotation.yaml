@@ -1,10 +1,11 @@
+# @package _global_
 # =============================================================================
 # Experiment Configuration — Task B with 90-degree Rotation Augmentation
 # =============================================================================
 
 # Inherit from Task B base
 defaults:
-  - experiment/taskB
+  - taskB
   - _self
 
 experiment_name: taskB_90rotation

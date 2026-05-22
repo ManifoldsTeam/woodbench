@@ -1,9 +1,12 @@
+# @package _global_
 # =============================================================================
 # Experiment Configuration — Task A: Family-level Classification
 # =============================================================================
 
 # Experiment identifier
 experiment_name: taskA_family_classification
+
+data_root: data/task-A
 
 # Task definition
 task:
@@ -27,6 +30,8 @@ model:
 train:
   _target_: train.base
   epochs: 50
+  wandb:
+    project: woodbench-taskA
 
 # Evaluation
 evaluation:
