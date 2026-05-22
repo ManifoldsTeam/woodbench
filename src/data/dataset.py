@@ -51,20 +51,28 @@ class ConiferDataset(Dataset):
         self.samples = self._collect_samples()
 
     def _get_species_classes(self) -> List[str]:
-        """Infer species classes from the dataset directory structure."""
+        """Infer species classes from the dataset directory structure.
+
+        Structure: data/{split}/{family}/{species}/images.jpg
+        """
         species = set()
         split_path = self.data_root / self.split
         if not split_path.exists():
             return []
+
         for family_folder in split_path.iterdir():
             if family_folder.is_dir():
                 for species_folder in family_folder.iterdir():
                     if species_folder.is_dir():
                         species.add(species_folder.name)
+
         return sorted(species)
 
     def _collect_samples(self) -> List[Tuple[Path, int]]:
-        """Walk directory tree and collect (image_path, label) tuples."""
+        """Walk directory tree and collect (image_path, label) tuples.
+
+        Structure: data/{split}/{family}/{species}/images.jpg
+        """
         samples = []
         split_path = self.data_root / self.split
 
@@ -126,15 +134,17 @@ def get_dataloaders(
     num_workers: int = 4,
     use_90rotation: bool = False,
     img_size: int = 224,
+    task: str = "taskA",
 ) -> Tuple[DataLoader, DataLoader, DataLoader]:
     """Create train/val/test dataloaders with appropriate transforms.
 
     Args:
-        data_root: Path to dataset root (data/split/)
+        data_root: Path to dataset root (data/split/ or data/task-B/)
         batch_size: Batch size
         num_workers: DataLoader workers
         use_90rotation: Whether to use 90-degree rotation augmentation
         img_size: Input image size
+        task: 'taskA' (family) or 'taskB' (species)
 
     Returns:
         Tuple of (train_loader, val_loader, test_loader)
@@ -144,9 +154,9 @@ def get_dataloaders(
     train_transform = get_train_transforms(img_size=img_size, use_90rotation=use_90rotation)
     val_transform = get_val_transforms(img_size=img_size)
 
-    train_dataset = ConiferDataset(data_root, split="train", transform=train_transform)
-    val_dataset = ConiferDataset(data_root, split="val", transform=val_transform)
-    test_dataset = ConiferDataset(data_root, split="test", transform=val_transform)
+    train_dataset = ConiferDataset(data_root, split="train", transform=train_transform, task=task)
+    val_dataset = ConiferDataset(data_root, split="val", transform=val_transform, task=task)
+    test_dataset = ConiferDataset(data_root, split="test", transform=val_transform, task=task)
 
     train_loader = DataLoader(
         train_dataset,

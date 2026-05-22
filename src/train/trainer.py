@@ -4,9 +4,12 @@ Handles the training loop with mixed precision support and tqdm progress bars.
 """
 
 from pathlib import Path
-from typing import Dict, Optional
+from typing import TYPE_CHECKING, Dict, Optional
 
 import torch
+
+if TYPE_CHECKING:
+    from .wandb_tracker import WandbTracker
 import torch.nn as nn
 from torch.amp import autocast, GradScaler
 from tqdm import tqdm
@@ -177,6 +180,7 @@ class TrainingEngine:
         save_best_only: bool = True,
         early_stopping_patience: int = 0,
         verbose: bool = True,
+        tracker: Optional["WandbTracker"] = None,
     ) -> Dict[str, float]:
         """Train for multiple epochs with checkpointing and optional early stopping.
 
@@ -221,7 +225,18 @@ class TrainingEngine:
             else:
                 early_stopping_counter += 1
 
-            # Print progress with best epoch info
+            if tracker is not None:
+                tracker.log(
+                    {
+                        "train/loss": train_metrics["train_loss"],
+                        "train/acc": train_metrics["train_acc"],
+                        "val/loss": val_metrics["val_loss"],
+                        "val/acc": val_metrics["val_acc"],
+                        "lr": self.optimizer.param_groups[0]["lr"],
+                    },
+                    step=epoch,
+                )
+
             if verbose:
                 lr = self.optimizer.param_groups[0]["lr"]
                 best_marker = "[Best]" if is_best else ""
