@@ -15,3 +15,5 @@
 | 22-05-2026 | 11:30 | Task B planning + lich 2x4090 (5x3 runs) | ~6.25h wall-clock | [Details](timeline/22-05-2026.md) |
 | 22-05-2026 | 12:30 | Task B: notebooks cho 2 machine vast.ai + chiến thuật tối ưu | Done | Machine A: ConvNeXt+MobileNet+EfficientNet; Machine B: Swin+ResNet |
 | 22-05-2026 | 13:44 | Task B: 5 notebook đơn giản (1 model × 3 seeds), rollback parallel | Done | 5 notebooks: ConvNeXt, Swin, EfficientNet, MobileNet, ResNet; mỗi notebook 3 seeds tuần tự |
+| 23-05-2026 | 01:45 | Task B: fix notebooks cho papermill trên vast.ai | Done | num_workers=0 tránh multiprocessing crash; .env dotenv thay getpass |
+| 23-05-2026 | 01:53 | Task B: wave runner script với auto-detect kernel | Done | `scripts/run_taskB_waves.py --all` chạy 3 waves + driver tự động |

@@ -7,11 +7,14 @@ Wave 3 (sequential): EfficientNet
 Final: Results Driver
 
 Usage:
-    # Wave 1
-    python scripts/run_taskB_waves.py --wave 1 --kernel_name woodbench
+    # Auto-detect kernel, run all waves
+    python scripts/run_taskB_waves.py --all
 
-    # All waves sequentially
-    python scripts/run_taskB_waves.py --all --kernel_name woodbench
+    # Run specific wave
+    python scripts/run_taskB_waves.py --wave 1
+
+    # Override kernel manually
+    python scripts/run_taskB_waves.py --all --kernel woodbench
 
 Requirements:
     pip install papermill jupyter nbconvert
@@ -130,6 +133,34 @@ def run_driver(kernel: str, timeout: int | None = None) -> bool:
     return run_notebook("driver", kernel, timeout)
 
 
+def detect_kernel() -> str:
+    """Detect the first available Jupyter kernel."""
+    try:
+        result = subprocess.run(
+            [sys.executable, "-m", "jupyter", "kernelspec", "list", "--json"],
+            capture_output=True, text=True, timeout=10,
+        )
+        if result.returncode == 0:
+            import json
+            kernels = json.loads(result.stdout)
+            # Prefer the current python interpreter's kernel
+            current = None
+            for name, spec in kernels.items():
+                if spec.get("spec", {}).get("argv", [sys.executable])[0] == sys.executable:
+                    current = name
+                    break
+            if current:
+                print(f"[Kernel] Auto-detected: {current}")
+                return current
+            # Fallback: first kernel
+            first = list(kernels.keys())[0]
+            print(f"[Kernel] Auto-detected: {first}")
+            return first
+    except Exception as e:
+        print(f"[Kernel] Auto-detect failed: {e}, using default")
+    return "Python 3"
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run Task B training waves")
     parser.add_argument("--wave", type=int, choices=[1, 2, 3], default=None,
@@ -148,13 +179,20 @@ def parse_args() -> argparse.Namespace:
 def main():
     args = parse_args()
 
+    # Auto-detect kernel if not provided
+    kernel = args.kernel
+    if kernel == "Python 3":  # default, try auto-detect
+        detected = detect_kernel()
+        if detected != "Python 3":
+            kernel = detected
+
     if args.driver:
-        run_driver(args.kernel, args.timeout)
+        run_driver(kernel, args.timeout)
         return
 
     if args.wave:
         wave_idx = args.wave - 1
-        results = run_wave(WAVES[wave_idx], args.kernel, args.timeout)
+        results = run_wave(WAVES[wave_idx], kernel, args.timeout)
         ok = all(results)
         print(f"\n{'='*65}")
         print(f"Wave {args.wave} {'PASSED' if ok else 'FAILED'}")
@@ -167,13 +205,13 @@ def main():
         print("="*65)
         wave_results = []
         for i, wave in enumerate(WAVES):
-            results = run_wave(wave, args.kernel, args.timeout)
+            results = run_wave(wave, kernel, args.timeout)
             wave_results.extend(results)
             ok = all(results)
             print(f"\n[Wave {i+1}] {'PASSED' if ok else 'FAILED'} — "
                   f"{(i+1)/len(WAVES)*100:.0f}% complete")
 
-        run_driver(args.kernel, args.timeout)
+        run_driver(kernel, args.timeout)
 
         all_ok = all(wave_results)
         print("\n" + "="*65)
