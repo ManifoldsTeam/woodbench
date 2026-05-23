@@ -25,6 +25,7 @@ from src import (
     set_seed,
     setup_logger,
 )
+from src.eval.metrics import compute_metrics
 from src.train import CheckpointCallback, WandbTracker
 from src.utils import MetricsLogger
 
@@ -125,6 +126,32 @@ def experiment_output_dir(cfg: DictConfig, seed: int) -> Path:
     return root / task_id / backbone / f"seed_{seed}"
 
 
+def _compute_detailed_metrics(
+    model: torch.nn.Module,
+    data_loader,
+    device: str,
+    prefix: str,
+    class_names: list[str] | None,
+) -> dict[str, float]:
+    """Compute precision/recall/f1 for a data loader."""
+    metrics = compute_metrics(
+        model=model,
+        data_loader=data_loader,
+        device=device,
+        num_classes=len(class_names) if class_names else 4,
+        class_names=class_names,
+    )
+    result = {
+        f"{prefix}/accuracy": metrics["accuracy"],
+        f"{prefix}/precision": metrics["precision_macro"],
+        f"{prefix}/recall": metrics["recall_macro"],
+        f"{prefix}/f1": metrics["f1_macro"],
+    }
+    for class_name, scores in metrics.get("per_class", {}).items():
+        result[f"{prefix}/f1/{class_name}"] = scores["f1"]
+    return result
+
+
 def _start_wandb(cfg: DictConfig, seed: int, output_dir: Path) -> WandbTracker | None:
     wb = cfg.get("train", {}).get("wandb", {})
     if not wb.get("enabled", False):
@@ -162,7 +189,7 @@ def main(cfg: DictConfig) -> None:
     early_cfg = train_cfg.get("early_stopping", {})
 
     train_transform, val_transform = build_transforms(cfg)
-    train_loader, val_loader, _test_loader = build_dataloaders(
+    train_loader, val_loader, test_loader = build_dataloaders(
         cfg, train_transform, val_transform
     )
 
@@ -266,12 +293,21 @@ def main(cfg: DictConfig) -> None:
             )
 
             if tracker is not None:
+                val_detailed = _compute_detailed_metrics(
+                    engine.model, val_loader, device, "val",
+                    class_names=val_loader.dataset.classes
+                    if hasattr(val_loader.dataset, "classes")
+                    else None,
+                )
                 tracker.log(
                     {
                         "train/loss": train_metrics["train_loss"],
                         "train/acc": train_metrics["train_acc"],
                         "val/loss": val_metrics["val_loss"],
                         "val/acc": val_metrics["val_acc"],
+                        "val/precision": val_detailed["val/precision"],
+                        "val/recall": val_detailed["val/recall"],
+                        "val/f1": val_detailed["val/f1"],
                         "lr": optimizer.param_groups[0]["lr"],
                     },
                     step=epoch,
@@ -286,18 +322,70 @@ def main(cfg: DictConfig) -> None:
                     f"acc={val_metrics['val_acc']:.2f}%"
                 )
 
+        # Evaluate on test set (best model checkpoint already saved)
+        logger.info("Evaluating on test set...")
+        class_names = (
+            test_loader.dataset.classes
+            if hasattr(test_loader.dataset, "classes")
+            else None
+        )
+        test_metrics = _compute_detailed_metrics(
+            engine.model, test_loader, device, "test", class_names
+        )
+
+        # Save test metrics to JSON
+        import json, numpy as np
+        test_results_path = output_dir / "test_metrics.json"
+        serializable_metrics = {}
+        for k, v in test_metrics.items():
+            if isinstance(v, (np.floating, float)):
+                serializable_metrics[k] = float(v)
+            elif isinstance(v, np.integer):
+                serializable_metrics[k] = int(v)
+            else:
+                serializable_metrics[k] = v
+        with open(test_results_path, "w") as f:
+            json.dump(serializable_metrics, f, indent=2)
+        logger.info(f"Test metrics saved to {test_results_path}")
+
+        # Log test metrics to wandb
         if tracker is not None:
+            tracker.log(test_metrics, step=epochs)
             tracker.finish()
 
-        logger.info(f"Seed {seed} done. Best val_acc: {engine.best_val_acc:.2f}%")
-        results_all_seeds.append({"seed": seed, "best_val_acc": engine.best_val_acc})
+        logger.info(
+            f"Seed {seed} done. "
+            f"Best val_acc: {engine.best_val_acc:.2f}% | "
+            f"Test acc: {test_metrics['test/accuracy']*100:.2f}% | "
+            f"Test F1: {test_metrics['test/f1']*100:.2f}%"
+        )
+        results_all_seeds.append({
+            "seed": seed,
+            "best_val_acc": engine.best_val_acc,
+            "test_accuracy": test_metrics["test/accuracy"],
+            "test_f1": test_metrics["test/f1"],
+            "test_precision": test_metrics["test/precision"],
+            "test_recall": test_metrics["test/recall"],
+        })
 
     if len(results_all_seeds) > 1:
         import numpy as np
 
-        accs = [r["best_val_acc"] for r in results_all_seeds]
+        val_accs = [r["best_val_acc"] for r in results_all_seeds]
+        test_accs = [r["test_accuracy"] * 100 for r in results_all_seeds]
+        test_f1s = [r["test_f1"] * 100 for r in results_all_seeds]
+
         logger.info(
-            f"Multi-seed: {np.mean(accs):.2f} +/- {np.std(accs):.2f}% (seeds={seeds})"
+            f"Multi-seed summary (seeds={seeds}):"
+        )
+        logger.info(
+            f"  Val acc: {np.mean(val_accs):.2f} +/- {np.std(val_accs):.2f}%"
+        )
+        logger.info(
+            f"  Test acc: {np.mean(test_accs):.2f} +/- {np.std(test_accs):.2f}%"
+        )
+        logger.info(
+            f"  Test F1:  {np.mean(test_f1s):.2f} +/- {np.std(test_f1s):.2f}%"
         )
 
     print(f"Training complete. Results: {results_all_seeds}")
