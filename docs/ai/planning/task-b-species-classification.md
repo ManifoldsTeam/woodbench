@@ -20,7 +20,7 @@ description: Task breakdown and timeline for species-level classification of 20 
 ## Milestones
 
 - [x] **M0:** Task B infrastructure (Hydra, configs, launcher, wandb, output layout)
-- [ ] **M1:** Task B main experiments (5 models × 3 seeds = 15 runs)
+- [x] **M1:** Task B main experiments (5 models × 3 seeds = 15 runs)
 - [ ] **M2:** Ablation experiments (90° rotation, label smoothing, resolution)
 - [ ] **M3:** Efficiency profiling (inference time, FLOPs, model size)
 - [ ] **M4:** Visualization (confusion matrix, per-class F1, Grad-CAM)
@@ -40,18 +40,18 @@ description: Task breakdown and timeline for species-level classification of 20 
 | 1.5 | wandb logging | `src/train/wandb_tracker.py`, bật qua `train.wandb.enabled` |
 | 1.6 | `scripts/run_experiments.py` | Gọi Hydra, ablation presets, `--max_workers` |
 | 1.7 | Output layout ổn định | `experiments/{taskB}/{backbone}/seed_{seed}/` |
+| 2.0 | Main training 15 runs | Đã hoàn thành (5 model × 3 seed) |
 
 ### In Progress
 
 | ID | Task | Notes |
 |----|------|-------|
-| 2.0 | Main training 15 runs | Chờ lên lịch 2×4090 (xem mục Parallel Schedule) |
+| 2.1 | Đánh giá + metrics sau M1 | `scripts/evaluate.py` |
 
 ### Not Started
 
 | ID | Task | Notes |
 |----|------|-------|
-| 2.1 | Đánh giá + metrics sau M1 | `scripts/evaluate.py` |
 | 3.1 | Ablation 90° rotation | `experiment=taskB_90rotation`, seed 42 |
 | 3.2 | Ablation label smoothing | 0.0 / 0.1 / 0.2 |
 | 3.3 | Ablation resolution 384 | VRAM cao hơn — chạy 1 job/GPU |
