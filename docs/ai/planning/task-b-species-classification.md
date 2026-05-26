@@ -6,7 +6,7 @@ description: Task breakdown and timeline for species-level classification of 20 
 
 # Project Planning — Task B: Species Classification (20-class)
 
-## Current Status (2026-05-22)
+## Current Status (2026-05-26)
 
 - **Task A:** Complete (5 models × 3 seeds, acc >97%)
 - **Task B data:** `data/task-B/` (3973 / 933 / 924, 20 classes)
@@ -21,7 +21,7 @@ description: Task breakdown and timeline for species-level classification of 20 
 
 - [x] **M0:** Task B infrastructure (Hydra, configs, launcher, wandb, output layout)
 - [x] **M1:** Task B main experiments (5 models × 3 seeds = 15 runs)
-- [ ] **M2:** Ablation experiments (90° rotation, label smoothing, resolution)
+- [/] **M2:** Ablation experiments (3.1 90° rotation: 5 notebooks ready, seed 42)
 - [ ] **M3:** Efficiency profiling (inference time, FLOPs, model size)
 - [ ] **M4:** Visualization (confusion matrix, per-class F1, Grad-CAM)
 
@@ -46,13 +46,13 @@ description: Task breakdown and timeline for species-level classification of 20 
 
 | ID | Task | Notes |
 |----|------|-------|
-| 2.1 | Đánh giá + metrics sau M1 | `scripts/evaluate.py` |
+| 2.1 | Đánh giá + metrics sau M1 | `TaskB_Evaluate.ipynb` (đã tạo) |
+| 3.1 | Ablation 90° rotation | 5 notebooks sẵn sàng, seed 42, `M2_ablation/3.1_90rotation/` |
 
 ### Not Started
 
 | ID | Task | Notes |
 |----|------|-------|
-| 3.1 | Ablation 90° rotation | `experiment=taskB_90rotation`, seed 42 |
 | 3.2 | Ablation label smoothing | 0.0 / 0.1 / 0.2 |
 | 3.3 | Ablation resolution 384 | VRAM cao hơn — chạy 1 job/GPU |
 | 4.1–4.5 | Efficiency + plots | Sau M1 |
@@ -158,13 +158,22 @@ Output: `experiments/taskB/{backbone}/seed_{seed}/` (sync lên Drive bằng rclo
 
 ## Ablation (sau M1, ~3–4 h thêm với 2 GPU)
 
-| Ablation | Hydra experiment | Runs | Ghi chú |
-|----------|------------------|------|---------|
-| 90° rotation | `taskB_90rotation` | 1× best model, seed 42 | So với baseline |
+| Ablation | Experiment | Runs | Ghi chú |
+|----------|------------|------|---------|
+| 90° rotation | `taskB_90rotation` | 5 models × seed 42 = 5 runs | So với baseline M1, cùng seed |
 | Label smooth 0.0 / 0.2 | `taskB_label_smoothing_*` | 2 | Baseline 0.1 đã có trong M1 |
 | Resolution 384 | `taskB_resolution_384` | 1 | `batch_size=24–32`, 1 job/GPU |
 
-Chạy trên **ConvNeXt-Tiny** (best Task A) trước, seed 42; multi-seed ablation tùy thời gian.
+Chạy trên tất cả 5 model, seed 42; so sánh trực tiếp với M1 seed 42 baseline.
+
+### Known Deviations (M1 → documented)
+
+| Issue | Design Doc | Actual | Reason |
+|-------|-----------|--------|--------|
+| Batch size | 64 cho tất cả | resnet/mobile=64, convnext/swin/effnet=32 | VRAM constraint trên Vast.ai (1×4090) |
+| Output dir | `experiments/taskB/` | `data/experiments/taskB/` | Chủ đích — tách khỏi Hydra output |
+| WandB tracker | `WandbTracker` trong `engine.fit()` | M1 chỉ `wandb.init()`, không truyền tracker | **Đã sửa** trong ablation notebooks |
+| Test evaluation | Tự động trong training loop | M1 không eval test | **Đã sửa** — ablation notebooks tự eval test + save `test_metrics.json` |
 
 ---
 
@@ -187,27 +196,42 @@ Mỗi instance = 1 GPU độc lập, không shared VRAM. Chạy notebook trên m
 **Makespan:** max(375, 285) = **~6.25h** wall-clock (2 GPU rời)
 
 
-### Notebooks
+### Notebooks (Restructured 2026-05-26)
 
 ```
 notebooks/phase 1/task-B/
-├── TaskB_convnext_tiny.ipynb
-├── TaskB_swin_tiny.ipynb
-├── TaskB_efficientnet_b3.ipynb
-├── TaskB_mobilenetv3_large.ipynb
-├── TaskB_resnet50.ipynb
-└── TaskB_Results_Driver.ipynb  # tổng hợp wandb sau khi xong
+├── M1_main/                        # Milestone 1: Main training (đã chạy)
+│   ├── TaskB_convnext_tiny.ipynb
+│   ├── TaskB_efficientnet_b3.ipynb
+│   ├── TaskB_mobilenetv3_large.ipynb
+│   ├── TaskB_resnet50.ipynb
+│   └── TaskB_swin_tiny.ipynb
+├── M1_eval/                        # Milestone 1: Evaluation
+│   ├── TaskB_Evaluate.ipynb
+│   └── TaskB_Results_Driver.ipynb
+├── M2_ablation/                    # Milestone 2: Ablation experiments
+│   ├── 3.1_90rotation/
+│   │   ├── TaskB_90rot_convnext_tiny.ipynb
+│   │   ├── TaskB_90rot_efficientnet_b3.ipynb
+│   │   ├── TaskB_90rot_mobilenetv3_large.ipynb
+│   │   ├── TaskB_90rot_resnet50.ipynb
+│   │   └── TaskB_90rot_swin_tiny.ipynb
+│   ├── 3.2_label_smoothing/        # (tương lai)
+│   └── 3.3_resolution/             # (tương lai)
+├── M3_efficiency/                  # (tương lai)
+└── M4_visualization/               # (tương lai)
 ```
 
-**Workflow:**
-1. Machine A: `TaskB_convnext_tiny.ipynb`
-2. Machine B: `TaskB_swin_tiny.ipynb` (song song với A)
-3. Machine A: `TaskB_mobilenetv3_large.ipynb`
-4. Machine B: `TaskB_resnet50.ipynb`
-5. Machine A (sau): `TaskB_efficientnet_b3.ipynb`
-6. Tổng hợp: `TaskB_Results_Driver.ipynb`
+**Ablation 3.1 Workflow:**
+1. Upload 5 notebooks lên Vast.ai
+2. Chạy song song 2 notebooks/machine
+3. Output: `data/experiments/taskB_90rotation/<backbone>/`
+4. Tổng hợp: so sánh với M1 baseline (seed 42)
 
-**Total makespan:** max(Machine A ~5h, Machine B ~4.75h) ≈ **5h**
+**Ablation 3.1 cải tiến so với M1:**
+- WandbTracker truyền vào `engine.fit()` → log epoch-level metrics
+- Test evaluation tự động → `test_metrics.json` sau training
+- `use_90rotation=True` truyền qua `get_dataloaders()`
 
 ---
 
