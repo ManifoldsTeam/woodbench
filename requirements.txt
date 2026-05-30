@@ -26,6 +26,7 @@ scikit-learn
 # Visualization
 matplotlib
 seaborn
+umap-learn
 
 # Efficiency profiling (choose one)
 thop
