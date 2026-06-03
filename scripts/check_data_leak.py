@@ -138,7 +138,7 @@ def main():
         repo_id = args.download_hf
         outdir = Path(args.out).expanduser().resolve()
         print(f"Downloading snapshot of {repo_id} to {outdir} (this may take a while)...")
-        snapshot_download(repo_id=repo_id, local_dir=str(outdir), allow_patterns=["**/*"], use_auth_token=True)
+        
         data_root = outdir
     elif args.data_root:
         data_root = Path(args.data_root).expanduser().resolve()
