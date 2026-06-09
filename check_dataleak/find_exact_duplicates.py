@@ -16,10 +16,8 @@ def main():
     data_root = Path("data") # Trỏ đến thư mục data của bạn
     print(f"Đang quét toàn bộ ảnh trong: {data_root.resolve()} ...")
     
-    # Dùng dictionary để nhóm các đường dẫn file có cùng chung mã MD5
     hash_to_paths = defaultdict(list)
     
-    # Quét tất cả file ảnh, bỏ qua thư mục .cache
     for ext in ["*.jpg", "*.jpeg", "*.png"]:
         for path in data_root.rglob(ext):
             if ".cache" in path.parts:
@@ -28,21 +26,18 @@ def main():
                 h = get_md5(path)
                 hash_to_paths[h].append(path)
 
-    # Lọc ra những mã MD5 có từ 2 đường dẫn trở lên (tức là bị trùng nội dung)
     duplicates = {h: paths for h, paths in hash_to_paths.items() if len(paths) > 1}
 
     if not duplicates:
         print("Tuyệt vời! Không phát hiện ảnh nào bị trùng lặp.")
         return
 
-    # Xuất báo cáo chi tiết ra file CSV
     out_csv = "duplicate_report.csv"
     with open(out_csv, mode="w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["Mã_MD5", "Số_lượng_trùng", "Đường_dẫn_chính_xác"])
         
         for h, paths in duplicates.items():
-            # Gộp các đường dẫn lại, cách nhau bằng dấu phẩy và khoảng trắng để dễ đọc
             paths_str = ", ".join(str(p) for p in paths)
             writer.writerow([h, len(paths), paths_str])
 

@@ -221,3 +221,8 @@ __marimo__/
 /data/
 node_modules/
 /.temp
+
+/duplicate_data
+/clean_data
+archive_clean_data.tar.gz
+archive_duplicate_date.tar.gz

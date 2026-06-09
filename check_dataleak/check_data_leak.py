@@ -47,7 +47,6 @@ def collect_images(data_root: Path, splits=("train", "val", "test")) -> Dict[str
 
 
 def find_overlaps(images_by_split: Dict[str, List[Path]]):
-    # filename overlaps
     basename_map: Dict[str, Set[str]] = {}
     hash_map: Dict[str, Set[str]] = {}
 
@@ -55,7 +54,6 @@ def find_overlaps(images_by_split: Dict[str, List[Path]]):
         for p in paths:
             basename_map.setdefault(p.name, set()).add(split)
 
-    # compute md5 per file (could be slow for large datasets)
     md5_cache: Dict[Path, str] = {}
     for split, paths in images_by_split.items():
         for p in paths:
@@ -73,7 +71,6 @@ def find_overlaps(images_by_split: Dict[str, List[Path]]):
 
 
 def check_manifest(data_root: Path, manifest_names=("manifest.csv",)):
-    # find manifest files under data_root
     manifests = []
     for name in manifest_names:
         for p in data_root.rglob(name):
@@ -108,7 +105,6 @@ def summary_report(images_by_split, filename_overlaps, hash_overlaps, md5_cache,
         print("\nExamples of md5-identical overlaps (md5 -> splits):")
         for i, (h, splits) in enumerate(hash_overlaps.items()):
             print(f"  {h} -> {sorted(list(splits))}")
-            # show file paths for the first example
             if i == 0:
                 paths = [p for p, hv in md5_cache.items() if hv == h]
                 for p in paths[:10]:
