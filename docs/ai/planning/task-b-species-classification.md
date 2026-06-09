@@ -6,14 +6,15 @@ description: Task breakdown and timeline for species-level classification of 20 
 
 # Project Planning — Task B: Species Classification (20-class)
 
-## Current Status (2026-05-26)
+## Current Status (2026-06-02)
 
 - **Task A:** Complete (5 models × 3 seeds, acc >97%)
 - **Task B data:** `data/task-B/` (3973 / 933 / 924, 20 classes)
 - **Infrastructure:** Hydra `train.py` + `scripts/run_experiments.py` + configs + wandb (`WandbTracker`)
 - **Smoke test:** 1 epoch ResNet-50 OK → `experiments/taskB/resnet50/seed_42/`
 - **Hardware:** 2× RTX 4090 24GB — sẵn sàng chạy main training
-- **Next:** 15 main runs (5 models × 3 seeds), sau đó ablation
+- **Next:** Chạy các ablation notebooks (90° rotation và label smoothing) trên GPU, sau đó chuẩn bị ablation resolution 384.
+
 
 ---
 
@@ -21,7 +22,7 @@ description: Task breakdown and timeline for species-level classification of 20 
 
 - [x] **M0:** Task B infrastructure (Hydra, configs, launcher, wandb, output layout)
 - [x] **M1:** Task B main experiments (5 models × 3 seeds = 15 runs)
-- [/] **M2:** Ablation experiments (3.1 90° rotation: 5 notebooks ready, seed 42)
+- [/] **M2:** Ablation experiments (3.1 90° rotation: 5 notebooks ready; 3.2 label smoothing: 5 notebooks ready, seed 42)
 - [ ] **M3:** Efficiency profiling (inference time, FLOPs, model size)
 - [ ] **M4:** Visualization (confusion matrix, per-class F1, Grad-CAM)
 
@@ -48,12 +49,12 @@ description: Task breakdown and timeline for species-level classification of 20 
 |----|------|-------|
 | 2.1 | Đánh giá + metrics sau M1 | `TaskB_Evaluate.ipynb` (đã tạo) |
 | 3.1 | Ablation 90° rotation | 5 notebooks sẵn sàng, seed 42, `M2_ablation/3.1_90rotation/` |
+| 3.2 | Ablation label smoothing | 5 notebooks sẵn sàng (LS 0.0 & 0.2), seed 42, `M2_ablation/3.2_label_smoothing/` |
 
 ### Not Started
 
 | ID | Task | Notes |
 |----|------|-------|
-| 3.2 | Ablation label smoothing | 0.0 / 0.1 / 0.2 |
 | 3.3 | Ablation resolution 384 | VRAM cao hơn — chạy 1 job/GPU |
 | 4.1–4.5 | Efficiency + plots | Sau M1 |
 
@@ -216,7 +217,12 @@ notebooks/phase 1/task-B/
 │   │   ├── TaskB_90rot_mobilenetv3_large.ipynb
 │   │   ├── TaskB_90rot_resnet50.ipynb
 │   │   └── TaskB_90rot_swin_tiny.ipynb
-│   ├── 3.2_label_smoothing/        # (tương lai)
+│   ├── 3.2_label_smoothing/
+│   │   ├── TaskB_ls_convnext_tiny.ipynb
+│   │   ├── TaskB_ls_efficientnet_b3.ipynb
+│   │   ├── TaskB_ls_mobilenetv3_large.ipynb
+│   │   ├── TaskB_ls_resnet50.ipynb
+│   │   └── TaskB_ls_swin_tiny.ipynb
 │   └── 3.3_resolution/             # (tương lai)
 ├── M3_efficiency/                  # (tương lai)
 └── M4_visualization/               # (tương lai)
