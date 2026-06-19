@@ -27,6 +27,8 @@ scikit-learn
 matplotlib
 seaborn
 umap-learn
+ipykernel
+ipywidgets
 
 # Efficiency profiling (choose one)
 thop
