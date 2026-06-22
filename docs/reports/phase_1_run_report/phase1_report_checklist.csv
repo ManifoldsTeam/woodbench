@@ -11,4 +11,4 @@ Task B clean leakage-check: W&B runs not missing,True,{'finished': 1}
 Task A manual metrics parsed,True,0 rows need review
 Required metrics found or reported,True,0 missing metric cells listed in missing_metrics.csv
 WoodID plan exists,True,docs/references/WoodID_plan.md
-Report cache saved,True,reports/phase1_run_report
+Report cache saved,True,docs/reports/phase_1_run_report
