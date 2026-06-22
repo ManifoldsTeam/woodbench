@@ -1,0 +1,14 @@
+check,ok,detail
+Task A manual: expected rows present,True,15/15
+Task B ablation 90rot: expected rows present,True,5/5
+Task B ablation label smoothing: expected rows present,True,10/10
+Task B clean leakage-check: expected rows present,True,1/1
+Task B main: expected rows present,True,15/15
+Task B main: W&B runs not missing,True,{'finished': 15}
+Task B ablation 90rot: W&B runs not missing,True,{'finished': 5}
+Task B ablation label smoothing: W&B runs not missing,True,{'finished': 10}
+Task B clean leakage-check: W&B runs not missing,True,{'finished': 1}
+Task A manual metrics parsed,True,0 rows need review
+Required metrics found or reported,True,0 missing metric cells listed in missing_metrics.csv
+WoodID plan exists,True,docs/references/WoodID_plan.md
+Report cache saved,True,reports/phase1_run_report

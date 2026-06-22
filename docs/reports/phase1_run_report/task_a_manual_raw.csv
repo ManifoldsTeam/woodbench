@@ -1,0 +1,16 @@
+group,task,backbone,seed,run_name,state,best_val_acc,best_epoch,test_accuracy,test_f1_macro,test_precision_macro,test_recall_macro,source_path
+Task A manual,A-family,convnext_tiny,42,TaskA_convnext_tiny,notebook-output,1.0,10,0.9990000000000001,0.9969,0.9945999999999999,0.9993000000000001,notebooks/phase 1/task-A/seed-42/TaskA_convnext_tiny.ipynb
+Task A manual,A-family,convnext_tiny,123,TaskA_convnext_tiny,notebook-output,1.0,7,1.0,1.0,1.0,1.0,notebooks/phase 1/task-A/seed-123/TaskA_convnext_tiny.ipynb
+Task A manual,A-family,convnext_tiny,456,TaskA_convnext_tiny,notebook-output,1.0,4,0.998,0.9941,0.9894,0.9990000000000001,notebooks/phase 1/task-A/seed-456/TaskA_convnext_tiny.ipynb
+Task A manual,A-family,efficientnet_b3,42,TaskA_efficientnet_b3,notebook-output,0.9990000000000001,18,0.9929000000000001,0.9840000000000001,0.9831,0.9856999999999999,notebooks/phase 1/task-A/seed-42/TaskA_efficientnet_b3.ipynb
+Task A manual,A-family,efficientnet_b3,123,TaskA_efficientnet_b3,notebook-output,0.9990000000000001,14,0.9939,0.9843000000000001,0.9875,0.9815,notebooks/phase 1/task-A/seed-123/TaskA_efficientnet_b3.ipynb
+Task A manual,A-family,efficientnet_b3,456,TaskA_efficientnet_b3,notebook-output,0.9990000000000001,12,0.9939,0.9894,0.9879000000000001,0.9912000000000001,notebooks/phase 1/task-A/seed-456/TaskA_efficientnet_b3.ipynb
+Task A manual,A-family,mobilenetv3_large,42,TaskA_mobilenetv3_large,notebook-output,0.9958,23,0.9908,0.9831,0.9764,0.9902,notebooks/phase 1/task-A/seed-42/TaskA_mobilenetv3_large.ipynb
+Task A manual,A-family,mobilenetv3_large,123,TaskA_mobilenetv3_large,notebook-output,0.9969,23,0.9918,0.9904999999999999,0.9906,0.9904999999999999,notebooks/phase 1/task-A/seed-123/TaskA_mobilenetv3_large.ipynb
+Task A manual,A-family,mobilenetv3_large,456,TaskA_mobilenetv3_large,notebook-output,0.9958,23,0.9918,0.9883,0.9861,0.9906999999999999,notebooks/phase 1/task-A/seed-456/TaskA_mobilenetv3_large.ipynb
+Task A manual,A-family,resnet50,42,TaskA_resnet50,notebook-output,0.9915999999999999,40,0.9817,0.9576,0.9376000000000001,0.9802,notebooks/phase 1/task-A/seed-42/TaskA_resnet50.ipynb
+Task A manual,A-family,resnet50,123,TaskA_resnet50,notebook-output,0.9895,38,0.9847,0.9679000000000001,0.9558,0.981,notebooks/phase 1/task-A/seed-123/TaskA_resnet50.ipynb
+Task A manual,A-family,resnet50,456,TaskA_resnet50,notebook-output,0.9873999999999999,38,0.9776,0.9573999999999999,0.9383,0.9787,notebooks/phase 1/task-A/seed-456/TaskA_resnet50.ipynb
+Task A manual,A-family,swin_tiny,42,TaskA_swin_tiny,notebook-output,1.0,5,0.9969,0.9934000000000001,0.9934000000000001,0.9934999999999999,notebooks/phase 1/task-A/seed-42/TaskA_swin_tiny.ipynb
+Task A manual,A-family,swin_tiny,123,TaskA_swin_tiny,notebook-output,1.0,4,0.998,0.9915,0.9892,0.9937999999999999,notebooks/phase 1/task-A/seed-123/TaskA_swin_tiny.ipynb
+Task A manual,A-family,swin_tiny,456,TaskA_swin_tiny,notebook-output,1.0,4,0.9990000000000001,0.9945999999999999,0.9948,0.9944,notebooks/phase 1/task-A/seed-456/TaskA_swin_tiny.ipynb

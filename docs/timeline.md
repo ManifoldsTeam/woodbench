@@ -19,3 +19,4 @@
 | 23-05-2026 | 01:53 | Task B: wave runner script với auto-detect kernel | Done | `scripts/run_taskB_waves.py --all` chạy 3 waves + driver tự động |
 | 23-05-2026 | 06:20 | Task B: train.py — thêm test evaluation + đầy đủ metrics wandb | Done | Log val precision/recall/f1 per epoch; test set evaluation sau training; per-class F1; save JSON |
 | 24-05-2026 | 14:30 | Task B: Hoàn thành Main Experiments (15 runs) | Done | [Details](timeline/24-05-2026.md) |
+| 22-06-2026 | 10:12 | Phase 1 run report notebook | Done | [Details](timeline/22-06-2026.md) |

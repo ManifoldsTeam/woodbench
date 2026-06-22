@@ -1,0 +1,47 @@
+group,task,backbone,seed,source,wandb_name,label_smoothing
+Task A manual,A-family,resnet50,42,/home/sakana/Code/ManifoldsTeam/woodbench/notebooks/phase 1/task-A/seed-42/TaskA_resnet50.ipynb,,
+Task B main,B-species,resnet50,42,ny0g507h3p_/woodbench-taskB,resnet50_s42_test,
+Task A manual,A-family,efficientnet_b3,42,/home/sakana/Code/ManifoldsTeam/woodbench/notebooks/phase 1/task-A/seed-42/TaskA_efficientnet_b3.ipynb,,
+Task B main,B-species,efficientnet_b3,42,ny0g507h3p_/woodbench-taskB,efficientnet_b3_s42_test,
+Task A manual,A-family,mobilenetv3_large,42,/home/sakana/Code/ManifoldsTeam/woodbench/notebooks/phase 1/task-A/seed-42/TaskA_mobilenetv3_large.ipynb,,
+Task B main,B-species,mobilenetv3_large,42,ny0g507h3p_/woodbench-taskB,mobilenetv3_large_s42_test,
+Task A manual,A-family,convnext_tiny,42,/home/sakana/Code/ManifoldsTeam/woodbench/notebooks/phase 1/task-A/seed-42/TaskA_convnext_tiny.ipynb,,
+Task B main,B-species,convnext_tiny,42,ny0g507h3p_/woodbench-taskB,convnext_tiny_s42_test,
+Task A manual,A-family,swin_tiny,42,/home/sakana/Code/ManifoldsTeam/woodbench/notebooks/phase 1/task-A/seed-42/TaskA_swin_tiny.ipynb,,
+Task B main,B-species,swin_tiny,42,ny0g507h3p_/woodbench-taskB,swin_tiny_s42_test,
+Task A manual,A-family,resnet50,123,/home/sakana/Code/ManifoldsTeam/woodbench/notebooks/phase 1/task-A/seed-123/TaskA_resnet50.ipynb,,
+Task B main,B-species,resnet50,123,ny0g507h3p_/woodbench-taskB,resnet50_s123_test,
+Task A manual,A-family,efficientnet_b3,123,/home/sakana/Code/ManifoldsTeam/woodbench/notebooks/phase 1/task-A/seed-123/TaskA_efficientnet_b3.ipynb,,
+Task B main,B-species,efficientnet_b3,123,ny0g507h3p_/woodbench-taskB,efficientnet_b3_s123_test,
+Task A manual,A-family,mobilenetv3_large,123,/home/sakana/Code/ManifoldsTeam/woodbench/notebooks/phase 1/task-A/seed-123/TaskA_mobilenetv3_large.ipynb,,
+Task B main,B-species,mobilenetv3_large,123,ny0g507h3p_/woodbench-taskB,mobilenetv3_large_s123_test,
+Task A manual,A-family,convnext_tiny,123,/home/sakana/Code/ManifoldsTeam/woodbench/notebooks/phase 1/task-A/seed-123/TaskA_convnext_tiny.ipynb,,
+Task B main,B-species,convnext_tiny,123,ny0g507h3p_/woodbench-taskB,convnext_tiny_s123_test,
+Task A manual,A-family,swin_tiny,123,/home/sakana/Code/ManifoldsTeam/woodbench/notebooks/phase 1/task-A/seed-123/TaskA_swin_tiny.ipynb,,
+Task B main,B-species,swin_tiny,123,ny0g507h3p_/woodbench-taskB,swin_tiny_s123_test,
+Task A manual,A-family,resnet50,456,/home/sakana/Code/ManifoldsTeam/woodbench/notebooks/phase 1/task-A/seed-456/TaskA_resnet50.ipynb,,
+Task B main,B-species,resnet50,456,ny0g507h3p_/woodbench-taskB,resnet50_s456_test,
+Task A manual,A-family,efficientnet_b3,456,/home/sakana/Code/ManifoldsTeam/woodbench/notebooks/phase 1/task-A/seed-456/TaskA_efficientnet_b3.ipynb,,
+Task B main,B-species,efficientnet_b3,456,ny0g507h3p_/woodbench-taskB,efficientnet_b3_s456_test,
+Task A manual,A-family,mobilenetv3_large,456,/home/sakana/Code/ManifoldsTeam/woodbench/notebooks/phase 1/task-A/seed-456/TaskA_mobilenetv3_large.ipynb,,
+Task B main,B-species,mobilenetv3_large,456,ny0g507h3p_/woodbench-taskB,mobilenetv3_large_s456_test,
+Task A manual,A-family,convnext_tiny,456,/home/sakana/Code/ManifoldsTeam/woodbench/notebooks/phase 1/task-A/seed-456/TaskA_convnext_tiny.ipynb,,
+Task B main,B-species,convnext_tiny,456,ny0g507h3p_/woodbench-taskB,convnext_tiny_s456_test,
+Task A manual,A-family,swin_tiny,456,/home/sakana/Code/ManifoldsTeam/woodbench/notebooks/phase 1/task-A/seed-456/TaskA_swin_tiny.ipynb,,
+Task B main,B-species,swin_tiny,456,ny0g507h3p_/woodbench-taskB,swin_tiny_s456_test,
+Task B ablation 90rot,B-species,resnet50,42,ny0g507h3p_/woodbench-taskB,resnet50_90rot_s42,
+Task B ablation label smoothing,B-species,resnet50,42,ny0g507h3p_/woodbench-taskB,resnet50_ls0.0_s42,0.0
+Task B ablation label smoothing,B-species,resnet50,42,ny0g507h3p_/woodbench-taskB,resnet50_ls0.2_s42,0.2
+Task B ablation 90rot,B-species,efficientnet_b3,42,ny0g507h3p_/woodbench-taskB,efficientnet_b3_90rot_s42,
+Task B ablation label smoothing,B-species,efficientnet_b3,42,ny0g507h3p_/woodbench-taskB,efficientnet_b3_ls0.0_s42,0.0
+Task B ablation label smoothing,B-species,efficientnet_b3,42,ny0g507h3p_/woodbench-taskB,efficientnet_b3_ls0.2_s42,0.2
+Task B ablation 90rot,B-species,mobilenetv3_large,42,ny0g507h3p_/woodbench-taskB,mobilenetv3_large_90rot_s42,
+Task B ablation label smoothing,B-species,mobilenetv3_large,42,ny0g507h3p_/woodbench-taskB,mobilenetv3_large_ls0.0_s42,0.0
+Task B ablation label smoothing,B-species,mobilenetv3_large,42,ny0g507h3p_/woodbench-taskB,mobilenetv3_large_ls0.2_s42,0.2
+Task B ablation 90rot,B-species,convnext_tiny,42,ny0g507h3p_/woodbench-taskB,convnext_tiny_90rot_s42,
+Task B ablation label smoothing,B-species,convnext_tiny,42,ny0g507h3p_/woodbench-taskB,convnext_tiny_ls0.0_s42,0.0
+Task B ablation label smoothing,B-species,convnext_tiny,42,ny0g507h3p_/woodbench-taskB,convnext_tiny_ls0.2_s42,0.2
+Task B ablation 90rot,B-species,swin_tiny,42,ny0g507h3p_/woodbench-taskB,swin_tiny_90rot_s42,
+Task B ablation label smoothing,B-species,swin_tiny,42,ny0g507h3p_/woodbench-taskB,swin_tiny_ls0.0_s42,0.0
+Task B ablation label smoothing,B-species,swin_tiny,42,ny0g507h3p_/woodbench-taskB,swin_tiny_ls0.2_s42,0.2
+Task B clean leakage-check,B-species-clean,swin_tiny,42,ny0g507h3p_/woodbench-taskB,swin_tiny_90rot_clean_s42,

@@ -1,0 +1,16 @@
+group,task,backbone,seed,epochs_trained_eval,best_val_acc_eval,test_accuracy_eval,test_precision_macro_eval,test_recall_macro_eval,test_f1_macro_eval,eval_source_path
+Task B main,B-species,convnext_tiny,123,25,1.0,0.9978,0.9979,0.998,0.9979,notebooks/phase 1/task-B/M1_eval/TaskB_Evaluate.ipynb
+Task B main,B-species,convnext_tiny,42,23,1.0,0.9956999999999999,0.996,0.9956999999999999,0.9958,notebooks/phase 1/task-B/M1_eval/TaskB_Evaluate.ipynb
+Task B main,B-species,convnext_tiny,456,20,1.0,0.9968,0.9968,0.9968,0.9968,notebooks/phase 1/task-B/M1_eval/TaskB_Evaluate.ipynb
+Task B main,B-species,efficientnet_b3,123,46,0.9945999999999999,0.9859,0.9864,0.9867,0.9864,notebooks/phase 1/task-B/M1_eval/TaskB_Evaluate.ipynb
+Task B main,B-species,efficientnet_b3,42,50,0.9936,0.9848,0.9854,0.9854999999999999,0.9854,notebooks/phase 1/task-B/M1_eval/TaskB_Evaluate.ipynb
+Task B main,B-species,efficientnet_b3,456,47,0.9945999999999999,0.9848,0.9853000000000001,0.9854,0.9851000000000001,notebooks/phase 1/task-B/M1_eval/TaskB_Evaluate.ipynb
+Task B main,B-species,mobilenetv3_large,123,45,0.9979,0.9859,0.9856999999999999,0.986,0.9856,notebooks/phase 1/task-B/M1_eval/TaskB_Evaluate.ipynb
+Task B main,B-species,mobilenetv3_large,42,45,0.9956999999999999,0.9848,0.9856,0.9848,0.9848,notebooks/phase 1/task-B/M1_eval/TaskB_Evaluate.ipynb
+Task B main,B-species,mobilenetv3_large,456,50,0.9968,0.9881,0.9883,0.9881,0.9879000000000001,notebooks/phase 1/task-B/M1_eval/TaskB_Evaluate.ipynb
+Task B main,B-species,resnet50,123,50,0.9603,0.9437000000000001,0.9479000000000001,0.9451,0.9440000000000001,notebooks/phase 1/task-B/M1_eval/TaskB_Evaluate.ipynb
+Task B main,B-species,resnet50,42,50,0.9539,0.9329000000000001,0.9372,0.934,0.9328,notebooks/phase 1/task-B/M1_eval/TaskB_Evaluate.ipynb
+Task B main,B-species,resnet50,456,50,0.9614,0.9361,0.9412999999999999,0.9376000000000001,0.9362,notebooks/phase 1/task-B/M1_eval/TaskB_Evaluate.ipynb
+Task B main,B-species,swin_tiny,123,22,1.0,0.9956999999999999,0.9958,0.9954000000000001,0.9954999999999999,notebooks/phase 1/task-B/M1_eval/TaskB_Evaluate.ipynb
+Task B main,B-species,swin_tiny,42,17,1.0,0.9924,0.9929000000000001,0.9926999999999999,0.9926,notebooks/phase 1/task-B/M1_eval/TaskB_Evaluate.ipynb
+Task B main,B-species,swin_tiny,456,20,1.0,0.9956999999999999,0.9958,0.9958,0.9958,notebooks/phase 1/task-B/M1_eval/TaskB_Evaluate.ipynb

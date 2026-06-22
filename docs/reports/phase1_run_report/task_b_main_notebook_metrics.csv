@@ -1,0 +1,16 @@
+group,task,backbone,seed,best_val_acc_notebook,source_path
+Task B main,B-species,convnext_tiny,42,1.0,notebooks/phase 1/task-B/M1_main/TaskB_convnext_tiny.ipynb
+Task B main,B-species,convnext_tiny,123,1.0,notebooks/phase 1/task-B/M1_main/TaskB_convnext_tiny.ipynb
+Task B main,B-species,convnext_tiny,456,1.0,notebooks/phase 1/task-B/M1_main/TaskB_convnext_tiny.ipynb
+Task B main,B-species,efficientnet_b3,42,0.9936,notebooks/phase 1/task-B/M1_main/TaskB_efficientnet_b3.ipynb
+Task B main,B-species,efficientnet_b3,123,0.9945999999999999,notebooks/phase 1/task-B/M1_main/TaskB_efficientnet_b3.ipynb
+Task B main,B-species,efficientnet_b3,456,0.9945999999999999,notebooks/phase 1/task-B/M1_main/TaskB_efficientnet_b3.ipynb
+Task B main,B-species,mobilenetv3_large,42,0.9956999999999999,notebooks/phase 1/task-B/M1_main/TaskB_mobilenetv3_large.ipynb
+Task B main,B-species,mobilenetv3_large,123,0.9979,notebooks/phase 1/task-B/M1_main/TaskB_mobilenetv3_large.ipynb
+Task B main,B-species,mobilenetv3_large,456,0.9968,notebooks/phase 1/task-B/M1_main/TaskB_mobilenetv3_large.ipynb
+Task B main,B-species,resnet50,42,0.9539,notebooks/phase 1/task-B/M1_main/TaskB_resnet50.ipynb
+Task B main,B-species,resnet50,123,0.9603,notebooks/phase 1/task-B/M1_main/TaskB_resnet50.ipynb
+Task B main,B-species,resnet50,456,0.9614,notebooks/phase 1/task-B/M1_main/TaskB_resnet50.ipynb
+Task B main,B-species,swin_tiny,42,1.0,notebooks/phase 1/task-B/M1_main/TaskB_swin_tiny.ipynb
+Task B main,B-species,swin_tiny,123,1.0,notebooks/phase 1/task-B/M1_main/TaskB_swin_tiny.ipynb
+Task B main,B-species,swin_tiny,456,1.0,notebooks/phase 1/task-B/M1_main/TaskB_swin_tiny.ipynb
