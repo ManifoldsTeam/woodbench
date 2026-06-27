@@ -19,6 +19,950 @@
 │       └── base.yaml
 ├── data
 │   ├── experiments
+│   │   └── Task-B
+│   │       ├── main
+│   │       │   ├── efficiency
+│   │       │   │   ├── efficiency_comparison.png
+│   │       │   │   ├── efficiency_results.csv
+│   │       │   │   ├── efficiency_results.json
+│   │       │   │   └── wandb
+│   │       │   │       └── run-20260625_184445-7rgrh9lx
+│   │       │   │           ├── files
+│   │       │   │           │   ├── config.yaml
+│   │       │   │           │   ├── media
+│   │       │   │           │   │   └── table
+│   │       │   │           │   │       └── efficiency_table_0_e931dc0c8b3ea5715161.table.json
+│   │       │   │           │   ├── requirements.txt
+│   │       │   │           │   ├── wandb-metadata.json
+│   │       │   │           │   └── wandb-summary.json
+│   │       │   │           ├── logs
+│   │       │   │           │   ├── debug-internal.log
+│   │       │   │           │   └── debug.log
+│   │       │   │           └── run-7rgrh9lx.wandb
+│   │       │   ├── seed_123
+│   │       │   │   ├── convnext_tiny
+│   │       │   │   │   ├── convnext_tiny_seed123_best.pth
+│   │       │   │   │   ├── convnext_tiny_seed123_last.pth
+│   │       │   │   │   ├── test_metrics.json
+│   │       │   │   │   └── wandb
+│   │       │   │   │       ├── run-20260625_120105-vitm4mwe
+│   │       │   │   │       │   ├── files
+│   │       │   │   │       │   │   ├── config.yaml
+│   │       │   │   │       │   │   ├── requirements.txt
+│   │       │   │   │       │   │   ├── wandb-metadata.json
+│   │       │   │   │       │   │   └── wandb-summary.json
+│   │       │   │   │       │   ├── logs
+│   │       │   │   │       │   │   ├── debug-internal.log
+│   │       │   │   │       │   │   └── debug.log
+│   │       │   │   │       │   └── run-vitm4mwe.wandb
+│   │       │   │   │       └── run-20260625_170156-6ool5o45
+│   │       │   │   │           ├── files
+│   │       │   │   │           │   ├── config.yaml
+│   │       │   │   │           │   ├── requirements.txt
+│   │       │   │   │           │   ├── wandb-metadata.json
+│   │       │   │   │           │   └── wandb-summary.json
+│   │       │   │   │           ├── logs
+│   │       │   │   │           │   ├── debug-internal.log
+│   │       │   │   │           │   └── debug.log
+│   │       │   │   │           └── run-6ool5o45.wandb
+│   │       │   │   ├── efficientnet_b3
+│   │       │   │   │   ├── efficientnet_b3_seed123_best.pth
+│   │       │   │   │   ├── efficientnet_b3_seed123_last.pth
+│   │       │   │   │   ├── test_metrics.json
+│   │       │   │   │   └── wandb
+│   │       │   │   │       ├── run-20260625_120124-pc1cbyug
+│   │       │   │   │       │   ├── files
+│   │       │   │   │       │   │   ├── config.yaml
+│   │       │   │   │       │   │   ├── requirements.txt
+│   │       │   │   │       │   │   ├── wandb-metadata.json
+│   │       │   │   │       │   │   └── wandb-summary.json
+│   │       │   │   │       │   ├── logs
+│   │       │   │   │       │   │   ├── debug-internal.log
+│   │       │   │   │       │   │   └── debug.log
+│   │       │   │   │       │   └── run-pc1cbyug.wandb
+│   │       │   │   │       └── run-20260625_180341-ajiwupvl
+│   │       │   │   │           ├── files
+│   │       │   │   │           │   ├── config.yaml
+│   │       │   │   │           │   ├── requirements.txt
+│   │       │   │   │           │   ├── wandb-metadata.json
+│   │       │   │   │           │   └── wandb-summary.json
+│   │       │   │   │           ├── logs
+│   │       │   │   │           │   ├── debug-internal.log
+│   │       │   │   │           │   └── debug.log
+│   │       │   │   │           └── run-ajiwupvl.wandb
+│   │       │   │   ├── mobilenetv3_large
+│   │       │   │   │   ├── mobilenetv3_large_seed123_best.pth
+│   │       │   │   │   ├── mobilenetv3_large_seed123_last.pth
+│   │       │   │   │   ├── test_metrics.json
+│   │       │   │   │   └── wandb
+│   │       │   │   │       ├── run-20260625_120052-usec23m0
+│   │       │   │   │       │   ├── files
+│   │       │   │   │       │   │   ├── config.yaml
+│   │       │   │   │       │   │   ├── requirements.txt
+│   │       │   │   │       │   │   ├── wandb-metadata.json
+│   │       │   │   │       │   │   └── wandb-summary.json
+│   │       │   │   │       │   ├── logs
+│   │       │   │   │       │   │   ├── debug-internal.log
+│   │       │   │   │       │   │   └── debug.log
+│   │       │   │   │       │   └── run-usec23m0.wandb
+│   │       │   │   │       └── run-20260625_181954-mrfm96z8
+│   │       │   │   │           ├── files
+│   │       │   │   │           │   ├── config.yaml
+│   │       │   │   │           │   ├── requirements.txt
+│   │       │   │   │           │   ├── wandb-metadata.json
+│   │       │   │   │           │   └── wandb-summary.json
+│   │       │   │   │           ├── logs
+│   │       │   │   │           │   ├── debug-internal.log
+│   │       │   │   │           │   └── debug.log
+│   │       │   │   │           └── run-mrfm96z8.wandb
+│   │       │   │   ├── resnet50
+│   │       │   │   │   ├── resnet50_seed123_best.pth
+│   │       │   │   │   ├── resnet50_seed123_last.pth
+│   │       │   │   │   ├── test_metrics.json
+│   │       │   │   │   └── wandb
+│   │       │   │   │       ├── run-20260625_115957-3re55dns
+│   │       │   │   │       │   ├── files
+│   │       │   │   │       │   │   ├── config.yaml
+│   │       │   │   │       │   │   ├── requirements.txt
+│   │       │   │   │       │   │   ├── wandb-metadata.json
+│   │       │   │   │       │   │   └── wandb-summary.json
+│   │       │   │   │       │   ├── logs
+│   │       │   │   │       │   │   ├── debug-internal.log
+│   │       │   │   │       │   │   └── debug.log
+│   │       │   │   │       │   └── run-3re55dns.wandb
+│   │       │   │   │       └── run-20260625_181938-euwf4inu
+│   │       │   │   │           ├── files
+│   │       │   │   │           │   ├── config.yaml
+│   │       │   │   │           │   ├── requirements.txt
+│   │       │   │   │           │   ├── wandb-metadata.json
+│   │       │   │   │           │   └── wandb-summary.json
+│   │       │   │   │           ├── logs
+│   │       │   │   │           │   ├── debug-internal.log
+│   │       │   │   │           │   └── debug.log
+│   │       │   │   │           └── run-euwf4inu.wandb
+│   │       │   │   └── swin_tiny
+│   │       │   │       ├── swin_tiny_seed123_best.pth
+│   │       │   │       ├── swin_tiny_seed123_last.pth
+│   │       │   │       ├── test_metrics.json
+│   │       │   │       └── wandb
+│   │       │   │           ├── run-20260625_120017-q45b80ny
+│   │       │   │           │   ├── files
+│   │       │   │           │   │   ├── config.yaml
+│   │       │   │           │   │   ├── requirements.txt
+│   │       │   │           │   │   ├── wandb-metadata.json
+│   │       │   │           │   │   └── wandb-summary.json
+│   │       │   │           │   ├── logs
+│   │       │   │           │   │   ├── debug-internal.log
+│   │       │   │           │   │   └── debug.log
+│   │       │   │           │   └── run-q45b80ny.wandb
+│   │       │   │           ├── run-20260625_162806-67m0auuj
+│   │       │   │           │   ├── files
+│   │       │   │           │   │   ├── config.yaml
+│   │       │   │           │   │   ├── requirements.txt
+│   │       │   │           │   │   ├── wandb-metadata.json
+│   │       │   │           │   │   └── wandb-summary.json
+│   │       │   │           │   ├── logs
+│   │       │   │           │   │   ├── debug-internal.log
+│   │       │   │           │   │   └── debug.log
+│   │       │   │           │   └── run-67m0auuj.wandb
+│   │       │   │           └── run-20260625_170105-khth3mer
+│   │       │   │               ├── files
+│   │       │   │               │   ├── config.yaml
+│   │       │   │               │   ├── requirements.txt
+│   │       │   │               │   ├── wandb-metadata.json
+│   │       │   │               │   └── wandb-summary.json
+│   │       │   │               ├── logs
+│   │       │   │               │   ├── debug-internal.log
+│   │       │   │               │   └── debug.log
+│   │       │   │               └── run-khth3mer.wandb
+│   │       │   ├── seed_42
+│   │       │   │   ├── convnext_tiny
+│   │       │   │   │   ├── confusion_matrix_convnext_tiny.png
+│   │       │   │   │   ├── convnext_tiny_seed42_best.pth
+│   │       │   │   │   ├── convnext_tiny_seed42_last.pth
+│   │       │   │   │   ├── test_metrics.json
+│   │       │   │   │   └── wandb
+│   │       │   │   │       ├── run-20260625_073000-9igmksbq
+│   │       │   │   │       │   ├── files
+│   │       │   │   │       │   │   ├── requirements.txt
+│   │       │   │   │       │   │   └── wandb-metadata.json
+│   │       │   │   │       │   ├── logs
+│   │       │   │   │       │   │   ├── debug-internal.log
+│   │       │   │   │       │   │   └── debug.log
+│   │       │   │   │       │   └── run-9igmksbq.wandb
+│   │       │   │   │       ├── run-20260625_074646-d76qd4wl
+│   │       │   │   │       │   ├── files
+│   │       │   │   │       │   │   ├── config.yaml
+│   │       │   │   │       │   │   ├── requirements.txt
+│   │       │   │   │       │   │   ├── wandb-metadata.json
+│   │       │   │   │       │   │   └── wandb-summary.json
+│   │       │   │   │       │   ├── logs
+│   │       │   │   │       │   │   ├── debug-internal.log
+│   │       │   │   │       │   │   └── debug.log
+│   │       │   │   │       │   └── run-d76qd4wl.wandb
+│   │       │   │   │       ├── run-20260625_170103-rd4unl55
+│   │       │   │   │       │   ├── files
+│   │       │   │   │       │   │   ├── config.yaml
+│   │       │   │   │       │   │   ├── requirements.txt
+│   │       │   │   │       │   │   ├── wandb-metadata.json
+│   │       │   │   │       │   │   └── wandb-summary.json
+│   │       │   │   │       │   ├── logs
+│   │       │   │   │       │   │   ├── debug-internal.log
+│   │       │   │   │       │   │   └── debug.log
+│   │       │   │   │       │   └── run-rd4unl55.wandb
+│   │       │   │   │       └── run-20260625_170242-rq6c4ona
+│   │       │   │   │           ├── files
+│   │       │   │   │           │   ├── config.yaml
+│   │       │   │   │           │   ├── media
+│   │       │   │   │           │   │   └── images
+│   │       │   │   │           │   │       └── confusion_matrix_0_ccf672a996a3cf408b8d.png
+│   │       │   │   │           │   ├── requirements.txt
+│   │       │   │   │           │   ├── wandb-metadata.json
+│   │       │   │   │           │   └── wandb-summary.json
+│   │       │   │   │           ├── logs
+│   │       │   │   │           │   ├── debug-internal.log
+│   │       │   │   │           │   └── debug.log
+│   │       │   │   │           └── run-rq6c4ona.wandb
+│   │       │   │   ├── efficientnet_b3
+│   │       │   │   │   ├── confusion_matrix_efficientnet_b3.png
+│   │       │   │   │   ├── efficientnet_b3_seed42_best.pth
+│   │       │   │   │   ├── efficientnet_b3_seed42_last.pth
+│   │       │   │   │   ├── test_metrics.json
+│   │       │   │   │   └── wandb
+│   │       │   │   │       ├── run-20260625_073007-evgg91gr
+│   │       │   │   │       │   ├── files
+│   │       │   │   │       │   │   ├── requirements.txt
+│   │       │   │   │       │   │   └── wandb-metadata.json
+│   │       │   │   │       │   ├── logs
+│   │       │   │   │       │   │   ├── debug-internal.log
+│   │       │   │   │       │   │   └── debug.log
+│   │       │   │   │       │   └── run-evgg91gr.wandb
+│   │       │   │   │       ├── run-20260625_074633-9vkvbu97
+│   │       │   │   │       │   ├── files
+│   │       │   │   │       │   │   ├── config.yaml
+│   │       │   │   │       │   │   ├── requirements.txt
+│   │       │   │   │       │   │   ├── wandb-metadata.json
+│   │       │   │   │       │   │   └── wandb-summary.json
+│   │       │   │   │       │   ├── logs
+│   │       │   │   │       │   │   ├── debug-internal.log
+│   │       │   │   │       │   │   └── debug.log
+│   │       │   │   │       │   └── run-9vkvbu97.wandb
+│   │       │   │   │       ├── run-20260625_180304-pk21hk9q
+│   │       │   │   │       │   ├── files
+│   │       │   │   │       │   │   ├── config.yaml
+│   │       │   │   │       │   │   ├── requirements.txt
+│   │       │   │   │       │   │   ├── wandb-metadata.json
+│   │       │   │   │       │   │   └── wandb-summary.json
+│   │       │   │   │       │   ├── logs
+│   │       │   │   │       │   │   ├── debug-internal.log
+│   │       │   │   │       │   │   └── debug.log
+│   │       │   │   │       │   └── run-pk21hk9q.wandb
+│   │       │   │   │       └── run-20260625_180420-x11s11oy
+│   │       │   │   │           ├── files
+│   │       │   │   │           │   ├── config.yaml
+│   │       │   │   │           │   ├── media
+│   │       │   │   │           │   │   └── images
+│   │       │   │   │           │   │       └── confusion_matrix_0_9d875739f55d00be1fb0.png
+│   │       │   │   │           │   ├── requirements.txt
+│   │       │   │   │           │   ├── wandb-metadata.json
+│   │       │   │   │           │   └── wandb-summary.json
+│   │       │   │   │           ├── logs
+│   │       │   │   │           │   ├── debug-internal.log
+│   │       │   │   │           │   └── debug.log
+│   │       │   │   │           └── run-x11s11oy.wandb
+│   │       │   │   ├── mobilenetv3_large
+│   │       │   │   │   ├── mobilenetv3_large_seed42_best.pth
+│   │       │   │   │   ├── mobilenetv3_large_seed42_last.pth
+│   │       │   │   │   ├── test_metrics.json
+│   │       │   │   │   └── wandb
+│   │       │   │   │       ├── run-20260625_072946-2dpw677i
+│   │       │   │   │       │   ├── files
+│   │       │   │   │       │   │   ├── requirements.txt
+│   │       │   │   │       │   │   └── wandb-metadata.json
+│   │       │   │   │       │   ├── logs
+│   │       │   │   │       │   │   ├── debug-internal.log
+│   │       │   │   │       │   │   └── debug.log
+│   │       │   │   │       │   └── run-2dpw677i.wandb
+│   │       │   │   │       ├── run-20260625_074615-yt9cfgkp
+│   │       │   │   │       │   ├── files
+│   │       │   │   │       │   │   ├── config.yaml
+│   │       │   │   │       │   │   ├── requirements.txt
+│   │       │   │   │       │   │   ├── wandb-metadata.json
+│   │       │   │   │       │   │   └── wandb-summary.json
+│   │       │   │   │       │   ├── logs
+│   │       │   │   │       │   │   ├── debug-internal.log
+│   │       │   │   │       │   │   └── debug.log
+│   │       │   │   │       │   └── run-yt9cfgkp.wandb
+│   │       │   │   │       └── run-20260625_181921-3b0zq1ht
+│   │       │   │   │           ├── files
+│   │       │   │   │           │   ├── config.yaml
+│   │       │   │   │           │   ├── requirements.txt
+│   │       │   │   │           │   ├── wandb-metadata.json
+│   │       │   │   │           │   └── wandb-summary.json
+│   │       │   │   │           ├── logs
+│   │       │   │   │           │   ├── debug-internal.log
+│   │       │   │   │           │   └── debug.log
+│   │       │   │   │           └── run-3b0zq1ht.wandb
+│   │       │   │   ├── resnet50
+│   │       │   │   │   ├── resnet50_seed42_best.pth
+│   │       │   │   │   ├── resnet50_seed42_last.pth
+│   │       │   │   │   ├── test_metrics.json
+│   │       │   │   │   └── wandb
+│   │       │   │   │       ├── run-20260625_072957-m5ci0k38
+│   │       │   │   │       │   ├── files
+│   │       │   │   │       │   │   ├── requirements.txt
+│   │       │   │   │       │   │   └── wandb-metadata.json
+│   │       │   │   │       │   ├── logs
+│   │       │   │   │       │   │   ├── debug-internal.log
+│   │       │   │   │       │   │   └── debug.log
+│   │       │   │   │       │   └── run-m5ci0k38.wandb
+│   │       │   │   │       ├── run-20260625_074626-fdfa6kkg
+│   │       │   │   │       │   ├── files
+│   │       │   │   │       │   │   ├── config.yaml
+│   │       │   │   │       │   │   ├── requirements.txt
+│   │       │   │   │       │   │   ├── wandb-metadata.json
+│   │       │   │   │       │   │   └── wandb-summary.json
+│   │       │   │   │       │   ├── logs
+│   │       │   │   │       │   │   ├── debug-internal.log
+│   │       │   │   │       │   │   └── debug.log
+│   │       │   │   │       │   └── run-fdfa6kkg.wandb
+│   │       │   │   │       └── run-20260625_181908-dd703thy
+│   │       │   │   │           ├── files
+│   │       │   │   │           │   ├── config.yaml
+│   │       │   │   │           │   ├── requirements.txt
+│   │       │   │   │           │   ├── wandb-metadata.json
+│   │       │   │   │           │   └── wandb-summary.json
+│   │       │   │   │           ├── logs
+│   │       │   │   │           │   ├── debug-internal.log
+│   │       │   │   │           │   └── debug.log
+│   │       │   │   │           └── run-dd703thy.wandb
+│   │       │   │   └── swin_tiny
+│   │       │   │       ├── swin_tiny_seed42_best.pth
+│   │       │   │       ├── swin_tiny_seed42_last.pth
+│   │       │   │       ├── test_metrics.json
+│   │       │   │       └── wandb
+│   │       │   │           ├── run-20260625_074619-6kshh9tw
+│   │       │   │           │   ├── files
+│   │       │   │           │   │   ├── config.yaml
+│   │       │   │           │   │   ├── requirements.txt
+│   │       │   │           │   │   ├── wandb-metadata.json
+│   │       │   │           │   │   └── wandb-summary.json
+│   │       │   │           │   ├── logs
+│   │       │   │           │   │   ├── debug-internal.log
+│   │       │   │           │   │   └── debug.log
+│   │       │   │           │   └── run-6kshh9tw.wandb
+│   │       │   │           ├── run-20260625_162717-7svlabs7
+│   │       │   │           │   ├── files
+│   │       │   │           │   │   ├── config.yaml
+│   │       │   │           │   │   ├── requirements.txt
+│   │       │   │           │   │   ├── wandb-metadata.json
+│   │       │   │           │   │   └── wandb-summary.json
+│   │       │   │           │   ├── logs
+│   │       │   │           │   │   ├── debug-internal.log
+│   │       │   │           │   │   └── debug.log
+│   │       │   │           │   └── run-7svlabs7.wandb
+│   │       │   │           └── run-20260625_170008-wmqbyuyl
+│   │       │   │               ├── files
+│   │       │   │               │   ├── config.yaml
+│   │       │   │               │   ├── requirements.txt
+│   │       │   │               │   ├── wandb-metadata.json
+│   │       │   │               │   └── wandb-summary.json
+│   │       │   │               ├── logs
+│   │       │   │               │   ├── debug-internal.log
+│   │       │   │               │   └── debug.log
+│   │       │   │               └── run-wmqbyuyl.wandb
+│   │       │   └── seed_456
+│   │       │       ├── convnext_tiny
+│   │       │       │   ├── convnext_tiny_seed456_best.pth
+│   │       │       │   ├── convnext_tiny_seed456_last.pth
+│   │       │       │   ├── test_metrics.json
+│   │       │       │   └── wandb
+│   │       │       │       ├── run-20260625_143338-a9xc19m2
+│   │       │       │       │   ├── files
+│   │       │       │       │   │   ├── config.yaml
+│   │       │       │       │   │   ├── requirements.txt
+│   │       │       │       │   │   ├── wandb-metadata.json
+│   │       │       │       │   │   └── wandb-summary.json
+│   │       │       │       │   ├── logs
+│   │       │       │       │   │   ├── debug-internal.log
+│   │       │       │       │   │   └── debug.log
+│   │       │       │       │   └── run-a9xc19m2.wandb
+│   │       │       │       └── run-20260625_170234-tr6a33q7
+│   │       │       │           ├── files
+│   │       │       │           │   ├── config.yaml
+│   │       │       │           │   ├── requirements.txt
+│   │       │       │           │   ├── wandb-metadata.json
+│   │       │       │           │   └── wandb-summary.json
+│   │       │       │           ├── logs
+│   │       │       │           │   ├── debug-internal.log
+│   │       │       │           │   └── debug.log
+│   │       │       │           └── run-tr6a33q7.wandb
+│   │       │       ├── efficientnet_b3
+│   │       │       │   ├── efficientnet_b3_seed456_best.pth
+│   │       │       │   ├── efficientnet_b3_seed456_last.pth
+│   │       │       │   ├── test_metrics.json
+│   │       │       │   └── wandb
+│   │       │       │       ├── run-20260625_150409-5dbl0ta3
+│   │       │       │       │   ├── files
+│   │       │       │       │   │   ├── config.yaml
+│   │       │       │       │   │   ├── requirements.txt
+│   │       │       │       │   │   ├── wandb-metadata.json
+│   │       │       │       │   │   └── wandb-summary.json
+│   │       │       │       │   ├── logs
+│   │       │       │       │   │   ├── debug-internal.log
+│   │       │       │       │   │   └── debug.log
+│   │       │       │       │   └── run-5dbl0ta3.wandb
+│   │       │       │       └── run-20260625_180413-6qc0oz2d
+│   │       │       │           ├── files
+│   │       │       │           │   ├── config.yaml
+│   │       │       │           │   ├── requirements.txt
+│   │       │       │           │   ├── wandb-metadata.json
+│   │       │       │           │   └── wandb-summary.json
+│   │       │       │           ├── logs
+│   │       │       │           │   ├── debug-internal.log
+│   │       │       │           │   └── debug.log
+│   │       │       │           └── run-6qc0oz2d.wandb
+│   │       │       ├── mobilenetv3_large
+│   │       │       │   ├── confusion_matrix_mobilenetv3_large.png
+│   │       │       │   ├── mobilenetv3_large_seed456_best.pth
+│   │       │       │   ├── mobilenetv3_large_seed456_last.pth
+│   │       │       │   ├── test_metrics.json
+│   │       │       │   └── wandb
+│   │       │       │       ├── run-20260625_155227-74r2kqr1
+│   │       │       │       │   ├── files
+│   │       │       │       │   │   ├── config.yaml
+│   │       │       │       │   │   ├── requirements.txt
+│   │       │       │       │   │   ├── wandb-metadata.json
+│   │       │       │       │   │   └── wandb-summary.json
+│   │       │       │       │   ├── logs
+│   │       │       │       │   │   ├── debug-internal.log
+│   │       │       │       │   │   └── debug.log
+│   │       │       │       │   └── run-74r2kqr1.wandb
+│   │       │       │       ├── run-20260625_182025-iaelf2ak
+│   │       │       │       │   ├── files
+│   │       │       │       │   │   ├── config.yaml
+│   │       │       │       │   │   ├── requirements.txt
+│   │       │       │       │   │   ├── wandb-metadata.json
+│   │       │       │       │   │   └── wandb-summary.json
+│   │       │       │       │   ├── logs
+│   │       │       │       │   │   ├── debug-internal.log
+│   │       │       │       │   │   └── debug.log
+│   │       │       │       │   └── run-iaelf2ak.wandb
+│   │       │       │       └── run-20260625_182033-1p5g473u
+│   │       │       │           ├── files
+│   │       │       │           │   ├── config.yaml
+│   │       │       │           │   ├── media
+│   │       │       │           │   │   └── images
+│   │       │       │           │   │       └── confusion_matrix_0_e960bda6c340cac54895.png
+│   │       │       │           │   ├── requirements.txt
+│   │       │       │           │   ├── wandb-metadata.json
+│   │       │       │           │   └── wandb-summary.json
+│   │       │       │           ├── logs
+│   │       │       │           │   ├── debug-internal.log
+│   │       │       │           │   └── debug.log
+│   │       │       │           └── run-1p5g473u.wandb
+│   │       │       ├── resnet50
+│   │       │       │   ├── confusion_matrix_resnet50.png
+│   │       │       │   ├── resnet50_seed456_best.pth
+│   │       │       │   ├── resnet50_seed456_last.pth
+│   │       │       │   ├── test_metrics.json
+│   │       │       │   └── wandb
+│   │       │       │       ├── run-20260625_155057-neutg2dc
+│   │       │       │       │   ├── files
+│   │       │       │       │   │   ├── config.yaml
+│   │       │       │       │   │   ├── requirements.txt
+│   │       │       │       │   │   ├── wandb-metadata.json
+│   │       │       │       │   │   └── wandb-summary.json
+│   │       │       │       │   ├── logs
+│   │       │       │       │   │   ├── debug-internal.log
+│   │       │       │       │   │   └── debug.log
+│   │       │       │       │   └── run-neutg2dc.wandb
+│   │       │       │       ├── run-20260625_182008-h9crg3ri
+│   │       │       │       │   ├── files
+│   │       │       │       │   │   ├── config.yaml
+│   │       │       │       │   │   ├── requirements.txt
+│   │       │       │       │   │   ├── wandb-metadata.json
+│   │       │       │       │   │   └── wandb-summary.json
+│   │       │       │       │   ├── logs
+│   │       │       │       │   │   ├── debug-internal.log
+│   │       │       │       │   │   └── debug.log
+│   │       │       │       │   └── run-h9crg3ri.wandb
+│   │       │       │       └── run-20260625_182017-7uqpsk95
+│   │       │       │           ├── files
+│   │       │       │           │   ├── config.yaml
+│   │       │       │           │   ├── media
+│   │       │       │           │   │   └── images
+│   │       │       │           │   │       └── confusion_matrix_0_c8605394c2b1cff209c5.png
+│   │       │       │           │   ├── requirements.txt
+│   │       │       │           │   ├── wandb-metadata.json
+│   │       │       │           │   └── wandb-summary.json
+│   │       │       │           ├── logs
+│   │       │       │           │   ├── debug-internal.log
+│   │       │       │           │   └── debug.log
+│   │       │       │           └── run-7uqpsk95.wandb
+│   │       │       └── swin_tiny
+│   │       │           ├── confusion_matrix_swin_tiny.png
+│   │       │           ├── swin_tiny_seed456_best.pth
+│   │       │           ├── swin_tiny_seed456_last.pth
+│   │       │           ├── test_metrics.json
+│   │       │           └── wandb
+│   │       │               ├── run-20260625_141649-wxxkmrlj
+│   │       │               │   ├── files
+│   │       │               │   │   ├── config.yaml
+│   │       │               │   │   ├── requirements.txt
+│   │       │               │   │   ├── wandb-metadata.json
+│   │       │               │   │   └── wandb-summary.json
+│   │       │               │   ├── logs
+│   │       │               │   │   ├── debug-internal.log
+│   │       │               │   │   └── debug.log
+│   │       │               │   └── run-wxxkmrlj.wandb
+│   │       │               ├── run-20260625_162857-h7rgo672
+│   │       │               │   ├── files
+│   │       │               │   │   ├── config.yaml
+│   │       │               │   │   ├── requirements.txt
+│   │       │               │   │   ├── wandb-metadata.json
+│   │       │               │   │   └── wandb-summary.json
+│   │       │               │   ├── logs
+│   │       │               │   │   ├── debug-internal.log
+│   │       │               │   │   └── debug.log
+│   │       │               │   └── run-h7rgo672.wandb
+│   │       │               ├── run-20260625_170200-pcx1b536
+│   │       │               │   ├── files
+│   │       │               │   │   ├── config.yaml
+│   │       │               │   │   ├── requirements.txt
+│   │       │               │   │   ├── wandb-metadata.json
+│   │       │               │   │   └── wandb-summary.json
+│   │       │               │   ├── logs
+│   │       │               │   │   ├── debug-internal.log
+│   │       │               │   │   └── debug.log
+│   │       │               │   └── run-pcx1b536.wandb
+│   │       │               └── run-20260625_170209-zn0svldw
+│   │       │                   ├── files
+│   │       │                   │   ├── config.yaml
+│   │       │                   │   ├── media
+│   │       │                   │   │   └── images
+│   │       │                   │   │       └── confusion_matrix_0_234b8ae37c4c9ddded23.png
+│   │       │                   │   ├── requirements.txt
+│   │       │                   │   ├── wandb-metadata.json
+│   │       │                   │   └── wandb-summary.json
+│   │       │                   ├── logs
+│   │       │                   │   ├── debug-internal.log
+│   │       │                   │   └── debug.log
+│   │       │                   └── run-zn0svldw.wandb
+│   │       ├── taskB_90rotation
+│   │       │   ├── convnext_tiny
+│   │       │   │   ├── convnext_tiny_seed42_best.pth
+│   │       │   │   ├── convnext_tiny_seed42_last.pth
+│   │       │   │   ├── test_metrics.json
+│   │       │   │   └── wandb
+│   │       │   │       ├── debug-internal.log -> run-20260623_204048-k95af1nw/logs/debug-internal.log
+│   │       │   │       ├── debug.log -> run-20260623_204048-k95af1nw/logs/debug.log
+│   │       │   │       ├── latest-run -> run-20260623_204048-k95af1nw
+│   │       │   │       ├── run-20260623_163545-tr0knwn8
+│   │       │   │       │   ├── files
+│   │       │   │       │   │   ├── requirements.txt
+│   │       │   │       │   │   └── wandb-metadata.json
+│   │       │   │       │   ├── logs
+│   │       │   │       │   │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260623_163545.log
+│   │       │   │       │   │   ├── debug-internal.log
+│   │       │   │       │   │   └── debug.log
+│   │       │   │       │   ├── run-tr0knwn8.wandb
+│   │       │   │       │   └── tmp
+│   │       │   │       │       └── code
+│   │       │   │       └── run-20260623_204048-k95af1nw
+│   │       │   │           ├── files
+│   │       │   │           │   ├── config.yaml
+│   │       │   │           │   ├── requirements.txt
+│   │       │   │           │   ├── wandb-metadata.json
+│   │       │   │           │   └── wandb-summary.json
+│   │       │   │           ├── logs
+│   │       │   │           │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260623_204048.log
+│   │       │   │           │   ├── debug-internal.log
+│   │       │   │           │   └── debug.log
+│   │       │   │           ├── run-k95af1nw.wandb
+│   │       │   │           └── tmp
+│   │       │   │               └── code
+│   │       │   ├── efficientnet_b3
+│   │       │   │   ├── efficientnet_b3_seed42_best.pth
+│   │       │   │   ├── efficientnet_b3_seed42_last.pth
+│   │       │   │   ├── test_metrics.json
+│   │       │   │   └── wandb
+│   │       │   │       ├── debug-internal.log -> run-20260624_001905-4c244k0f/logs/debug-internal.log
+│   │       │   │       ├── debug.log -> run-20260624_001905-4c244k0f/logs/debug.log
+│   │       │   │       ├── latest-run -> run-20260624_001905-4c244k0f
+│   │       │   │       └── run-20260624_001905-4c244k0f
+│   │       │   │           ├── files
+│   │       │   │           │   ├── config.yaml
+│   │       │   │           │   ├── requirements.txt
+│   │       │   │           │   ├── wandb-metadata.json
+│   │       │   │           │   └── wandb-summary.json
+│   │       │   │           ├── logs
+│   │       │   │           │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260624_001905.log
+│   │       │   │           │   ├── debug-internal.log
+│   │       │   │           │   └── debug.log
+│   │       │   │           ├── run-4c244k0f.wandb
+│   │       │   │           └── tmp
+│   │       │   │               └── code
+│   │       │   ├── mobilenetv3_large
+│   │       │   │   ├── mobilenetv3_large_seed42_best.pth
+│   │       │   │   ├── mobilenetv3_large_seed42_last.pth
+│   │       │   │   ├── test_metrics.json
+│   │       │   │   └── wandb
+│   │       │   │       ├── debug-internal.log -> run-20260624_002421-lkc3t81r/logs/debug-internal.log
+│   │       │   │       ├── debug.log -> run-20260624_002421-lkc3t81r/logs/debug.log
+│   │       │   │       ├── latest-run -> run-20260624_002421-lkc3t81r
+│   │       │   │       ├── run-20260624_000329-xlx1snv4
+│   │       │   │       │   ├── files
+│   │       │   │       │   │   ├── requirements.txt
+│   │       │   │       │   │   └── wandb-metadata.json
+│   │       │   │       │   ├── logs
+│   │       │   │       │   │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260624_000329.log
+│   │       │   │       │   │   ├── debug-internal.log
+│   │       │   │       │   │   └── debug.log
+│   │       │   │       │   ├── run-xlx1snv4.wandb
+│   │       │   │       │   └── tmp
+│   │       │   │       │       └── code
+│   │       │   │       └── run-20260624_002421-lkc3t81r
+│   │       │   │           ├── files
+│   │       │   │           │   ├── config.yaml
+│   │       │   │           │   ├── requirements.txt
+│   │       │   │           │   ├── wandb-metadata.json
+│   │       │   │           │   └── wandb-summary.json
+│   │       │   │           ├── logs
+│   │       │   │           │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260624_002421.log
+│   │       │   │           │   ├── debug-internal.log
+│   │       │   │           │   └── debug.log
+│   │       │   │           ├── run-lkc3t81r.wandb
+│   │       │   │           └── tmp
+│   │       │   │               └── code
+│   │       │   ├── resnet50
+│   │       │   │   ├── resnet50_seed42_best.pth
+│   │       │   │   ├── resnet50_seed42_last.pth
+│   │       │   │   ├── test_metrics.json
+│   │       │   │   └── wandb
+│   │       │   │       ├── debug-internal.log -> run-20260624_015010-m2ierzfb/logs/debug-internal.log
+│   │       │   │       ├── debug.log -> run-20260624_015010-m2ierzfb/logs/debug.log
+│   │       │   │       ├── latest-run -> run-20260624_015010-m2ierzfb
+│   │       │   │       ├── run-20260624_013743-1pxhs9pg
+│   │       │   │       │   ├── files
+│   │       │   │       │   │   ├── requirements.txt
+│   │       │   │       │   │   └── wandb-metadata.json
+│   │       │   │       │   ├── logs
+│   │       │   │       │   │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260624_013743.log
+│   │       │   │       │   │   ├── debug-internal.log
+│   │       │   │       │   │   └── debug.log
+│   │       │   │       │   ├── run-1pxhs9pg.wandb
+│   │       │   │       │   └── tmp
+│   │       │   │       │       └── code
+│   │       │   │       └── run-20260624_015010-m2ierzfb
+│   │       │   │           ├── files
+│   │       │   │           │   ├── config.yaml
+│   │       │   │           │   ├── requirements.txt
+│   │       │   │           │   ├── wandb-metadata.json
+│   │       │   │           │   └── wandb-summary.json
+│   │       │   │           ├── logs
+│   │       │   │           │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260624_015010.log
+│   │       │   │           │   ├── debug-internal.log
+│   │       │   │           │   └── debug.log
+│   │       │   │           ├── run-m2ierzfb.wandb
+│   │       │   │           └── tmp
+│   │       │   │               └── code
+│   │       │   └── swin_tiny
+│   │       │       ├── swin_tiny_seed42_best.pth
+│   │       │       ├── swin_tiny_seed42_last.pth
+│   │       │       ├── test_metrics.json
+│   │       │       └── wandb
+│   │       │           ├── debug-internal.log -> run-20260623_205023-1chj6m9n/logs/debug-internal.log
+│   │       │           ├── debug.log -> run-20260623_205023-1chj6m9n/logs/debug.log
+│   │       │           ├── latest-run -> run-20260623_205023-1chj6m9n
+│   │       │           └── run-20260623_205023-1chj6m9n
+│   │       │               ├── files
+│   │       │               │   ├── config.yaml
+│   │       │               │   ├── requirements.txt
+│   │       │               │   ├── wandb-metadata.json
+│   │       │               │   └── wandb-summary.json
+│   │       │               ├── logs
+│   │       │               │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260623_205023.log
+│   │       │               │   ├── debug-internal.log
+│   │       │               │   └── debug.log
+│   │       │               ├── run-1chj6m9n.wandb
+│   │       │               └── tmp
+│   │       │                   └── code
+│   │       ├── taskB_label_smoothing_0.0
+│   │       │   ├── convnext_tiny
+│   │       │   │   ├── convnext_tiny_seed42_best.pth
+│   │       │   │   ├── convnext_tiny_seed42_last.pth
+│   │       │   │   ├── test_metrics.json
+│   │       │   │   └── wandb
+│   │       │   │       ├── debug-internal.log -> run-20260624_102951-cpmnzk47/logs/debug-internal.log
+│   │       │   │       ├── debug.log -> run-20260624_102951-cpmnzk47/logs/debug.log
+│   │       │   │       ├── latest-run -> run-20260624_102951-cpmnzk47
+│   │       │   │       └── run-20260624_102951-cpmnzk47
+│   │       │   │           ├── files
+│   │       │   │           │   ├── config.yaml
+│   │       │   │           │   ├── requirements.txt
+│   │       │   │           │   ├── wandb-metadata.json
+│   │       │   │           │   └── wandb-summary.json
+│   │       │   │           ├── logs
+│   │       │   │           │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260624_102951.log
+│   │       │   │           │   ├── debug-internal.log
+│   │       │   │           │   └── debug.log
+│   │       │   │           ├── run-cpmnzk47.wandb
+│   │       │   │           └── tmp
+│   │       │   │               └── code
+│   │       │   ├── efficientnet_b3
+│   │       │   │   ├── efficientnet_b3_seed42_best.pth
+│   │       │   │   ├── efficientnet_b3_seed42_last.pth
+│   │       │   │   ├── test_metrics.json
+│   │       │   │   └── wandb
+│   │       │   │       ├── debug-internal.log -> run-20260624_103143-c6w77bft/logs/debug-internal.log
+│   │       │   │       ├── debug.log -> run-20260624_103143-c6w77bft/logs/debug.log
+│   │       │   │       ├── latest-run -> run-20260624_103143-c6w77bft
+│   │       │   │       └── run-20260624_103143-c6w77bft
+│   │       │   │           ├── files
+│   │       │   │           │   ├── config.yaml
+│   │       │   │           │   ├── requirements.txt
+│   │       │   │           │   ├── wandb-metadata.json
+│   │       │   │           │   └── wandb-summary.json
+│   │       │   │           ├── logs
+│   │       │   │           │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260624_103143.log
+│   │       │   │           │   ├── debug-internal.log
+│   │       │   │           │   └── debug.log
+│   │       │   │           ├── run-c6w77bft.wandb
+│   │       │   │           └── tmp
+│   │       │   │               └── code
+│   │       │   ├── mobilenetv3_large
+│   │       │   │   ├── mobilenetv3_large_seed42_best.pth
+│   │       │   │   ├── mobilenetv3_large_seed42_last.pth
+│   │       │   │   ├── test_metrics.json
+│   │       │   │   └── wandb
+│   │       │   │       ├── debug-internal.log -> run-20260624_132143-xn385xm6/logs/debug-internal.log
+│   │       │   │       ├── debug.log -> run-20260624_132143-xn385xm6/logs/debug.log
+│   │       │   │       ├── latest-run -> run-20260624_132143-xn385xm6
+│   │       │   │       ├── run-20260624_103320-rh0e0g54
+│   │       │   │       │   ├── files
+│   │       │   │       │   │   ├── config.yaml
+│   │       │   │       │   │   ├── requirements.txt
+│   │       │   │       │   │   ├── wandb-metadata.json
+│   │       │   │       │   │   └── wandb-summary.json
+│   │       │   │       │   ├── logs
+│   │       │   │       │   │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260624_103320.log
+│   │       │   │       │   │   ├── debug-internal.log
+│   │       │   │       │   │   └── debug.log
+│   │       │   │       │   ├── run-rh0e0g54.wandb
+│   │       │   │       │   └── tmp
+│   │       │   │       │       └── code
+│   │       │   │       └── run-20260624_132143-xn385xm6
+│   │       │   │           ├── files
+│   │       │   │           │   ├── requirements.txt
+│   │       │   │           │   └── wandb-metadata.json
+│   │       │   │           ├── logs
+│   │       │   │           │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260624_132143.log
+│   │       │   │           │   ├── debug-internal.log
+│   │       │   │           │   └── debug.log
+│   │       │   │           ├── run-xn385xm6.wandb
+│   │       │   │           └── tmp
+│   │       │   │               └── code
+│   │       │   ├── resnet50
+│   │       │   │   ├── resnet50_seed42_best.pth
+│   │       │   │   ├── resnet50_seed42_last.pth
+│   │       │   │   ├── test_metrics.json
+│   │       │   │   └── wandb
+│   │       │   │       ├── debug-internal.log -> run-20260624_134217-65nvbbtf/logs/debug-internal.log
+│   │       │   │       ├── debug.log -> run-20260624_134217-65nvbbtf/logs/debug.log
+│   │       │   │       ├── latest-run -> run-20260624_134217-65nvbbtf
+│   │       │   │       ├── run-20260624_132144-7dgf0kug
+│   │       │   │       │   ├── files
+│   │       │   │       │   │   ├── requirements.txt
+│   │       │   │       │   │   └── wandb-metadata.json
+│   │       │   │       │   ├── logs
+│   │       │   │       │   │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260624_132144.log
+│   │       │   │       │   │   ├── debug-internal.log
+│   │       │   │       │   │   └── debug.log
+│   │       │   │       │   ├── run-7dgf0kug.wandb
+│   │       │   │       │   └── tmp
+│   │       │   │       │       └── code
+│   │       │   │       ├── run-20260624_132915-8jgr8ngn
+│   │       │   │       │   ├── files
+│   │       │   │       │   │   ├── requirements.txt
+│   │       │   │       │   │   └── wandb-metadata.json
+│   │       │   │       │   ├── logs
+│   │       │   │       │   │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260624_132915.log
+│   │       │   │       │   │   ├── debug-internal.log
+│   │       │   │       │   │   └── debug.log
+│   │       │   │       │   ├── run-8jgr8ngn.wandb
+│   │       │   │       │   └── tmp
+│   │       │   │       │       └── code
+│   │       │   │       ├── run-20260624_133047-0of4t8fj
+│   │       │   │       │   ├── files
+│   │       │   │       │   ├── logs
+│   │       │   │       │   │   └── debug.log
+│   │       │   │       │   └── tmp
+│   │       │   │       │       └── code
+│   │       │   │       ├── run-20260624_134127-fwfqsx4v
+│   │       │   │       │   ├── files
+│   │       │   │       │   ├── logs
+│   │       │   │       │   │   └── debug.log
+│   │       │   │       │   └── tmp
+│   │       │   │       │       └── code
+│   │       │   │       └── run-20260624_134217-65nvbbtf
+│   │       │   │           ├── files
+│   │       │   │           │   ├── config.yaml
+│   │       │   │           │   ├── requirements.txt
+│   │       │   │           │   ├── wandb-metadata.json
+│   │       │   │           │   └── wandb-summary.json
+│   │       │   │           ├── logs
+│   │       │   │           │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260624_134217.log
+│   │       │   │           │   ├── debug-internal.log
+│   │       │   │           │   └── debug.log
+│   │       │   │           ├── run-65nvbbtf.wandb
+│   │       │   │           └── tmp
+│   │       │   │               └── code
+│   │       │   └── swin_tiny
+│   │       │       ├── swin_tiny_seed42_best.pth
+│   │       │       ├── swin_tiny_seed42_last.pth
+│   │       │       ├── test_metrics.json
+│   │       │       └── wandb
+│   │       │           ├── debug-internal.log -> run-20260624_134225-8mlqzuqj/logs/debug-internal.log
+│   │       │           ├── debug.log -> run-20260624_134225-8mlqzuqj/logs/debug.log
+│   │       │           ├── latest-run -> run-20260624_134225-8mlqzuqj
+│   │       │           ├── run-20260624_132918-4vbbfwi7
+│   │       │           │   ├── files
+│   │       │           │   │   ├── requirements.txt
+│   │       │           │   │   └── wandb-metadata.json
+│   │       │           │   ├── logs
+│   │       │           │   │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260624_132918.log
+│   │       │           │   │   ├── debug-internal.log
+│   │       │           │   │   └── debug.log
+│   │       │           │   ├── run-4vbbfwi7.wandb
+│   │       │           │   └── tmp
+│   │       │           │       └── code
+│   │       │           ├── run-20260624_133048-3l2w2t93
+│   │       │           │   ├── files
+│   │       │           │   ├── logs
+│   │       │           │   │   └── debug.log
+│   │       │           │   └── tmp
+│   │       │           │       └── code
+│   │       │           └── run-20260624_134225-8mlqzuqj
+│   │       │               ├── files
+│   │       │               │   ├── config.yaml
+│   │       │               │   ├── requirements.txt
+│   │       │               │   ├── wandb-metadata.json
+│   │       │               │   └── wandb-summary.json
+│   │       │               ├── logs
+│   │       │               │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260624_134225.log
+│   │       │               │   ├── debug-internal.log
+│   │       │               │   └── debug.log
+│   │       │               ├── run-8mlqzuqj.wandb
+│   │       │               └── tmp
+│   │       │                   └── code
+│   │       └── taskB_label_smoothing_0.2
+│   │           ├── convnext_tiny
+│   │           │   ├── convnext_tiny_seed42_best.pth
+│   │           │   ├── convnext_tiny_seed42_last.pth
+│   │           │   ├── test_metrics.json
+│   │           │   └── wandb
+│   │           │       ├── debug-internal.log -> run-20260624_112430-z08vm1tt/logs/debug-internal.log
+│   │           │       ├── debug.log -> run-20260624_112430-z08vm1tt/logs/debug.log
+│   │           │       ├── latest-run -> run-20260624_112430-z08vm1tt
+│   │           │       └── run-20260624_112430-z08vm1tt
+│   │           │           ├── files
+│   │           │           │   ├── config.yaml
+│   │           │           │   ├── requirements.txt
+│   │           │           │   ├── wandb-metadata.json
+│   │           │           │   └── wandb-summary.json
+│   │           │           ├── logs
+│   │           │           │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260624_102951.log
+│   │           │           │   ├── debug-internal.log
+│   │           │           │   └── debug.log
+│   │           │           ├── run-z08vm1tt.wandb
+│   │           │           └── tmp
+│   │           │               └── code
+│   │           ├── efficientnet_b3
+│   │           │   ├── efficientnet_b3_seed42_best.pth
+│   │           │   ├── efficientnet_b3_seed42_last.pth
+│   │           │   ├── test_metrics.json
+│   │           │   └── wandb
+│   │           │       ├── debug-internal.log -> run-20260624_120225-5tlpar9u/logs/debug-internal.log
+│   │           │       ├── debug.log -> run-20260624_120225-5tlpar9u/logs/debug.log
+│   │           │       ├── latest-run -> run-20260624_120225-5tlpar9u
+│   │           │       └── run-20260624_120225-5tlpar9u
+│   │           │           ├── files
+│   │           │           │   ├── config.yaml
+│   │           │           │   ├── requirements.txt
+│   │           │           │   ├── wandb-metadata.json
+│   │           │           │   └── wandb-summary.json
+│   │           │           ├── logs
+│   │           │           │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260624_103143.log
+│   │           │           │   ├── debug-internal.log
+│   │           │           │   └── debug.log
+│   │           │           ├── run-5tlpar9u.wandb
+│   │           │           └── tmp
+│   │           │               └── code
+│   │           ├── mobilenetv3_large
+│   │           │   ├── mobilenetv3_large_seed42_best.pth
+│   │           │   ├── mobilenetv3_large_seed42_last.pth
+│   │           │   ├── test_metrics.json
+│   │           │   └── wandb
+│   │           │       ├── debug-internal.log -> run-20260624_115416-e0taqezl/logs/debug-internal.log
+│   │           │       ├── debug.log -> run-20260624_115416-e0taqezl/logs/debug.log
+│   │           │       ├── latest-run -> run-20260624_115416-e0taqezl
+│   │           │       └── run-20260624_115416-e0taqezl
+│   │           │           ├── files
+│   │           │           │   ├── config.yaml
+│   │           │           │   ├── requirements.txt
+│   │           │           │   ├── wandb-metadata.json
+│   │           │           │   └── wandb-summary.json
+│   │           │           ├── logs
+│   │           │           │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260624_103320.log
+│   │           │           │   ├── debug-internal.log
+│   │           │           │   └── debug.log
+│   │           │           ├── run-e0taqezl.wandb
+│   │           │           └── tmp
+│   │           │               └── code
+│   │           ├── resnet50
+│   │           │   ├── resnet50_seed42_best.pth
+│   │           │   ├── resnet50_seed42_last.pth
+│   │           │   ├── test_metrics.json
+│   │           │   └── wandb
+│   │           │       ├── debug-internal.log -> run-20260624_145838-we0so9af/logs/debug-internal.log
+│   │           │       ├── debug.log -> run-20260624_145838-we0so9af/logs/debug.log
+│   │           │       ├── latest-run -> run-20260624_145838-we0so9af
+│   │           │       └── run-20260624_145838-we0so9af
+│   │           │           ├── files
+│   │           │           │   ├── config.yaml
+│   │           │           │   ├── requirements.txt
+│   │           │           │   ├── wandb-metadata.json
+│   │           │           │   └── wandb-summary.json
+│   │           │           ├── logs
+│   │           │           │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260624_134217.log
+│   │           │           │   ├── debug-internal.log
+│   │           │           │   └── debug.log
+│   │           │           ├── run-we0so9af.wandb
+│   │           │           └── tmp
+│   │           │               └── code
+│   │           └── swin_tiny
+│   │               ├── swin_tiny_seed42_best.pth
+│   │               ├── swin_tiny_seed42_last.pth
+│   │               ├── test_metrics.json
+│   │               └── wandb
+│   │                   ├── debug-internal.log -> run-20260624_141410-vg4zfqu8/logs/debug-internal.log
+│   │                   ├── debug.log -> run-20260624_141410-vg4zfqu8/logs/debug.log
+│   │                   ├── latest-run -> run-20260624_141410-vg4zfqu8
+│   │                   └── run-20260624_141410-vg4zfqu8
+│   │                       ├── files
+│   │                       │   ├── config.yaml
+│   │                       │   ├── requirements.txt
+│   │                       │   ├── wandb-metadata.json
+│   │                       │   └── wandb-summary.json
+│   │                       ├── logs
+│   │                       │   ├── debug-core.log -> /home/sakana/.cache/wandb/logs/core-debug-20260624_134225.log
+│   │                       │   ├── debug-internal.log
+│   │                       │   └── debug.log
+│   │                       ├── run-vg4zfqu8.wandb
+│   │                       └── tmp
+│   │                           └── code
+│   ├── experiments-old
 │   │   ├── task-A
 │   │   │   ├── seed123
 │   │   │   │   ├── convnext_tiny
@@ -19081,25 +20025,26 @@
 │   │   │   ├── task-B-clean_manifest.csv
 │   │   │   ├── task-B_manifest.csv
 │   │   │   └── WoodID_Phase1_Leakage_Origin_Report.md
-│   │   └── phase_1_run_report
-│   │       ├── ablation_90rot_delta.csv
-│   │       ├── ablation_label_smoothing_pivot.csv
-│   │       ├── best_epochs_from_learning_curves.csv
-│   │       ├── learning_curves_from_notebooks.csv
-│   │       ├── missing_metrics.csv
-│   │       ├── phase1_all_runs_raw.csv
-│   │       ├── phase1_group_backbone_comparison.png
-│   │       ├── phase1_manifest.csv
-│   │       ├── phase1_report_checklist.csv
-│   │       ├── phase1_summary_by_group_backbone.csv
-│   │       ├── phase1_summary_by_group_backbone_percent.csv
-│   │       ├── swin_clean_vs_unclean_leakage_check.csv
-│   │       ├── swin_clean_vs_unclean_learning_curve.png
-│   │       ├── task_a_manual_raw.csv
-│   │       ├── task_b_main_eval_metrics.csv
-│   │       ├── task_b_main_learning_curves_from_notebooks.png
-│   │       ├── task_b_main_notebook_metrics.csv
-│   │       └── wandb_phase1_raw.csv
+│   │   ├── phase_1_run_report_not_strict
+│   │   │   ├── ablation_90rot_delta.csv
+│   │   │   ├── ablation_label_smoothing_pivot.csv
+│   │   │   ├── best_epochs_from_learning_curves.csv
+│   │   │   ├── learning_curves_from_notebooks.csv
+│   │   │   ├── missing_metrics.csv
+│   │   │   ├── phase1_all_runs_raw.csv
+│   │   │   ├── phase1_group_backbone_comparison.png
+│   │   │   ├── phase1_manifest.csv
+│   │   │   ├── phase1_report_checklist.csv
+│   │   │   ├── phase1_summary_by_group_backbone.csv
+│   │   │   ├── phase1_summary_by_group_backbone_percent.csv
+│   │   │   ├── swin_clean_vs_unclean_leakage_check.csv
+│   │   │   ├── swin_clean_vs_unclean_learning_curve.png
+│   │   │   ├── task_a_manual_raw.csv
+│   │   │   ├── task_b_main_eval_metrics.csv
+│   │   │   ├── task_b_main_learning_curves_from_notebooks.png
+│   │   │   ├── task_b_main_notebook_metrics.csv
+│   │   │   └── wandb_phase1_raw.csv
+│   │   └── task_b_wandb_all_runs_report-hotfix.md
 │   ├── timeline
 │   │   ├── 12-05-2026.md
 │   │   ├── 14-05-2026.md
@@ -19112,6 +20057,11 @@
 │   │   └── 24-05-2026.md
 │   └── timeline.md
 ├── eval.py
+├── executed
+├── _flags
+├── logs
+│   ├── resnet50.log
+│   └── resnet_watcher.log
 ├── node_modules
 │   ├── accepts
 │   │   ├── HISTORY.md
@@ -31126,6 +32076,8 @@
 │   ├── phase -1
 │   │   └── dataset_exploration.ipynb
 │   ├── phase 1
+│   │   ├── leakage
+│   │   │   └── 90rot-comparisons.ipynb
 │   │   ├── task-A
 │   │   │   ├── seed-123
 │   │   │   │   ├── TaskA_convnext_tiny.ipynb
@@ -31149,6 +32101,7 @@
 │   │   │   ├── leakage-check
 │   │   │   │   └── TaskB_90rot_swin_tiny.ipynb
 │   │   │   ├── M1_eval
+│   │   │   │   ├── TaskB_efficiency_benchmark.ipynb
 │   │   │   │   ├── TaskB_Evaluate.ipynb
 │   │   │   │   └── TaskB_Results_Driver.ipynb
 │   │   │   ├── M1_main
@@ -31257,8 +32210,15 @@
 │       └── seed.py
 ├── tests
 │   ├── __init__.py
-│   └── test_augmentation_properties.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-311.pyc
+│   │   ├── test_augmentation_properties.cpython-311-pytest-9.0.3.pyc
+│   │   ├── test_dataset_class_mapping.cpython-311-pytest-9.0.3.pyc
+│   │   └── test_metrics_missing_classes.cpython-311-pytest-9.0.3.pyc
+│   ├── test_augmentation_properties.py
+│   ├── test_dataset_class_mapping.py
+│   └── test_metrics_missing_classes.py
 ├── train.py
 └── uv.lock
 
-2436 directories, 28826 files
+2793 directories, 29429 files
