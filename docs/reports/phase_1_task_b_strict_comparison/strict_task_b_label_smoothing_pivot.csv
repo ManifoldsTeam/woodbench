@@ -1,0 +1,6 @@
+backbone,display_backbone,0.0,0.2,delta_ls0.2_minus_0.0
+convnext_tiny,ConvNeXt-Tiny,97.83,99.6,1.769999999999996
+swin_tiny,Swin-Tiny,98.03,99.84,1.8100000000000023
+efficientnet_b3,EfficientNet-B3,91.52,92.52,1.0
+mobilenetv3_large,MobileNetV3-L,90.43,90.91,0.47999999999998977
+resnet50,ResNet-50,84.65,84.79,0.14000000000000057

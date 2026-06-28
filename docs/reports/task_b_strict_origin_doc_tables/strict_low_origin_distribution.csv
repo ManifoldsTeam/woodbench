@@ -1,0 +1,4 @@
+Class,Origins,Train images,Val images,Test images,Train origins,Val origins,Test origins
+Calocedrus sp,1,238,0,0,1,0,0
+Pinus sp,2,110,0,106,1,0,1
+Cupressus funebris (Cupressus pendula),2,163,0,155,1,0,1

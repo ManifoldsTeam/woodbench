@@ -20,3 +20,6 @@
 | 23-05-2026 | 06:20 | Task B: train.py — thêm test evaluation + đầy đủ metrics wandb | Done | Log val precision/recall/f1 per epoch; test set evaluation sau training; per-class F1; save JSON |
 | 24-05-2026 | 14:30 | Task B: Hoàn thành Main Experiments (15 runs) | Done | [Details](timeline/24-05-2026.md) |
 | 22-06-2026 | 10:12 | Phase 1 run report notebook | Done | [Details](timeline/22-06-2026.md) |
+| 27-06-2026 | 10:55 | Task B strict split: backfill local W&B metrics | Done | [Details](timeline/27-06-2026.md) |
+| 27-06-2026 | 14:14 | Task B original vs strict-by-origin report | Done | [Details](timeline/27-06-2026.md) |
+| 27-06-2026 | 14:18 | Strict split missing-class caveat + recommendations | Done | [Details](timeline/27-06-2026.md) |

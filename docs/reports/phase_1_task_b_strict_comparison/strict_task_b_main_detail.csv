@@ -1,0 +1,16 @@
+run_name,backbone,display_backbone,seed,best_epoch,epochs_trained,best_val_acc,test_accuracy,test_f1_macro,test_precision_macro,test_recall_macro
+convnext_tiny_s42,convnext_tiny,ConvNeXt-Tiny,42,20,20,100.0,98.99,98.94,98.79,99.15
+convnext_tiny_s123,convnext_tiny,ConvNeXt-Tiny,123,25,35,99.56,98.87,99.17,98.84,99.57
+convnext_tiny_s456,convnext_tiny,ConvNeXt-Tiny,456,21,31,99.34,97.98,98.58,98.18,99.22
+efficientnet_b3_s42,efficientnet_b3,EfficientNet-B3,42,45,45,96.35,97.73,92.68,92.93,92.63
+efficientnet_b3_s123,efficientnet_b3,EfficientNet-B3,123,26,36,95.68,97.6,92.18,92.51,92.24
+efficientnet_b3_s456,efficientnet_b3,EfficientNet-B3,456,29,39,95.9,96.72,91.57,91.66,91.98
+mobilenetv3_large_s42,mobilenetv3_large,MobileNetV3-L,42,36,36,96.01,92.94,88.92,87.82,91.35
+mobilenetv3_large_s123,mobilenetv3_large,MobileNetV3-L,123,40,50,95.79,92.06,88.37,87.56,91.32
+mobilenetv3_large_s456,mobilenetv3_large,MobileNetV3-L,456,38,48,96.79,93.82,89.81,89.02,91.71
+resnet50_s42,resnet50,ResNet-50,42,45,45,91.47,84.62,81.88,83.02,85.35
+resnet50_s123,resnet50,ResNet-50,123,42,50,91.81,84.11,82.22,84.36,85.59
+resnet50_s456,resnet50,ResNet-50,456,42,50,92.47,84.99,82.54,84.22,86.53
+swin_tiny_s42,swin_tiny,Swin-Tiny,42,30,30,100.0,99.12,98.95,98.93,99.07
+swin_tiny_s123,swin_tiny,Swin-Tiny,123,21,31,99.89,99.75,99.72,99.64,99.8
+swin_tiny_s456,swin_tiny,Swin-Tiny,456,18,28,99.78,99.62,99.57,99.5,99.66
