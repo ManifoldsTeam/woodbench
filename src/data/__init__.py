@@ -1,7 +1,7 @@
 """Data module for Conifer Family Classification."""
 
 from .augmentation import AugmentationPipeline, AugmentationMethod
-from .dataset import ConiferDataset, get_dataloaders
+from .dataset import ConiferDataset, FlatConiferDataset, get_dataloaders
 from .directory_copier import DirectoryCopier
 from .manifest_writer import ManifestWriter
 from .splitter import create_stratified_split, verify_split

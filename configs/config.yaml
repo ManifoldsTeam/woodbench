@@ -1,17 +1,22 @@
 # =============================================================================
-# Base Configuration — WoodID-S2-2026 Conifer Family Classification
-# IC4SD Lab — PTIT
+# Base Configuration — WoodID-S2-2026
 # =============================================================================
 
 name: woodbench
 project: WoodID-S2-2026
 
-# Hydra config — output directory structure
+defaults:
+  - data: base
+  - model: base
+  - train: base
+  - experiment: taskB
+  - _self_
+
+# Checkpoint root (override via CLI: output.root=~/experiments/woodbench)
+output:
+  root: experiments
+
 hydra:
   run:
-    dir: logs/${now:%Y-%m-%d}/${experiment_name}/${model.backbone}/${seed}
-  sweep:
-    dir: logs/${now:%Y-%m-%d}/${experiment_name}/${model.backbone}/sweep
-    subdir: ${seed}
-  job:
-    name: ${experiment_name}_${model.backbone}_s${seed}
+    dir: .
+  output_subdir: null

@@ -1,0 +1,4 @@
+data_version,group,backbone,seed,run_name,url,best_epoch,best_val_acc,test_accuracy,test_f1_macro,test_precision_macro,test_recall_macro
+unclean_90rot,Task B ablation 90rot,swin_tiny,42.0,swin_tiny_90rot_s42,https://wandb.ai/ny0g507h3p_/woodbench-taskB/runs/4z7t55es,5,1.0,0.9935064935064936,0.9935302993060502,0.9941455099873232,0.9933284290460372
+clean_90rot,Task B clean leakage-check,swin_tiny,42.0,swin_tiny_90rot_clean_s42,https://wandb.ai/ny0g507h3p_/woodbench-taskB/runs/h2yw6g7d,10,1.0,0.9976498237367802,0.997594393541703,0.9972695035460994,0.9979795918367348
+delta_clean_minus_unclean,,,,,,5,0.0,0.004143330230286679,0.004064094235652793,0.003123993558776239,0.0046511627906975495

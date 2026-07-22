@@ -1,0 +1,22 @@
+group,task,backbone,best_epoch_mean,best_epoch_std,best_epoch_count,best_val_acc_mean,best_val_acc_std,best_val_acc_count,test_accuracy_mean,test_accuracy_std,test_accuracy_count,test_f1_macro_mean,test_f1_macro_std,test_f1_macro_count,test_precision_macro_mean,test_precision_macro_std,test_precision_macro_count,test_recall_macro_mean,test_recall_macro_std,test_recall_macro_count
+Task A manual,A-family,convnext_tiny,7.0,2.45,3,100.0,0.0,3,99.9,0.08,3,99.7,0.24,3,99.47,0.43,3,99.94,0.04,3
+Task A manual,A-family,efficientnet_b3,14.67,2.49,3,99.9,0.0,3,99.36,0.05,3,98.59,0.25,3,98.62,0.22,3,98.61,0.4,3
+Task A manual,A-family,mobilenetv3_large,23.0,0.0,3,99.62,0.05,3,99.15,0.05,3,98.73,0.31,3,98.44,0.59,3,99.05,0.02,3
+Task A manual,A-family,resnet50,38.67,0.94,3,98.95,0.17,3,98.13,0.29,3,96.1,0.49,3,94.39,0.84,3,98.0,0.1,3
+Task A manual,A-family,swin_tiny,4.33,0.47,3,100.0,0.0,3,99.8,0.09,3,99.32,0.13,3,99.25,0.24,3,99.39,0.04,3
+Task B ablation 90rot,B-species,convnext_tiny,8.0,0.0,1,100.0,0.0,1,99.57,0.0,1,99.59,0.0,1,99.59,0.0,1,99.59,0.0,1
+Task B ablation 90rot,B-species,efficientnet_b3,32.0,0.0,1,99.57,0.0,1,99.24,0.0,1,99.23,0.0,1,99.21,0.0,1,99.26,0.0,1
+Task B ablation 90rot,B-species,mobilenetv3_large,24.0,0.0,1,99.68,0.0,1,99.46,0.0,1,99.46,0.0,1,99.48,0.0,1,99.45,0.0,1
+Task B ablation 90rot,B-species,resnet50,47.0,0.0,1,96.89,0.0,1,96.21,0.0,1,96.22,0.0,1,96.35,0.0,1,96.24,0.0,1
+Task B ablation 90rot,B-species,swin_tiny,5.0,0.0,1,100.0,0.0,1,99.35,0.0,1,99.35,0.0,1,99.41,0.0,1,99.33,0.0,1
+Task B ablation label smoothing,B-species,convnext_tiny,11.5,4.5,2,100.0,0.0,2,99.68,0.0,2,99.67,0.0,2,99.68,0.01,2,99.67,0.0,2
+Task B ablation label smoothing,B-species,efficientnet_b3,29.0,3.0,2,99.36,0.0,2,98.92,0.22,2,98.96,0.19,2,98.96,0.19,2,98.97,0.2,2
+Task B ablation label smoothing,B-species,mobilenetv3_large,24.5,0.5,2,99.57,0.0,2,98.81,0.11,2,98.8,0.12,2,98.83,0.1,2,98.81,0.12,2
+Task B ablation label smoothing,B-species,resnet50,36.5,3.5,2,96.84,0.27,2,95.29,0.05,2,95.29,0.04,2,95.58,0.01,2,95.42,0.07,2
+Task B ablation label smoothing,B-species,swin_tiny,14.0,2.0,2,99.94,0.05,2,99.62,0.05,2,99.63,0.05,2,99.63,0.05,2,99.63,0.06,2
+Task B clean leakage-check,B-species-clean,swin_tiny,10.0,0.0,1,100.0,0.0,1,99.76,0.0,1,99.76,0.0,1,99.73,0.0,1,99.8,0.0,1
+Task B main,B-species,convnext_tiny,12.67,2.05,3,100.0,0.0,3,99.68,0.09,3,99.68,0.09,3,99.69,0.08,3,99.68,0.09,3
+Task B main,B-species,efficientnet_b3,37.67,1.7,3,99.43,0.05,3,98.52,0.05,3,98.56,0.06,3,98.57,0.05,3,98.59,0.06,3
+Task B main,B-species,mobilenetv3_large,38.67,5.19,3,99.68,0.09,3,98.63,0.14,3,98.61,0.13,3,98.65,0.12,3,98.63,0.14,3
+Task B main,B-species,resnet50,45.0,4.08,3,95.85,0.33,3,93.76,0.45,3,93.77,0.47,3,94.21,0.44,3,93.89,0.46,3
+Task B main,B-species,swin_tiny,9.67,2.05,3,100.0,0.0,3,99.46,0.16,3,99.46,0.14,3,99.48,0.14,3,99.46,0.14,3

@@ -21,6 +21,8 @@ class ConiferDataset(Dataset):
         split: 'train' | 'val' | 'test'
         transform: Optional transform to apply
         task: 'taskA' (family) or 'taskB' (species)
+        classes: Optional fixed class list. For Task B val/test, pass the
+            train classes so labels keep the same indices across splits.
     """
 
     FAMILY_CLASSES = [
@@ -36,6 +38,7 @@ class ConiferDataset(Dataset):
         split: str = "train",
         transform: Optional[Callable] = None,
         task: str = "taskA",
+        classes: Optional[List[str]] = None,
     ):
         self.data_root = Path(data_root)
         self.split = split
@@ -45,26 +48,36 @@ class ConiferDataset(Dataset):
         if task == "taskA":
             self.classes = self.FAMILY_CLASSES
         else:
-            self.classes = self._get_species_classes()
+            self.classes = (
+                list(classes) if classes is not None else self._get_species_classes()
+            )
 
         self.class_to_idx = {cls: idx for idx, cls in enumerate(self.classes)}
         self.samples = self._collect_samples()
 
     def _get_species_classes(self) -> List[str]:
-        """Infer species classes from the dataset directory structure."""
+        """Infer species classes from the dataset directory structure.
+
+        Structure: data/{split}/{family}/{species}/images.jpg
+        """
         species = set()
         split_path = self.data_root / self.split
         if not split_path.exists():
             return []
+
         for family_folder in split_path.iterdir():
             if family_folder.is_dir():
                 for species_folder in family_folder.iterdir():
                     if species_folder.is_dir():
                         species.add(species_folder.name)
+
         return sorted(species)
 
     def _collect_samples(self) -> List[Tuple[Path, int]]:
-        """Walk directory tree and collect (image_path, label) tuples."""
+        """Walk directory tree and collect (image_path, label) tuples.
+
+        Structure: data/{split}/{family}/{species}/images.jpg
+        """
         samples = []
         split_path = self.data_root / self.split
 
@@ -89,7 +102,10 @@ class ConiferDataset(Dataset):
                             samples.append((img_path, label))
             else:
                 for species_folder in family_folder.iterdir():
-                    if species_folder.is_dir() and species_folder.name in self.class_to_idx:
+                    if (
+                        species_folder.is_dir()
+                        and species_folder.name in self.class_to_idx
+                    ):
                         label = self.class_to_idx[species_folder.name]
                         for img_path in species_folder.glob("*.jpg"):
                             samples.append((img_path, label))
@@ -120,33 +136,157 @@ class ConiferDataset(Dataset):
         return distribution
 
 
+class FlatConiferDataset(Dataset):
+    """Flat dataset: data/{split}/{species}/images.jpg (no family folder).
+
+    Used for HuggingFace datasets (e.g. Task B) with structure:
+        train/
+            Chamaecyparis_obtusa/
+            Cryptomeria_japonica/
+            ...
+    """
+
+    def __init__(
+        self,
+        data_root: str | Path,
+        split: str = "train",
+        transform: Optional[Callable] = None,
+        task: str = "taskB",
+        classes: Optional[List[str]] = None,
+    ):
+        self.data_root = Path(data_root)
+        self.split = split
+        self.transform = transform
+        self.task = task
+
+        split_path = self.data_root / split
+        if classes is not None:
+            self.classes = list(classes)
+        elif split_path.exists():
+            # Classes = subfolders directly under split/
+            self.classes = sorted([d.name for d in split_path.iterdir() if d.is_dir()])
+        else:
+            self.classes = []
+        self.class_to_idx = {cls: idx for idx, cls in enumerate(self.classes)}
+
+        self.samples = self._collect_samples()
+
+    def _collect_samples(self) -> List[Tuple[Path, int]]:
+        samples = []
+        split_path = self.data_root / self.split
+        if not split_path.exists():
+            return samples
+        for cls_folder in split_path.iterdir():
+            if not cls_folder.is_dir():
+                continue
+            if cls_folder.name not in self.class_to_idx:
+                continue
+            label = self.class_to_idx[cls_folder.name]
+            for img_path in cls_folder.glob("*.jpg"):
+                samples.append((img_path, label))
+            for img_path in cls_folder.glob("*.jpeg"):
+                samples.append((img_path, label))
+            for img_path in cls_folder.glob("*.png"):
+                samples.append((img_path, label))
+        return samples
+
+    def __len__(self) -> int:
+        return len(self.samples)
+
+    def __getitem__(self, idx: int) -> Tuple:
+        img_path, label = self.samples[idx]
+        image = Image.open(img_path).convert("RGB")
+        if self.transform:
+            image = self.transform(image)
+        return image, label
+
+    def get_class_distribution(self) -> Dict[str, int]:
+        distribution = {cls: 0 for cls in self.classes}
+        for _, label in self.samples:
+            distribution[self.classes[label]] += 1
+        return distribution
+
+
+def _detect_structure(data_root: Path, split: str) -> str:
+    """Detect whether dataset has nested (family/species) or flat (species) structure."""
+    split_path = data_root / split
+    if not split_path.exists():
+        return "flat"
+    subdirs = [d for d in split_path.iterdir() if d.is_dir()]
+    if not subdirs:
+        return "flat"
+    # Check if subdirs have further subdirs (nested) or not (flat)
+    first = subdirs[0]
+    has_nested = any(d.is_dir() for d in first.iterdir())
+    return "nested" if has_nested else "flat"
+
+
 def get_dataloaders(
     data_root: str | Path,
     batch_size: int = 64,
     num_workers: int = 4,
     use_90rotation: bool = False,
     img_size: int = 224,
+    task: str = "taskA",
+    classes: Optional[List[str]] = None,
 ) -> Tuple[DataLoader, DataLoader, DataLoader]:
     """Create train/val/test dataloaders with appropriate transforms.
 
     Args:
-        data_root: Path to dataset root (data/split/)
+        data_root: Path to dataset root (data/split/ or data/task-B/)
         batch_size: Batch size
         num_workers: DataLoader workers
         use_90rotation: Whether to use 90-degree rotation augmentation
         img_size: Input image size
+        task: 'taskA' (family) or 'taskB' (species)
+        classes: Optional fixed class list. If omitted, Task B uses train
+            classes for val/test so class indices remain consistent.
 
     Returns:
         Tuple of (train_loader, val_loader, test_loader)
     """
     from .transforms import get_train_transforms, get_val_transforms
 
-    train_transform = get_train_transforms(img_size=img_size, use_90rotation=use_90rotation)
+    data_root = Path(data_root)
+
+    # Detect structure for taskB (nested vs flat)
+    use_flat = task == "taskB" and _detect_structure(data_root, "train") == "flat"
+    DatasetCls = FlatConiferDataset if use_flat else ConiferDataset
+
+    train_transform = get_train_transforms(
+        img_size=img_size, use_90rotation=use_90rotation
+    )
     val_transform = get_val_transforms(img_size=img_size)
 
-    train_dataset = ConiferDataset(data_root, split="train", transform=train_transform)
-    val_dataset = ConiferDataset(data_root, split="val", transform=val_transform)
-    test_dataset = ConiferDataset(data_root, split="test", transform=val_transform)
+    train_dataset = DatasetCls(
+        data_root,
+        split="train",
+        transform=train_transform,
+        task=task,
+        classes=classes,
+    )
+    eval_classes = train_dataset.classes if classes is None else list(classes)
+    val_dataset = DatasetCls(
+        data_root,
+        split="val",
+        transform=val_transform,
+        task=task,
+        classes=eval_classes,
+    )
+    test_dataset = DatasetCls(
+        data_root,
+        split="test",
+        transform=val_transform,
+        task=task,
+        classes=eval_classes,
+    )
+
+    if len(train_dataset) == 0:
+        raise ValueError(
+            f"[get_dataloaders] No training samples found in {data_root}/train. "
+            f"task={task}, structure={_detect_structure(data_root, 'train')}. "
+            f"Subdirs: {list((data_root / 'train').iterdir()) if (data_root / 'train').exists() else 'N/A'}"
+        )
 
     train_loader = DataLoader(
         train_dataset,

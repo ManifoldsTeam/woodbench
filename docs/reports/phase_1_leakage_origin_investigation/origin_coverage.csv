@@ -1,0 +1,5 @@
+dataset,split,images,images_with_origin_seen_in_train,coverage_pct,unique_origins,unique_origins_seen_in_train
+task-B,val,933,912,97.7491961414791,305,284
+task-B,test,924,902,97.61904761904762,297,275
+task-B-clean,val,926,905,97.73218142548596,305,284
+task-B-clean,test,851,829,97.41480611045829,293,271

@@ -11,6 +11,7 @@ timm
 # Configuration management
 hydra-core
 omegaconf
+python-dotenv
 
 # Data processing
 Pillow
@@ -25,6 +26,9 @@ scikit-learn
 # Visualization
 matplotlib
 seaborn
+umap-learn
+ipykernel
+ipywidgets
 
 # Efficiency profiling (choose one)
 thop
@@ -34,7 +38,7 @@ thop
 torchcam
 
 # Experiment tracking (optional — uncomment if needed)
-# wandb
+wandb
 # tensorboard
 
 # Development

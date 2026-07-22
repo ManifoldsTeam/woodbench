@@ -1,0 +1,6 @@
+backbone,display_backbone,best_val_acc,test_accuracy,test_f1_macro,test_precision_macro,test_recall_macro
+convnext_tiny,ConvNeXt-Tiny,99.67,100.0,100.0,100.0,100.0
+swin_tiny,Swin-Tiny,99.34,99.87,99.82,99.84,99.8
+efficientnet_b3,EfficientNet-B3,96.9,98.87,98.51,98.68,98.5
+mobilenetv3_large,MobileNetV3-L,98.01,99.12,98.91,98.95,98.96
+resnet50,ResNet-50,93.47,96.47,95.24,95.59,95.46

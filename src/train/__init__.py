@@ -3,6 +3,7 @@ from .trainer import TrainingEngine
 from .optimizer import create_optimizer, create_scheduler
 from .loss import create_loss_function, LabelSmoothingCrossEntropy, FocalLoss
 from .callbacks import CheckpointCallback, EarlyStoppingCallback
+from .wandb_tracker import WandbTracker
 
 __all__ = [
     "TrainingEngine",
@@ -13,4 +14,5 @@ __all__ = [
     "FocalLoss",
     "CheckpointCallback",
     "EarlyStoppingCallback",
+    "WandbTracker",
 ]

@@ -1,0 +1,46 @@
+group,backbone,seed,label_smoothing_key,best_epoch_curve,best_val_acc_curve,curve_source_path
+Task A manual,convnext_tiny,42,__NA__,10,1.0,notebooks/phase 1/task-A/seed-42/TaskA_convnext_tiny.ipynb
+Task A manual,convnext_tiny,123,__NA__,7,1.0,notebooks/phase 1/task-A/seed-123/TaskA_convnext_tiny.ipynb
+Task A manual,convnext_tiny,456,__NA__,4,1.0,notebooks/phase 1/task-A/seed-456/TaskA_convnext_tiny.ipynb
+Task A manual,efficientnet_b3,42,__NA__,18,0.9990000000000001,notebooks/phase 1/task-A/seed-42/TaskA_efficientnet_b3.ipynb
+Task A manual,efficientnet_b3,123,__NA__,14,0.9990000000000001,notebooks/phase 1/task-A/seed-123/TaskA_efficientnet_b3.ipynb
+Task A manual,efficientnet_b3,456,__NA__,12,0.9990000000000001,notebooks/phase 1/task-A/seed-456/TaskA_efficientnet_b3.ipynb
+Task A manual,mobilenetv3_large,42,__NA__,23,0.9958,notebooks/phase 1/task-A/seed-42/TaskA_mobilenetv3_large.ipynb
+Task A manual,mobilenetv3_large,123,__NA__,23,0.9969,notebooks/phase 1/task-A/seed-123/TaskA_mobilenetv3_large.ipynb
+Task A manual,mobilenetv3_large,456,__NA__,23,0.9958,notebooks/phase 1/task-A/seed-456/TaskA_mobilenetv3_large.ipynb
+Task A manual,resnet50,42,__NA__,40,0.9915999999999999,notebooks/phase 1/task-A/seed-42/TaskA_resnet50.ipynb
+Task A manual,resnet50,123,__NA__,38,0.9895,notebooks/phase 1/task-A/seed-123/TaskA_resnet50.ipynb
+Task A manual,resnet50,456,__NA__,38,0.9873999999999999,notebooks/phase 1/task-A/seed-456/TaskA_resnet50.ipynb
+Task A manual,swin_tiny,123,__NA__,4,1.0,notebooks/phase 1/task-A/seed-123/TaskA_swin_tiny.ipynb
+Task A manual,swin_tiny,456,__NA__,4,1.0,notebooks/phase 1/task-A/seed-456/TaskA_swin_tiny.ipynb
+Task B ablation 90rot,convnext_tiny,42,__NA__,8,1.0,notebooks/phase 1/task-B/M2_ablation/3.1_90rotation/TaskB_90rot_convnext_tiny.ipynb
+Task B ablation 90rot,efficientnet_b3,42,__NA__,32,0.9956999999999999,notebooks/phase 1/task-B/M2_ablation/3.1_90rotation/TaskB_90rot_efficientnet_b3.ipynb
+Task B ablation 90rot,mobilenetv3_large,42,__NA__,24,0.9968,notebooks/phase 1/task-B/M2_ablation/3.1_90rotation/TaskB_90rot_mobilenetv3_large.ipynb
+Task B ablation 90rot,resnet50,42,__NA__,47,0.9689,notebooks/phase 1/task-B/M2_ablation/3.1_90rotation/TaskB_90rot_resnet50.ipynb
+Task B ablation 90rot,swin_tiny,42,__NA__,5,1.0,notebooks/phase 1/task-B/M2_ablation/3.1_90rotation/TaskB_90rot_swin_tiny.ipynb
+Task B ablation label smoothing,convnext_tiny,42,0.0,16,1.0,notebooks/phase 1/task-B/M2_ablation/3.2_label_smoothing/TaskB_ls_convnext_tiny.ipynb
+Task B ablation label smoothing,convnext_tiny,42,0.2,7,1.0,notebooks/phase 1/task-B/M2_ablation/3.2_label_smoothing/TaskB_ls_convnext_tiny.ipynb
+Task B ablation label smoothing,efficientnet_b3,42,0.0,32,0.9936,notebooks/phase 1/task-B/M2_ablation/3.2_label_smoothing/TaskB_ls_efficientnet_b3.ipynb
+Task B ablation label smoothing,efficientnet_b3,42,0.2,26,0.9936,notebooks/phase 1/task-B/M2_ablation/3.2_label_smoothing/TaskB_ls_efficientnet_b3.ipynb
+Task B ablation label smoothing,mobilenetv3_large,42,0.0,25,0.9956999999999999,notebooks/phase 1/task-B/M2_ablation/3.2_label_smoothing/TaskB_ls_mobilenetv3_large.ipynb
+Task B ablation label smoothing,mobilenetv3_large,42,0.2,24,0.9956999999999999,notebooks/phase 1/task-B/M2_ablation/3.2_label_smoothing/TaskB_ls_mobilenetv3_large.ipynb
+Task B ablation label smoothing,resnet50,42,0.0,33,0.9656999999999999,notebooks/phase 1/task-B/M2_ablation/3.2_label_smoothing/TaskB_ls_resnet50.ipynb
+Task B ablation label smoothing,resnet50,42,0.2,40,0.9711,notebooks/phase 1/task-B/M2_ablation/3.2_label_smoothing/TaskB_ls_resnet50.ipynb
+Task B ablation label smoothing,swin_tiny,42,0.0,12,0.9989,notebooks/phase 1/task-B/M2_ablation/3.2_label_smoothing/TaskB_ls_swin_tiny.ipynb
+Task B ablation label smoothing,swin_tiny,42,0.2,16,1.0,notebooks/phase 1/task-B/M2_ablation/3.2_label_smoothing/TaskB_ls_swin_tiny.ipynb
+Task B clean leakage-check,swin_tiny,42,__NA__,10,1.0,notebooks/phase 1/task-B/leakage-check/TaskB_90rot_swin_tiny.ipynb
+Task B main,convnext_tiny,42,__NA__,13,1.0,notebooks/phase 1/task-B/M1_main/TaskB_convnext_tiny.ipynb
+Task B main,convnext_tiny,123,__NA__,15,1.0,notebooks/phase 1/task-B/M1_main/TaskB_convnext_tiny.ipynb
+Task B main,convnext_tiny,456,__NA__,10,1.0,notebooks/phase 1/task-B/M1_main/TaskB_convnext_tiny.ipynb
+Task B main,efficientnet_b3,42,__NA__,40,0.9936,notebooks/phase 1/task-B/M1_main/TaskB_efficientnet_b3.ipynb
+Task B main,efficientnet_b3,123,__NA__,36,0.9945999999999999,notebooks/phase 1/task-B/M1_main/TaskB_efficientnet_b3.ipynb
+Task B main,efficientnet_b3,456,__NA__,37,0.9945999999999999,notebooks/phase 1/task-B/M1_main/TaskB_efficientnet_b3.ipynb
+Task B main,mobilenetv3_large,42,__NA__,35,0.9956999999999999,notebooks/phase 1/task-B/M1_main/TaskB_mobilenetv3_large.ipynb
+Task B main,mobilenetv3_large,123,__NA__,35,0.9979,notebooks/phase 1/task-B/M1_main/TaskB_mobilenetv3_large.ipynb
+Task B main,mobilenetv3_large,456,__NA__,46,0.9968,notebooks/phase 1/task-B/M1_main/TaskB_mobilenetv3_large.ipynb
+Task B main,resnet50,42,__NA__,40,0.9539,notebooks/phase 1/task-B/M1_main/TaskB_resnet50.ipynb
+Task B main,resnet50,123,__NA__,50,0.9603,notebooks/phase 1/task-B/M1_main/TaskB_resnet50.ipynb
+Task B main,resnet50,456,__NA__,45,0.9614,notebooks/phase 1/task-B/M1_main/TaskB_resnet50.ipynb
+Task B main,swin_tiny,42,__NA__,7,1.0,notebooks/phase 1/task-B/M1_main/TaskB_swin_tiny.ipynb
+Task B main,swin_tiny,123,__NA__,12,1.0,notebooks/phase 1/task-B/M1_main/TaskB_swin_tiny.ipynb
+Task B main,swin_tiny,456,__NA__,10,1.0,notebooks/phase 1/task-B/M1_main/TaskB_swin_tiny.ipynb

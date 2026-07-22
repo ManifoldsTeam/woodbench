@@ -1,0 +1,4 @@
+new_split,images,origins,classes,ratio_images_pct
+train,3876,389,20,69.56209619526203
+val,903,90,17,16.20603015075377
+test,793,78,19,14.231873653984207
