@@ -15,11 +15,11 @@ trap 'fail "setup failed at line $LINENO. Check the message above for the failin
 log "Reading credentials"
 read -rsp "GH_TOKEN: " ghtoken
 echo
-read -rsp "HF_TOKEN: " HF_TOKEN
-echo
+# read -rsp "HF_TOKEN: " HF_TOKEN
+# echo
 
 [[ -n "${ghtoken:-}" ]] || fail "GitHub token is required"
-[[ -n "${HF_TOKEN:-}" ]] || fail "Hugging Face token is required"
+# [[ -n "${HF_TOKEN:-}" ]] || fail "Hugging Face token is required"
 
 repo="https://github.com/ManifoldsTeam/woodbench.git"
 repo_with_token="${repo/https:\/\//https:\/\/$ghtoken@}"
@@ -31,20 +31,22 @@ fi
 log "Cloning repository"
 git clone "$repo_with_token"
 cd woodbench
+git checkout hotfix
+
 
 log "Installing Python dependencies"
 python -m pip install -r requirements.txt
 
-log "Installing Hugging Face CLI"
-python -m pip install -U "huggingface_hub[cli]"
+# log "Installing Hugging Face CLI"
+# python -m pip install -U "huggingface_hub[cli]"
 
-log "Logging in to Hugging Face"
-hf auth login --token "$HF_TOKEN"
+# log "Logging in to Hugging Face"
+# hf auth login --token "$HF_TOKEN"
 
-log "Downloading Task B dataset"
-mkdir -p data/task-B
-hf download ny0g507h3p/wood-B \
-  --repo-type dataset \
-  --local-dir data/task-B
+# log "Downloading Task B dataset"
+# mkdir -p data/task-B
+# hf download ny0g507h3p/wood \
+#   --repo-type dataset \
+#   --local-dir data/task-B-group-split
 
 log "Setup completed successfully"

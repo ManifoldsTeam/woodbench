@@ -21,6 +21,8 @@ class ConiferDataset(Dataset):
         split: 'train' | 'val' | 'test'
         transform: Optional transform to apply
         task: 'taskA' (family) or 'taskB' (species)
+        classes: Optional fixed class list. For Task B val/test, pass the
+            train classes so labels keep the same indices across splits.
     """
 
     FAMILY_CLASSES = [
@@ -36,6 +38,7 @@ class ConiferDataset(Dataset):
         split: str = "train",
         transform: Optional[Callable] = None,
         task: str = "taskA",
+        classes: Optional[List[str]] = None,
     ):
         self.data_root = Path(data_root)
         self.split = split
@@ -45,7 +48,9 @@ class ConiferDataset(Dataset):
         if task == "taskA":
             self.classes = self.FAMILY_CLASSES
         else:
-            self.classes = self._get_species_classes()
+            self.classes = (
+                list(classes) if classes is not None else self._get_species_classes()
+            )
 
         self.class_to_idx = {cls: idx for idx, cls in enumerate(self.classes)}
         self.samples = self._collect_samples()
@@ -97,7 +102,10 @@ class ConiferDataset(Dataset):
                             samples.append((img_path, label))
             else:
                 for species_folder in family_folder.iterdir():
-                    if species_folder.is_dir() and species_folder.name in self.class_to_idx:
+                    if (
+                        species_folder.is_dir()
+                        and species_folder.name in self.class_to_idx
+                    ):
                         label = self.class_to_idx[species_folder.name]
                         for img_path in species_folder.glob("*.jpg"):
                             samples.append((img_path, label))
@@ -144,6 +152,7 @@ class FlatConiferDataset(Dataset):
         split: str = "train",
         transform: Optional[Callable] = None,
         task: str = "taskB",
+        classes: Optional[List[str]] = None,
     ):
         self.data_root = Path(data_root)
         self.split = split
@@ -151,16 +160,13 @@ class FlatConiferDataset(Dataset):
         self.task = task
 
         split_path = self.data_root / split
-        if not split_path.exists():
+        if classes is not None:
+            self.classes = list(classes)
+        elif split_path.exists():
+            # Classes = subfolders directly under split/
+            self.classes = sorted([d.name for d in split_path.iterdir() if d.is_dir()])
+        else:
             self.classes = []
-            self.class_to_idx = {}
-            self.samples = []
-            return
-
-        # Classes = subfolders directly under split/
-        self.classes = sorted([
-            d.name for d in split_path.iterdir() if d.is_dir()
-        ])
         self.class_to_idx = {cls: idx for idx, cls in enumerate(self.classes)}
 
         self.samples = self._collect_samples()
@@ -168,6 +174,8 @@ class FlatConiferDataset(Dataset):
     def _collect_samples(self) -> List[Tuple[Path, int]]:
         samples = []
         split_path = self.data_root / self.split
+        if not split_path.exists():
+            return samples
         for cls_folder in split_path.iterdir():
             if not cls_folder.is_dir():
                 continue
@@ -220,6 +228,7 @@ def get_dataloaders(
     use_90rotation: bool = False,
     img_size: int = 224,
     task: str = "taskA",
+    classes: Optional[List[str]] = None,
 ) -> Tuple[DataLoader, DataLoader, DataLoader]:
     """Create train/val/test dataloaders with appropriate transforms.
 
@@ -230,6 +239,8 @@ def get_dataloaders(
         use_90rotation: Whether to use 90-degree rotation augmentation
         img_size: Input image size
         task: 'taskA' (family) or 'taskB' (species)
+        classes: Optional fixed class list. If omitted, Task B uses train
+            classes for val/test so class indices remain consistent.
 
     Returns:
         Tuple of (train_loader, val_loader, test_loader)
@@ -242,12 +253,33 @@ def get_dataloaders(
     use_flat = task == "taskB" and _detect_structure(data_root, "train") == "flat"
     DatasetCls = FlatConiferDataset if use_flat else ConiferDataset
 
-    train_transform = get_train_transforms(img_size=img_size, use_90rotation=use_90rotation)
+    train_transform = get_train_transforms(
+        img_size=img_size, use_90rotation=use_90rotation
+    )
     val_transform = get_val_transforms(img_size=img_size)
 
-    train_dataset = DatasetCls(data_root, split="train", transform=train_transform, task=task)
-    val_dataset = DatasetCls(data_root, split="val", transform=val_transform, task=task)
-    test_dataset = DatasetCls(data_root, split="test", transform=val_transform, task=task)
+    train_dataset = DatasetCls(
+        data_root,
+        split="train",
+        transform=train_transform,
+        task=task,
+        classes=classes,
+    )
+    eval_classes = train_dataset.classes if classes is None else list(classes)
+    val_dataset = DatasetCls(
+        data_root,
+        split="val",
+        transform=val_transform,
+        task=task,
+        classes=eval_classes,
+    )
+    test_dataset = DatasetCls(
+        data_root,
+        split="test",
+        transform=val_transform,
+        task=task,
+        classes=eval_classes,
+    )
 
     if len(train_dataset) == 0:
         raise ValueError(

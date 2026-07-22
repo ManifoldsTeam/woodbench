@@ -1,0 +1,4 @@
+Split,Number of classes,Missing classes
+train,20,-
+val,17,"Calocedrus sp, Cupressus funebris (Cupressus pendula), Pinus sp"
+test,19,Calocedrus sp
