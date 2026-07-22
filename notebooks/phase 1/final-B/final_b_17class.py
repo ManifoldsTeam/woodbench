@@ -226,6 +226,24 @@ def _write_metrics(path: Path, payload: dict[str, Any]) -> None:
     path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
 
+def load_completed_results(
+    *, backbone_name: str, root: Path
+) -> list[dict[str, Any]]:
+    """Load completed metrics for one backbone in experiment order."""
+    results: list[dict[str, Any]] = []
+    for experiment_name, experiment_cfg in EXPERIMENTS.items():
+        for seed in experiment_cfg["seeds"]:
+            output_dir = experiment_output_dir(
+                root, experiment_name, seed, backbone_name
+            )
+            metrics_path = output_dir / "test_metrics.json"
+            if metrics_path.exists():
+                results.append(
+                    json.loads(metrics_path.read_text(encoding="utf-8"))
+                )
+    return results
+
+
 def _evaluate_existing_checkpoint(
     *,
     backbone: str,
@@ -278,6 +296,105 @@ def _evaluate_existing_checkpoint(
     return payload
 
 
+def _fit_remaining_epochs(
+    *,
+    engine: TrainingEngine,
+    start_epoch: int,
+    epochs: int,
+    output_dir: Path,
+    name: str,
+    early_stopping_patience: int,
+    tracker: WandbTracker | None,
+) -> dict[str, Any]:
+    """Continue a TrainingEngine from a restored checkpoint.
+
+    A last checkpoint is written after every completed epoch so a transient
+    instance failure loses at most the currently-running epoch.
+    """
+    early_stopping_counter = 0
+    early_stopped = False
+
+    for epoch in range(start_epoch, epochs):
+        engine.current_epoch = epoch
+        train_metrics = engine.train_one_epoch(epoch, epochs)
+        engine.train_history.append(train_metrics)
+
+        val_metrics = engine.validate(epoch, epochs)
+        engine.val_history.append(val_metrics)
+
+        if engine.scheduler is not None:
+            engine.scheduler.step()
+
+        is_best = val_metrics["val_acc"] > engine.best_val_acc
+        if is_best:
+            engine.best_val_acc = val_metrics["val_acc"]
+            engine.best_epoch = epoch
+            early_stopping_counter = 0
+        else:
+            early_stopping_counter += 1
+
+        if tracker is not None:
+            tracker.log(
+                {
+                    "train/loss": train_metrics["train_loss"],
+                    "train/acc": train_metrics["train_acc"],
+                    "val/loss": val_metrics["val_loss"],
+                    "val/acc": val_metrics["val_acc"],
+                    "lr": engine.optimizer.param_groups[0]["lr"],
+                },
+                step=epoch,
+            )
+
+        lr = engine.optimizer.param_groups[0]["lr"]
+        best_marker = "[Best]" if is_best else ""
+        early_marker = (
+            f"[EarlyStop {early_stopping_counter}/{early_stopping_patience}]"
+        )
+        print(
+            f"Epoch {epoch + 1}/{epochs} | "
+            f"Train Loss: {train_metrics['train_loss']:.4f}, "
+            f"Acc: {train_metrics['train_acc']:.2f}% | "
+            f"Val Loss: {val_metrics['val_loss']:.4f}, "
+            f"Acc: {val_metrics['val_acc']:.2f}% | "
+            f"LR: {lr:.2e}{best_marker}{early_marker}"
+        )
+
+        if is_best:
+            engine.save_checkpoint(
+                output_dir / f"{name}_best.pth",
+                epoch=epoch,
+                metrics={**train_metrics, **val_metrics},
+            )
+            print(
+                f"  ↳ New best! Saved to {name}_best.pth "
+                f"(Val Acc: {val_metrics['val_acc']:.2f}%)"
+            )
+
+        engine.save_checkpoint(
+            output_dir / f"{name}_last.pth",
+            epoch=epoch,
+            metrics={**train_metrics, **val_metrics},
+        )
+
+        if early_stopping_counter >= early_stopping_patience:
+            print(
+                "\n[EarlyStopping] No improvement for "
+                f"{early_stopping_patience} epochs. "
+                f"Stopping at epoch {epoch + 1}."
+            )
+            early_stopped = True
+            break
+
+    return {
+        "best_val_acc": engine.best_val_acc,
+        "best_epoch": engine.best_epoch + 1,
+        "final_train_acc": engine.train_history[-1]["train_acc"],
+        "final_val_acc": engine.val_history[-1]["val_acc"],
+        "stopped_early": early_stopped,
+        "epochs_trained": engine.current_epoch + 1,
+    }
+
+
 def train_one(
     *,
     root: Path,
@@ -289,6 +406,7 @@ def train_one(
     batch_size: int,
     epochs: int = 50,
     device: str | None = None,
+    resume_training: bool = False,
 ) -> dict[str, Any]:
     """Train and evaluate one Task B 17-class run."""
     root = Path(root)
@@ -304,18 +422,46 @@ def train_one(
         print(f"[{experiment_name} | {backbone} s{seed}] Reusing {metrics_path}")
         return json.loads(metrics_path.read_text(encoding="utf-8"))
 
-    resumed = _evaluate_existing_checkpoint(
-        backbone=backbone,
-        seed=seed,
-        experiment_name=experiment_name,
-        experiment_cfg=experiment_cfg,
-        data_root=data_root,
-        output_dir=output_dir,
-        batch_size=batch_size,
-        device=device,
-    )
-    if resumed is not None:
-        return resumed
+    resume_checkpoint: dict[str, Any] | None = None
+    resume_checkpoint_path: Path | None = None
+    if resume_training:
+        checkpoint_name = f"{backbone}_seed{seed}"
+        candidates = [
+            output_dir / f"{checkpoint_name}_last.pth",
+            output_dir / f"{checkpoint_name}_best.pth",
+        ]
+        resume_checkpoint_path = next(
+            (path for path in candidates if path.exists()), None
+        )
+        if resume_checkpoint_path is not None:
+            resume_checkpoint = _load_checkpoint(resume_checkpoint_path)
+            start_epoch = int(resume_checkpoint.get("epoch", -1)) + 1
+            if start_epoch >= epochs:
+                resumed = _evaluate_existing_checkpoint(
+                    backbone=backbone,
+                    seed=seed,
+                    experiment_name=experiment_name,
+                    experiment_cfg=experiment_cfg,
+                    data_root=data_root,
+                    output_dir=output_dir,
+                    batch_size=batch_size,
+                    device=device,
+                )
+                if resumed is not None:
+                    return resumed
+    else:
+        resumed = _evaluate_existing_checkpoint(
+            backbone=backbone,
+            seed=seed,
+            experiment_name=experiment_name,
+            experiment_cfg=experiment_cfg,
+            data_root=data_root,
+            output_dir=output_dir,
+            batch_size=batch_size,
+            device=device,
+        )
+        if resumed is not None:
+            return resumed
 
     tracker = None
     tracker_finished = False
@@ -366,7 +512,11 @@ def train_one(
             dir_path=str(output_dir),
         )
 
-        model = create_model(backbone, num_classes=num_classes, pretrained=True)
+        model = create_model(
+            backbone,
+            num_classes=num_classes,
+            pretrained=resume_checkpoint is None,
+        )
         optimizer = create_optimizer(
             model,
             lr=1e-4,
@@ -389,14 +539,43 @@ def train_one(
             device=device,
             use_amp=True,
         )
-        result = engine.fit(
-            epochs=epochs,
-            output_dir=output_dir,
-            name=f"{backbone}_seed{seed}",
-            save_best_only=True,
-            early_stopping_patience=10,
-            tracker=tracker,
-        )
+        if resume_checkpoint is not None:
+            model.load_state_dict(resume_checkpoint["model_state_dict"])
+            optimizer.load_state_dict(resume_checkpoint["optimizer_state_dict"])
+            if (
+                scheduler is not None
+                and "scheduler_state_dict" in resume_checkpoint
+            ):
+                scheduler.load_state_dict(
+                    resume_checkpoint["scheduler_state_dict"]
+                )
+            engine.best_val_acc = float(
+                resume_checkpoint.get("best_val_acc", 0.0)
+            )
+            engine.best_epoch = int(resume_checkpoint.get("best_epoch", 0))
+            start_epoch = int(resume_checkpoint.get("epoch", -1)) + 1
+            print(
+                f"[Resume] {resume_checkpoint_path} -> "
+                f"epoch {start_epoch + 1}/{epochs}"
+            )
+            result = _fit_remaining_epochs(
+                engine=engine,
+                start_epoch=start_epoch,
+                epochs=epochs,
+                output_dir=output_dir,
+                name=f"{backbone}_seed{seed}",
+                early_stopping_patience=10,
+                tracker=tracker,
+            )
+        else:
+            result = engine.fit(
+                epochs=epochs,
+                output_dir=output_dir,
+                name=f"{backbone}_seed{seed}",
+                save_best_only=True,
+                early_stopping_patience=10,
+                tracker=tracker,
+            )
 
         test_metrics = evaluate_model(model, test_loader, device)
         payload = {
