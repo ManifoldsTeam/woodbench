@@ -24,3 +24,5 @@
 | 27-06-2026 | 14:14 | Task B original vs strict-by-origin report | Done | [Details](timeline/27-06-2026.md) |
 | 27-06-2026 | 14:18 | Strict split missing-class caveat + recommendations | Done | [Details](timeline/27-06-2026.md) |
 | 22-07-2026 | 19:10 | Task B Final-B report + notebook organization | Done | [Details](timeline/22-07-2026.md) |
+| 23-07-2026 | 19:46 | Phase 1 consolidation + FLOPs/inference benchmark + summary report | Done with Task B scope caveat | [Details](timeline/23-07-2026.md) |
+| 23-07-2026 | 20:36 | Restore Task A + recompute 45 Task A/Final-B checkpoints | Done — Final-B fixed at 17 classes | [Details](timeline/23-07-2026.md) |
