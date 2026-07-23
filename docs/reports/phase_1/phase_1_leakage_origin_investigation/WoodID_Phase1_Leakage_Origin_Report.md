@@ -9,7 +9,7 @@ description: "Báo cáo điều tra nguồn gốc leakage trong Phase 1 của Wo
 
 Notebook nguồn: `notebooks/phase 1/WoodID_Phase1_Leakage_Origin_Investigation.ipynb`
 
-Thư mục kết quả: `docs/reports/phase_1_leakage_origin_investigation/`
+Thư mục kết quả: `docs/reports/phase_1/phase_1_leakage_origin_investigation/`
 
 ## 1. Tóm Tắt Dễ Hiểu
 

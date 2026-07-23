@@ -1,8 +1,8 @@
 # Task B Original vs Strict-by-Origin Comparison
 
 - Generated: 2026-06-27 11:40:53
-- Original split source: `docs/reports/phase_1_run_report_not_strict/phase1_summary_by_group_backbone_percent.csv`.
-- Strict split source: `docs/reports/task_b_wandb_all_runs_report-hotfix.md` plus local seed-42 supplement noted in that file.
+- Original split source: `docs/reports/phase_1/phase_1_run_report_not_strict [DEPRECATED]/phase1_summary_by_group_backbone_percent.csv`.
+- Strict split source: `docs/reports/phase_1/task_b_wandb_all_runs_report-hotfix.md` plus local seed-42 supplement noted in that file.
 
 ## Key Findings
 

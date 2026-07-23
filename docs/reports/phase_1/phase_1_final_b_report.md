@@ -1,5 +1,7 @@
 # Báo cáo lần chạy cuối — Final-B
 
+> **Đã được thay thế:** Các bảng bên dưới là report lịch sử sinh trong lần training. Sau khi tải đủ checkpoint 17 lớp và inference lại, một số metric không khớp `best.pth`. Kết quả chuẩn hiện nằm tại `phase_1_summary_report.md` và `data/experiments/phase_1/summary/`.
+
 - Bài toán: phân loại 17 loài cây.
 - Dữ liệu: train 3.365 ảnh, validation 903 ảnh, test 532 ảnh.
 - Metric: Accuracy và macro-averaged F1/Precision/Recall.
@@ -7,7 +9,7 @@
 
 ## 1. ResNet-50
 
-Nguồn: [01_train_resnet50.ipynb](../../notebooks/phase%201/final-B/01_train_resnet50.ipynb)
+Nguồn: [01_train_resnet50.ipynb](../../../notebooks/phase%201/final-B/01_train_resnet50.ipynb)
 
 | Experiment | Seed | Val Acc | Test Acc | Macro F1 | Precision | Recall |
 |---|---:|---:|---:|---:|---:|---:|
@@ -20,7 +22,7 @@ Nguồn: [01_train_resnet50.ipynb](../../notebooks/phase%201/final-B/01_train_re
 
 ## 2. EfficientNet-B3
 
-Nguồn: [02_train_efficientnet_b3.ipynb](../../notebooks/phase%201/final-B/02_train_efficientnet_b3.ipynb)
+Nguồn: [02_train_efficientnet_b3.ipynb](../../../notebooks/phase%201/final-B/02_train_efficientnet_b3.ipynb)
 
 | Experiment | Seed | Val Acc | Test Acc | Macro F1 | Precision | Recall |
 |---|---:|---:|---:|---:|---:|---:|
@@ -33,7 +35,7 @@ Nguồn: [02_train_efficientnet_b3.ipynb](../../notebooks/phase%201/final-B/02_t
 
 ## 3. MobileNetV3-Large
 
-Nguồn: [03_train_mobilenetv3_large.ipynb](../../notebooks/phase%201/final-B/03_train_mobilenetv3_large.ipynb)
+Nguồn: [03_train_mobilenetv3_large.ipynb](../../../notebooks/phase%201/final-B/03_train_mobilenetv3_large.ipynb)
 
 | Experiment | Seed | Val Acc | Test Acc | Macro F1 | Precision | Recall |
 |---|---:|---:|---:|---:|---:|---:|
@@ -46,7 +48,7 @@ Nguồn: [03_train_mobilenetv3_large.ipynb](../../notebooks/phase%201/final-B/03
 
 ## 4. ConvNeXt-Tiny
 
-Nguồn: [04_train_convnext_tiny.ipynb](../../notebooks/phase%201/final-B/04_train_convnext_tiny.ipynb)
+Nguồn: [04_train_convnext_tiny.ipynb](../../../notebooks/phase%201/final-B/04_train_convnext_tiny.ipynb)
 
 | Experiment | Seed | Val Acc | Test Acc | Macro F1 | Precision | Recall |
 |---|---:|---:|---:|---:|---:|---:|
@@ -59,7 +61,7 @@ Nguồn: [04_train_convnext_tiny.ipynb](../../notebooks/phase%201/final-B/04_tra
 
 ## 5. Swin-Tiny
 
-Nguồn: [05_train_swin_tiny.ipynb](../../notebooks/phase%201/final-B/05_train_swin_tiny.ipynb)
+Nguồn: [05_train_swin_tiny.ipynb](../../../notebooks/phase%201/final-B/05_train_swin_tiny.ipynb)
 
 | Experiment | Seed | Val Acc | Test Acc | Macro F1 | Precision | Recall |
 |---|---:|---:|---:|---:|---:|---:|
