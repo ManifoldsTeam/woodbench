@@ -226,3 +226,13 @@ node_modules/
 /clean_data
 archive_clean_data.tar.gz
 archive_duplicate_date.tar.gz
+
+
+# 3 task - Model checkpoints and all JSON metrics
+3 task/**/*.pth
+3 task/**/*.json
+3 task/**/*.md
+3 task/task2
+
+data-taskB/data-B
+data-taskB/data-B.tar.zst

@@ -1,0 +1,11 @@
+---
+inclusion: always
+---
+
+# Quy định ngôn ngữ
+
+- **Ngôn ngữ bắt buộc**: Luôn luôn sử dụng tiếng Việt trong mọi câu trả lời, giải thích và phản hồi cho người dùng.
+- **Giải thích mã nguồn**: Khi giải thích code hoặc thuật toán, phải giải thích bằng tiếng Việt một cách dễ hiểu, gần gũi.
+- **Biến và định danh**: Chỉ sử dụng tiếng Anh cho tên biến, hàm, lớp (coding conventions) nhưng phần chú thích (comments) và tài liệu kèm theo phải dùng tiếng Việt.
+- **Phong cách**: Sử dụng văn phong hỗ trợ, chuyên nghiệp và thân thiện.
+- **Khong dung emoji hoac icon trong code**: Khong dung bat ky emoji hay icon (VD: :bug:, :fire:, :warning:, :white_check_mark:, :zap:, :hammer:) trong code, comments, docstrings, commit messages, hoac ten bien/ham. Chi dung text thuan hoac ky hieu text thong thuong (VD: `FIX`, `TODO`, `[OK]`, `[ERR]`).
