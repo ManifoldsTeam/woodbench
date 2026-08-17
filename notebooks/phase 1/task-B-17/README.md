@@ -13,6 +13,8 @@ Run order:
    - `03_train_mobilenetv3_large.ipynb`
    - `04_train_convnext_tiny.ipynb`
    - `05_train_swin_tiny.ipynb`
+3. Recompute all validation/test metrics from the 30 final checkpoints:
+   - `06_recompute_all_metrics.ipynb`
 
 Each model notebook runs:
 
@@ -29,3 +31,7 @@ data/experiments/Task-B-17class-scratch/
 
 These runs start from ImageNet pretrained weights and do not transfer weights
 from the previous 20-class Task B checkpoints.
+
+The metrics notebook reads the finalized checkpoints from
+`data/experiments/Task-B/` and writes recomputed artifacts to
+`data/experiments/phase_1/final_b_recomputed/`.

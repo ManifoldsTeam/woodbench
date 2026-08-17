@@ -1,24 +1,24 @@
 # @package _global_
 # =============================================================================
-# Experiment Configuration — Task B: Species-level Classification
+# Experiment Configuration — Final Task B: 17-class Species Classification
 # =============================================================================
 
 # Experiment identifier
 experiment_name: taskB_species_classification
 
-data_root: data/task-B
+data_root: data/task-B-group-split
 
 # Task definition
 task:
   id: taskB
   name: Species Classification
-  description: 20-class species-level classification (all species in dataset)
-  num_classes: 20
+  description: Final 17-class species-level classification with origin-safe splits
+  num_classes: 17
 
 # Model config overrides
 model:
   _target_: model.base
-  num_classes: 20
+  num_classes: 17
   family_classes: null  # Not needed for Task B
 
 # Training config
@@ -26,7 +26,7 @@ train:
   _target_: train.base
   epochs: 50
   wandb:
-    project: woodbench-taskB
+    project: woodbench-taskB-17class
 
 # Evaluation
 evaluation:

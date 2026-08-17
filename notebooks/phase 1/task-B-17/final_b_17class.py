@@ -128,7 +128,7 @@ def verify_17class_dataset(data_root: Path, expected_classes: int = 17) -> list[
         details = "\n".join(f"  - {msg}" for msg in errors)
         raise ValueError(
             "Task B final notebooks require the 17-class dataset.\n"
-            "Run notebooks/phase 1/final-B/00_data_preparation.ipynb first, "
+            "Run notebooks/phase 1/task-B-17/00_data_preparation.ipynb first, "
             "or use the already-prepared cloud data.\n"
             f"{details}"
         )

@@ -26,3 +26,5 @@
 | 22-07-2026 | 19:10 | Task B Final-B report + notebook organization | Done | [Details](timeline/22-07-2026.md) |
 | 23-07-2026 | 19:46 | Phase 1 consolidation + FLOPs/inference benchmark + summary report | Done with Task B scope caveat | [Details](timeline/23-07-2026.md) |
 | 23-07-2026 | 20:36 | Restore Task A + recompute 45 Task A/Final-B checkpoints | Done — Final-B fixed at 17 classes | [Details](timeline/23-07-2026.md) |
+| 17-08-2026 | 20:09 | Final-B 17-class metric recomputation notebook | Code ready; preflight dry-run passed | [Details](timeline/17-08-2026.md) |
+| 17-08-2026 | 22:46 | Recompute Final-B metrics + rename notebook folder | Done — 30 checkpoints, val/test | [Details](timeline/17-08-2026.md) |
