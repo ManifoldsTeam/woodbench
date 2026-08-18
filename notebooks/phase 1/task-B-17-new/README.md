@@ -13,8 +13,9 @@ Run order:
    - `03_train_mobilenetv3_large.ipynb`
    - `04_train_convnext_tiny.ipynb`
    - `05_train_swin_tiny.ipynb`
-3. Recompute all validation/test metrics from the 30 final checkpoints:
-   - `06_recompute_all_metrics.ipynb`
+3. Recompute all validation/test metrics from the 30 final checkpoints and
+   create the immutable, timestamped run registry/report CSVs:
+   - `06_evaluate_and_register_runs.ipynb`
 
 Each model notebook runs:
 
@@ -32,9 +33,12 @@ data/experiments/Task-B-new/final/
 These runs start from ImageNet pretrained weights and do not transfer weights
 from the previous 20-class Task B checkpoints.
 
-The metrics notebook reads the new finalized checkpoints from
+The evaluation/registry notebook reads the new finalized checkpoints from
 `data/experiments/Task-B-new/final/` and writes recomputed artifacts to
-`data/experiments/phase_1/final_b_new_recomputed/`.
+`data/experiments/phase_1/final_b_new_recomputed/`. Each registry row is one
+training run; validation and test metrics live on that same row. Every other
+report table carries `run_id`, `source_run_ids`, or `baseline_run_id` lineage
+back to the timestamped `task-b-17class-<UTC timestamp>-registry.csv`.
 
 `05_train_swin_tiny_audit.ipynb` preserves the three-run validation audit and
 is not part of the official Run All sequence.

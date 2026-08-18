@@ -60,6 +60,19 @@ Khi lam viec voi cac feature lien quan den WoodID-S2-2026, **cac tai lieu sau la
 
 ---
 
+# Experiment Registry and Report Traceability
+
+Khi chạy training/evaluation và tạo báo cáo:
+
+1. **Mỗi đợt tổng hợp run PHẢI tạo một registry CSV riêng** theo mẫu `<name>-<YYYYMMDDTHHMMSSZ>-registry.csv`. Không ghi đè registry của đợt chạy trước.
+2. **Mỗi dòng registry tương ứng đúng một training run** (không tách validation/test thành hai dòng).
+3. Registry tối thiểu phải có các cột: `run_id`, `run_date`, `notebook`, `git_commit`, `split_version`, `num_classes`, `n_train`, `n_val`, `n_test`, `seed`, `lr`, `epochs`, `batch`, `image_size`, `label_smoothing`, `augmentation`, `checkpoint_path`, `prediction_path`, cùng toàn bộ metric validation/test dùng trong báo cáo.
+4. `run_id` phải ổn định và duy nhất trong registry. Đường dẫn checkpoint/prediction phải tương đối theo `ROOT` để chạy được ở local và Colab.
+5. **Mọi dòng trong mọi bảng báo cáo phải truy ngược được về registry**: bảng theo từng run phải có `run_id`; bảng tổng hợp nhiều run phải có `source_run_ids`; bảng so sánh phải có cả `run_id` và run đối chứng (ví dụ `baseline_run_id`). Các ID này phải tồn tại trong đúng registry được khai báo trong metadata báo cáo.
+6. Logic hậu xử lý (tính lại metric, xuất prediction, tạo report CSV và registry) phải nằm trong một notebook riêng, đặt cùng tầng với các notebook training tương ứng.
+
+---
+
 # Colab Notebook Convention
 
 Khi tao hoac refactor notebook training/evaluation trong `notebooks/`:

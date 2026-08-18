@@ -30,3 +30,4 @@
 | 17-08-2026 | 22:46 | Recompute Final-B metrics + rename notebook folder | Done — 30 checkpoints, val/test | [Details](timeline/17-08-2026.md) |
 | 18-08-2026 | 09:04 | Swin-Tiny suspicious validation audit | Done — 3 reruns did not reproduce 100% val accuracy | [Details](timeline/18-08-2026.md) |
 | 18-08-2026 | 15:52 | Archive old Task B and prepare official 17-class retraining | Code ready; isolated paths and dry-run passed | [Details](timeline/18-08-2026.md) |
+| 18-08-2026 | 20:10 | Add immutable run registry and report lineage | Code ready; schema and split provenance checks passed | [Details](timeline/18-08-2026.md) |
