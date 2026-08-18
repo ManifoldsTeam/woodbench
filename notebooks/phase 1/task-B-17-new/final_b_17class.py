@@ -72,7 +72,7 @@ EXPERIMENTS: dict[str, dict[str, Any]] = {
     },
 }
 
-OUTPUT_EXPERIMENT_ROOT = Path("data") / "experiments" / "Task-B-17class"
+OUTPUT_EXPERIMENT_ROOT = Path("data") / "experiments" / "Task-B-new" / "final"
 
 
 def prepare_environment(root: Path) -> None:
@@ -128,7 +128,7 @@ def verify_17class_dataset(data_root: Path, expected_classes: int = 17) -> list[
         details = "\n".join(f"  - {msg}" for msg in errors)
         raise ValueError(
             "Task B final notebooks require the 17-class dataset.\n"
-            "Run notebooks/phase 1/task-B-17/00_data_preparation.ipynb first, "
+            "Run notebooks/phase 1/task-B-17-old/00_data_preparation.ipynb first, "
             "or use the already-prepared cloud data.\n"
             f"{details}"
         )
@@ -485,7 +485,7 @@ def train_one(
 
         run_config = {
             "task": "Task-B",
-            "variant": "17class",
+            "variant": "17class-retrain",
             "backbone": backbone,
             "seed": seed,
             "epochs": epochs,
@@ -505,10 +505,10 @@ def train_one(
         _write_metrics(output_dir / "run_config.json", run_config)
 
         tracker = WandbTracker.start(
-            project="woodbench-taskB-17class",
+            project="woodbench-taskB-17class-retrain",
             name=f"{backbone}_{experiment_name}_s{seed}",
             config=run_config,
-            tags=["final-B", backbone, f"seed{seed}", *experiment_cfg["tags"]],
+            tags=["task-B-17-new", backbone, f"seed{seed}", *experiment_cfg["tags"]],
             dir_path=str(output_dir),
         )
 

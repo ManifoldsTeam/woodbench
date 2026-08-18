@@ -28,3 +28,5 @@
 | 23-07-2026 | 20:36 | Restore Task A + recompute 45 Task A/Final-B checkpoints | Done — Final-B fixed at 17 classes | [Details](timeline/23-07-2026.md) |
 | 17-08-2026 | 20:09 | Final-B 17-class metric recomputation notebook | Code ready; preflight dry-run passed | [Details](timeline/17-08-2026.md) |
 | 17-08-2026 | 22:46 | Recompute Final-B metrics + rename notebook folder | Done — 30 checkpoints, val/test | [Details](timeline/17-08-2026.md) |
+| 18-08-2026 | 09:04 | Swin-Tiny suspicious validation audit | Done — 3 reruns did not reproduce 100% val accuracy | [Details](timeline/18-08-2026.md) |
+| 18-08-2026 | 15:52 | Archive old Task B and prepare official 17-class retraining | Code ready; isolated paths and dry-run passed | [Details](timeline/18-08-2026.md) |

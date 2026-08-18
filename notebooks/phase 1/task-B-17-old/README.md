@@ -1,7 +1,7 @@
-# Final Task B 17-class
+# Task B 17-class — Historical Archive
 
-This folder contains the final Task B species-classification notebooks for the
-17-class dataset.
+This folder preserves the previous Task B 17-class notebooks and their outputs.
+Use `../task-B-17-new/` for the official retraining.
 
 Run order:
 
@@ -26,7 +26,7 @@ Each model notebook runs:
 Outputs are written under:
 
 ```text
-data/experiments/Task-B-17class-scratch/
+data/experiments/Task-B-17class/
 ```
 
 These runs start from ImageNet pretrained weights and do not transfer weights
