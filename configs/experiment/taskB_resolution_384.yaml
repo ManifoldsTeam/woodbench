@@ -6,7 +6,7 @@
 # Inherit from Task B base
 defaults:
   - taskB
-  - _self
+  - _self_
 
 experiment_name: taskB_resolution_384
 

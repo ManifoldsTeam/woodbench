@@ -1,0 +1,104 @@
+/test
+Araucaria araucana
+Callitris columellaris/14.png
+Callitris columellaris/127.png
+Callitris columellaris/127__from-val__06c2f2ac.png
+Callitris columellaris/132.png
+Callitris columellaris/138.png
+Callitris columellaris/162.png
+Callitris columellaris/165.png
+Callitris columellaris/193.png
+Calocedrus rupestris
+Chamaecyparis obtusa
+Cryptomeria japonica/3350. Cryptomeria japonica.4.(115).png
+Cryptomeria japonica/3350. Cryptomeria japonica.4.(116).png
+Cryptomeria japonica/3350. Cryptomeria japonica.4.(119).png
+Cryptomeria japonica/3350. Cryptomeria japonica.4.(123).png
+Cryptomeria japonica/3350. Cryptomeria japonica.4.(130).png (Hơi cháy)
+Cryptomeria japonica/3350. Cryptomeria japonica.4.(131).png (Hơi cháy)
+Cryptomeria japonica/3350. Cryptomeria japonica.4.(132).png (Hơi cháy)
+Cryptomeria japonica/3350. Cryptomeria japonica.4.(133).png (Hơi cháy)
+Cunninghamia lanceolata/16__from-val__98d74a4d.png (Nghi ngờ)
+Cunninghamia lanceolata/113__from-val__091ca36d.png(Nghi ngờ)
+Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(132).png (Cháy 1 ít ở viền phải)
+Fokienia hodginsii/pơ mu97.png (Nghi ngờ)
+Fokienia hodginsii/pơmu72.png (Mất 1 góc tam giác bên trên trái)
+Fokienia hodginsii/pơmu79.png (Cháy 1 ít góc dưới phải)
+Picea glauca
+Pinus cernua
+Pinus dalatensis
+Pinus krempfii
+Pinus radiata
+Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (10).png (Nghi ngờ cháy dưới trái)
+Pseudotsuga brevifolia
+Taxus wallichiana
+Thujopsis dolabrata
+Xanthocyparis vietnamensis
+
+/train
+Araucaria araucana
+Callitris columellaris/10.png(Cháy sáng ở 1 vài đốm)
+Callitris columellaris/17__from-test__996e2bc5.png(Nghi ngờ cháy dưới phải)
+Callitris columellaris/18.png(Cháy sáng)
+Callitris columellaris/125.png(Nghi ngờ cháy sáng)
+Callitris columellaris/143.png(Nghi ngờ cháy sáng trên phải)
+Callitris columellaris/160__from-test__97905399.png (Nghi ngờ)
+Callitris columellaris/184.png (Nghi ngờ)
+Callitris columellaris/185__from-test__78bcae18.png
+Calocedrus rupestris (Từ 20->33, 288->292 hcn đen nhập ngày nhỏ hơn)
+Chamaecyparis obtusa/3350. Cryptomeria japonica.1.(13).png (Nghi ngờ)
+Chamaecyparis obtusa/3350. Cryptomeria japonica.6.(194).png (Nghi ngờ)
+Chamaecyparis obtusa/3350. Cryptomeria japonica.7.(223).png
+Cryptomeria japonica
+Cunninghamia lanceolata
+Chamaecyparis obtusa
+Fokienia hodginsii/pơ mu19.png (Nghi ngờ)
+Fokienia hodginsii/pơ mu71.png (Nghi ngờ)
+Fokienia hodginsii/pơ mu35.png (Nghi ngờ)
+Fokienia hodginsii/pơmu44__from-val__e58d53f5.png (Nghi ngờ)
+Fokienia hodginsii/pơmu48__from-val__2f4a7924.png (Nghi ngờ)
+Fokienia hodginsii/pơ mu63.png (Nghi ngờ)
+Fokienia hodginsii/pơ mu95.png (Nghi ngờ)
+Picea glauca
+Pinus cernua
+Pinus dalatensis/3393. Pinus dalatensis.1 (1).png
+Pinus dalatensis/3393. Pinus dalatensis.1 (6).png
+Pinus dalatensis/3393. Pinus dalatensis.1 (8).png
+Pinus dalatensis/3393. Pinus dalatensis.1 (9).png
+Pinus dalatensis/3393. Pinus dalatensis.1 (10).png
+Pinus dalatensis/3393. Pinus dalatensis.1 (11).png
+Pinus dalatensis/3393. Pinus dalatensis.1 (27).png
+Pinus dalatensis/3393. Pinus dalatensis.1 (96).png (1 góc nhỏ bên phải)
+Pinus dalatensis/3393. Pinus dalatensis.1 (115).png (trên phải nhỏ)
+Pinus dalatensis/3393. Pinus dalatensis.1 (68).png
+Pinus krempfii/3384. Pinus krempfii (60).png
+Pinus krempfii/3384. Pinus krempfii.3 (92).png (Cháy 1 ít bên trên)
+Pinus radiata
+Podocarpus pilgeri
+Pseudotsuga brevifolia
+Taxus wallichiana
+Thujopsis dolabrata
+Xanthocyparis vietnamensis
+
+/val
+Araucaria araucana
+Callitris columellaris/15.png (Nghi ngờ)
+Callitris columellaris/126.png
+Callitris columellaris/128__from-val__7d4c5343.png
+Callitris columellaris/190__from-test__d12db15c.png (Nghi ngờ)
+Callitris columellaris/190__from-val__24eaae71.png (Nghi ngờ)
+Calocedrus rupestris
+Chamaecyparis obtusa
+Cryptomeria japonica
+Cunninghamia lanceolata/13.png(Nghi ngờ)
+Chamaecyparis obtusa
+Fokienia hodginsii
+Picea glauca
+Pinus cernua
+Pinus dalatensis
+Pinus radiata
+Podocarpus pilgeri (221 - 222 ảnh giống hệt nhau)
+Pseudotsuga brevifolia
+Taxus wallichiana
+Thujopsis dolabrata
+Xanthocyparis vietnamensis

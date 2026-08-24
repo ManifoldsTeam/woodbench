@@ -1,11 +1,7 @@
-"""Shared evaluation metrics for WoodBench classification tasks.
+"""Evaluation metrics for Conifer Family Classification."""
 
-The current Task B benchmark has exactly 17 species classes.  Every Task B
-backbone and seed must use :func:`compute_task_b_metrics` so the metric
-definition and label universe cannot drift between notebooks.
-"""
-
-from typing import Any, Dict, List, Optional, Sequence, Tuple
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple
 
 import numpy as np
 import torch
@@ -17,130 +13,6 @@ from sklearn.metrics import (
     precision_score,
     recall_score,
 )
-
-TASK_B_NUM_CLASSES = 17
-TASK_B_LABELS = tuple(range(TASK_B_NUM_CLASSES))
-
-
-def _compute_classification_metrics(
-    y_true: Sequence[int] | np.ndarray,
-    y_pred: Sequence[int] | np.ndarray,
-    *,
-    labels: Sequence[int],
-    class_names: Optional[Sequence[str]] = None,
-) -> Dict[str, Any]:
-    """Compute classification metrics over an explicit label universe."""
-    true = np.asarray(y_true)
-    pred = np.asarray(y_pred)
-    fixed_labels = list(labels)
-
-    if true.ndim != 1 or pred.ndim != 1:
-        raise ValueError("y_true and y_pred must be one-dimensional")
-    if true.size == 0:
-        raise ValueError("y_true and y_pred must not be empty")
-    if true.shape[0] != pred.shape[0]:
-        raise ValueError("y_true and y_pred must have the same length")
-    if not fixed_labels:
-        raise ValueError("labels must not be empty")
-    if len(set(fixed_labels)) != len(fixed_labels):
-        raise ValueError("labels must contain unique class indices")
-
-    declared = set(fixed_labels)
-    observed = set(true.tolist()) | set(pred.tolist())
-    unknown = observed - declared
-    if unknown:
-        raise ValueError(
-            f"y_true/y_pred contain class indices outside labels: {sorted(unknown)}"
-        )
-
-    if class_names is None:
-        fixed_class_names = [f"class_{label}" for label in fixed_labels]
-    else:
-        fixed_class_names = list(class_names)
-        if len(fixed_class_names) != len(fixed_labels):
-            raise ValueError("class_names must have the same length as labels")
-        if len(set(fixed_class_names)) != len(fixed_class_names):
-            raise ValueError("class_names must be unique")
-
-    per_class_precision = precision_score(
-        true, pred, labels=fixed_labels, average=None, zero_division=0
-    )
-    per_class_recall = recall_score(
-        true, pred, labels=fixed_labels, average=None, zero_division=0
-    )
-    per_class_f1 = f1_score(
-        true, pred, labels=fixed_labels, average=None, zero_division=0
-    )
-
-    return {
-        "accuracy": float(accuracy_score(true, pred)),
-        "precision_macro": float(
-            precision_score(
-                true,
-                pred,
-                labels=fixed_labels,
-                average="macro",
-                zero_division=0,
-            )
-        ),
-        "recall_macro": float(
-            recall_score(
-                true,
-                pred,
-                labels=fixed_labels,
-                average="macro",
-                zero_division=0,
-            )
-        ),
-        "f1_macro": float(
-            f1_score(
-                true,
-                pred,
-                labels=fixed_labels,
-                average="macro",
-                zero_division=0,
-            )
-        ),
-        "confusion_matrix": confusion_matrix(
-            true, pred, labels=fixed_labels
-        ),
-        "per_class": {
-            name: {
-                "label": label,
-                "precision": float(per_class_precision[index]),
-                "recall": float(per_class_recall[index]),
-                "f1": float(per_class_f1[index]),
-            }
-            for index, (label, name) in enumerate(
-                zip(fixed_labels, fixed_class_names)
-            )
-        },
-        "labels": fixed_labels,
-        "class_names": fixed_class_names,
-        "average": "macro",
-        "zero_division": 0,
-    }
-
-
-def compute_task_b_metrics(
-    y_true: Sequence[int] | np.ndarray,
-    y_pred: Sequence[int] | np.ndarray,
-    *,
-    class_names: Optional[Sequence[str]] = None,
-) -> Dict[str, Any]:
-    """Compute the canonical metrics for the current 17-class Task B.
-
-    Macro precision, recall, and F1 always use labels ``0..16`` and
-    ``zero_division=0``. Callers cannot supply another label universe. If
-    ``class_names`` is provided, it must contain exactly 17 unique names in
-    checkpoint-output order.
-    """
-    return _compute_classification_metrics(
-        y_true,
-        y_pred,
-        labels=TASK_B_LABELS,
-        class_names=class_names,
-    )
 
 
 @torch.no_grad()
@@ -167,28 +39,63 @@ def compute_metrics(
 
     all_preds = []
     all_labels = []
+    all_probs = []
+
     for images, labels in data_loader:
         images = images.to(device, non_blocking=True)
         labels = labels.to(device, non_blocking=True)
 
         outputs = model(images)
+        probs = torch.softmax(outputs, dim=1)
         preds = outputs.argmax(dim=1)
 
         all_preds.extend(preds.cpu().numpy())
         all_labels.extend(labels.cpu().numpy())
+        all_probs.extend(probs.cpu().numpy())
 
     all_preds = np.array(all_preds)
     all_labels = np.array(all_labels)
+    all_probs = np.array(all_probs)
+
+    labels = list(range(num_classes))
+    metrics = {
+        "accuracy": accuracy_score(all_labels, all_preds),
+        "precision_macro": precision_score(
+            all_labels, all_preds, labels=labels, average="macro", zero_division=0
+        ),
+        "recall_macro": recall_score(
+            all_labels, all_preds, labels=labels, average="macro", zero_division=0
+        ),
+        "f1_macro": f1_score(
+            all_labels, all_preds, labels=labels, average="macro", zero_division=0
+        ),
+        "confusion_matrix": confusion_matrix(all_labels, all_preds, labels=labels),
+    }
+
+    # Per-class metrics
+    per_class_f1 = f1_score(
+        all_labels, all_preds, labels=labels, average=None, zero_division=0
+    )
+    per_class_precision = precision_score(
+        all_labels, all_preds, labels=labels, average=None, zero_division=0
+    )
+    per_class_recall = recall_score(
+        all_labels, all_preds, labels=labels, average=None, zero_division=0
+    )
 
     if class_names is None:
         class_names = [f"class_{i}" for i in range(num_classes)]
 
-    return _compute_classification_metrics(
-        all_labels,
-        all_preds,
-        labels=list(range(num_classes)),
-        class_names=class_names,
-    )
+    metrics["per_class"] = {
+        name: {
+            "f1": float(per_class_f1[i]),
+            "precision": float(per_class_precision[i]),
+            "recall": float(per_class_recall[i]),
+        }
+        for i, name in enumerate(class_names)
+    }
+
+    return metrics
 
 
 @torch.no_grad()

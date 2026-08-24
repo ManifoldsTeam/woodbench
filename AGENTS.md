@@ -1,7 +1,7 @@
 <!-- gitnexus:start -->
 # GitNexus — Code Intelligence
 
-This project is indexed by GitNexus as **woodbench** (1280 symbols, 1600 relationships, 19 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
+This project is indexed by GitNexus as **woodbench** (1714 symbols, 2197 relationships, 31 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
 
 > If any GitNexus tool warns the index is stale, run `npx gitnexus analyze` in terminal first.
 
@@ -57,6 +57,19 @@ Khi lam viec voi cac feature lien quan den WoodID-S2-2026, **cac tai lieu sau la
 # Always Use Conda Environment
 
 - **MUST use conda environment `wood` for all commands.** Always run `conda activate wood` before executing any Python, pip, or shell commands. Check the environment is active with `conda info --envs` if unsure.
+
+---
+
+# Experiment Registry and Report Traceability
+
+Khi chạy training/evaluation và tạo báo cáo:
+
+1. **Mỗi đợt tổng hợp run PHẢI tạo một registry CSV riêng** theo mẫu `<name>-<YYYYMMDDTHHMMSSZ>-registry.csv`. Không ghi đè registry của đợt chạy trước.
+2. **Mỗi dòng registry tương ứng đúng một training run** (không tách validation/test thành hai dòng).
+3. Registry tối thiểu phải có các cột: `run_id`, `run_date`, `notebook`, `git_commit`, `split_version`, `num_classes`, `n_train`, `n_val`, `n_test`, `seed`, `lr`, `epochs`, `batch`, `image_size`, `label_smoothing`, `augmentation`, `checkpoint_path`, `prediction_path`, cùng toàn bộ metric validation/test dùng trong báo cáo.
+4. `run_id` phải ổn định và duy nhất trong registry. Đường dẫn checkpoint/prediction phải tương đối theo `ROOT` để chạy được ở local và Colab.
+5. **Mọi dòng trong mọi bảng báo cáo phải truy ngược được về registry**: bảng theo từng run phải có `run_id`; bảng tổng hợp nhiều run phải có `source_run_ids`; bảng so sánh phải có cả `run_id` và run đối chứng (ví dụ `baseline_run_id`). Các ID này phải tồn tại trong đúng registry được khai báo trong metadata báo cáo.
+6. Logic hậu xử lý (tính lại metric, xuất prediction, tạo report CSV và registry) phải nằm trong một notebook riêng, đặt cùng tầng với các notebook training tương ứng.
 
 ---
 

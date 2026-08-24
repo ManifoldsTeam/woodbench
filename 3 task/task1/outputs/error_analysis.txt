@@ -1,0 +1,40 @@
+======================================================================
+INTRA-FAMILY ERROR ANALYSIS
+======================================================================
+
+Overall Accuracy: 93.42% (497/532)
+Total Errors: 35
+
+----------------------------------------------------------------------
+CUPRESSACEAE INTRA-FAMILY ERRORS
+----------------------------------------------------------------------
+
+Total intra-family errors: 5
+
+Top confused pairs:
+  Callitris columellaris                   → Cunninghamia lanceolata                 :   4
+  Callitris columellaris                   → Fokienia hodginsii                      :   1
+
+----------------------------------------------------------------------
+PER-CLASS PERFORMANCE
+----------------------------------------------------------------------
+
+Species                                       Family          Correct   Total   Acc%
+------------------------------------------------------------------------------------------
+Araucaria araucana                            Pinaceae             30      30  100.0
+Callitris columellaris                        Cupressaceae         28      34   82.4
+Calocedrus rupestris                          Cupressaceae         21      24   87.5
+Chamaecyparis obtusa                          Cupressaceae         33      33  100.0
+Cryptomeria japonica                          Cupressaceae         33      33  100.0
+Cunninghamia lanceolata                       Cupressaceae         27      27  100.0
+Fokienia hodginsii                            Cupressaceae         39      39  100.0
+Picea glauca                                  Pinaceae             25      25  100.0
+Pinus cernua                                  Pinaceae             30      31   96.8
+Pinus dalatensis                              Pinaceae             29      32   90.6
+Pinus krempfii                                Pinaceae             31      36   86.1
+Pinus radiata                                 Pinaceae             31      31  100.0
+Podocarpus pilgeri                            Podocarpaceae        29      36   80.6
+Pseudotsuga brevifolia                        Pinaceae             29      29  100.0
+Taxus wallichiana                             Taxaceae             18      26   69.2
+Thujopsis dolabrata                           Cupressaceae         34      34  100.0
+Xanthocyparis vietnamensis                    Cupressaceae         30      32   93.8
