@@ -1,0 +1,89 @@
+{
+  "registry_created_at_utc": "2026-08-19T04:37:33.586402+00:00",
+  "registry_file": "docs/reports/experiments/phase_1b/final_b_new_recomputed/20260819T043733Z/task-b-17class-20260819T043733Z-registry.csv",
+  "evaluation_notebook": "notebooks/phase 1/task-B-17-new/06_evaluate_and_register_runs.ipynb",
+  "git_commit": "75df6c061eca5a3d63cfac706d1b6e256e404342",
+  "split_version": "task-B-group-split:359be7f5379818d4",
+  "split_version_method": "sha256(relative_image_path + image_sha256)[:16]",
+  "device_type": "cuda",
+  "device_name": "NVIDIA GeForce RTX 4090",
+  "python_version": "3.12.13",
+  "torch_version": "2.11.0+cu128",
+  "inference_optimization": {
+    "amp_fp16": true,
+    "tf32": true,
+    "channels_last": true,
+    "eval_cache_location": {
+      "val": "cuda",
+      "test": "cuda"
+    },
+    "backbone_eval_batch_sizes": {
+      "convnext_tiny": 903,
+      "efficientnet_b3": 903,
+      "mobilenetv3_large": 903,
+      "resnet50": 903,
+      "swin_tiny": 903
+    },
+    "max_eval_batch_size": 1024,
+    "gpu_cache_reserve_gb": 2.0
+  },
+  "classes": [
+    "Araucaria araucana",
+    "Callitris columellaris",
+    "Calocedrus rupestris",
+    "Chamaecyparis obtusa",
+    "Cryptomeria japonica",
+    "Cunninghamia lanceolata",
+    "Fokienia hodginsii",
+    "Picea glauca",
+    "Pinus cernua",
+    "Pinus dalatensis",
+    "Pinus krempfii",
+    "Pinus radiata",
+    "Podocarpus pilgeri",
+    "Pseudotsuga brevifolia",
+    "Taxus wallichiana",
+    "Thujopsis dolabrata",
+    "Xanthocyparis vietnamensis"
+  ],
+  "excluded_classes": [
+    "Calocedrus sp",
+    "Cupressus funebris (Cupressus pendula)",
+    "Pinus sp"
+  ],
+  "split_counts": {
+    "train": 3365,
+    "val": 903,
+    "test": 532
+  },
+  "registered_runs": 30,
+  "evaluated_splits": [
+    "val",
+    "test"
+  ],
+  "metric_columns": [
+    "log_loss",
+    "accuracy",
+    "balanced_accuracy",
+    "precision_macro",
+    "recall_macro",
+    "f1_macro",
+    "precision_micro",
+    "recall_micro",
+    "f1_micro",
+    "precision_weighted",
+    "recall_weighted",
+    "f1_weighted",
+    "matthews_corrcoef",
+    "cohen_kappa",
+    "top3_accuracy"
+  ],
+  "confusion_matrix_artifacts": {
+    "format": "png",
+    "splits": [
+      "val",
+      "test"
+    ]
+  },
+  "lineage_rule": "run_id/source_run_ids/baseline_run_id values resolve to registry rows"
+}
