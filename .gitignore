@@ -226,3 +226,4 @@ node_modules/
 /clean_data
 archive_clean_data.tar.gz
 archive_duplicate_date.tar.gz
+/artifacts

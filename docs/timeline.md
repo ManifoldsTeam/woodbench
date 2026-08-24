@@ -26,3 +26,10 @@
 | 22-07-2026 | 19:10 | Task B Final-B report + notebook organization | Done | [Details](timeline/22-07-2026.md) |
 | 23-07-2026 | 19:46 | Phase 1 consolidation + FLOPs/inference benchmark + summary report | Done with Task B scope caveat | [Details](timeline/23-07-2026.md) |
 | 23-07-2026 | 20:36 | Restore Task A + recompute 45 Task A/Final-B checkpoints | Done — Final-B fixed at 17 classes | [Details](timeline/23-07-2026.md) |
+| 27-07-2026 | 22:30 | Final-B: re-evaluate all best checkpoints | Done — 30 best checkpoints, 30 prediction bundles | [Details](timeline/27-07-2026.md) |
+| 27-07-2026 | 23:53 | Chuẩn hóa metric dùng chung cho Task B | Done — một contract Final-B cố định 17 lớp cho mọi model/notebook | [Details](timeline/27-07-2026.md) |
+| 28-07-2026 | 19:51 | Task B F1 audit notebook | Done — hai cột F1 và chẩn đoán lệch >0,5 pp | [Details](timeline/28-07-2026.md) |
+| 28-07-2026 | 20:59 | Origin-key specimen audit notebook | Done — mục 3.1–3.7, artifact tách riêng | [Details](timeline/28-07-2026.md) |
+| 28-07-2026 | 21:29 | Restore image traceability for origin audit | Done — mapped 5.572/5.572 current images; MD5-verified 356 sampled images | [Details](timeline/28-07-2026.md) |
+| 29-07-2026 | 19:36 | Visual duplicate audit notebook | Done — original-20 vs strict-17, frozen Swin embedding + pHash + 300-DPI figures | [Details](timeline/29-07-2026.md) |
+| 30-07-2026 | 16:10 | Anatomy-destruction probe notebook | Partial — B0–B3 notebook and smoke tests complete; full 20-epoch GPU run pending | [Details](timeline/30-07-2026.md) |

@@ -18,9 +18,9 @@ os.environ.setdefault("MPLCONFIGDIR", "/tmp/matplotlib")
 
 import numpy as np
 import torch
-from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
 from src.data import get_dataloaders
+from src.eval.metrics import compute_task_b_metrics
 from src.models import create_model
 from src.train import (
     TrainingEngine,
@@ -202,22 +202,24 @@ def evaluate_model(model: torch.nn.Module, test_loader, device: str) -> dict[str
         all_preds.extend(outputs.argmax(dim=1).cpu().numpy())
         all_labels.extend(labels.cpu().numpy())
 
-    f1_per_class = f1_score(all_labels, all_preds, average=None, zero_division=0)
+    metrics = compute_task_b_metrics(
+        all_labels,
+        all_preds,
+        class_names=class_names,
+    )
     return {
-        "test_accuracy": float(accuracy_score(all_labels, all_preds)),
-        "test_f1_macro": float(
-            f1_score(all_labels, all_preds, average="macro", zero_division=0)
-        ),
-        "test_precision_macro": float(
-            precision_score(all_labels, all_preds, average="macro", zero_division=0)
-        ),
-        "test_recall_macro": float(
-            recall_score(all_labels, all_preds, average="macro", zero_division=0)
-        ),
+        "test_accuracy": metrics["accuracy"],
+        "test_f1_macro": metrics["f1_macro"],
+        "test_precision_macro": metrics["precision_macro"],
+        "test_recall_macro": metrics["recall_macro"],
         "test_f1_per_class": {
-            class_name: float(score)
-            for class_name, score in zip(class_names, f1_per_class)
+            class_name: metrics["per_class"][class_name]["f1"]
+            for class_name in class_names
         },
+        "metric_labels": metrics["labels"],
+        "metric_class_names": metrics["class_names"],
+        "metric_average": metrics["average"],
+        "metric_zero_division": metrics["zero_division"],
     }
 
 
