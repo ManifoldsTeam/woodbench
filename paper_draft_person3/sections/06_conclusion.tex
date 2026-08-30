@@ -1,0 +1,77 @@
+% =====================================================================
+% Section 6 — Conclusion
+%
+% Written only after Sections 4 and 5 were complete and every table and
+% figure was frozen. Introduces no number that does not already appear in
+% Section 4, and no claim not already argued in Section 5.
+% =====================================================================
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+This study benchmarked five deep-learning architectures on macroscopic
+cross-section identification of 17 conifer species, under a partition
+grouped by origin key and evaluated from a single immutable registry.
+
+Three results are supported by the evidence presented. First, ResNet-50 is
+not competitive on this task: at $92.356 \pm 1.022$\,\% accuracy it sits
+roughly seven points below ConvNeXt-Tiny, a separation several times its own
+seed-to-seed variation, and it accounts for 122 of the 204 errors made by
+all five backbones across all seeds. Second, the remaining four architectures
+are not separated by this experiment. ConvNeXt-Tiny, Swin-Tiny and
+MobileNetV3-Large differ by margins comparable to the standard deviation
+across three seeds, so their ordering should not be treated as established.
+Third, within that group MobileNetV3-Large is the practically interesting
+result: it comes within 1.19 accuracy points of the best model using one
+sixth the parameters and one twentieth the compute, which is the trade-off
+that matters for field deployment.
+
+The error structure is concentrated rather than diffuse. In the strongest
+model every error across three seeds is the same confusion, \textit{Pinus
+krempfii} predicted as \textit{Pinus dalatensis}, and that pair is the only
+one appearing in all five architectures. It is strongly asymmetric, 61
+occurrences against one in the reverse direction, and it does not diminish
+as capacity increases --- a pattern better read as a property of the imagery
+than of any one model. By contrast the apparently large
+\textit{Podocarpus pilgeri} difficulty is an artefact of pooling: 48 of its
+55 occurrences come from ResNet-50 alone, and two architectures never make
+that error. The same disaggregation removes the expectation that
+Cupressaceae is the hardest family; over all five backbones it has the lowest
+error rate of the five, though once ResNet-50 is excluded the single-species
+Araucariaceae falls to zero and takes that position.
+
+Neither augmentation ablation supports a recommendation. Discrete
+$90^\circ$ rotation changes sign across architectures and helps neither of
+the two strongest models. Removing label smoothing lowers accuracy in all
+five backbones, which is the only directionally consistent pattern in the
+ablation table, but each individual effect is small and every ablation was
+trained with a single seed, so no effect size is established.
+
+The most important qualification concerns what the accuracies measure. A
+control experiment shows that a model trained on $16\times16$ inputs retains
+95.3\,\% of full-image accuracy and one trained on heavily blurred inputs
+96.6\,\%, while a colour-histogram-only model reaches 37.970\,\%. Anatomical
+structure is destroyed at those resolutions, so the decisive evidence is
+spatial but low-frequency, and the $99$\,\%-level accuracies cannot be read
+as evidence that the models identify wood by anatomy. This does not
+invalidate the architecture comparison, which was conducted under identical
+conditions throughout, but it bounds what the absolute numbers may be
+claimed to show. A specimen-key audit adds a second qualification: regrouping
+the 552 origin keys under a coarser rule collapses them to 325, and whether
+the key denotes a physical specimen rather than an image or view has not yet
+been verified against the collection's records.
+
+Three lines of work follow directly. Repeating each ablation across the same
+three seeds as the main runs would make those comparisons interpretable at a
+cost of 30 training runs. Completing the specimen-key verification against
+the collection's own records would establish, rather than assume, that the
+partition separates physical specimens. And evaluating on independently
+acquired images --- different operator, equipment and lighting --- is the
+only way to separate the benign and adverse readings of the probe results,
+and the precondition for any claim about field use.
+
+Until those are done, the defensible summary of this work is a controlled
+comparison of five architectures on one corpus, with a clearly identified
+species pair that resists every architecture tested, and an explicit warning
+that the headline accuracy overstates what has been demonstrated about
+anatomical identification.

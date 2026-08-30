@@ -1,0 +1,18 @@
+true_class,family,Araucaria araucana,Callitris columellaris,Calocedrus rupestris,Chamaecyparis obtusa,Cryptomeria japonica,Cunninghamia lanceolata,Fokienia hodginsii,Thujopsis dolabrata,Xanthocyparis vietnamensis,Picea glauca,Pinus cernua,Pinus dalatensis,Pinus krempfii,Pinus radiata,Pseudotsuga brevifolia,Podocarpus pilgeri,Taxus wallichiana,row_total
+Araucaria araucana,Araucariaceae,90,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,90
+Callitris columellaris,Cupressaceae,0,102,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,102
+Calocedrus rupestris,Cupressaceae,0,0,72,0,0,0,0,0,0,0,0,0,0,0,0,0,0,72
+Chamaecyparis obtusa,Cupressaceae,0,0,0,99,0,0,0,0,0,0,0,0,0,0,0,0,0,99
+Cryptomeria japonica,Cupressaceae,0,0,0,0,99,0,0,0,0,0,0,0,0,0,0,0,0,99
+Cunninghamia lanceolata,Cupressaceae,0,0,0,0,0,81,0,0,0,0,0,0,0,0,0,0,0,81
+Fokienia hodginsii,Cupressaceae,0,0,0,0,0,0,117,0,0,0,0,0,0,0,0,0,0,117
+Thujopsis dolabrata,Cupressaceae,0,0,0,0,0,0,0,102,0,0,0,0,0,0,0,0,0,102
+Xanthocyparis vietnamensis,Cupressaceae,0,0,0,0,0,0,0,0,96,0,0,0,0,0,0,0,0,96
+Picea glauca,Pinaceae,0,0,0,0,0,0,0,0,0,75,0,0,0,0,0,0,0,75
+Pinus cernua,Pinaceae,0,0,0,0,0,0,0,0,0,0,93,0,0,0,0,0,0,93
+Pinus dalatensis,Pinaceae,0,0,0,0,0,0,0,0,0,0,0,96,0,0,0,0,0,96
+Pinus krempfii,Pinaceae,0,0,0,0,0,0,0,0,0,0,0,7,101,0,0,0,0,108
+Pinus radiata,Pinaceae,0,0,0,0,0,0,0,0,0,0,0,0,0,93,0,0,0,93
+Pseudotsuga brevifolia,Pinaceae,0,0,0,0,0,0,0,0,0,0,0,0,0,0,87,0,0,87
+Podocarpus pilgeri,Podocarpaceae,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,108,0,108
+Taxus wallichiana,Taxaceae,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,78,78

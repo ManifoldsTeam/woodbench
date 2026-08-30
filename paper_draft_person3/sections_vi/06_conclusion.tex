@@ -1,0 +1,55 @@
+% =====================================================================
+% Mục 6 — Kết luận  (BẢN TIẾNG VIỆT)
+%
+% Bam bon phan duoc yeu cau: tom tat; mo hinh tot nhat cho tung kich ban
+% su dung; y nghia bao ton; huong nghien cuu tiep theo.
+%
+% Theo scientific-writing.md va writing_quality_check.md cua skill
+% academic-paper:
+%   * Ket luan khong duoc gioi thieu du lieu hay lap luan moi chua xuat
+%     hien o Muc 4 va Muc 5. Moi khang dinh o day deu tro ve mot tieu muc
+%     cu the cua Muc 5.
+%   * Khong dung dau gach ngang lam dau cau.
+%   * Do dai doan phai bien thien, khong deu nhau.
+%   * Cac khang dinh ve hien trang bao ton nam ngoai du lieu nghien cuu
+%     nen duoc danh dau [CAN NGUON].
+% =====================================================================
+
+\section{Kết luận}
+\label{vi:sec:conclusion}
+
+Nghiên cứu này đánh giá đối sánh năm kiến trúc học sâu cho bài toán định danh
+17 loài cây lá kim từ ảnh mặt cắt ngang ở thang đo vĩ mô, trên một phân hoạch
+gom theo khóa nguồn và một registry đánh giá bất biến duy nhất. ConvNeXt-Tiny
+đạt độ chính xác cao nhất và ResNet-50 kém rõ rệt, trong khi ba mô hình còn lại
+chênh nhau những khoảng cách cùng bậc độ lớn với biến động giữa các seed, nên
+thứ tự nội bộ của nhóm này chưa được xác lập
+(Mục~\ref{vi:sec:discussion:ranking}).
+
+Cấu trúc lỗi mang nhiều thông tin hơn bản thân con số độ chính xác. Toàn bộ khó
+khăn còn lại của mô hình mạnh nhất nằm ở một cặp loài duy nhất trong cùng một
+chi (Mục~\ref{vi:sec:discussion:cupressaceae}).
+
+Lựa chọn mô hình phụ thuộc vào kịch bản sử dụng. Với hệ thống chạy trên máy
+chủ, nơi chi phí tính toán không phải ràng buộc, ConvNeXt-Tiny là lựa chọn hợp
+lý. Với định danh tại hiện trường trên điện thoại hoặc thiết bị nhúng,
+MobileNetV3-Large phù hợp hơn, vì chỉ kém 1.19 điểm độ chính xác nhưng dùng
+khoảng một phần sáu số tham số và một phần hai mươi khối lượng tính toán.
+ResNet-50 không được khuyến nghị cho cả hai kịch bản, vì nó có chi phí tính
+toán cùng bậc với ConvNeXt-Tiny mà độ chính xác thấp hơn bảy điểm.
+
+Về ý nghĩa bảo tồn, bốn loài đặc hữu Việt Nam trong bộ dữ liệu đều được phân
+loại tốt dưới mô hình mạnh nhất, trong đó hai loài đạt F1 tuyệt đối trên cả ba
+seed (Mục~\ref{vi:sec:discussion:endemic})
+[CẦN NGUỒN: hiện trạng bảo tồn của bốn loài này]. Một công cụ định danh tự động
+đủ nhẹ để chạy tại hiện trường có thể hỗ trợ việc kiểm soát nguồn gốc gỗ và
+giám sát khai thác. Kết luận đó chỉ có giá trị nếu hiệu năng được xác nhận lại
+trên ảnh thu thập độc lập, điều mà nghiên cứu này chưa làm được
+(Mục~\ref{vi:sec:discussion:external}).
+
+Ba hướng tiếp theo là trực tiếp. Lặp lại mỗi ablation trên đúng ba seed như các
+lần chạy chính sẽ làm các phép so sánh đó diễn giải được. Hoàn tất việc xác
+minh khóa mẫu vật đối chiếu với sổ mẫu của bộ sưu tập sẽ chứng minh, thay vì
+giả định, rằng phân hoạch tách được các mẫu vật vật lý. Và đánh giá trên ảnh
+chụp bởi người khác, thiết bị khác và điều kiện ánh sáng khác là cách duy nhất
+để tách hai cách đọc lành tính và bất lợi của kết quả thăm dò.

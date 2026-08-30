@@ -1,0 +1,49 @@
+% =====================================================================
+% WoodID-S2-2026 — file ráp cho các mục của Người 3  (BẢN TIẾNG VIỆT)
+%
+% Biên dịch TỪ THƯ MỤC GỐC của repo để đường dẫn \includegraphics
+% (artifact/person3/..., artifact/person1/...) trỏ đúng:
+%
+%     pdflatex -output-directory=paper_draft_person3/build \
+%              paper_draft_person3/main_vi.tex
+%
+% Bản VI và bản EN được biên dịch thành HAI tài liệu riêng. Chúng dùng cùng
+% tên nhãn (tab:task_b, fig:confusion, ...) nên KHÔNG được \input cả hai vào
+% cùng một tài liệu.
+%
+% BẢNG VÀ HÌNH. Khác bản EN, bản VI đặt \input của từng bảng/hình ngay
+% trong tiểu mục tham chiếu tới nó, bên trong sections_vi/04_results.tex.
+% Vì vậy KHÔNG khai báo lại chúng ở đây, nếu không sẽ trùng nhãn.
+%
+% TIẾNG VIỆT CÓ DẤU. Nguồn UTF-8, dựng qua mã hóa T5 của vntex
+% (gói Debian/Ubuntu: texlive-lang-other). Vẫn dùng pdflatex.
+%
+% DẤU THẬP PHÂN. Giữ dấu chấm y hệt bản tiếng Anh, để phép truy nguyên con
+% số trong scripts/person3/check_vi_prose.py còn hiệu lực.
+% =====================================================================
+\documentclass[10pt]{article}
+
+% Tìm woodid.sty trong thư mục của chính bài báo. Nhờ dòng này, lệnh
+% \usepackage dưới đây chạy được dù biên dịch từ thư mục gốc repo hay từ
+% trong paper_draft_person3/. KHÔNG được xóa, nếu không pdflatex sẽ báo
+% "File `woodid.sty' not found".
+\makeatletter
+\providecommand{\input@path}{}
+\edef\input@path{{paper_draft_person3/}{./}\input@path}
+\makeatother
+\usepackage[vietnamese]{woodid}
+\renewcommand{\keywordsname}{Từ khóa}
+
+\begin{document}
+
+\input{paper_draft_person3/sections_vi/00_abstract}
+
+% \input{sections_vi/01_introduction}      % tác giả khác
+% \input{sections_vi/02_related_work}      % tác giả khác
+% \input{sections_vi/03_materials_methods} % tác giả khác
+
+\input{paper_draft_person3/sections_vi/04_results}
+\input{paper_draft_person3/sections_vi/05_discussion}
+\input{paper_draft_person3/sections_vi/06_conclusion}
+
+\end{document}

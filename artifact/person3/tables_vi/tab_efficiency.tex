@@ -1,0 +1,23 @@
+% Table: model complexity (params / MACs / size)
+% AUTO-GENERATED bang scripts/person3/make_result_tables.py -- khong sua tay
+% Source file      : results/efficiency.csv
+% KHONG thuoc registry 20260819T043733Z: day la thuoc tinh kien truc,
+% do voi pretrained=False nen doc lap voi checkpoint va lan huan luyen.
+% Latency da BO (do tren NVIDIA GeForce RTX 3060, khac phan cung cua registry).
+% Cot MACs = cot flops_g cua CSV chia 2 (CSV dem FLOPs = 2 x MACs).
+\begin{table}[!htbp]
+\centering
+\caption{Độ phức tạp của năm kiến trúc ở độ phân giải đầu vào $224\times224$ dùng xuyên suốt, với đầu ra 17 lớp. Số tham số, số phép nhân cộng (MACs) và kích thước mô hình là thuộc tính của kiến trúc: chúng được đo trên mô hình khởi tạo ngẫu nhiên và không phụ thuộc vào bất kỳ checkpoint đã huấn luyện nào. Báo cáo MACs thay vì FLOPs; script đo ghi $\text{FLOPs} = 2\times\text{MACs}$, và các giá trị dưới đây là cột đó chia đôi, để so sánh trực tiếp được với quy ước dùng trong tài liệu về kiến trúc. Độ trễ suy luận không được báo cáo: nó đo trên phần cứng khác với phần cứng huấn luyện và đánh giá, nên không so sánh được với bất kỳ con số nào khác trong bài.}
+\label{tab:efficiency}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Kiến trúc} & \textbf{Tham số (M)} & \textbf{MACs (G)} & \textbf{Kích thước (MB)} \\
+\midrule
+ResNet-50         & $23.54$ & $4.13$ & $90.11$ \\
+EfficientNet-B3   & $10.72$ & $0.94$ & $41.42$ \\
+MobileNetV3-Large & $4.22$ & $0.22$ & $16.30$ \\
+ConvNeXt-Tiny     & $27.83$ & $4.46$ & $106.24$ \\
+Swin-Tiny         & $27.53$ & $4.37$ & $105.09$ \\
+\bottomrule
+\end{tabular}
+\end{table}

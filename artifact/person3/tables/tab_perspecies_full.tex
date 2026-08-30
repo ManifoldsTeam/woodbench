@@ -1,0 +1,64 @@
+% Table: per-species F1, full 17 classes x 5 backbones
+% AUTO-GENERATED bang scripts/person3/make_result_tables.py -- khong sua tay
+% Source file      : docs/reports/experiments/phase_1b/final_b_new_recomputed/20260819T043733Z/per_class_metrics.csv
+% Registry created : 2026-08-19T04:37:33.586402+00:00
+% Source run ids   : 15 runs
+%   taskB17__main__seed_123__convnext_tiny
+%   taskB17__main__seed_123__efficientnet_b3
+%   taskB17__main__seed_123__mobilenetv3_large
+%   taskB17__main__seed_123__resnet50
+%   taskB17__main__seed_123__swin_tiny
+%   taskB17__main__seed_42__convnext_tiny
+%   taskB17__main__seed_42__efficientnet_b3
+%   taskB17__main__seed_42__mobilenetv3_large
+%   taskB17__main__seed_42__resnet50
+%   taskB17__main__seed_42__swin_tiny
+%   taskB17__main__seed_456__convnext_tiny
+%   taskB17__main__seed_456__efficientnet_b3
+%   taskB17__main__seed_456__mobilenetv3_large
+%   taskB17__main__seed_456__resnet50
+%   taskB17__main__seed_456__swin_tiny
+\begin{table}[!htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\caption{Per-species F1 score (\%) on the Task B test set (17 species,
+532 images), for every backbone. Values are the mean $\pm$ standard
+deviation across the 3 main training seeds (42, 123, 456); the spread is a
+standard deviation over three runs and is not an interval estimate.
+Species are grouped by family. $n$ is the number of test images per species.}
+\label{tab:perspecies_full}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrccccc}
+\toprule
+\textbf{Species} & $n$ & \textbf{ResNet-50} & \textbf{EfficientNet-B3} & \textbf{MobileNetV3-Large} & \textbf{ConvNeXt-Tiny} & \textbf{Swin-Tiny} \\
+\midrule
+\multicolumn{7}{l}{\textit{Araucariaceae}} \\
+\quad \textit{Araucaria araucana} & 30 & $95.905 \pm 2.781$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ \\
+\midrule
+\multicolumn{7}{l}{\textit{Cupressaceae}} \\
+\quad \textit{Callitris columellaris} & 34 & $94.067 \pm 1.734$ & $97.995 \pm 0.888$ & $99.020 \pm 1.698$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ \\
+\quad \textit{Calocedrus rupestris} & 24 & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ \\
+\quad \textit{Chamaecyparis obtusa} & 33 & $80.336 \pm 4.658$ & $98.492 \pm 0.027$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $97.556 \pm 1.649$ \\
+\quad \textit{Cryptomeria japonica} & 33 & $98.974 \pm 0.888$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ \\
+\quad \textit{Cunninghamia lanceolata} & 27 & $96.781 \pm 2.307$ & $97.597 \pm 1.012$ & $98.765 \pm 2.138$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ \\
+\quad \textit{Fokienia hodginsii} & 39 & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ \\
+\quad \textit{Thujopsis dolabrata} & 34 & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ \\
+\quad \textit{Xanthocyparis vietnamensis} & 32 & $95.431 \pm 0.080$ & $97.387 \pm 1.861$ & $95.733 \pm 1.892$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ \\
+\midrule
+\multicolumn{7}{l}{\textit{Pinaceae}} \\
+\quad \textit{Picea glauca} & 25 & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ \\
+\quad \textit{Pinus cernua} & 31 & $95.610 \pm 0.915$ & $97.832 \pm 0.916$ & $99.471 \pm 0.916$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ \\
+\quad \textit{Pinus dalatensis} & 32 & $87.596 \pm 3.913$ & $92.228 \pm 0.911$ & $92.767 \pm 1.345$ & $96.559 \pm 3.295$ & $95.620 \pm 3.706$ \\
+\quad \textit{Pinus krempfii} & 36 & $87.383 \pm 0.738$ & $93.663 \pm 0.788$ & $89.849 \pm 0.294$ & $96.573 \pm 3.495$ & $95.548 \pm 4.082$ \\
+\quad \textit{Pinus radiata} & 31 & $96.409 \pm 2.273$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ \\
+\quad \textit{Pseudotsuga brevifolia} & 29 & $98.305 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ \\
+\midrule
+\multicolumn{7}{l}{\textit{Podocarpaceae}} \\
+\quad \textit{Podocarpus pilgeri} & 36 & $61.994 \pm 9.598$ & $95.420 \pm 1.562$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ & $97.612 \pm 1.697$ \\
+\midrule
+\multicolumn{7}{l}{\textit{Taxaceae}} \\
+\quad \textit{Taxus wallichiana} & 26 & $84.891 \pm 2.182$ & $92.732 \pm 2.970$ & $98.013 \pm 2.000$ & $100.000 \pm 0.000$ & $100.000 \pm 0.000$ \\
+\bottomrule
+\end{tabular}}
+\end{table}

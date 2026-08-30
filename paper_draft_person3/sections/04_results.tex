@@ -1,0 +1,337 @@
+% =====================================================================
+% Section 4 — Experimental Results
+%
+% PROVENANCE. Every quantitative statement in this section resolves to a
+% table or figure, and every table or figure resolves to the immutable
+% registry below. Nothing here is quoted from an earlier report.
+%
+%   Registry   : docs/reports/experiments/phase_1b/final_b_new_recomputed/
+%                20260819T043733Z/
+%   Created    : 2026-08-19T04:37:33.586402+00:00
+%   Git commit : 75df6c061eca5a3d63cfac706d1b6e256e404342
+%   Split      : task-B-group-split:359be7f5379818d4
+%
+%   tab:task_b           <- main_test_summary.csv        (15 runs)
+%   tab:ablation         <- ablation_vs_main_seed42.csv  (20 runs)
+%   tab:perspecies_full  <- per_class_metrics.csv        (15 runs)
+%   fig:confusion        <- predictions.csv              (3 runs)
+%   fig:perclass         <- per_class_metrics.csv        (15 runs)
+%
+% NGOAI REGISTRY (nguon khac, lineage rieng -- ghi ro trong tung caption):
+%   tab:efficiency  <- results/efficiency.csv
+%                      thuoc tinh kien truc, do voi pretrained=False;
+%                      latency da bo (do tren RTX 3060, khac phan cung registry)
+%   Sec 4.5 probe   <- docs/reports/experiments/phase_1b/anatomy_destruction_probe/
+%                      tables/anatomy_probe_summary.csv + run_summary.json
+%   Sec 4.5 hoi tu  <- data/experiments/Task-B-new/final/**/test_metrics.json
+%                      (best_epoch / epochs_trained / stopped_early / final acc)
+%   fig:gradcam     <- artifact/person1/gradcam/  (repo WoodID, branch p1,
+%   fig:tsne        <- artifact/person1/tsne/      commit d39a3f6; xem SOURCE.txt)
+%                      ca hai dung checkpoint seed 42 cua CUNG registry nay
+%
+% Per-table run-id lists are carried in artifact/person3/tables/
+% tables_metadata.json and in the header comment of each .tex file.
+%
+% REPORTING RULE. Dispersion is always a standard deviation over the three
+% main seeds. It is never an interval estimate, and no claim of statistical
+% reliability is attached to any difference in this section.
+% =====================================================================
+
+\section{Experimental Results}
+\label{sec:results}
+
+\subsection{Experimental Setup}
+\label{sec:results:setup}
+
+All runs reported in this section come from a single immutable evaluation
+registry, created on 2026-08-19 against git commit
+\texttt{75df6c06} and split version
+\texttt{task-B-group-split:\allowbreak 359be7f5379818d4}. Re-running the evaluation
+notebook against that commit reproduces every number below.
+
+\paragraph{Data.} The Task~B partition contains 17 conifer species split
+3{,}365 / 903 / 532 images across train / validation / test. Three further
+species present in the source collection
+(\textit{Calocedrus} sp., \textit{Cupressus funebris},
+\textit{Pinus} sp.) were excluded because they are identified only to genus.
+The partition is grouped by \emph{origin key}: images sharing an origin key
+are assigned to a single split, rather than being divided image-by-image. The
+origin key is derived from the filename and is intended to stand for the
+physical wood specimen, so that test images come from specimens the model has
+not seen rather than from unseen crops of familiar specimens. Whether the key
+corresponds one-to-one to a physical specimen has not been established, and
+Section~\ref{sec:discussion:originkey} sets out what the grouping does and
+does not guarantee.
+
+\paragraph{Family assignment.} Species are grouped into five families ---
+Araucariaceae, Cupressaceae, Pinaceae, Podocarpaceae and Taxaceae --- following
+accepted conifer taxonomy, so that \textit{Araucaria araucana} is assigned to
+Araucariaceae. This differs from the four-family scheme of the project's
+family-level task, which folds that species into Pinaceae. Family membership
+affects only how results are grouped for presentation; it plays no part in
+training or evaluation, and every per-species number is unchanged by the
+choice. Family-level error rates in this section are computed under the
+five-family scheme throughout.
+
+\paragraph{Training configuration.} All five backbones were initialised from
+ImageNet weights and fine-tuned for 50 epochs with a cosine schedule, a head
+learning rate of $1\times10^{-4}$, a backbone learning rate of
+$1\times10^{-5}$, weight decay $1\times10^{-4}$, label smoothing 0.1, and
+mixed-precision training. These settings are identical across all 30
+registered runs. Batch size is the one setting that varies, and it varies by
+backbone rather than by experiment: 64 for ResNet-50 and MobileNetV3-Large,
+32 for EfficientNet-B3, ConvNeXt-Tiny and Swin-Tiny, held constant for a
+given backbone across the main runs and all three ablations. Comparisons
+between an ablation and its baseline are therefore within-backbone and
+single-variable; comparisons \emph{between} backbones carry batch size as an
+additional uncontrolled difference.
+
+\paragraph{Seeds and evaluation.} The main configuration was trained with
+three seeds (42, 123, 456), giving 15 main runs. Each ablation was trained
+with seed 42 only, giving 5 runs per ablation. Evaluation used FP16
+autocast, TF32 matrix multiplication and channels-last memory format on an
+NVIDIA GeForce RTX 4090 under PyTorch 2.11.0+cu128, with the whole split
+resident on the GPU so that batching does not affect the result.
+
+\subsection{Main Benchmark}
+\label{sec:results:benchmark}
+
+Table~\ref{tab:task_b} reports test accuracy and macro-F1 for the five
+architectures, as the mean and standard deviation over the three main seeds.
+
+The two modern backbones lead. ConvNeXt-Tiny reaches
+$99.561 \pm 0.354$\,\% accuracy and $99.596 \pm 0.326$\,\% macro-F1,
+ahead of Swin-Tiny at $99.123 \pm 0.581$\,\% and
+$99.196 \pm 0.533$\,\%. MobileNetV3-Large follows at
+$98.371 \pm 0.319$\,\% accuracy despite being the smallest model in the
+comparison, and EfficientNet-B3 at $97.807 \pm 0.319$\,\%. ResNet-50 is
+last by a clear margin, $92.356 \pm 1.022$\,\% accuracy and
+$92.569 \pm 0.982$\,\% macro-F1 --- roughly seven points below the leader
+and with the largest seed-to-seed spread of the five.
+
+Two features of the spread are worth stating before any ranking is read too
+firmly. First, the gaps separating ConvNeXt-Tiny, Swin-Tiny and
+MobileNetV3-Large are of the same order as the seed-to-seed standard
+deviations themselves, so the ordering among those three rests on
+differences that a different choice of seeds could plausibly reorder.
+Second, ResNet-50's separation from the rest is several times its own
+standard deviation and is the one ordering in the table that does not depend
+on that caveat.
+
+Accuracy and macro-F1 track each other closely for every backbone, which is
+expected given that the test partition is close to balanced --- per-species
+support ranges from 24 to 39 images (Table~\ref{tab:perspecies_full}). No
+backbone is buying accuracy by neglecting a small class.
+
+\subsection{Per-Species and Confusion Analysis}
+\label{sec:results:perspecies}
+
+\paragraph{Model selection.} The confusion matrix is reported for a single
+architecture, selected by a criterion fixed before the confusion structure
+was inspected: the backbone with the highest mean macro-F1 over the three
+main seeds, which is ConvNeXt-Tiny (Table~\ref{tab:task_b}). The
+alternative of reporting whichever individual run scored highest was
+rejected, and is in any case ill-defined here: seeds 42 and 123 tie exactly
+at 99.812\,\% accuracy with no stated tie-break.
+
+\paragraph{Aggregation.} Figure~\ref{fig:confusion} sums the three per-seed
+$17\times17$ count matrices element-wise, giving $532\times3 = 1{,}596$
+predictions. Each seed contributes equally, and row normalisation divides by
+the row total of the summed counts. The per-seed matrices are published
+alongside the aggregate so the sum can be checked.
+
+\paragraph{Result.} ConvNeXt-Tiny makes 7 errors in 1{,}596 predictions, and
+all 7 are the same confusion: \textit{Pinus krempfii} predicted as
+\textit{Pinus dalatensis}. The matrix is otherwise exactly diagonal. Both
+species are Pinaceae, so no error crosses a family boundary.
+
+Figure~\ref{fig:perclass} and Table~\ref{tab:perspecies_full} give per-species
+F1 for all five backbones. Three patterns stand out.
+
+\textit{First}, the \textit{P.\ krempfii} / \textit{P.\ dalatensis} pair is
+the only confusion that appears in every architecture: 18, 12, 15, 9 and 7
+occurrences for ResNet-50, EfficientNet-B3, MobileNetV3-Large, Swin-Tiny and
+ConvNeXt-Tiny respectively, 61 in total, against a single occurrence in the
+reverse direction. It accounts for 61 of the 204 errors made by all
+backbones and seeds combined, and it does not diminish as capacity
+increases. Both species are \textit{Pinus} (Pinaceae) with comparable test
+support (36 and 32 images), so neither class imbalance nor a family boundary
+explains it. These two species also carry the largest seed-to-seed standard
+deviation within the two strongest columns --- 3.30 to 4.08 points, against
+zero for every other species under ConvNeXt-Tiny --- so the magnitude of the
+effect is itself unstable.
+
+\textit{Second}, the errors are not evenly distributed across
+architectures. ResNet-50 alone produces 122 of the 204 errors. Its worst
+case is \textit{Podocarpus pilgeri}, at $61.994 \pm 9.598$\,\% F1 ---
+33.4 points below the next-worst model and the largest dispersion of any
+cell in Table~\ref{tab:perspecies_full} --- driven by 48 confusions with
+\textit{Chamaecyparis obtusa}. The remaining four architectures score
+between 95.420 and 100.000\,\% F1 on the same species, and two of them make
+this error zero times. Pooling architectures would present this as the
+second-largest difficulty in the dataset; disaggregated, it is one model's
+failure mode on this configuration and is not evidence that the two woods
+resemble one another.
+
+\textit{Third}, family-level difficulty does not follow the intuition that
+the largest family is the hardest. Error rates by true family are
+1.56\,\% for Araucariaceae, 0.78\,\% for Cupressaceae, 2.83\,\% for
+Pinaceae, 10.93\,\% for Podocarpaceae and 7.69\,\% for Taxaceae.
+Cupressaceae, the largest family at eight species, is the \emph{lowest} of
+the five, and all eight of its species are error-free under ConvNeXt-Tiny.
+Three of the five families contain exactly one species (Araucariaceae,
+Podocarpaceae, Taxaceae), so their rates are single-species rates over much
+smaller denominators and are not comparable in kind with the eight-species
+and six-species rates. Excluding ResNet-50 changes the picture again:
+Araucariaceae falls to 0.00\,\%, Podocarpaceae to 2.08\,\% and Taxaceae to
+3.53\,\%, while Cupressaceae reaches 0.49\,\% and Pinaceae 2.13\,\%. Three
+of the five families therefore owe most of their apparent difficulty to a
+single backbone, and the ordering among the remaining families is not stable
+between the two groupings.
+
+\subsection{Rotation and Label Smoothing}
+\label{sec:results:ablation}
+
+Table~\ref{tab:ablation} reports three ablations against the main
+configuration at the same seed and the same backbone: discrete
+$90^\circ$ rotation in place of continuous $\pm30^\circ$ rotation, and label
+smoothing set to 0.0 and 0.2 in place of 0.1. Each ablation was trained with
+seed 42 only, so every entry is a single-run point estimate with no
+dispersion of its own.
+
+Discrete $90^\circ$ rotation does not produce a consistent effect. Its
+accuracy deltas are $+0.940$, $+1.316$, $0.000$, $-0.564$ and $-0.564$
+percentage points for ResNet-50, EfficientNet-B3, MobileNetV3-Large,
+ConvNeXt-Tiny and Swin-Tiny --- positive for the two weaker convolutional
+backbones, zero for one, and negative for both of the strongest models. The
+sign is not stable across architectures, and four of the five magnitudes lie
+within about 1.6 times the corresponding seed-to-seed standard deviation
+from Table~\ref{tab:task_b}. Only EfficientNet-B3 shows a delta clearly
+larger than its own seed noise, at roughly four times that standard
+deviation, and with one seed it cannot be separated from a favourable draw.
+
+Removing label smoothing entirely ($0.0$) lowers accuracy for all five
+backbones: $-0.376$, $-0.752$, $-0.376$, $-0.188$ and $-0.188$ percentage
+points. The individual magnitudes are small --- three of the five are below
+the corresponding seed-to-seed standard deviation --- but the direction is
+the same in all five cases, which is the only consistent pattern in the
+ablation table. Raising label smoothing to $0.2$ produces no such
+consistency: two backbones improve or stay level and three decline.
+
+Taken together, neither ablation supports a recommendation. The rotation
+result argues against treating discrete $90^\circ$ augmentation as a general
+improvement for this task, and the label-smoothing sweep suggests that the
+default of 0.1 is at least not worse than either neighbour tested. Both
+readings are limited by the single-seed design
+(Section~\ref{sec:discussion:oneseed}).
+
+\subsection{Training Convergence and Anatomical Sufficiency}
+\label{sec:results:convergence}
+
+\paragraph{Convergence.} Per-epoch curves were not persisted for the registry
+runs, so convergence is characterised from the summary fields recorded with
+each checkpoint. The two strongest backbones converge in roughly a third of
+the budget: the best validation epoch averages 20.3 for ConvNeXt-Tiny and
+15.0 for Swin-Tiny, against 40.3--44.0 for MobileNetV3-Large,
+EfficientNet-B3 and ResNet-50. Early stopping fired in all three seeds for
+ConvNeXt-Tiny and Swin-Tiny and in none for ResNet-50. The gap between final
+training and final validation accuracy separates the same two groups: 0.17
+and 0.48 points for ConvNeXt-Tiny and Swin-Tiny against 3.14, 3.85 and 4.73
+for the other three. The ordering by convergence speed and by generalisation
+gap therefore matches the ordering by test accuracy in
+Table~\ref{tab:task_b}.
+
+\paragraph{Anatomical sufficiency.} A control experiment tests whether the
+task actually requires anatomical detail. Three probes were trained on the
+same partition and evaluated once on the same test set: \textbf{B1}, images
+downsampled to $16\times16$ and resized back to $224\times224$; \textbf{B2},
+images blurred with a Gaussian kernel of size 49 and $\sigma=8$; and
+\textbf{B3}, a small multi-layer perceptron given only a normalised
+$3\times32$-bin RGB histogram, discarding all spatial structure. B1 and B2
+use a freshly initialised ImageNet-pretrained Swin-Tiny; the full-image
+reference is the corresponding Swin-Tiny run at 99.060\,\% accuracy.
+
+\begin{center}
+\small
+\begin{tabular}{llcc}
+\toprule
+\textbf{Probe} & \textbf{Input} & \textbf{Accuracy (\%)} & \textbf{Retention (\%)} \\
+\midrule
+Uniform chance      & none                        & 5.882  & --- \\
+Majority class      & none                        & 7.331  & --- \\
+Full image          & $224\times224$              & 99.060 & 100.0 \\
+B1                  & $16\times16$ upsampled      & 94.361 & 95.3 \\
+B2                  & Gaussian blur $\sigma=8$    & 95.677 & 96.6 \\
+B3                  & RGB histogram only          & 37.970 & 38.3 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+At $16\times16$ every structure a wood anatomist would use --- tracheid
+diameter, resin canals, ray cells, growth-ring boundaries --- is destroyed,
+yet accuracy retains 95.3\,\% of the full-image reference. Heavy blurring
+retains 96.6\,\%. Colour alone is not sufficient: B3 reaches 37.970\,\%,
+well above the 5.882\,\% chance level but far below either spatial probe.
+The task as posed is therefore largely solvable from low-frequency image
+content that survives the destruction of anatomical detail, and the
+$99$\,\%-level accuracies in Table~\ref{tab:task_b} cannot be read as
+evidence that the models perform anatomical identification.
+Section~\ref{sec:discussion:shortcut} takes up what this implies.
+
+\subsection{Model Complexity}
+\label{sec:results:efficiency}
+
+Table~\ref{tab:efficiency} reports parameter count, multiply--accumulate
+operations and model size at the $224\times224$ input resolution.
+
+The accuracy ranking does not follow model size. MobileNetV3-Large reaches
+$98.371 \pm 0.319$\,\% accuracy (Table~\ref{tab:task_b}) with 4.22\,M
+parameters and 0.22\,G MACs --- roughly one sixth the parameters and one
+twentieth the compute of ConvNeXt-Tiny, for a difference of 1.19 accuracy
+points. ResNet-50, at 23.54\,M parameters and 4.13\,G MACs, is within 15\,\%
+of ConvNeXt-Tiny's compute yet scores seven points lower, so the gap between
+them is not explained by capacity. ConvNeXt-Tiny and Swin-Tiny are nearly
+identical in complexity (27.83 versus 27.53\,M parameters, 4.46 versus
+4.37\,G MACs), which makes their accuracy difference a comparison of
+architecture rather than of scale.
+
+Two limits apply to this table. Inference latency is not reported: the
+available measurements were taken on different hardware from the training
+and evaluation runs, so they cannot be placed alongside any other number in
+this paper. And the complexity figures are architecture properties measured
+on randomly initialised models, so unlike every other table here they do not
+derive from the evaluation registry.
+
+\subsection{Grad-CAM and Feature-Space Structure}
+\label{sec:results:gradcam}
+
+\paragraph{Grad-CAM.} Figure~\ref{fig:gradcam} shows Grad-CAM maps for
+ConvNeXt-Tiny, Swin-Tiny and MobileNetV3-Large on five test images. The
+images were selected by a rule fixed in advance: among images classified
+correctly by all three models, the one nearest the median ConvNeXt-Tiny
+confidence for its family, with ties broken by image path. No image was
+chosen for the appearance of its heatmap. All three maps come from the
+seed-42 checkpoints of the same runs used in
+Table~\ref{tab:task_b}.
+
+The attributions are diffuse and distributed across the field rather than
+concentrated on identifiable anatomical landmarks, and the three
+architectures highlight different regions of the same image. Read together
+with the probes of Section~\ref{sec:results:convergence}, this is what would
+be expected if the decisive evidence were low-frequency and spread over the
+image rather than carried by localised anatomical features. Grad-CAM shows
+where gradient support lies; it does not by itself establish what feature is
+being used, and no anatomical reading of these maps is offered here.
+
+\paragraph{Feature space.} Figure~\ref{fig:tsne} embeds the 768-dimensional
+pre-logit features of ConvNeXt-Tiny seed 42 for all 532 test images, reduced
+by PCA to 50 dimensions and then by t-SNE to two, with perplexity 30 and a
+fixed random seed. Species form largely separated clusters, consistent with
+the near-diagonal confusion matrix of Figure~\ref{fig:confusion}. The one
+structure that matters for interpretation is the relationship between
+\textit{Pinus krempfii} and \textit{Pinus dalatensis}, the single pair that
+survives in the best model (Section~\ref{sec:results:perspecies}).
+
+The embedding is a projection chosen to preserve local neighbourhoods, and
+distances in it are not metric; it is included as a qualitative view of the
+representation, not as evidence of separability.

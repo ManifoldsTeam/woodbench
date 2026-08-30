@@ -1,0 +1,284 @@
+% =====================================================================
+% Section 5 — Discussion
+%
+% Same provenance rule as Section 4: every quantitative statement here
+% resolves to a table or figure in Section 4, which resolves to registry
+% 20260819T043733Z. This section adds interpretation and limitations; it
+% introduces no new numbers.
+%
+% Dispersion is always a standard deviation over three seeds, never an
+% interval estimate.
+% =====================================================================
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Architecture Ranking and Seed-to-Seed Variation}
+\label{sec:discussion:ranking}
+
+The benchmark separates into two findings of very different strength, and
+they should not be reported with the same confidence.
+
+The robust finding is that ResNet-50 is not competitive on this task. Its
+$92.356 \pm 1.022$\,\% accuracy sits roughly seven points below
+ConvNeXt-Tiny, a gap several times its own seed-to-seed standard deviation,
+and it produces 122 of the 204 errors made by all five backbones across all
+seeds (Section~\ref{sec:results:perspecies}). The gap is also structural
+rather than diffuse: it is concentrated in specific species where the other
+four architectures are near-perfect.
+
+The fragile finding is the ordering among the remaining four. ConvNeXt-Tiny
+leads Swin-Tiny by 0.438 accuracy points while their standard deviations are
+0.354 and 0.581; MobileNetV3-Large trails Swin-Tiny by 0.752 points with a
+standard deviation of 0.319. These separations are of the same order as the
+seed-to-seed variation, so with three seeds the ordering cannot be treated
+as established, and a different seed triple could plausibly reorder them.
+The defensible claim is that ConvNeXt-Tiny, Swin-Tiny and MobileNetV3-Large
+all reach a comparable operating point, and that identifying a single best
+architecture among them would require more seeds than this study ran.
+
+The MobileNetV3-Large result deserves emphasis for a different reason. It
+reaches within 1.19 accuracy points of the best model using 4.22\,M
+parameters against 27.83\,M, and 0.22\,G MACs against 4.46\,G
+(Table~\ref{tab:efficiency}) --- roughly one sixth the parameters and one
+twentieth the compute. For the field-deployment scenario that motivates
+macroscopic wood identification, that trade-off matters more than the
+ranking at the top. The comparison is one of accuracy against static
+complexity only; inference latency is not reported here, for the reason
+given in Section~\ref{sec:results:efficiency}.
+
+\subsection{What the Models Are Using: Evidence Against an Anatomical Reading}
+\label{sec:discussion:shortcut}
+
+The most consequential limitation of this benchmark is not the size of the
+accuracy gaps but what the accuracies measure. The probes in
+Section~\ref{sec:results:convergence} show that a Swin-Tiny trained on
+$16\times16$ inputs reaches 94.361\,\% accuracy, and one trained on heavily
+blurred inputs 95.677\,\%, against 99.060\,\% for the full-resolution
+reference. Both destroy the anatomical structure that macroscopic wood
+identification relies on, and both retain more than 95\,\% of full-image
+performance.
+
+The natural first explanation --- that the models are simply reading
+colour --- is not supported: the histogram-only probe reaches 37.970\,\%.
+Colour carries real signal, far above the 5.882\,\% chance level, but it
+accounts for well under half of what the spatial probes achieve. The
+decisive evidence is therefore spatial but low-frequency: something that
+survives sixteen-fold downsampling. Broad tonal gradients, coarse
+figure, overall lightness distribution and specimen-level acquisition
+characteristics are all consistent with this and are not separated by the
+present experiments.
+
+Two readings remain open, and they have very different consequences. The
+benign reading is that conifer species genuinely differ in bulk optical
+properties at this scale, in which case the models have learned a real but
+coarser cue than intended, and the benchmark measures a legitimate if
+narrower task. The adverse reading is that low-frequency content carries
+specimen identity --- lighting, staining, mounting, camera setup --- and
+that residual specimen leakage (Section~\ref{sec:discussion:originkey})
+allows it to be exploited. The two readings cannot be separated from the
+present data. Distinguishing them requires evaluation on independently
+acquired images, which this study does not have
+(Section~\ref{sec:discussion:external}).
+
+The consequence for reporting is direct. The headline accuracies should be
+read as accuracy on this task and this corpus, not as evidence that the
+models identify wood by anatomy, and the project's own probe protocol
+records the benchmark as not yet released on this basis. This does not
+invalidate the architecture comparison in
+Section~\ref{sec:discussion:ranking}: all five backbones were trained and
+evaluated under identical conditions, so their relative ordering remains a
+valid comparison. It restricts what the absolute numbers may be claimed to
+demonstrate.
+
+Two further observations follow from the probes. Their retention ordering
+(blur above downsampling) suggests the useful content is at a coarser scale
+than $16\times16$ sampling preserves, which is a testable prediction for a
+resolution sweep --- an experiment that was configured for this study but
+never run (Section~\ref{sec:discussion:scope}). And the probes were trained
+for 20 epochs against 50 for the main runs, so their absolute numbers are
+lower bounds on what the destroyed inputs can support, which strengthens
+rather than weakens the argument.
+
+\subsection{Rotation Does Not Improve Uniformly}
+\label{sec:discussion:rotation}
+
+Discrete $90^\circ$ rotation was motivated by the observation that a
+macroscopic cross-section has no canonical orientation, so rotations by
+multiples of $90^\circ$ should preserve every diagnostic feature. The data
+do not support the expected benefit.
+
+The effect changes sign across architectures: positive for ResNet-50 and
+EfficientNet-B3, exactly zero for MobileNetV3-Large, negative for both
+ConvNeXt-Tiny and Swin-Tiny (Table~\ref{tab:ablation}). An augmentation that
+genuinely encoded a property of the imaging geometry would be expected to
+help, or at least not hurt, regardless of backbone. That the two strongest
+models are the two that decline is the opposite of the pattern a real
+invariance gain would produce.
+
+Two readings remain open and this study cannot separate them. The
+augmentation may be redundant --- the main configuration already applies
+continuous $\pm30^\circ$ rotation plus horizontal and vertical flips, so
+much of the orientation invariance may already be covered, leaving discrete
+$90^\circ$ rotation to trade away sample diversity for nothing. Or the
+deltas may simply be seed noise: four of the five magnitudes fall within
+about 1.6 times the corresponding seed-to-seed standard deviation, and with
+a single seed per ablation there is no way to tell a small real effect from
+a favourable draw. Either way, the practical conclusion is the same:
+discrete $90^\circ$ rotation should not be adopted as a default for this
+task on the strength of these runs.
+
+Label smoothing behaves differently and is worth separating. Removing it
+lowers accuracy for all five backbones without exception. No individual
+delta is large, and three of five are below the corresponding seed-to-seed
+standard deviation, so the effect size is not established --- but the
+consistency of direction across five independent architectures is the one
+pattern in the ablation table that does not look like noise. Raising label
+smoothing to 0.2 shows no such consistency. This is weak evidence that the
+default of 0.1 is a reasonable choice, and it is not evidence that 0.1 is
+optimal.
+
+\subsection{The Single-Seed Ablation Design Is the Binding Limitation}
+\label{sec:discussion:oneseed}
+
+Every ablation in this study was trained with seed 42 only. This is the most
+consequential methodological limitation of the ablation results, and it is
+not repairable by analysis.
+
+The main runs establish that seed-to-seed standard deviation on this task
+ranges from 0.319 to 1.022 accuracy points depending on backbone
+(Table~\ref{tab:task_b}). Of the 15 ablation deltas in
+Table~\ref{tab:ablation}, 9 are smaller than the standard deviation of their
+own backbone, and only one exceeds it by more than about 2.4 times. A
+single-seed delta of a fraction of a point therefore carries almost no
+information about the underlying effect: the measurement noise and the
+effect being measured are the same size.
+
+This has a specific consequence for how the ablation table should be read.
+Individual cells should not be interpreted. What can be read is the pattern
+across the row of five backbones --- a consistent sign across five
+independently initialised architectures, as seen for label smoothing 0.0, is
+harder to explain by seed noise than any single cell, even though each cell
+alone is uninformative. This is why Section~\ref{sec:results:ablation}
+reports directional consistency rather than effect magnitudes, and why no
+ablation is presented as an improvement.
+
+Repeating each ablation across the same three seeds used for the main runs
+would cost 30 additional training runs and would make these comparisons
+interpretable. That is the single highest-value extension to this study.
+
+\subsection{Effect of Origin-Key Construction}
+\label{sec:discussion:originkey}
+
+The Task~B partition groups images by specimen so that all crops from one
+physical wood sample fall in a single split. This matters because the source
+corpus is heavily cropped: 5{,}830 images derive from 557 specimens, and
+88.3\,\% of the images come from specimens contributing 24 crops or more.
+Under an image-level split, a specimen with 30 crops has a probability of
+about $6.9\times10^{-16}$ of avoiding the training set entirely, so
+essentially every large specimen appears in training, and test images become
+different crops of familiar samples rather than new samples. The earlier
+image-level Task~B partition showed exactly this: 97.62\,\% of its test
+images came from specimens already present in training. Accuracy measured
+under that partition describes crop recognition, not species generalisation.
+
+The specimen grouping used here removes that particular failure, but the
+guarantee it provides is bounded by how the specimen key is constructed. The
+key is derived from the filename: the trailing crop index is stripped and the
+class name prefixed, so \texttt{3351.\ Araucaria araucana.1.(12).png} becomes
+\texttt{Araucaria araucana::3351.\ Araucaria araucana.1.}. It is a naming
+convention, not a specimen identifier recorded at collection time. Two
+distinct consequences follow, and they are not symmetric.
+
+Over-grouping --- two physically different specimens sharing a filename stem
+and being merged into one key --- costs only split flexibility. It is
+conservative and does not inflate results.
+
+Under-grouping is the real risk. If crops of one physical specimen were
+saved under different stems, for example across separate scanning sessions or
+after a renaming step, the key assigns them different origins and the
+grouping silently fails to separate them. Nothing in the filename can detect
+this, and no independent specimen identifier exists in the corpus against
+which to check it.
+
+A dedicated audit of the key gives this concern a magnitude. Regrouping the
+552 keys of the 17-class set under a coarser candidate rule yields 325
+groups, a 41.1\,\% collapse: on that reading, four keys in ten are fragments
+of a larger physical unit rather than units in their own right. The audit
+also finds 86 sample numbers reused across species, so the numeric part of a
+filename is not by itself a specimen identifier. Its stated conclusion is
+that whether the key denotes a physical specimen or merely an image or view
+cannot yet be determined, and that filename structure must not substitute
+for verification against the collection's own records; that verification
+remains outstanding. The strength of the specimen-separation claim therefore
+rests on the source collection's naming discipline, which this study did not
+independently verify.
+
+Two further caveats affect what can be checked from the published artifacts.
+First, roughly 19\,\% of test images carry renumbered filenames in the
+deployed split, so their origin key cannot be reconstructed after the fact;
+among the 81\,\% that can be reconstructed, no specimen is shared between
+validation and test. Second, the registry publishes predictions for the
+validation and test splits only, so the train-versus-test separation --- the
+one that actually matters --- cannot be re-verified from the released
+artifacts and rests on the split construction itself. Publishing the
+specimen-to-split assignment alongside the registry would close this gap.
+
+\subsection{No External or Field Validation}
+\label{sec:discussion:external}
+
+All results come from a single corpus, split internally. The models have
+never been evaluated on wood imaged by a different operator, with different
+equipment, under different lighting, or at a different site. Accuracy above
+99\,\% should be read as accuracy on held-out specimens \emph{from this
+collection}, not as an estimate of field performance.
+
+This limit is more restrictive than it may appear, for a reason specific to
+this study. The single confusion that survives in the strongest model is
+between two \textit{Pinus} species, and the errors that separate ResNet-50
+from the rest are concentrated in a handful of species. Both patterns are
+properties of this corpus at its current size --- 24 to 39 test images per
+species, drawn from a limited number of specimens per species. A different
+collection could easily show a different set of difficult species without
+contradicting anything reported here.
+
+Nothing in this study supports a claim about deployment readiness. The
+appropriate next step is evaluation on an independently collected set of
+specimens, ideally imaged under conditions the models have not seen, before
+any operational use is considered.
+
+\subsection{Scope Decisions: Task A and the Resolution Ablation}
+\label{sec:discussion:scope}
+
+Two experiments that appear in the project plan are not reported in
+Section~\ref{sec:results}, and the reasons differ.
+
+\paragraph{Task A (family-level classification).} The family-level task used
+a species-stratified split operating at the image level, the same mechanism
+that produced 97.62\,\% specimen coverage in the earlier Task~B partition
+(Section~\ref{sec:discussion:originkey}), applied to the same heavily cropped
+corpus. Its results are therefore subject to the same leakage, and its
+near-perfect family-level scores --- including one architecture at
+100.000\,\% on all three seeds --- cannot be read as evidence of
+generalisation to unseen specimens. Reporting Task~A alongside a
+specimen-grouped Task~B would place two incomparable evaluation protocols in
+one results section and invite exactly the misreading the grouped split was
+built to prevent. Task~A is therefore excluded rather than reported with a
+caveat. Restoring it would require rebuilding the family-level split by
+specimen and retraining all 15 runs; at family level this is less likely to
+run short of classes than at species level, since the three species excluded
+from Task~B belong to families that retain many other specimens. Note also
+that the family-level task is defined over four families, folding
+\textit{Araucaria araucana} into Pinaceae, whereas the grouping used in
+Section~\ref{sec:results} keeps Araucariaceae separate; the two would have to
+be reconciled before the tasks could be reported side by side.
+
+\paragraph{Input resolution.} A $384$-pixel resolution ablation was
+configured but never trained; no runs for it exist in the registry. Input
+resolution is consequently untested in this study. This is a genuine gap
+rather than an exclusion: resolution plausibly interacts with the one
+difficulty that survives in the best model, since distinguishing
+\textit{P.\ krempfii} from \textit{P.\ dalatensis} may depend on fine
+anatomical detail that $224$-pixel inputs do not resolve. Testing it is a
+natural companion to the multi-seed ablation proposed in
+Section~\ref{sec:discussion:oneseed}.

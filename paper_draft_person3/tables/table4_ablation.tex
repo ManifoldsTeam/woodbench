@@ -1,0 +1,26 @@
+% Table 4: Ablation study summary
+% Nguon: docs/reports/phase_1/phase_1_summary_report.md, muc 6
+\begin{table*}[t]
+\centering
+\caption{Ablation study on the Task B test set, seed 42 only. The rotation
+ablation contrasts discrete rotation over $\{0^\circ,90^\circ,180^\circ,
+270^\circ\}$ against the default continuous rotation within $\pm30^\circ$;
+the two configurations are mutually exclusive. The label smoothing ablation
+varies $\epsilon$ while all other settings are held fixed; $\epsilon=0.1$
+is the main configuration. Best label smoothing level per architecture in bold.}
+\label{tab:ablation}
+\begin{tabular}{lccc|ccc}
+\toprule
+& \multicolumn{3}{c|}{\textbf{Rotation (Accuracy \%)}}
+& \multicolumn{3}{c}{\textbf{Label smoothing (Accuracy \%)}} \\
+\textbf{Architecture} & Continuous $\pm30^\circ$ & Discrete $90^\circ$ & $\Delta$
+& $\epsilon=0.0$ & $\epsilon=0.1$ & $\epsilon=0.2$ \\
+\midrule
+ResNet-50         & 94.737 & 95.489  & $+0.752$ & 93.797 & \textbf{94.737} & 93.985 \\
+EfficientNet-B3   & 96.992 & 98.684  & $\mathbf{+1.692}$ & 96.429 & \textbf{96.992} & 95.677 \\
+MobileNetV3-Large & 98.496 & 98.684  & $+0.188$ & 98.120 & 98.496 & \textbf{98.684} \\
+ConvNeXt-Tiny     & 99.624 & \textbf{100.000} & $+0.376$ & \textbf{99.812} & 99.624 & 97.932 \\
+Swin-Tiny         & 99.060 & 99.812  & $+0.752$ & 99.436 & 99.060 & \textbf{99.624} \\
+\bottomrule
+\end{tabular}
+\end{table*}

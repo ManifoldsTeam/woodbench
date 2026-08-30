@@ -1,0 +1,21 @@
+% Table 2: Species-level (Task B) performance
+% Nguon: docs/reports/phase_1/phase_1_summary_report.md, muc 5
+\begin{table}[t]
+\centering
+\caption{Species-level classification performance on the Task B test set
+(17 species, 532 images, origin-safe partition). Values are mean $\pm$
+standard deviation over three seeds (42, 123, 456). Best result per column
+in bold.}
+\label{tab:task_b}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Architecture} & \textbf{Top-1 Accuracy (\%)} & \textbf{Macro-F1 (\%)} \\
+\midrule
+ResNet-50          & $93.672 \pm 1.022$ & $93.844 \pm 0.998$ \\
+EfficientNet-B3    & $97.118 \pm 0.177$ & $97.138 \pm 0.221$ \\
+MobileNetV3-Large  & $98.371 \pm 0.319$ & $98.407 \pm 0.339$ \\
+ConvNeXt-Tiny      & $\mathbf{99.499 \pm 0.089}$ & $\mathbf{99.524 \pm 0.059}$ \\
+Swin-Tiny          & $99.436 \pm 0.307$ & $99.481 \pm 0.282$ \\
+\bottomrule
+\end{tabular}
+\end{table}

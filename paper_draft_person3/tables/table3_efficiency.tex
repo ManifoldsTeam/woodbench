@@ -1,0 +1,27 @@
+% Table 3: Computational efficiency benchmark
+% Nguon: docs/reports/phase_1/phase_1_summary_report.md, muc 7
+\begin{table*}[t]
+\centering
+\caption{Comprehensive efficiency benchmark measured on a single
+NVIDIA GeForce RTX 3060. Input $1\times3\times224\times224$, batch size 1,
+20 warm-up iterations (excluded) followed by 100 timed iterations.
+FLOPs are derived from THOP multiply-accumulate counts using the
+convention $1\,\text{MAC}=2\,\text{FLOPs}$. Model size is the serialized
+state dict, excluding optimizer and scheduler state. Task B accuracy is
+repeated from Table~\ref{tab:task_b} for reference. Best value per column
+in bold.}
+\label{tab:efficiency}
+\begin{tabular}{lrrrrrr}
+\toprule
+\textbf{Architecture} & \textbf{Params} & \textbf{GFLOPs} & \textbf{Size} &
+\textbf{Latency} & \textbf{P95} & \textbf{Task B Acc.} \\
+ & (M) & & (MB) & (ms/image) & (ms) & (\%) \\
+\midrule
+ResNet-50          & 23.54 & 8.263 & 90.11  & 3.094 & 3.758 & 93.672 \\
+EfficientNet-B3    & 10.72 & 1.877 & 41.42  & 3.474 & 3.909 & 97.118 \\
+MobileNetV3-Large  & \textbf{4.22} & \textbf{0.431} & \textbf{16.30} & \textbf{1.882} & \textbf{2.720} & 98.371 \\
+ConvNeXt-Tiny      & 27.83 & 8.910 & 106.24 & 3.762 & 4.557 & \textbf{99.499} \\
+Swin-Tiny          & 27.53 & 8.742 & 105.09 & 4.696 & 5.534 & 99.436 \\
+\bottomrule
+\end{tabular}
+\end{table*}

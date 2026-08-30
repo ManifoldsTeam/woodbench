@@ -1,0 +1,32 @@
+% Table: model complexity (params / MACs / size)
+% AUTO-GENERATED bang scripts/person3/make_result_tables.py -- khong sua tay
+% Source file      : results/efficiency.csv
+% KHONG thuoc registry 20260819T043733Z: day la thuoc tinh kien truc,
+% do voi pretrained=False nen doc lap voi checkpoint va lan huan luyen.
+% Latency da BO (do tren NVIDIA GeForce RTX 3060, khac phan cung cua registry).
+% Cot MACs = cot flops_g cua CSV chia 2 (CSV dem FLOPs = 2 x MACs).
+\begin{table}[!htbp]
+\centering
+\caption{Model complexity of the five architectures at the $224\times224$ input
+resolution used throughout, with a 17-class head. Parameter counts, multiply--accumulate
+operations (MACs) and model size are properties of the architecture: they were
+measured on randomly initialised models and do not depend on any trained
+checkpoint. MACs are reported rather than FLOPs; the profiling script records
+$\text{FLOPs} = 2\times\text{MACs}$, and the values below are that column halved, so
+that they are directly comparable with the convention used in the architecture
+literature. Inference latency is not reported: it was measured on different
+hardware from the training and evaluation runs and is therefore not comparable
+with any other number in this paper.}
+\label{tab:efficiency}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Architecture} & \textbf{Params (M)} & \textbf{MACs (G)} & \textbf{Model size (MB)} \\
+\midrule
+ResNet-50         & $23.54$ & $4.13$ & $90.11$ \\
+EfficientNet-B3   & $10.72$ & $0.94$ & $41.42$ \\
+MobileNetV3-Large & $4.22$ & $0.22$ & $16.30$ \\
+ConvNeXt-Tiny     & $27.83$ & $4.46$ & $106.24$ \\
+Swin-Tiny         & $27.53$ & $4.37$ & $105.09$ \\
+\bottomrule
+\end{tabular}
+\end{table}

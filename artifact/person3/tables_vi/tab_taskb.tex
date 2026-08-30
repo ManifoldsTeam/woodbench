@@ -1,0 +1,36 @@
+% Table: Task B main benchmark (species-level, 17 classes)
+% AUTO-GENERATED bang scripts/person3/make_result_tables.py -- khong sua tay
+% Source file      : docs/reports/experiments/phase_1b/final_b_new_recomputed/20260819T043733Z/main_test_summary.csv
+% Registry created : 2026-08-19T04:37:33.586402+00:00
+% Source run ids   : 15 runs
+%   taskB17__main__seed_123__convnext_tiny
+%   taskB17__main__seed_123__efficientnet_b3
+%   taskB17__main__seed_123__mobilenetv3_large
+%   taskB17__main__seed_123__resnet50
+%   taskB17__main__seed_123__swin_tiny
+%   taskB17__main__seed_42__convnext_tiny
+%   taskB17__main__seed_42__efficientnet_b3
+%   taskB17__main__seed_42__mobilenetv3_large
+%   taskB17__main__seed_42__resnet50
+%   taskB17__main__seed_42__swin_tiny
+%   taskB17__main__seed_456__convnext_tiny
+%   taskB17__main__seed_456__efficientnet_b3
+%   taskB17__main__seed_456__mobilenetv3_large
+%   taskB17__main__seed_456__resnet50
+%   taskB17__main__seed_456__swin_tiny
+\begin{table}[!htbp]
+\centering
+\caption{Hiệu năng phân loại ở cấp loài trên tập test Task~B (17 loài, 532 ảnh, phân hoạch gom theo khóa nguồn sao cho các ảnh cùng một khóa nguồn nằm trong cùng một tập). Giá trị là trung bình $\pm$ độ lệch chuẩn trên 3 seed huấn luyện (42, 123, 456); độ phân tán được báo cáo là độ lệch chuẩn trên ba lần chạy, không phải ước lượng khoảng. Giá trị tốt nhất mỗi cột in đậm.}
+\label{tab:task_b}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Kiến trúc} & \textbf{Độ chính xác Top-1 (\%)} & \textbf{Macro-F1 (\%)} \\
+\midrule
+ResNet-50         & $92.356 \pm 1.022$ & $92.569 \pm 0.982$ \\
+EfficientNet-B3   & $97.807 \pm 0.319$ & $97.844 \pm 0.322$ \\
+MobileNetV3-Large & $98.371 \pm 0.319$ & $98.448 \pm 0.345$ \\
+ConvNeXt-Tiny     & $\mathbf{99.561 \pm 0.354}$ & $\mathbf{99.596 \pm 0.326}$ \\
+Swin-Tiny         & $99.123 \pm 0.581$ & $99.196 \pm 0.533$ \\
+\bottomrule
+\end{tabular}
+\end{table}

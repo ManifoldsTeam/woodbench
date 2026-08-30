@@ -1,0 +1,812 @@
+{
+  "generated_by": "scripts/person3/make_confusion_and_perclass.py",
+  "source_files": {
+    "per_class_f1": "docs/reports/experiments/phase_1b/final_b_new_recomputed/20260819T043733Z/per_class_metrics.csv",
+    "error_analysis": "docs/reports/experiments/phase_1b/final_b_new_recomputed/20260819T043733Z/predictions.csv"
+  },
+  "registry_dir": "docs/reports/experiments/phase_1b/final_b_new_recomputed/20260819T043733Z",
+  "registry_created_at_utc": "2026-08-19T04:37:33.586402+00:00",
+  "split_version": "task-B-group-split:359be7f5379818d4",
+  "seeds": [
+    "42",
+    "123",
+    "456"
+  ],
+  "dispersion_reported_as": "standard deviation over 3 seeds (not an interval estimate)",
+  "backbones": [
+    "resnet50",
+    "efficientnet_b3",
+    "mobilenetv3_large",
+    "convnext_tiny",
+    "swin_tiny"
+  ],
+  "class_order": [
+    "Araucaria araucana",
+    "Callitris columellaris",
+    "Calocedrus rupestris",
+    "Chamaecyparis obtusa",
+    "Cryptomeria japonica",
+    "Cunninghamia lanceolata",
+    "Fokienia hodginsii",
+    "Thujopsis dolabrata",
+    "Xanthocyparis vietnamensis",
+    "Picea glauca",
+    "Pinus cernua",
+    "Pinus dalatensis",
+    "Pinus krempfii",
+    "Pinus radiata",
+    "Pseudotsuga brevifolia",
+    "Podocarpus pilgeri",
+    "Taxus wallichiana"
+  ],
+  "class_family": {
+    "Araucaria araucana": "Araucariaceae",
+    "Callitris columellaris": "Cupressaceae",
+    "Calocedrus rupestris": "Cupressaceae",
+    "Chamaecyparis obtusa": "Cupressaceae",
+    "Cryptomeria japonica": "Cupressaceae",
+    "Cunninghamia lanceolata": "Cupressaceae",
+    "Fokienia hodginsii": "Cupressaceae",
+    "Thujopsis dolabrata": "Cupressaceae",
+    "Xanthocyparis vietnamensis": "Cupressaceae",
+    "Picea glauca": "Pinaceae",
+    "Pinus cernua": "Pinaceae",
+    "Pinus dalatensis": "Pinaceae",
+    "Pinus krempfii": "Pinaceae",
+    "Pinus radiata": "Pinaceae",
+    "Pseudotsuga brevifolia": "Pinaceae",
+    "Podocarpus pilgeri": "Podocarpaceae",
+    "Taxus wallichiana": "Taxaceae"
+  },
+  "support": {
+    "Araucaria araucana": 30,
+    "Callitris columellaris": 34,
+    "Calocedrus rupestris": 24,
+    "Chamaecyparis obtusa": 33,
+    "Cryptomeria japonica": 33,
+    "Cunninghamia lanceolata": 27,
+    "Fokienia hodginsii": 39,
+    "Picea glauca": 25,
+    "Pinus cernua": 31,
+    "Pinus dalatensis": 32,
+    "Pinus krempfii": 36,
+    "Pinus radiata": 31,
+    "Podocarpus pilgeri": 36,
+    "Pseudotsuga brevifolia": 29,
+    "Taxus wallichiana": 26,
+    "Thujopsis dolabrata": 34,
+    "Xanthocyparis vietnamensis": 32
+  },
+  "per_class_f1": {
+    "Araucaria araucana": {
+      "resnet50": {
+        "mean_pct": 95.9047,
+        "sd_pct": 2.781
+      },
+      "efficientnet_b3": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "mobilenetv3_large": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "convnext_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "swin_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      }
+    },
+    "Callitris columellaris": {
+      "resnet50": {
+        "mean_pct": 94.0667,
+        "sd_pct": 1.734
+      },
+      "efficientnet_b3": {
+        "mean_pct": 97.9949,
+        "sd_pct": 0.8878
+      },
+      "mobilenetv3_large": {
+        "mean_pct": 99.0196,
+        "sd_pct": 1.6981
+      },
+      "convnext_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "swin_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      }
+    },
+    "Calocedrus rupestris": {
+      "resnet50": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "efficientnet_b3": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "mobilenetv3_large": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "convnext_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "swin_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      }
+    },
+    "Chamaecyparis obtusa": {
+      "resnet50": {
+        "mean_pct": 80.3361,
+        "sd_pct": 4.6576
+      },
+      "efficientnet_b3": {
+        "mean_pct": 98.4922,
+        "sd_pct": 0.0265
+      },
+      "mobilenetv3_large": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "convnext_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "swin_tiny": {
+        "mean_pct": 97.5557,
+        "sd_pct": 1.6485
+      }
+    },
+    "Cryptomeria japonica": {
+      "resnet50": {
+        "mean_pct": 98.9744,
+        "sd_pct": 0.8882
+      },
+      "efficientnet_b3": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "mobilenetv3_large": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "convnext_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "swin_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      }
+    },
+    "Cunninghamia lanceolata": {
+      "resnet50": {
+        "mean_pct": 96.7814,
+        "sd_pct": 2.3068
+      },
+      "efficientnet_b3": {
+        "mean_pct": 97.5974,
+        "sd_pct": 1.0122
+      },
+      "mobilenetv3_large": {
+        "mean_pct": 98.7654,
+        "sd_pct": 2.1383
+      },
+      "convnext_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "swin_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      }
+    },
+    "Fokienia hodginsii": {
+      "resnet50": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "efficientnet_b3": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "mobilenetv3_large": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "convnext_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "swin_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      }
+    },
+    "Thujopsis dolabrata": {
+      "resnet50": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "efficientnet_b3": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "mobilenetv3_large": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "convnext_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "swin_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      }
+    },
+    "Xanthocyparis vietnamensis": {
+      "resnet50": {
+        "mean_pct": 95.4305,
+        "sd_pct": 0.0795
+      },
+      "efficientnet_b3": {
+        "mean_pct": 97.3871,
+        "sd_pct": 1.8611
+      },
+      "mobilenetv3_large": {
+        "mean_pct": 95.7325,
+        "sd_pct": 1.8922
+      },
+      "convnext_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "swin_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      }
+    },
+    "Picea glauca": {
+      "resnet50": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "efficientnet_b3": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "mobilenetv3_large": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "convnext_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "swin_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      }
+    },
+    "Pinus cernua": {
+      "resnet50": {
+        "mean_pct": 95.6102,
+        "sd_pct": 0.9149
+      },
+      "efficientnet_b3": {
+        "mean_pct": 97.8318,
+        "sd_pct": 0.9159
+      },
+      "mobilenetv3_large": {
+        "mean_pct": 99.4709,
+        "sd_pct": 0.9164
+      },
+      "convnext_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "swin_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      }
+    },
+    "Pinus dalatensis": {
+      "resnet50": {
+        "mean_pct": 87.5957,
+        "sd_pct": 3.9134
+      },
+      "efficientnet_b3": {
+        "mean_pct": 92.2279,
+        "sd_pct": 0.9106
+      },
+      "mobilenetv3_large": {
+        "mean_pct": 92.7666,
+        "sd_pct": 1.3446
+      },
+      "convnext_tiny": {
+        "mean_pct": 96.5589,
+        "sd_pct": 3.2955
+      },
+      "swin_tiny": {
+        "mean_pct": 95.6199,
+        "sd_pct": 3.7057
+      }
+    },
+    "Pinus krempfii": {
+      "resnet50": {
+        "mean_pct": 87.3828,
+        "sd_pct": 0.7383
+      },
+      "efficientnet_b3": {
+        "mean_pct": 93.663,
+        "sd_pct": 0.7875
+      },
+      "mobilenetv3_large": {
+        "mean_pct": 89.8494,
+        "sd_pct": 0.2943
+      },
+      "convnext_tiny": {
+        "mean_pct": 96.5735,
+        "sd_pct": 3.4954
+      },
+      "swin_tiny": {
+        "mean_pct": 95.5478,
+        "sd_pct": 4.082
+      }
+    },
+    "Pinus radiata": {
+      "resnet50": {
+        "mean_pct": 96.409,
+        "sd_pct": 2.2728
+      },
+      "efficientnet_b3": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "mobilenetv3_large": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "convnext_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "swin_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      }
+    },
+    "Pseudotsuga brevifolia": {
+      "resnet50": {
+        "mean_pct": 98.3051,
+        "sd_pct": 0.0
+      },
+      "efficientnet_b3": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "mobilenetv3_large": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "convnext_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "swin_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      }
+    },
+    "Podocarpus pilgeri": {
+      "resnet50": {
+        "mean_pct": 61.9937,
+        "sd_pct": 9.5978
+      },
+      "efficientnet_b3": {
+        "mean_pct": 95.4204,
+        "sd_pct": 1.5622
+      },
+      "mobilenetv3_large": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "convnext_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "swin_tiny": {
+        "mean_pct": 97.6118,
+        "sd_pct": 1.697
+      }
+    },
+    "Taxus wallichiana": {
+      "resnet50": {
+        "mean_pct": 84.8905,
+        "sd_pct": 2.1819
+      },
+      "efficientnet_b3": {
+        "mean_pct": 92.732,
+        "sd_pct": 2.9704
+      },
+      "mobilenetv3_large": {
+        "mean_pct": 98.0131,
+        "sd_pct": 2.0001
+      },
+      "convnext_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      },
+      "swin_tiny": {
+        "mean_pct": 100.0,
+        "sd_pct": 0.0
+      }
+    }
+  },
+  "error_analysis": {
+    "source": "predictions.csv (split=test, experiment=main)",
+    "n_predictions": 7980,
+    "n_errors": 204,
+    "errors_by_backbone": {
+      "resnet50": 122,
+      "efficientnet_b3": 35,
+      "mobilenetv3_large": 26,
+      "convnext_tiny": 7,
+      "swin_tiny": 14
+    },
+    "family_error_rate_all_backbones": {
+      "Araucariaceae": {
+        "errors": 7,
+        "predictions": 450,
+        "error_rate_pct": 1.5556
+      },
+      "Cupressaceae": {
+        "errors": 30,
+        "predictions": 3840,
+        "error_rate_pct": 0.7812
+      },
+      "Pinaceae": {
+        "errors": 78,
+        "predictions": 2760,
+        "error_rate_pct": 2.8261
+      },
+      "Podocarpaceae": {
+        "errors": 59,
+        "predictions": 540,
+        "error_rate_pct": 10.9259
+      },
+      "Taxaceae": {
+        "errors": 30,
+        "predictions": 390,
+        "error_rate_pct": 7.6923
+      }
+    },
+    "family_error_rate_excluding_resnet50": {
+      "Araucariaceae": {
+        "errors": 0,
+        "predictions": 360,
+        "error_rate_pct": 0.0
+      },
+      "Cupressaceae": {
+        "errors": 15,
+        "predictions": 3072,
+        "error_rate_pct": 0.4883
+      },
+      "Pinaceae": {
+        "errors": 47,
+        "predictions": 2208,
+        "error_rate_pct": 2.1286
+      },
+      "Podocarpaceae": {
+        "errors": 9,
+        "predictions": 432,
+        "error_rate_pct": 2.0833
+      },
+      "Taxaceae": {
+        "errors": 11,
+        "predictions": 312,
+        "error_rate_pct": 3.5256
+      }
+    },
+    "cross_family_errors": 117,
+    "within_family_errors": 87,
+    "confusion_pairs": {
+      "Pinus krempfii -> Pinus dalatensis": {
+        "total_over_all_backbones": 61,
+        "by_backbone": {
+          "resnet50": 18,
+          "efficientnet_b3": 12,
+          "mobilenetv3_large": 15,
+          "convnext_tiny": 7,
+          "swin_tiny": 9
+        }
+      },
+      "Podocarpus pilgeri -> Chamaecyparis obtusa": {
+        "total_over_all_backbones": 55,
+        "by_backbone": {
+          "resnet50": 48,
+          "efficientnet_b3": 2,
+          "mobilenetv3_large": 0,
+          "convnext_tiny": 0,
+          "swin_tiny": 5
+        }
+      },
+      "Taxus wallichiana -> Podocarpus pilgeri": {
+        "total_over_all_backbones": 17,
+        "by_backbone": {
+          "resnet50": 12,
+          "efficientnet_b3": 5,
+          "mobilenetv3_large": 0,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Taxus wallichiana -> Xanthocyparis vietnamensis": {
+        "total_over_all_backbones": 12,
+        "by_backbone": {
+          "resnet50": 7,
+          "efficientnet_b3": 3,
+          "mobilenetv3_large": 2,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Xanthocyparis vietnamensis -> Pinus krempfii": {
+        "total_over_all_backbones": 8,
+        "by_backbone": {
+          "resnet50": 1,
+          "efficientnet_b3": 1,
+          "mobilenetv3_large": 6,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Araucaria araucana -> Pinus radiata": {
+        "total_over_all_backbones": 7,
+        "by_backbone": {
+          "resnet50": 7,
+          "efficientnet_b3": 0,
+          "mobilenetv3_large": 0,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Cunninghamia lanceolata -> Callitris columellaris": {
+        "total_over_all_backbones": 6,
+        "by_backbone": {
+          "resnet50": 5,
+          "efficientnet_b3": 0,
+          "mobilenetv3_large": 1,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Pinus cernua -> Pinus krempfii": {
+        "total_over_all_backbones": 6,
+        "by_backbone": {
+          "resnet50": 6,
+          "efficientnet_b3": 0,
+          "mobilenetv3_large": 0,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Callitris columellaris -> Cunninghamia lanceolata": {
+        "total_over_all_backbones": 5,
+        "by_backbone": {
+          "resnet50": 0,
+          "efficientnet_b3": 4,
+          "mobilenetv3_large": 1,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Pinus cernua -> Pinus dalatensis": {
+        "total_over_all_backbones": 3,
+        "by_backbone": {
+          "resnet50": 0,
+          "efficientnet_b3": 3,
+          "mobilenetv3_large": 0,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Podocarpus pilgeri -> Taxus wallichiana": {
+        "total_over_all_backbones": 3,
+        "by_backbone": {
+          "resnet50": 1,
+          "efficientnet_b3": 2,
+          "mobilenetv3_large": 0,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Callitris columellaris -> Podocarpus pilgeri": {
+        "total_over_all_backbones": 3,
+        "by_backbone": {
+          "resnet50": 3,
+          "efficientnet_b3": 0,
+          "mobilenetv3_large": 0,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Pinus dalatensis -> Podocarpus pilgeri": {
+        "total_over_all_backbones": 3,
+        "by_backbone": {
+          "resnet50": 3,
+          "efficientnet_b3": 0,
+          "mobilenetv3_large": 0,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Xanthocyparis vietnamensis -> Podocarpus pilgeri": {
+        "total_over_all_backbones": 2,
+        "by_backbone": {
+          "resnet50": 1,
+          "efficientnet_b3": 1,
+          "mobilenetv3_large": 0,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Pinus dalatensis -> Pinus cernua": {
+        "total_over_all_backbones": 2,
+        "by_backbone": {
+          "resnet50": 1,
+          "efficientnet_b3": 1,
+          "mobilenetv3_large": 0,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Pinus dalatensis -> Pseudotsuga brevifolia": {
+        "total_over_all_backbones": 2,
+        "by_backbone": {
+          "resnet50": 2,
+          "efficientnet_b3": 0,
+          "mobilenetv3_large": 0,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Chamaecyparis obtusa -> Taxus wallichiana": {
+        "total_over_all_backbones": 1,
+        "by_backbone": {
+          "resnet50": 0,
+          "efficientnet_b3": 1,
+          "mobilenetv3_large": 0,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Taxus wallichiana -> Pinus cernua": {
+        "total_over_all_backbones": 1,
+        "by_backbone": {
+          "resnet50": 0,
+          "efficientnet_b3": 0,
+          "mobilenetv3_large": 1,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Podocarpus pilgeri -> Callitris columellaris": {
+        "total_over_all_backbones": 1,
+        "by_backbone": {
+          "resnet50": 1,
+          "efficientnet_b3": 0,
+          "mobilenetv3_large": 0,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Callitris columellaris -> Taxus wallichiana": {
+        "total_over_all_backbones": 1,
+        "by_backbone": {
+          "resnet50": 1,
+          "efficientnet_b3": 0,
+          "mobilenetv3_large": 0,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Cryptomeria japonica -> Podocarpus pilgeri": {
+        "total_over_all_backbones": 1,
+        "by_backbone": {
+          "resnet50": 1,
+          "efficientnet_b3": 0,
+          "mobilenetv3_large": 0,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Pinus dalatensis -> Pinus krempfii": {
+        "total_over_all_backbones": 1,
+        "by_backbone": {
+          "resnet50": 1,
+          "efficientnet_b3": 0,
+          "mobilenetv3_large": 0,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Callitris columellaris -> Pseudotsuga brevifolia": {
+        "total_over_all_backbones": 1,
+        "by_backbone": {
+          "resnet50": 1,
+          "efficientnet_b3": 0,
+          "mobilenetv3_large": 0,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Callitris columellaris -> Pinus cernua": {
+        "total_over_all_backbones": 1,
+        "by_backbone": {
+          "resnet50": 1,
+          "efficientnet_b3": 0,
+          "mobilenetv3_large": 0,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      },
+      "Cryptomeria japonica -> Chamaecyparis obtusa": {
+        "total_over_all_backbones": 1,
+        "by_backbone": {
+          "resnet50": 1,
+          "efficientnet_b3": 0,
+          "mobilenetv3_large": 0,
+          "convnext_tiny": 0,
+          "swin_tiny": 0
+        }
+      }
+    }
+  },
+  "source_run_ids": {
+    "per_class_metrics_csv": [
+      "taskB17__main__seed_123__convnext_tiny",
+      "taskB17__main__seed_123__efficientnet_b3",
+      "taskB17__main__seed_123__mobilenetv3_large",
+      "taskB17__main__seed_123__resnet50",
+      "taskB17__main__seed_123__swin_tiny",
+      "taskB17__main__seed_42__convnext_tiny",
+      "taskB17__main__seed_42__efficientnet_b3",
+      "taskB17__main__seed_42__mobilenetv3_large",
+      "taskB17__main__seed_42__resnet50",
+      "taskB17__main__seed_42__swin_tiny",
+      "taskB17__main__seed_456__convnext_tiny",
+      "taskB17__main__seed_456__efficientnet_b3",
+      "taskB17__main__seed_456__mobilenetv3_large",
+      "taskB17__main__seed_456__resnet50",
+      "taskB17__main__seed_456__swin_tiny"
+    ],
+    "predictions_csv": [
+      "taskB17__main__seed_123__convnext_tiny",
+      "taskB17__main__seed_123__efficientnet_b3",
+      "taskB17__main__seed_123__mobilenetv3_large",
+      "taskB17__main__seed_123__resnet50",
+      "taskB17__main__seed_123__swin_tiny",
+      "taskB17__main__seed_42__convnext_tiny",
+      "taskB17__main__seed_42__efficientnet_b3",
+      "taskB17__main__seed_42__mobilenetv3_large",
+      "taskB17__main__seed_42__resnet50",
+      "taskB17__main__seed_42__swin_tiny",
+      "taskB17__main__seed_456__convnext_tiny",
+      "taskB17__main__seed_456__efficientnet_b3",
+      "taskB17__main__seed_456__mobilenetv3_large",
+      "taskB17__main__seed_456__resnet50",
+      "taskB17__main__seed_456__swin_tiny"
+    ]
+  }
+}

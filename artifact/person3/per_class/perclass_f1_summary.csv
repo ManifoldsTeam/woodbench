@@ -1,0 +1,18 @@
+species,family,n_test_images,resnet50_f1_mean_pct,resnet50_f1_sd_pct,efficientnet_b3_f1_mean_pct,efficientnet_b3_f1_sd_pct,mobilenetv3_large_f1_mean_pct,mobilenetv3_large_f1_sd_pct,convnext_tiny_f1_mean_pct,convnext_tiny_f1_sd_pct,swin_tiny_f1_mean_pct,swin_tiny_f1_sd_pct
+Araucaria araucana,Araucariaceae,30,95.9047,2.781,100.0,0.0,100.0,0.0,100.0,0.0,100.0,0.0
+Callitris columellaris,Cupressaceae,34,94.0667,1.734,97.9949,0.8878,99.0196,1.6981,100.0,0.0,100.0,0.0
+Calocedrus rupestris,Cupressaceae,24,100.0,0.0,100.0,0.0,100.0,0.0,100.0,0.0,100.0,0.0
+Chamaecyparis obtusa,Cupressaceae,33,80.3361,4.6576,98.4922,0.0265,100.0,0.0,100.0,0.0,97.5557,1.6485
+Cryptomeria japonica,Cupressaceae,33,98.9744,0.8882,100.0,0.0,100.0,0.0,100.0,0.0,100.0,0.0
+Cunninghamia lanceolata,Cupressaceae,27,96.7814,2.3068,97.5974,1.0122,98.7654,2.1383,100.0,0.0,100.0,0.0
+Fokienia hodginsii,Cupressaceae,39,100.0,0.0,100.0,0.0,100.0,0.0,100.0,0.0,100.0,0.0
+Thujopsis dolabrata,Cupressaceae,34,100.0,0.0,100.0,0.0,100.0,0.0,100.0,0.0,100.0,0.0
+Xanthocyparis vietnamensis,Cupressaceae,32,95.4305,0.0795,97.3871,1.8611,95.7325,1.8922,100.0,0.0,100.0,0.0
+Picea glauca,Pinaceae,25,100.0,0.0,100.0,0.0,100.0,0.0,100.0,0.0,100.0,0.0
+Pinus cernua,Pinaceae,31,95.6102,0.9149,97.8318,0.9159,99.4709,0.9164,100.0,0.0,100.0,0.0
+Pinus dalatensis,Pinaceae,32,87.5957,3.9134,92.2279,0.9106,92.7666,1.3446,96.5589,3.2955,95.6199,3.7057
+Pinus krempfii,Pinaceae,36,87.3828,0.7383,93.663,0.7875,89.8494,0.2943,96.5735,3.4954,95.5478,4.082
+Pinus radiata,Pinaceae,31,96.409,2.2728,100.0,0.0,100.0,0.0,100.0,0.0,100.0,0.0
+Pseudotsuga brevifolia,Pinaceae,29,98.3051,0.0,100.0,0.0,100.0,0.0,100.0,0.0,100.0,0.0
+Podocarpus pilgeri,Podocarpaceae,36,61.9937,9.5978,95.4204,1.5622,100.0,0.0,100.0,0.0,97.6118,1.697
+Taxus wallichiana,Taxaceae,26,84.8905,2.1819,92.732,2.9704,98.0131,2.0001,100.0,0.0,100.0,0.0

@@ -238,3 +238,6 @@ data-taskB/data-B
 data-taskB/data-B.tar.zst
 data-taskB/preview_flash_images.ipynb
 artifacts/
+.agents
+.claude
+.kiro

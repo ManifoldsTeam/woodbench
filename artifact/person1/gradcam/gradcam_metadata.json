@@ -1,0 +1,16 @@
+{
+  "generated_at_utc": "2026-08-27T05:47:10.035837+00:00",
+  "selection_rule": "Correct for all three models; for each family choose the image nearest the median ConvNeXt-Tiny confidence; break ties by image_path.",
+  "dataset_split": "data/task-B-group-split/test",
+  "num_selected_images": 5,
+  "families": [
+    "Araucariaceae",
+    "Cupressaceae",
+    "Pinaceae",
+    "Podocarpaceae",
+    "Taxaceae"
+  ],
+  "device": "cpu",
+  "checkpoint_root": "woodbench/data/experiments/Task-B-new/19-08-2026",
+  "source_predictions": "woodbench/docs/reports/experiments/phase_1b/final_b_new_recomputed/20260819T043733Z/predictions.csv"
+}

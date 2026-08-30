@@ -1,0 +1,6 @@
+Keo tu: github.com/ManifoldsTeam/WoodID  branch p1
+Commit: d39a3f6b2cc5942e1e718c0dca86e89b0d81eb4d
+Duong dan goc: artifact/person1
+Ngay keo: 2026-08-29T04:11:04Z
+Luu y: repo nay (woodbench) co remote khac (ManifoldsTeam/woodbench).
+       person1 la artifact tu repo WoodID, khong sinh lai duoc bang script trong woodbench.

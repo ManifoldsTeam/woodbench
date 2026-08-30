@@ -1,0 +1,334 @@
+% =====================================================================
+% Mục 5 — Bàn luận  (BẢN TIẾNG VIỆT)
+%
+% Bản dịch đối ứng 1-1 với sections/05_discussion.tex. Mọi con số phải giống
+% bản tiếng Anh. Mục này không đưa ra con số mới nào ngoài Mục 4.
+%
+% Độ phân tán luôn là độ lệch chuẩn trên ba seed, không bao giờ là ước lượng
+% khoảng.
+%
+% DẤU THẬP PHÂN: giữ dấu chấm như bản tiếng Anh, để phép kiểm tra trùng khớp
+% tập con số giữa hai bản còn hiệu lực.
+% =====================================================================
+
+\section{Bàn luận}
+\label{vi:sec:discussion}
+
+\subsection{Thứ hạng kiến trúc và biến động giữa các seed}
+\label{vi:sec:discussion:ranking}
+
+Benchmark tách ra thành hai phát hiện có độ vững chắc rất khác nhau, và không
+nên báo cáo chung với cùng một mức tự tin.
+
+Phát hiện vững chắc là ResNet-50 không cạnh tranh được ở bài toán này. Mức
+$92.356 \pm 1.022$\,\% của nó thấp hơn ConvNeXt-Tiny khoảng bảy điểm, một
+khoảng cách gấp nhiều lần độ lệch chuẩn giữa các seed của chính nó, và nó gây
+ra 122 trong 204 lỗi của cả năm backbone trên mọi seed
+(Mục~\ref{vi:sec:results:perspecies}). Khoảng cách này còn mang tính cấu trúc
+chứ không khuếch tán: nó tập trung ở một số loài cụ thể mà bốn kiến trúc kia
+gần như hoàn hảo.
+
+Phát hiện mong manh là thứ tự giữa bốn mô hình còn lại. ConvNeXt-Tiny hơn
+Swin-Tiny 0.438 điểm độ chính xác trong khi độ lệch chuẩn của hai bên là 0.354
+và 0.581; MobileNetV3-Large kém Swin-Tiny 0.752 điểm với độ lệch chuẩn 0.319.
+Các khoảng cách này cùng bậc độ lớn với biến động giữa các seed, nên với ba
+seed thì thứ tự không thể coi là đã xác lập, và một bộ ba seed khác hoàn toàn
+có thể đảo lại. Khẳng định bảo vệ được là ConvNeXt-Tiny, Swin-Tiny và
+MobileNetV3-Large đều đạt tới một điểm vận hành tương đương, và việc chỉ ra
+một kiến trúc tốt nhất trong số đó sẽ đòi hỏi nhiều seed hơn nghiên cứu này đã
+chạy.
+
+Kết quả của MobileNetV3-Large đáng được nhấn mạnh vì một lý do khác. Nó đạt
+trong phạm vi 1.19 điểm độ chính xác so với mô hình tốt nhất, với 4.22\,M tham
+số so với 27.83\,M, và 0.22\,G MACs so với 4.46\,G
+(Bảng~\ref{tab:efficiency}), tức khoảng một phần sáu số tham số và một phần
+hai mươi khối lượng tính toán. Với kịch bản triển khai tại hiện trường (động
+lực chính của việc định danh gỗ bằng ảnh mặt cắt), đánh đổi đó quan trọng hơn
+thứ hạng ở đỉnh bảng. Đây chỉ là phép so sánh giữa độ chính xác và độ phức tạp
+tĩnh. Độ trễ suy luận không được báo cáo ở đây, với lý do nêu ở
+Mục~\ref{vi:sec:results:efficiency}.
+
+\subsection{Cấu trúc nhầm lẫn nội họ: Cupressaceae so với Pinaceae}
+\label{vi:sec:discussion:cupressaceae}
+
+Độ khó ở cấp họ không tỷ lệ với số loài trong họ. Cupressaceae là họ lớn nhất
+của bộ dữ liệu với tám loài, nhưng lại có tỷ lệ lỗi thấp nhất trong năm họ, chỉ
+0.78\,\%.
+
+Điều đáng phân tích nằm ở chỗ khác, là vị trí của lỗi so với ranh giới họ. Các
+số đếm dưới đây cộng theo từng phần tử trên 15 lần chạy chính của registry,
+cùng cách gộp dùng cho Hình~\ref{fig:confusion}. Chỉ 12 trong 30 lỗi của
+Cupressaceae là nhầm lẫn nội họ, và gần như toàn bộ số đó
+thuộc một cặp duy nhất, \textit{Cunninghamia lanceolata} và
+\textit{Callitris columellaris}, với 6 lần theo chiều thứ nhất và 5 lần theo
+chiều ngược lại. Cặp này gần như cân bằng. Pinaceae cho một bức ảnh trái ngược:
+75 trong 78 lỗi của họ này là nội họ, và riêng 61 lỗi dồn vào đúng một chiều,
+\textit{Pinus krempfii} bị dự đoán thành \textit{Pinus dalatensis}.
+
+Hai dạng cấu trúc đó gợi ý hai cơ chế khác nhau. Một cặp nhỏ và đối xứng phù
+hợp với cách đọc rằng hai loài thực sự khó phân biệt ở mức phân giải hiện có,
+khi mô hình nhầm theo cả hai chiều với tần suất tương đương. Một cặp lớn và bất
+đối xứng thì không đọc được như vậy, vì nếu chỉ là khó phân biệt thuần túy thì
+lỗi phải xuất hiện theo cả hai chiều. Sự bất đối xứng 61 so với một gợi ý mô
+hình có thiên lệch hệ thống về phía một lớp, và thiên lệch đó không giảm khi
+năng lực mô hình tăng.
+
+Hệ quả cho việc đọc kết quả cấp họ là tỷ lệ lỗi của một họ không đủ để mô tả độ
+khó của nó. Cupressaceae và Pinaceae có tỷ lệ lỗi lần lượt là 0.78\,\% và
+2.83\,\%, chênh nhau chưa tới bốn lần, nhưng cấu trúc lỗi bên dưới hai con số
+đó khác nhau về bản chất.
+
+\subsection{Hiệu năng trên các loài đặc hữu Việt Nam}
+\label{vi:sec:discussion:endemic}
+
+Bốn loài trong bộ dữ liệu là loài đặc hữu của Việt Nam
+[CẦN NGUỒN: tài liệu phân loại học xác nhận tính đặc hữu của bốn loài này].
+Đây là nhóm loài mà một công cụ định danh triển khai trong nước sẽ gặp thường
+xuyên nhất, nên hiệu năng riêng trên nhóm này đáng được tách ra xem xét.
+
+Kết quả không đồng nhất trong nhóm. Mọi giá trị F1 trích dẫn ở đây đều lấy từ
+Bảng~\ref{tab:perspecies_full}. Dưới ConvNeXt-Tiny,
+\textit{Xanthocyparis vietnamensis} và \textit{Pinus cernua} đều đạt
+$100.000 \pm 0.000$\,\% F1 trên cả ba seed. Hai loài còn lại thấp hơn rõ rệt,
+với \textit{Pinus dalatensis} đạt $96.559 \pm 3.295$\,\% và
+\textit{Pinus krempfii} đạt $96.573 \pm 3.495$\,\%. Chúng cũng là hai loài mang
+độ lệch chuẩn giữa các seed lớn nhất trong cột này.
+
+Như vậy khó khăn còn lại của mô hình tốt nhất tập trung vào đúng hai loài đặc
+hữu cùng thuộc chi \textit{Pinus}, chứ không gắn với tính đặc hữu nói chung.
+Cách đọc này được củng cố bởi hai loài phân bố tại Việt Nam nhưng không thuộc
+chi \textit{Pinus}: \textit{Calocedrus rupestris} và
+\textit{Fokienia hodginsii} đạt $100.000 \pm 0.000$\,\% F1 trên cả năm
+backbone, tức không một kiến trúc nào mắc lỗi trên hai loài này. Yếu tố quyết
+định vì vậy là quan hệ phân loại học gần giữa hai loài trong cùng một chi,
+không phải nguồn gốc địa lý của mẫu vật.
+
+Cần đặt kết quả này cạnh giới hạn nêu ở Mục~\ref{vi:sec:discussion:shortcut}.
+Điểm F1 cao trên các loài đặc hữu được đo trên cùng bộ sưu tập và cùng điều
+kiện chụp với tập huấn luyện, nên chúng chưa nói được gì về hiệu năng trên mẫu
+vật thu thập độc lập.
+
+\subsection{Mô hình đang dùng gì: bằng chứng phản bác cách đọc theo giải phẫu}
+\label{vi:sec:discussion:shortcut}
+
+Giới hạn hệ trọng nhất của benchmark này không nằm ở độ lớn các khoảng cách độ
+chính xác, mà ở \emph{ý nghĩa} của chính các con số độ chính xác. Các phép thăm
+dò ở Mục~\ref{vi:sec:results:convergence} cho thấy một Swin-Tiny huấn luyện
+trên đầu vào $16\times16$ đạt 94.361\,\% độ chính xác, và một mô hình huấn
+luyện trên ảnh làm mờ nặng đạt 95.677\,\%, so với 99.060\,\% của mức tham
+chiếu độ phân giải đầy đủ. Cả hai phép biến đổi đều phá hủy cấu trúc giải phẫu
+mà việc định danh gỗ bằng mặt cắt dựa vào, và cả hai đều giữ lại trên 95\,\%
+hiệu năng của ảnh đầy đủ.
+
+Các con số thăm dò dẫn ở đây nằm ở Bảng~\ref{tab:probe}, còn mức tham chiếu
+toàn ảnh nằm ở Bảng~\ref{tab:task_b}. Cách giải thích đầu tiên, cho rằng mô
+hình chỉ đọc màu sắc, không được ủng hộ: phép thăm dò chỉ dùng histogram đạt
+37.970\,\%. Màu sắc có mang tín hiệu
+thật, cao hơn hẳn mức ngẫu nhiên 5.882\,\%, nhưng nó chỉ chiếm chưa đến một nửa
+những gì hai phép thăm dò có thông tin không gian đạt được. Vậy bằng chứng
+quyết định mang tính không gian nhưng ở tần số thấp: một thứ sống sót qua việc
+lấy mẫu giảm mười sáu lần. Độ dốc dài theo tổng thể, vân thớ thô, phân bố độ
+sáng toàn cục và các đặc trưng thu ảnh gắn với từng mẫu vật đều phù hợp với
+quan sát này, và các thí nghiệm hiện tại không tách được chúng ra.
+
+Còn lại hai cách đọc, với hệ quả rất khác nhau. Cách đọc lành tính là các loài
+cây lá kim thực sự khác nhau về tính chất quang học tổng thể ở thang đo này,
+khi đó mô hình đã học được một dấu hiệu có thật nhưng thô hơn dự định, và
+benchmark đo một bài toán chính đáng dù hẹp hơn. Cách đọc bất lợi là nội dung
+tần số thấp mang \emph{danh tính mẫu vật} (như ánh sáng, thuốc nhuộm, cách gắn
+mẫu, thiết lập máy ảnh) và rò rỉ mẫu vật còn sót lại
+(Mục~\ref{vi:sec:discussion:originkey}) cho phép khai thác điều đó. Dữ liệu
+hiện có không tách được hai cách đọc. Để phân biệt chúng cần đánh giá trên ảnh
+được thu thập độc lập, thứ mà nghiên cứu này không có
+(Mục~\ref{vi:sec:discussion:external}).
+
+Hệ quả cho việc báo cáo là trực tiếp. Các mức độ chính xác ở tiêu đề nên đọc
+như độ chính xác trên bài toán này và bộ dữ liệu này, không phải như bằng chứng
+rằng mô hình định danh gỗ bằng giải phẫu. Chính quy trình thăm dò của nhóm
+cũng ghi nhận benchmark chưa được phát hành trên cơ sở đó. Điều này không làm
+mất hiệu lực phép so sánh kiến trúc ở
+Mục~\ref{vi:sec:discussion:ranking}: cả năm backbone đều được huấn luyện và
+đánh giá trong điều kiện như nhau, nên thứ tự tương đối giữa chúng vẫn là một
+phép so sánh hợp lệ. Nó chỉ giới hạn điều mà các con số \emph{tuyệt đối} được
+phép khẳng định.
+
+Hai quan sát nữa rút ra từ các phép thăm dò. Thứ tự tỷ lệ giữ lại (làm mờ cao
+hơn lấy mẫu giảm) gợi ý rằng nội dung hữu ích nằm ở thang đo thô hơn mức mà
+phép lấy mẫu $16\times16$ giữ được, và đây là một dự đoán kiểm chứng được bằng
+một phép quét độ phân giải (thí nghiệm đã được cấu hình cho nghiên cứu này
+nhưng chưa bao giờ được chạy, xem
+Mục~\ref{vi:sec:discussion:scope}). Và các phép thăm dò chỉ huấn luyện 20
+epoch so với 50 của các lần chạy chính, nên con số tuyệt đối của chúng là cận
+dưới của những gì đầu vào đã bị phá hủy có thể hỗ trợ, điều này làm mạnh
+thêm chứ không làm yếu lập luận.
+
+\subsection{Xoay ảnh không cải thiện đồng đều}
+\label{vi:sec:discussion:rotation}
+
+Xoay rời rạc $90^\circ$ xuất phát từ nhận xét rằng một mặt cắt ngang không có
+hướng chuẩn tắc, nên các phép xoay bội của $90^\circ$ lẽ ra phải bảo toàn mọi
+đặc trưng chẩn đoán. Dữ liệu không ủng hộ lợi ích được kỳ vọng đó.
+
+Hiệu ứng đổi dấu giữa các kiến trúc: dương với ResNet-50 và EfficientNet-B3,
+đúng bằng không với MobileNetV3-Large, âm với cả ConvNeXt-Tiny và Swin-Tiny
+(Bảng~\ref{tab:ablation}). Một phép tăng cường thực sự mã hóa được một tính
+chất của hình học thu ảnh thì lẽ ra phải giúp ích, hoặc ít nhất không gây hại,
+bất kể backbone nào. Việc hai mô hình mạnh nhất lại chính là hai mô hình giảm
+là ngược với quy luật mà một lợi ích bất biến thật sự sẽ tạo ra.
+
+Còn lại hai cách đọc mà nghiên cứu này không tách được. Phép tăng cường có thể
+là thừa, bởi cấu hình chính đã áp dụng xoay liên tục $\pm30^\circ$ cùng lật
+ngang và lật dọc, nên phần lớn tính bất biến theo hướng có thể đã được phủ,
+khiến xoay rời rạc $90^\circ$ đánh đổi đa dạng màu mà không được gì. Hoặc các
+chênh lệch đơn giản là tạp âm seed: bốn trong năm độ lớn nằm trong khoảng 1.6
+lần độ lệch chuẩn giữa các seed tương ứng, và với một seed cho mỗi ablation thì
+không có cách nào phân biệt một hiệu ứng thật nhỏ với một lần bốc may mắn. Dù
+theo hướng nào, kết luận thực tế vẫn thế: không nên lấy xoay rời rạc
+$90^\circ$ làm mặc định cho bài toán này dựa trên những lần chạy ở đây.
+
+Label smoothing hành xử khác và đáng tách riêng. Bỏ nó làm giảm độ chính xác ở
+cả năm backbone, không ngoại lệ nào. Không chênh lệch đơn lẻ nào lớn, và ba
+trong năm nằm dưới độ lệch chuẩn giữa các seed tương ứng, nên độ lớn hiệu ứng
+chưa được xác lập. Dẫu vậy, sự nhất quán về \emph{hướng} trên năm kiến trúc
+độc lập là quy luật duy nhất trong bảng ablation không giống tạp âm. Nâng label
+smoothing lên 0.2 không cho sự nhất quán như vậy. Đây là bằng chứng yếu rằng
+giá trị mặc định 0.1 là một lựa chọn hợp lý, và \emph{không} phải bằng chứng
+rằng 0.1 là tối ưu.
+
+\subsection{Thiết kế ablation một seed là giới hạn ràng buộc}
+\label{vi:sec:discussion:oneseed}
+
+Mọi ablation trong nghiên cứu này chỉ huấn luyện với seed 42. Đây là giới hạn
+phương pháp hệ trọng nhất của các kết quả ablation, và nó không sửa được bằng
+phân tích.
+
+Các lần chạy chính cho thấy độ lệch chuẩn giữa các seed ở bài toán này nằm
+trong khoảng 0.319 đến 1.022 điểm độ chính xác tùy backbone
+(Bảng~\ref{tab:task_b}). Trong 15 chênh lệch ablation ở
+Bảng~\ref{tab:ablation}, có 9 nhỏ hơn độ lệch chuẩn của chính backbone tương
+ứng, và chỉ một vượt qua nó hơn khoảng 2.4 lần. Vậy một chênh lệch một seed có
+độ lớn vài phần của một điểm gần như không mang thông tin gì về hiệu ứng bên
+dưới: nhiễu đo và hiệu ứng đang đo có cùng một cỡ.
+
+Điều này có một hệ quả cụ thể về cách đọc bảng ablation. Không nên diễn giải
+từng ô riêng lẻ. Thứ đọc được là quy luật trên cả hàng năm backbone, thể hiện qua một
+dấu nhất quán trên năm kiến trúc khởi tạo độc lập, như thấy ở label smoothing
+0.0, khó giải thích bằng tạp âm seed hơn bất kỳ ô đơn lẻ nào, ngay cả khi từng
+ô một mình không mang thông tin. Đó là lý do
+Mục~\ref{vi:sec:results:ablation} báo cáo sự nhất quán về hướng chứ không phải
+độ lớn hiệu ứng, và không ablation nào được trình bày như một cải tiến.
+
+Lặp lại mỗi ablation trên đúng ba seed đã dùng cho các lần chạy chính sẽ tốn
+thêm 30 lần huấn luyện và sẽ làm cho các phép so sánh này diễn giải được. Đây
+là mở rộng có giá trị cao nhất cho nghiên cứu này.
+
+\subsection{Ảnh hưởng của cách xây dựng khóa nguồn}
+\label{vi:sec:discussion:originkey}
+
+Phân hoạch Task~B gom ảnh theo mẫu vật sao cho mọi lát cắt từ cùng một mẫu gỗ
+vật lý đều nằm trong một tập. Điều này quan trọng vì bộ dữ liệu gốc bị cắt rất
+nhiều: 5{,}830 ảnh sinh ra từ 557 mẫu vật, và 88.3\,\% số ảnh đến từ những mẫu
+vật đóng góp từ 24 lát cắt trở lên. Với phép chia ở cấp từng ảnh, một mẫu vật
+gồm 30 lát cắt có xác suất khoảng $6.9\times10^{-16}$ để không rơi vào tập
+huấn luyện, nên gần như mọi mẫu vật lớn đều xuất hiện trong tập train, và ảnh
+test trở thành những lát cắt khác của mẫu đã quen thay vì mẫu mới. Phân hoạch
+Task~B cấp-ảnh trước đây đúng là như vậy: 97.62\,\% số ảnh test của nó đến từ
+những mẫu vật đã có mặt trong tập train. Độ chính xác đo dưới phân hoạch đó mô
+tả khả năng nhận lại lát cắt, không phải khả năng khái quát hóa theo loài.
+
+Cách gom theo mẫu vật dùng ở đây loại bỏ đúng chế độ thất bại đó, nhưng bảo đảm
+mà nó cung cấp bị giới hạn bởi \emph{cách xây dựng khóa mẫu vật}. Khóa được suy
+ra từ tên tệp: bỏ chỉ số lát cắt ở cuối và thêm tên lớp ở đầu, nên
+\texttt{3351.\ Araucaria araucana.1.(12).png} trở thành
+\texttt{Araucaria araucana::3351.\ Araucaria araucana.1.}. Đó là một quy ước
+đặt tên, không phải định danh mẫu vật được ghi lúc thu thập. Từ đó có hai hệ
+quả khác nhau, và chúng không đối xứng.
+
+Trường hợp gom thừa, khi hai mẫu vật khác nhau về vật lý nhưng trùng gốc tên tệp nên bị
+nhập làm một khóa, chỉ làm mất tính linh hoạt khi chia. Đây là hướng bảo thủ
+và không làm thổi phồng kết quả.
+
+Gom thiếu mới là rủi ro thật. Nếu các lát cắt của cùng một mẫu vật được lưu
+dưới những gốc tên khác nhau, ví dụ qua nhiều phiên quét riêng biệt hoặc sau
+một bước đổi tên, thì khóa sẽ gán cho chúng những nguồn khác nhau và phép gom
+\emph{âm thầm} thất bại trong việc tách chúng ra. Không có gì trong tên tệp
+phát hiện được điều này, và không có định danh mẫu vật độc lập nào trong bộ dữ
+liệu để đối chiếu.
+
+Một cuộc kiểm toán riêng về khóa này cho thấy độ lớn của mối lo ngại đó. Gom
+lại 552 khóa của tập 17 lớp theo một quy tắc ứng viên thô hơn cho ra 325 nhóm,
+tức thu gọn 41.1\,\%: theo cách đọc đó, bốn trong mười khóa là mảnh của một đơn
+vị vật lý lớn hơn chứ không phải là đơn vị độc lập. Kiểm toán cũng tìm thấy 86
+mã số mẫu bị dùng lại giữa các loài, nên phần số trong tên tệp tự nó không phải
+là một định danh mẫu vật. Kết luận chính thức của kiểm toán là \textbf{chưa thể
+xác định} khóa này định danh mẫu vật vật lý hay chỉ là một ảnh/góc chụp, và
+rằng cấu trúc tên tệp không được thay thế cho bước xác minh đối chiếu với sổ
+mẫu của phòng thí nghiệm; bước xác minh đó vẫn chưa hoàn tất. Do vậy, độ mạnh
+của khẳng định tách mẫu vật phụ thuộc vào kỷ luật đặt tên của bộ sưu tập gốc,
+điều mà nghiên cứu này không tự kiểm chứng được.
+
+Hai lưu ý nữa ảnh hưởng đến những gì kiểm tra được từ các artifact đã công bố.
+Thứ nhất, khoảng 19\,\% ảnh test mang tên tệp đã đánh số lại trong phân hoạch
+triển khai, nên không thể tái lập khóa nguồn của chúng về sau; trong 81\,\% tái
+lập được, không mẫu vật nào xuất hiện ở cả validation lẫn test. Thứ hai,
+registry chỉ công bố dự đoán cho tập validation và test, nên việc tách
+train--test (yếu tố thực sự quan trọng) không thể kiểm chứng lại từ các
+artifact đã phát hành và phụ thuộc vào chính cách xây dựng phân hoạch. Công bố
+kèm bảng ánh xạ mẫu-vật sang tập sẽ đóng được lỗ hổng này.
+
+\subsection{Chưa có kiểm chứng ngoài hoặc tại hiện trường}
+\label{vi:sec:discussion:external}
+
+Toàn bộ kết quả đến từ một bộ dữ liệu duy nhất, được chia nội bộ. Các mô hình
+chưa bao giờ được đánh giá trên gỗ được chụp bởi một người khác, bằng thiết bị
+khác, dưới ánh sáng khác, hoặc tại một địa điểm khác. Độ chính xác trên
+99\,\% nên đọc là độ chính xác trên những mẫu vật giữ lại \emph{của bộ sưu tập
+này}, không phải là ước lượng hiệu năng tại hiện trường.
+
+Giới hạn này chặt hơn về bề ngoài, vì một lý do đặc thù của nghiên cứu này.
+Nhầm lẫn duy nhất còn sót lại ở mô hình mạnh nhất là giữa hai loài
+\textit{Pinus}, và các lỗi tách ResNet-50 khỏi phần còn lại tập trung ở một vài
+loài. Cả hai quy luật đều là thuộc tính của bộ dữ liệu này ở quy mô hiện tại
+(từ 24 đến 39 ảnh test mỗi loài theo Bảng~\ref{tab:perspecies_full}, rút ra từ
+một số lượng mẫu vật hạn chế mỗi
+loài). Một bộ sưu tập khác hoàn toàn có thể cho ra một tập loài khó khác mà
+không mâu thuẫn với bất kỳ điều gì báo cáo ở đây.
+
+Không có gì trong nghiên cứu này ủng hộ một khẳng định về mức độ sẵn sàng triển
+khai. Bước tiếp theo phù hợp là đánh giá trên một tập mẫu vật được thu thập độc
+lập, lý tưởng là chụp trong những điều kiện mô hình chưa từng thấy, trước khi
+cân nhắc bất kỳ sử dụng vận hành nào.
+
+\subsection{Quyết định về phạm vi: Task A và ablation độ phân giải}
+\label{vi:sec:discussion:scope}
+
+Hai thí nghiệm có trong kế hoạch dự án nhưng không được báo cáo ở
+Mục~\ref{vi:sec:results}, với lý do khác nhau.
+
+\paragraph{Task A (phân loại cấp họ).} Nhiệm vụ cấp họ dùng phép chia phân tầng
+theo loài, thao tác ở cấp từng ảnh, đúng cơ chế đã tạo ra 97.62\,\% độ phủ
+mẫu vật ở phân hoạch Task~B trước đây
+(Mục~\ref{vi:sec:discussion:originkey}), áp lên cùng bộ dữ liệu bị cắt nhiều
+đó. Kết quả của nó do vậy chịu cùng một rò rỉ, và các điểm gần như tuyệt đối ở
+cấp họ, kể cả một kiến trúc đạt 100.000\,\% trên cả ba seed, không thể đọc như
+bằng chứng về khả năng khái quát hóa sang mẫu vật chưa thấy. Báo cáo Task~A
+cạnh một Task~B đã gom theo mẫu vật sẽ đặt hai giao thức đánh giá không so sánh
+được cạnh nhau trong cùng một mục kết quả, và mời gọi đúng cách đọc sai mà phép
+gom sinh ra để ngăn chặn. Vì vậy Task~A bị \emph{loại} chứ không báo cáo kèm
+cảnh báo. Khôi phục nó sẽ đòi hỏi dựng lại phép chia cấp họ theo mẫu vật và
+huấn luyện lại cả 15 lần chạy; ở cấp họ điều này ít rủi ro thiếu lớp hơn ở cấp
+loài, vì ba loài bị loại khỏi Task~B thuộc những họ vẫn còn nhiều mẫu vật khác.
+Cũng lưu ý rằng nhiệm vụ cấp họ được định nghĩa trên bốn họ, gộp
+\textit{Araucaria araucana} vào Pinaceae, trong khi cách nhóm dùng ở
+Mục~\ref{vi:sec:results} giữ Araucariaceae riêng; hai sơ đồ này phải được thống
+nhất trước khi có thể báo cáo hai nhiệm vụ cạnh nhau.
+
+\paragraph{Độ phân giải đầu vào.} Một ablation độ phân giải $384$ pixel đã được
+cấu hình nhưng chưa bao giờ được huấn luyện; không có lần chạy nào cho nó trong
+registry. Độ phân giải đầu vào do vậy chưa được kiểm chứng trong nghiên cứu
+này. Đây là một khoảng trống thật sự chứ không phải một sự loại bỏ: độ phân
+giải có thể tương tác với đúng cái khó khăn còn sót lại ở mô hình tốt nhất, vì
+việc phân biệt \textit{P.\ krempfii} với \textit{P.\ dalatensis} có thể phụ
+thuộc vào chi tiết giải phẫu tinh mà đầu vào $224$ pixel không phân giải được.
+Kiểm chứng điều này là phần bổ tự nhiên cho ablation nhiều seed đề xuất ở
+Mục~\ref{vi:sec:discussion:oneseed}.

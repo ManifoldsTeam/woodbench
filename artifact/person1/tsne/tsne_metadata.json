@@ -1,0 +1,48 @@
+{
+  "generated_at_utc": "2026-08-27T05:48:38.672072+00:00",
+  "run_id": "taskB17__main__seed_42__convnext_tiny",
+  "checkpoint_path": "woodbench/data/experiments/Task-B-new/19-08-2026/main/seed_42/convnext_tiny/convnext_tiny_seed42_best.pth",
+  "dataset_split": "woodbench/data/task-B-group-split/test",
+  "num_images": 532,
+  "feature_shape": [
+    532,
+    768
+  ],
+  "feature_source": "model.forward_head(model.forward_features(x), pre_logits=True)",
+  "preprocessing": {
+    "resize": [
+      224,
+      224
+    ],
+    "normalization_mean": [
+      0.48500001430511475,
+      0.4560000002384186,
+      0.4059999883174896
+    ],
+    "normalization_std": [
+      0.2290000021457672,
+      0.2240000069141388,
+      0.22499999403953552
+    ]
+  },
+  "dimensionality_reduction": {
+    "standard_scaler": true,
+    "pca_components": 50,
+    "tsne_components": 2,
+    "perplexity": 30.0,
+    "learning_rate": "auto",
+    "init": "pca",
+    "max_iter": 1500,
+    "random_seed": 42
+  },
+  "origin_key_join": "Reconstructed destination path using the collision-renaming logic in the investigator notebook; class_name + image MD5 is the fallback.",
+  "device": "cpu",
+  "versions": {
+    "python": "3.11.15",
+    "torch": "2.12.0+cu130",
+    "timm": "1.0.27",
+    "sklearn": "1.8.0",
+    "numpy": "1.26.4",
+    "pandas": "3.0.2"
+  }
+}

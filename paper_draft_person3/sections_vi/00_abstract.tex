@@ -1,0 +1,62 @@
+% =====================================================================
+% Mục 0 — Tóm tắt  (BẢN TIẾNG VIỆT)
+%
+% VIET SAU CUNG, theo dung yeu cau cua ke hoach: chi soan muc nay khi
+% Muc 4, Muc 5, Muc 6 va toan bo bang/hinh da dong bang.
+%
+% RANG BUOC BAT BUOC: khong duoc dua ra ket qua chua xuat hien trong Muc 4.
+% Moi con so o day deu phai co mat trong sections_vi/04_results.tex.
+% Kiem tra tu dong bang scripts/person3/check_vi_plan.py.
+%
+% Cau truc theo mo hinh 5 thanh phan cua skill academic-paper
+% (references/abstract_writing_guide.md), do dai 150-250 tu theo
+% scientific-writing.md:
+%   1. Boi canh va khoang trong   (2 cau)
+%   2. Muc tieu                   (1 cau)
+%   3. Phuong phap                (2 cau)
+%   4. Ket qua chinh              (4 cau, co so lieu cu the)
+%   5. Y nghia                    (2 cau)
+%
+% Khong trich dan tai lieu trong tom tat. Khong dung dau gach ngang lam
+% dau cau. Khong dung viet tat chua giai nghia.
+%
+% Doi chieu so lieu voi Muc 4:
+%   99.561 +/- 0.354 ; 92.356 +/- 1.022 ; 98.371 +/- 0.319   Bang 1
+%   4.22 M so voi 27.83 M                                    Bang 5
+%   61 trong 204 loi                                         Muc 4.3
+%   95.3 / 96.6 / 37.970                                     Bang 4
+%   17 loai, 532 anh test, 3 seed                            Muc 4.1
+% =====================================================================
+
+\begin{abstract}
+Ảnh mặt cắt ngang ở thang đo vĩ mô là hướng khả thi nhất để định danh gỗ cây lá
+kim bên ngoài phòng thí nghiệm. Chưa rõ bài toán này đòi hỏi kiến trúc học sâu
+nào, và bao nhiêu phần trong độ chính xác đã công bố phản ánh bằng chứng giải
+phẫu.
+
+Nghiên cứu đánh giá đối sánh năm kiến trúc trên cùng một giao thức và kiểm tra
+xem độ chính xác đó dựa trên loại thông tin ảnh nào. ResNet-50,
+EfficientNet-B3, MobileNetV3-Large, ConvNeXt-Tiny và Swin-Tiny được tinh chỉnh
+trên 17 loài cây lá kim, với phân hoạch gom theo khóa nguồn, ba seed mỗi cấu
+hình và một registry đánh giá bất biến. Ba phép thăm dò phá hủy cấu trúc giải
+phẫu được huấn luyện trên cùng phân hoạch.
+
+ConvNeXt-Tiny đạt $99.561 \pm 0.354$\,\% độ chính xác test, còn ResNet-50 chỉ
+đạt $92.356 \pm 1.022$\,\%. MobileNetV3-Large đạt $98.371 \pm 0.319$\,\% với
+4.22\,M tham số so với 27.83\,M của mô hình dẫn đầu. Lỗi mang tính tập trung: 61 trong
+tổng số 204 lỗi là cùng một nhầm lẫn giữa \textit{Pinus krempfii} và
+\textit{Pinus dalatensis}, cặp duy nhất xuất hiện ở cả năm kiến trúc. Mô hình
+huấn luyện trên đầu vào $16\times16$ vẫn giữ 95.3\,\% độ chính xác của ảnh đầy
+đủ, ảnh làm mờ nặng giữ 96.6\,\%, còn mô hình chỉ dùng histogram màu đạt
+37.970\,\%.
+
+Cấu trúc giải phẫu không sống sót qua những phép biến đổi đó. Các mức độ chính
+xác ở đây vì vậy mô tả hiệu năng trên bộ dữ liệu này chứ không phải khả năng
+định danh theo giải phẫu, và kiểm chứng trên ảnh thu thập độc lập là bước tiếp
+theo bắt buộc.
+\end{abstract}
+
+\begin{paperkeywords}
+định danh gỗ, loài cây lá kim, ảnh mặt cắt ngang vĩ mô, đánh giá đối sánh học
+sâu, học theo đường tắt, rò rỉ dữ liệu
+\end{paperkeywords}

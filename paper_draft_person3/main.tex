@@ -1,0 +1,60 @@
+% =====================================================================
+% WoodID-S2-2026 — assembly file for the Person-3 sections
+%
+% Compile from the REPOSITORY ROOT so that the \includegraphics paths
+% (artifact/person3/..., artifact/person1/...) resolve:
+%
+%     pdflatex -output-directory=paper_draft_person3/build \
+%              paper_draft_person3/main.tex
+%
+% Sections 1 (Introduction) and 3 (Materials and Methods) are owned by
+% other authors and are not included here; the \input lines for them are
+% left commented so this file compiles standalone.
+%
+% LAYOUT. One-column arXiv/NeurIPS-style preprint: letter paper, a
+% 5.5in x 9in text block, Times, arabic section numbers with no trailing
+% period, an abstract indented on both sides, and "Table 1:" / "Figure 1:"
+% captions. All of that lives in paper_draft_person3/woodid.sty, which the
+% Vietnamese build loads too, so the two versions cannot drift apart.
+% Every table and figure is an ordinary float -- no starred floats.
+% =====================================================================
+\documentclass[10pt]{article}
+% Tim woodid.sty trong thu muc cua chinh bai bao. Nho dong nay, lenh
+% \usepackage duoi day chay duoc du bien dich tu thu muc goc repo
+% (cach dung dung, vi duong dan anh la tuong doi so voi goc) hay tu
+% trong paper_draft_person3/.
+\makeatletter
+\providecommand{\input@path}{}
+\edef\input@path{{paper_draft_person3/}{./}\input@path}
+\makeatother
+\usepackage{woodid}
+
+\begin{document}
+
+\title{A Systematic Benchmark of Deep Learning Architectures for Conifer
+Wood Species Identification Using Macroscopic Cross-Section Images}
+\author{WoodID-S2-2026}
+\maketitle
+
+\input{paper_draft_person3/sections/00_abstract}
+
+% \input{sections/01_introduction}     % other author
+% \input{sections/02_related_work}     % other author
+% \input{sections/03_materials_methods}% other author
+
+\input{paper_draft_person3/sections/04_results}
+
+% ---- tables and figures referenced by Section 4 ----
+\input{artifact/person3/tables/tab_taskb}
+\input{artifact/person3/tables/tab_ablation}
+\input{artifact/person3/tables/tab_perspecies_full}
+\input{artifact/person3/tables/tab_efficiency}
+\input{artifact/person3/figures/fig_confusion}
+\input{artifact/person3/figures/fig_perclass}
+\input{artifact/person3/figures/fig_gradcam}
+\input{artifact/person3/figures/fig_tsne}
+
+\input{paper_draft_person3/sections/05_discussion}
+\input{paper_draft_person3/sections/06_conclusion}
+
+\end{document}

@@ -1,0 +1,120 @@
+% =====================================================================
+% woodid.sty -- kieu trinh bay preprint mot cot cho WoodID-S2-2026
+%
+% Dung theo format cua ban preprint arXiv/NeurIPS: kho letter, mot cot,
+% khoi chu 5.5in x 9in, chu Times, muc danh so A Rap khong dau cham,
+% abstract thut le hai ben, caption "Bang 1:" / "Hinh 1:".
+%
+% Tuy chon:
+%   [vietnamese]  bat ma hoa T5 + babel tieng Viet (can goi texlive-lang-other)
+%
+% Dung chung cho ca main.tex (EN) va main_vi.tex (VI) de hai ban khong the
+% lech nhau ve trinh bay.
+% =====================================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{woodid}[2026/08/29 WoodID-S2-2026 one-column preprint style]
+
+\newif\ifwoodid@vi \woodid@vifalse
+\DeclareOption{vietnamese}{\woodid@vitrue}
+\ProcessOptions\relax
+
+% ---- hinh hoc trang: letter, khoi chu 5.5in x 9in ----
+\RequirePackage[letterpaper,left=1.5in,right=1.5in,top=1in,bottom=1in]{geometry}
+
+% ---- ma hoa va ngon ngu ----
+\ifwoodid@vi
+  \RequirePackage[T5]{fontenc}
+  \RequirePackage[utf8]{inputenc}
+  \RequirePackage[vietnamese]{babel}
+\else
+  \RequirePackage[T1]{fontenc}
+  \RequirePackage[utf8]{inputenc}
+\fi
+
+% ---- chu Times ----
+\RequirePackage{mathptmx}
+
+\RequirePackage{graphicx}
+\RequirePackage{booktabs}
+\RequirePackage{amsmath,amssymb}
+% Khong cho bang/hinh troi qua ranh gioi \section: moi float phai o lai
+% dung muc dat no. Tuy chon [section] tu chen \FloatBarrier truoc moi
+% \section, nen Hinh cua muc Ket qua khong the roi sang muc Ban luan.
+\RequirePackage[section]{placeins}
+\RequirePackage{titlesec}
+
+% Tuy chon [section] cua placeins chi chan truoc \section. Bang va hinh
+% van troi qua ranh gioi \subsection, khien vi du Bang 1 hien duoi tieu de
+% "Thiet lap thuc nghiem" trong khi no thuoc "Benchmark chinh". Chan them
+% o cap \subsection de moi float o lai dung tieu muc dat no.
+\let\woodid@subsection\subsection
+\renewcommand{\subsection}{\FloatBarrier\woodid@subsection}
+\RequirePackage{caption}
+\RequirePackage{xcolor}
+\definecolor{refRed}{RGB}{204, 0, 0}      % Đỏ cho số tham chiếu hình, bảng
+\definecolor{citeGreen}{RGB}{0, 136, 55}  % Xanh lá cây cho tài liệu tham khảo [số]
+\definecolor{urlBlue}{RGB}{0, 85, 170}    % Xanh dương cho URL
+\RequirePackage[
+    colorlinks=true,
+    linkcolor=refRed,
+    citecolor=citeGreen,
+    urlcolor=urlBlue
+]{hyperref}
+
+% Trich dan tai lieu tham khao theo chuan IEEE: dang so trong ngoac vuong.
+% CHI CON SO duoc to mau xanh; cap ngoac vuong giu mau chu thuong. Day la
+% hanh vi mac dinh cua hyperref, khong dinh nghia lai \@cite.
+
+% ---- khoi chu hep hon IEEEtran nen cho phep gian dong cuoi doi chut,
+% de ten ho thuc vat dai va cac cum toan khong day ra ngoai le ----
+\setlength{\emergencystretch}{3em}
+
+% ---- tieu de muc: dam, so A Rap, KHONG dau cham sau so ----
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titlespacing*{\section}{0pt}{2.2ex plus 1ex minus .2ex}{1.3ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{1.9ex plus 1ex minus .2ex}{1.0ex plus .2ex}
+
+% ---- caption: "Bang 1: ..." / "Hinh 1: ..." , nhan in dam ----
+\captionsetup{font=small,labelfont=bf,labelsep=colon,skip=6pt,justification=justified}
+
+% ---- khoi tieu de bai ----
+\makeatletter
+\renewcommand\@maketitle{%
+  \null
+  \begin{center}%
+    {\LARGE\bfseries \@title \par}%
+    \vskip 1.4em%
+    {\large \@author \par}%
+    \ifx\@date\@empty\else\vskip 0.8em{\normalsize \@date \par}\fi%
+  \end{center}%
+  \par\vskip 1.2em}
+\makeatother
+\date{}
+
+% ---- abstract: tieu de can giua, than thut le 0.5in hai ben ----
+\renewenvironment{abstract}{%
+  \vskip 0.6em%
+  \begin{center}{\large\bfseries \abstractname}\end{center}%
+  \vskip 0.2em%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{0.5in}\setlength{\rightmargin}{0.5in}%
+    \setlength{\labelwidth}{0pt}\setlength{\labelsep}{0pt}%
+    \setlength{\itemindent}{0pt}\setlength{\listparindent}{\parindent}%
+    \setlength{\topsep}{0pt}\setlength{\parsep}{\parskip}}%
+  \item[]\small\ignorespaces}%
+  {\par\end{list}\vskip 0.8em}
+
+% ---- tu khoa: cung le thut voi abstract ----
+% Nhan mac dinh la ASCII. Ban tieng Viet ghi de trong main_vi.tex, noi
+% ma hoa T5 da duoc nap -- KHONG dat chu co dau trong tep .sty nay, vi
+% ban EN cung nap no khi chua co T5.
+\providecommand{\keywordsname}{Keywords}
+\newenvironment{paperkeywords}{%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{0.5in}\setlength{\rightmargin}{0.5in}%
+    \setlength{\labelwidth}{0pt}\setlength{\labelsep}{0pt}%
+    \setlength{\itemindent}{0pt}\setlength{\topsep}{0pt}}%
+  \item[]\small\textbf{\keywordsname\,---\,}\ignorespaces}%
+  {\par\end{list}\vskip 1.0em}

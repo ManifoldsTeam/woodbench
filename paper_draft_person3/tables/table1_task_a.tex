@@ -1,0 +1,20 @@
+% Table 1: Family-level (Task A) performance
+% Nguon: docs/reports/phase_1/phase_1_summary_report.md, muc 4
+\begin{table}[t]
+\centering
+\caption{Family-level classification performance on the Task A test set
+(4 families, 981 images). Values are mean $\pm$ standard deviation over
+three seeds (42, 123, 456). Best result per column in bold.}
+\label{tab:task_a}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Architecture} & \textbf{Top-1 Accuracy (\%)} & \textbf{Macro-F1 (\%)} \\
+\midrule
+ResNet-50          & $98.573 \pm 0.220$ & $97.442 \pm 0.392$ \\
+EfficientNet-B3    & $98.233 \pm 0.509$ & $96.608 \pm 0.834$ \\
+MobileNetV3-Large  & $99.626 \pm 0.048$ & $99.383 \pm 0.328$ \\
+ConvNeXt-Tiny      & $99.898 \pm 0.144$ & $99.784 \pm 0.306$ \\
+Swin-Tiny          & $\mathbf{100.000 \pm 0.000}$ & $\mathbf{100.000 \pm 0.000}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
