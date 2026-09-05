@@ -238,3 +238,9 @@ data-taskB/data-B
 data-taskB/data-B.tar.zst
 data-taskB/preview_flash_images.ipynb
 artifacts/
+
+# Local Git worktrees used for branch review
+/.worktree/
+
+# Office temporary lock files
+.~lock.*#
