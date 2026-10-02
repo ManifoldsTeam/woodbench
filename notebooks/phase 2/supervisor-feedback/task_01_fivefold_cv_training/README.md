@@ -1,361 +1,138 @@
-# 5-Fold Cross-Validation by Origin Key
+# Task 1 — Grouped 5-fold CV
 
-## Quick Start (Local Dry Run)
+Train 5 model độc lập theo origin của lần Phase 1 cuối. Mỗi model chạy lần lượt
+5 fold; mỗi fold khởi tạo lại từ ImageNet, train đủ số epoch đã chốt, rồi đánh giá
+held-out đúng một lần. Không chọn checkpoint bằng kết quả held-out.
 
-### Test trên local trước khi chạy trên vast.ai:
+## Cấu hình mặc định
 
-```bash
-cd notebooks/phase\ 2/supervisor-feedback/task_01_fivefold_cv_training/
+| Tham số | Giá trị |
+|---|---|
+| Models | ConvNeXt-Tiny, MobileNetV3-Large, ResNet-50, EfficientNet-B3, Swin-Tiny |
+| Epochs | **50 mỗi fold** |
+| Batch | **64** cho ResNet/MobileNet; **32** cho ba model còn lại |
+| Optimizer / LR | AdamW; backbone `1e-5`, head `1e-4`; weight decay `1e-4` |
+| Scheduler / loss | Cosine, `T_max=50`; label smoothing `0.1` |
+| Seed | `42` để chia 5 fold theo origin từng loài và khởi tạo lại mỗi model/fold |
+| Augmentation | Resize 224×224, H/VFlip p=0.5, rotation ±30°, brightness/contrast jitter 0.2, ImageNet normalize |
+| Held-out | Resize 224×224 và normalize; không augmentation/crop |
 
-# Dry run để verify setup
-python train_kfold.py --backbone convnext_tiny --dryrun
+Engine dùng cùng transform với Phase 1. `USE_90ROTATION=0` là main;
+`1` là ablation chọn góc 0/90/180/270°. Không đặt `BATCH_SIZE` để giữ batch theo model.
+Training hiện dùng FP32; Phase 1 dùng AMP và chọn best checkpoint/early stopping.
+CV dùng fixed epochs và `final.pth`, nên ghi rõ khác biệt protocol khi đối chiếu.
 
-# Dry run với verbose
-python train_kfold.py --backbone convnext_tiny --dryrun -v
-```
+Origin được đọc từ manifest
+`docs/reports/phase_1/phase_1_leakage_origin_investigation/task-B-clean_group_split_plan.csv`.
+Pool 4.800 ảnh train/val/test, 17 lớp, 552 key; giữ collision rename của Phase 1,
+kiểm tra thiếu ảnh/loài và overlap origin/MD5 theo manifest. Chỉ chấp nhận thiếu
+ba lớp đã bị loại ở Phase 1 (`Calocedrus sp`, `Cupressus funebris`, `Pinus sp`).
+Ba loài dùng filename key
+vẫn chưa có specimen ID được xác minh thêm. Mean ± sample std mô tả biến thiên
+qua fold, không phải confidence interval.
 
-Dry run sẽ kiểm tra:
-- ✅ Dataset tồn tại
-- ✅ Origin key extraction
-- ✅ Split distribution
-- ✅ Model khả dụng
-- ✅ GPU available
-- ✅ Output path writable
+## 1. Chuẩn bị và smoke test trên Vast
 
----
+Repo ở `/workspace/woodbench`, có dataset `data/task-B-group-split`, manifest,
+môi trường `wood` và GPU CUDA. Mỗi shell zsh cần activate cùng môi trường.
 
-## Quy trình chạy trên vast.ai
-
-### Bước 1: SSH vào vast.ai
-
-```bash
-ssh user@your-vast-instance
-```
-
-### Bước 2: Setup environment (lần đầu)
-
-```bash
-# Clone repo
-git clone https://github.com/your-repo/woodbench.git
-cd woodbench
-
-# Cài conda env
-conda env create -f environment.yml
+```zsh
 conda activate wood
+cd '/workspace/woodbench/notebooks/phase 2/supervisor-feedback/task_01_fivefold_cv_training'
+python -c "import torch; assert torch.cuda.is_available(); print(torch.cuda.get_device_name(0))"
 
-# Tải dataset từ rclone
-rclone sync remote:dataset ./data/task-B-group-split
-```
-
-### Bước 3: Setup WandB
-
-```bash
-# Login
-wandb login
-
-# Hoặc set API key
-export WANDB_API_KEY=your_api_key
-```
-
-### Bước 4: Dry run để verify
-
-```bash
-cd notebooks/phase\ 2/supervisor-feedback/task_01_fivefold_cv_training/
-
-# Verify với 1 model
-python train_kfold.py --backbone convnext_tiny --dryrun
-```
-
-### Bước 5: Chạy tất cả models
-
-**Shell 1: Chạy training (dùng `nohup`)**
-
-```bash
-cd notebooks/phase\ 2/supervisor-feedback/task_01_fivefold_cv_training/
-
-# Tạo logs dir
-mkdir -p logs
-
-# Chạy tất cả models trong background
-nohup bash run_all_models.sh > kfold.log 2>&1 &
-
-# Ghi PID để track
-echo $! > training.pid
-cat training.pid
-```
-
-**Shell 2: Monitor progress (mở SSH tab mới)**
-
-```bash
-# Check nhanh
-python check_progress.py
-
-# Chi tiết hơn
-python check_progress.py -v
-
-# Watch mode (auto refresh 30s)
-bash monitor_progress.sh
-```
-
-**Shell 3: Check GPU status**
-
-```bash
-# GPU usage
-nvidia-smi
-
-# Processes
-ps aux | grep train_kfold
-```
-
-### Bước 6: SSH disconnect
-
-**Q: Tắt kết nối SSH thì process có bị kill không?**
-
-**A: KHÔNG** - Vì dùng `nohup`:
-- `nohup` chạy process độc lập với terminal
-- SIGHUP signal không ảnh hưởng
-- Process tiếp tục chạy ngay cả khi logout
-
-**Để verify:**
-
-```bash
-# Sau khi chạy nohup
-echo $!  # Lưu PID
-
-# Thoát SSH
-exit
-
-# SSH lại sau vài phút
-ssh user@vast
-
-# Check process vẫn chạy
-ps aux | grep train_kfold
-```
-
-### Bước 7: Check lại progress
-
-```bash
-cd notebooks/phase\ 2/supervisor-feedback/task_01_fivefold_cv_training/
-
-# Check progress
-python check_progress.py
-
-# Check logs
-tail -f logs/convnext_tiny.log
-```
-
----
-
-## ZSH vs TERMUX
-
-### Vấn đề với Termux (Android)
-
-| Vấn đề | Mô tả |
-|---------|--------|
-| Process killed on disconnect | Termux giữ process trong app, nhưng SSH session không persist |
-| Limited shell | Không có `tmux` hay `screen` tốt |
-| Resource limits | Android resource limits |
-
-### Giải pháp: Cài zsh trên Linux host
-
-**Trên vast.ai instance (Linux):**
-
-```bash
-# Cài zsh
-sudo apt update && sudo apt install -y zsh
-
-# Cài oh-my-zsh (optional)
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# Set zsh as default shell
-chsh -s /bin/zsh
-```
-
-### So sánh
-
-| Feature | Termux | Zsh (Linux) |
-|---------|--------|-------------|
-| Background processes | ⚠️ Unreliable | ✅ Reliable |
-| nohup | ⚠️ May not work | ✅ Works |
-| tmux/screen | ❌ Not available | ✅ Available |
-| Multiple sessions | ❌ Limited | ✅ Unlimited |
-| Resource limits | ⚠️ Android limits | ✅ Full Linux |
-
-### Recommendation
-
-**Nếu dùng vast.ai (Linux):**
-- Cài zsh và dùng `nohup` 
-- Hoặc dùng `tmux` để persist sessions
-
-**Nếu dùng Termux (Android):**
-- Dùng Termux session giữ mở
-- Hoặc dùng `nohup` nhưng cần test kỹ
-
----
-
-## tmux (Alternative to nohup)
-
-Nếu muốn interactive session persistence:
-
-```bash
-# Tạo tmux session
-tmux new -s training
-
-# Chạy training
-python train_kfold.py --backbone convnext_tiny
-
-# Detach: Ctrl+B, D
-
-# Thoát SSH
-
-# SSH lại và attach
-tmux attach -s training
-```
-
-### Commands tmux
-
-| Command | Description |
-|---------|-------------|
-| `tmux new -s name` | Tạo session mới |
-| `Ctrl+B, D` | Detach (thoát nhưng giữ chạy) |
-| `tmux attach -s name` | Attach lại session |
-| `tmux ls` | List all sessions |
-| `tmux kill-session -t name` | Kill session |
-
----
-
-## Workflow Diagram
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    LOCAL MACHINE                                 │
-│  1. Dry run test                                               │
-│     python train_kfold.py --backbone convnext_tiny --dryrun    │
-│                                                                 │
-│  2. Sync to vast                                               │
-│     rsync -avz notebooks/ user@vast:/workspace/                │
-└─────────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    VAST.AI INSTANCE                             │
-│                                                                 │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐            │
-│  │  Shell 1   │  │  Shell 2    │  │  Shell 3    │            │
-│  │             │  │             │  │             │            │
-│  │ nohup      │  │ check_      │  │ nvidia-smi  │            │
-│  │ run_all    │  │ progress.py │  │             │            │
-│  │ _models.sh │  │             │  │             │            │
-│  │             │  │ tail -f    │  │             │            │
-│  │ (RUNNING)  │  │ logs/*.log  │  │             │            │
-│  └─────────────┘  └─────────────┘  └─────────────┘            │
-│                                                                 │
-│  SSH DISCONNECT ─────────────────────────────────────────────► │
-│  (process vẫn chạy vì nohup)                                 │
-│                                                                 │
-│  SSH RECONNECT ──────────────────────────────────────────────► │
-│  python check_progress.py                                       │
-└─────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## Dry Run Output Example
-
-```
-============================================================
-🔍 DRYRUN MODE - Verifying setup
-============================================================
-
-✅ Dataset: /path/to/data/task-B-group-split
-   Samples: 3365
-   Classes: 17
-   Files: 3365
-
-✅ Origin distribution:
-   Unique origins: 89
-   Min samples/origin: 1
-   Max samples/origin: 120
-   Mean samples/origin: 37.8
-
-✅ 5-Fold Split:
-   Fold 1: 71 train origins, 18 val origins
-   Fold 2: 71 train origins, 18 val origins
-   Fold 3: 71 train origins, 18 val origins
-   Fold 4: 71 train origins, 18 val origins
-   Fold 5: 71 train origins, 18 val origins
-
-✅ Model: convnext_tiny
-   Parameters: 27,967,312
-
-✅ GPU: cuda
-   Name: NVIDIA GeForce RTX 3060
-   Memory: 12.5 GB
-
-✅ Output: /path/to/experiments/Task-B-origin-cv/convnext_tiny
-
-============================================================
-✅ DRYRUN PASSED - Setup is valid
-============================================================
-
-To start training, run without --dryrun:
-  python train_kfold.py --backbone convnext_tiny --n_folds 5
-```
-
----
-
-## Commands Reference
-
-### Training
-
-```bash
-# Dry run
+# Kiểm tra cấu trúc data/model/checkpoint, chưa chạy forward/backward.
 python train_kfold.py --backbone convnext_tiny --dryrun
 
-# Train 1 model (all 5 folds)
-python train_kfold.py --backbone convnext_tiny --n_folds 5 --epochs 30
-
-# Train 1 fold only (debug)
-python train_single_fold.py --backbone convnext_tiny --fold 1
-
-# Resume from checkpoint
-python train_kfold.py --backbone convnext_tiny --resume
-
-# All models
-bash run_all_models.sh
+# Một epoch cho mỗi model, output riêng; không dùng kết quả smoke để báo cáo.
+smoke_root="/workspace/woodbench/data/experiments/Task-B-origin-cv-smoke-$(date -u +%Y%m%dT%H%M%SZ)"
+for model in convnext_tiny mobilenetv3_large resnet50 efficientnet_b3 swin_tiny; do
+  python train_kfold.py --backbone "$model" --fold 1 --epochs 1 --output_root "$smoke_root"
+done
 ```
 
-### Monitoring
+## 2. Chạy ngầm 5 model, giữ chạy khi mất SSH
 
-```bash
-# Quick progress
-python check_progress.py
+Từ folder Task 1, sau khi smoke test thành công:
 
-# Verbose
-python check_progress.py -v
-
-# Watch mode
-bash monitor_progress.sh
-
-# Check status + GPU
-bash check_status.sh
-
-# Check specific model
-python check_progress.py --model convnext_tiny --verbose
+```zsh
+unset MODELS BATCH_SIZE
+N_FOLDS=5 EPOCHS=50 MAX_PARALLEL=5 USE_90ROTATION=0 RESUME=0 \
+nohup bash run_all_models.sh \
+  > "launch-$(date -u +%Y%m%dT%H%M%SZ).log" 2>&1 < /dev/null &
+disown
 ```
 
-### Process Management
+5 model chạy song song trên GPU mà môi trường cho phép nhìn thấy. Đây không
+phải lệnh phân mỗi model sang một GPU riêng. Nếu VRAM không đủ, giảm
+`MAX_PARALLEL` trước khi đổi batch để giữ cấu hình đối chiếu Phase 1.
+Launcher in đường dẫn log session, chờ mã thoát của từng model và trả lỗi nếu có
+model thất bại. Mỗi lần launch giữ log riêng tại `logs/<session>/<model>.log`.
 
-```bash
-# Kill all training
-pkill -f train_kfold.py
+## 3. Monitor từ shell zsh khác hoặc sau khi kết nối SSH lại
 
-# Kill specific model
-pkill -f convnext_tiny
+```zsh
+conda activate wood
+cd '/workspace/woodbench/notebooks/phase 2/supervisor-feedback/task_01_fivefold_cv_training'
+python check_progress.py --watch --verbose
+```
 
-# Check running processes
-ps aux | grep train_kfold
+Monitor cập nhật mỗi 30 giây: tổng fold đã hoàn thành, trạng thái từng fold,
+`epoch=12/50` và held-out accuracy của fold hoàn thành. `Ctrl-C` chỉ dừng monitor.
+`in_progress` là process đang sống; `interrupted` là fold dở đã ngừng; `error`
+là config/artifact không hợp lệ. Khi đủ kết quả: `25/25 folds completed`.
 
-# Check GPU
+Để xem log và GPU, mở thêm shell trong cùng folder:
+
+```zsh
+session_dir=$(ls -td logs/*/ | head -n 1)
+tail -f "$session_dir/convnext_tiny.log"
+# Hoặc xem một lần:
 nvidia-smi
 ```
+
+## 4. Resume và các kịch bản
+
+Nếu process đã ngừng, chạy lại với **cùng code, dữ liệu và cấu hình**:
+
+```zsh
+unset MODELS BATCH_SIZE
+N_FOLDS=5 EPOCHS=50 MAX_PARALLEL=5 USE_90ROTATION=0 RESUME=1 \
+nohup bash run_all_models.sh \
+  > "launch-$(date -u +%Y%m%dT%H%M%SZ).log" 2>&1 < /dev/null &
+disown
+```
+
+Resume giữ fold hoàn thành có config/split/code/checksum khớp; **fold dở train
+lại từ epoch 0**, không tiếp tục epoch cuối. Output cũ khác cấu hình sẽ bị từ chối.
+
+| Kịch bản | Thao tác |
+|---|---|
+| Mất SSH nhưng training vẫn sống | Kết nối lại và monitor; không launch thêm |
+| Process ngừng / instance restart | Dùng lệnh `RESUME=1` ở trên |
+| Chạy lại riêng fold 3 | `python train_kfold.py --backbone convnext_tiny --fold 3 --resume` |
+| OOM khi chạy song song | Giảm `MAX_PARALLEL` rồi resume, giữ nguyên batch |
+| Đổi batch, epoch, LR, seed, augmentation hoặc code | Chọn `OUTPUT_ROOT` mới; không trộn với run cũ |
+| Output riêng | Launcher đặt `OUTPUT_ROOT=/đường/dẫn`; monitor dùng `--output /đường/dẫn` |
+| Chuyển instance | Copy code, dataset, manifest và toàn bộ output; dùng lại cấu hình cũ |
+
+Override tùy chọn: `MODELS`, `MAX_PARALLEL`, `N_FOLDS`, `EPOCHS`, `BATCH_SIZE`,
+`BACKBONE_LR`, `HEAD_LR`, `WEIGHT_DECAY`, `LABEL_SMOOTHING`, `SEED`, `NUM_WORKERS`,
+`DATA_ROOT`, `MANIFEST_PATH`, `OUTPUT_ROOT`, `LOG_ROOT`, `PYTHON`, `WANDB_PROJECT`.
+`BATCH_SIZE` nếu đặt sẽ áp dụng cho mọi model. Có thể đặt `WANDB_API_KEY` trước
+launch nếu cần tracking. Giữ nguyên các override đó khi resume.
+
+## 5. Xuất kết quả và backup
+
+Output: `data/experiments/Task-B-origin-cv/<model>/fold_<n>/` chứa `final.pth`,
+`predictions.csv`, `metrics.json`, `run.json`, `history.json`.
+Sau khi đủ fold, mở [evaluate_and_register_cv.ipynb](evaluate_and_register_cv.ipynb)
+và chạy các cell: mỗi lần xuất tạo registry CSV riêng, một dòng/run, cùng
+per-class metrics, OOF và summary trong `reports/<session>/`; giữ
+`run_id`/`source_run_ids` và đường dẫn tương đối theo repo ROOT.
+Backup toàn bộ output, code và logs trước khi Destroy instance.
+
+Notebook [fivefold_cv_training.ipynb](fivefold_cv_training.ipynb) gọi cùng engine
+nhưng chạy các model tuần tự; dùng launcher ở trên để chạy song song.
+Từ repo root, kiểm tra bằng:
+`PYTHONPATH="$PWD" pytest -q tests/test_origin_cv.py tests/test_cv_training_runs.py`.

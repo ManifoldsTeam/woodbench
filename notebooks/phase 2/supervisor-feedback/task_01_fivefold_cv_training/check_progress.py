@@ -1,211 +1,143 @@
 #!/usr/bin/env python3
-"""
-5-Fold CV Progress Monitor
-
-Check progress of all running/finished k-fold experiments.
-
-Usage:
-    python check_progress.py
-    python check_progress.py --watch
-    python check_progress.py --model convnext_tiny
-"""
+"""Monitor matching completion markers and live process identities."""
 
 import argparse
+from collections import Counter
 import json
-import os
 from pathlib import Path
-from datetime import datetime
-import sys
+import statistics
+import time
 
-ROOT = Path(__file__).parent.parent.parent.parent.resolve()
-OUTPUT_ROOT = ROOT / "data" / "experiments" / "Task-B-origin-cv"
+from run_artifacts import ROOT, completed_fold, digest, process_token
 
-MODELS = ["convnext_tiny", "mobilenetv3_large", "resnet50", "efficientnet_b3", "swin_tiny"]
+OUTPUT_ROOT = ROOT / "data/experiments/Task-B-origin-cv"
+MODELS = [
+    "convnext_tiny",
+    "mobilenetv3_large",
+    "resnet50",
+    "efficientnet_b3",
+    "swin_tiny",
+]
+STATUSES = ("completed", "in_progress", "interrupted", "error", "not_started")
 
 
 def get_model_progress(model_dir: Path, n_folds: int = 5):
-    """Get progress for one model."""
-    results = {
-        "model": model_dir.name,
-        "folds": [],
-        "completed": 0,
-        "in_progress": 0,
-        "not_started": 0,
-        "accuracies": [],
-    }
+    identity_path = model_dir / "run_config.json"
+    identity, config_error = None, None
+    try:
+        if identity_path.exists():
+            identity = json.loads(identity_path.read_text())
+            if digest(identity["config"]) != identity["fingerprint"]:
+                raise ValueError("Changed config fingerprint")
+            n_folds = int(identity["config"]["n_folds"])
+            if n_folds < 2:
+                raise ValueError("Invalid fold count")
+    except (ValueError, KeyError, OSError, TypeError) as error:
+        config_error, n_folds = str(error), 5
 
+    epochs = identity["config"].get("epochs") if identity and not config_error else None
+    folds = []
     for fold in range(1, n_folds + 1):
-        fold_dir = model_dir / f"fold_{fold}"
-        metrics_path = fold_dir / "metrics.json"
-        best_path = fold_dir / "best.pth"
-
-        fold_result = {
+        folder = model_dir / f"fold_{fold}"
+        item = {
             "fold": fold,
             "status": "not_started",
             "accuracy": None,
-            "best_epoch": None,
+            "epoch": None,
+            "epochs": epochs,
         }
+        try:
+            if config_error:
+                raise ValueError(config_error)
+            if (folder / "metrics.json").exists():
+                if identity:
+                    metrics = completed_fold(
+                        folder, identity["fingerprint"], verify_checksums=False
+                    )
+                else:
+                    metrics = json.loads((folder / "metrics.json").read_text())
+                    if metrics.get("status") != "completed":
+                        raise ValueError("Legacy completion marker")
+                item.update(
+                    status="completed",
+                    accuracy=metrics["accuracy"],
+                    epoch=metrics.get("epoch"),
+                )
+            elif (folder / "run.json").exists():
+                run = json.loads((folder / "run.json").read_text())
+                if identity and run.get("fingerprint") != identity["fingerprint"]:
+                    raise ValueError("Unfinished fold config mismatch")
+                token = run.get("process_token")
+                alive = token is not None and process_token(run["pid"]) == token
+                item.update(
+                    status=(
+                        "in_progress"
+                        if run["status"] == "running" and alive
+                        else "interrupted"
+                    ),
+                    epoch=run.get("epoch"),
+                )
+            elif any(
+                (folder / name).exists()
+                for name in ("last.pth", "final.pth", "best.pth")
+            ):
+                item["status"] = "interrupted"
+        except (ValueError, KeyError, OSError, TypeError) as error:
+            item.update(status="error", error=str(error))
+        folds.append(item)
 
-        if metrics_path.exists():
-            try:
-                with open(metrics_path) as f:
-                    metrics = json.load(f)
-                fold_result["status"] = "completed"
-                fold_result["accuracy"] = metrics.get("accuracy", metrics.get("test_accuracy"))
-                fold_result["best_epoch"] = metrics.get("best_epoch")
-                results["completed"] += 1
-                if fold_result["accuracy"]:
-                    results["accuracies"].append(fold_result["accuracy"])
-            except:
-                fold_result["status"] = "error"
-        elif best_path.exists():
-            fold_result["status"] = "in_progress"
-            results["in_progress"] += 1
-        else:
-            results["not_started"] += 1
-
-        results["folds"].append(fold_result)
-
-    if results["accuracies"]:
-        import numpy as np
-        results["mean_accuracy"] = np.mean(results["accuracies"])
-        results["std_accuracy"] = np.std(results["accuracies"])
-    else:
-        results["mean_accuracy"] = None
-        results["std_accuracy"] = None
-
-    return results
+    counts = Counter(item["status"] for item in folds)
+    accuracies = [item["accuracy"] for item in folds if item["accuracy"] is not None]
+    return {
+        "model": model_dir.name,
+        "folds": folds,
+        "accuracies": accuracies,
+        **{status: counts[status] for status in STATUSES},
+        "mean_accuracy": statistics.mean(accuracies) if accuracies else None,
+        "std_accuracy": statistics.stdev(accuracies) if len(accuracies) > 1 else None,
+    }
 
 
-def print_progress(model_results, verbose=False):
-    """Print progress for all models."""
-    print("\n" + "=" * 80)
-    print("5-FOLD CV PROGRESS - Origin Key Split")
-    print("=" * 80)
-    print(f"Output: {OUTPUT_ROOT}")
-    print(f"Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print("-" * 80)
-
-    total_completed = 0
-    total_folds = 0
-
+def print_progress(model_results, output_root, verbose=False):
+    print(f"ORIGIN CV PROGRESS\nOutput: {output_root}")
     for result in model_results:
-        model = result["model"]
-        completed = result["completed"]
-        in_progress = result["in_progress"]
-        not_started = result["not_started"]
-        total = completed + in_progress + not_started
-        total_folds += total
-
-        # Status indicator
-        if completed == 5:
-            status = "✅ DONE"
-        elif completed > 0 or in_progress > 0:
-            status = "🔄 IN PROGRESS"
-        else:
-            status = "⏳ NOT STARTED"
-
-        print(f"\n{model.upper():30s} {status}")
-        print(f"  Progress: [{'●' * completed}{'◐' * in_progress}{'○' * not_started}] {completed}/5 folds")
-
+        counts = ", ".join(f"{status}={result[status]}" for status in STATUSES)
+        print(f"{result['model']}: {counts}")
         if result["mean_accuracy"] is not None:
-            mean_acc = result["mean_accuracy"]
-            std_acc = result["std_accuracy"]
-            print(f"  Accuracy: {mean_acc:.4f} ± {std_acc:.4f} ({mean_acc*100:.2f}%)")
-        elif completed > 0:
-            print(f"  Completed folds: {completed}")
-
+            print(
+                f"  Held-out accuracy mean={result['mean_accuracy']:.4f}; fold std={result['std_accuracy']}"
+            )
         if verbose:
             for fold in result["folds"]:
-                status_icon = {
-                    "completed": "✅",
-                    "in_progress": "🔄",
-                    "not_started": "○",
-                    "error": "❌"
-                }.get(fold["status"], "?")
-
-                acc_str = f"{fold['accuracy']:.4f}" if fold["accuracy"] else "---"
-                epoch_str = f"ep{fold['best_epoch']}" if fold["best_epoch"] else ""
-
-                print(f"    Fold {fold['fold']}: {status_icon} {acc_str} {epoch_str}")
-
-    # Summary
-    total_completed = sum(r["completed"] for r in model_results)
-    print("\n" + "=" * 80)
-    print(f"SUMMARY: {total_completed}/{len(model_results) * 5} folds completed across {len(model_results)} models")
-
-    # Estimated time remaining
-    if total_completed < len(model_results) * 5:
-        avg_time_per_fold = 30  # minutes (rough estimate)
-        remaining = (len(model_results) * 5) - total_completed
-        print(f"Estimated remaining: ~{remaining * avg_time_per_fold / 60:.1f} hours (if running sequentially)")
-    print("=" * 80)
-
-
-def check_wandb_status():
-    """Check WandB for running experiments."""
-    try:
-        import wandb
-        api = wandb.Api()
-
-        print("\n--- WandB Running Experiments ---")
-        runs = api.runs("your-username/woodbench-origin-cv", filters={"state": "running"})
-
-        if runs:
-            for run in runs:
-                print(f"  {run.name}: {run.state}")
-        else:
-            print("  No running experiments found")
-    except Exception as e:
-        print(f"  (WandB not available or not logged in)")
+                print(
+                    f"  Fold {fold['fold']}: {fold['status']}, "
+                    f"epoch={fold['epoch'] or 0}/{fold['epochs'] or '?'}, "
+                    f"accuracy={fold['accuracy']}"
+                )
+                if fold.get("error"):
+                    print(f"    {fold['error']}")
+    print(
+        f"SUMMARY: {sum(r['completed'] for r in model_results)}/{sum(len(r['folds']) for r in model_results)} folds completed"
+    )
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Check 5-fold CV progress')
-    parser.add_argument('--watch', action='store_true', help='Watch mode (refresh every 30s)')
-    parser.add_argument('--model', type=str, help='Check specific model only')
-    parser.add_argument('--output', type=str, help='Output root path')
-    parser.add_argument('--verbose', '-v', action='store_true', help='Verbose output')
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--watch", action="store_true")
+    parser.add_argument("--model", choices=MODELS)
+    parser.add_argument("--output", type=Path, default=OUTPUT_ROOT)
+    parser.add_argument("--verbose", "-v", action="store_true")
     args = parser.parse_args()
-
-    global OUTPUT_ROOT
-    if args.output:
-        OUTPUT_ROOT = Path(args.output)
-
-    models_to_check = [args.model] if args.model else MODELS
-
-    def do_check():
-        model_results = []
-        for model in models_to_check:
-            model_dir = OUTPUT_ROOT / model
-            if model_dir.exists():
-                result = get_model_progress(model_dir)
-                model_results.append(result)
-            else:
-                model_results.append({
-                    "model": model,
-                    "completed": 0,
-                    "folds": [],
-                    "mean_accuracy": None,
-                })
-
-        print_progress(model_results, verbose=args.verbose)
-
-        if os.getenv("WANDB_API_KEY"):
-            check_wandb_status()
-
-    if args.watch:
-        import time
-        print("Watching progress... (Ctrl+C to stop)")
-        try:
-            while True:
-                os.system('clear' if os.name == 'posix' else 'cls')
-                do_check()
-                time.sleep(30)
-        except KeyboardInterrupt:
-            print("\nStopped.")
-    else:
-        do_check()
+    models = [args.model] if args.model else MODELS
+    try:
+        while True:
+            results = [get_model_progress(args.output / model) for model in models]
+            print_progress(results, args.output, args.verbose)
+            if not args.watch:
+                return
+            time.sleep(30)
+    except KeyboardInterrupt:
+        print("Stopped.")
 
 
 if __name__ == "__main__":
