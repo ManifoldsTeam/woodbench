@@ -1,0 +1,58 @@
+{
+  "created_at_utc": "20261003T163224Z",
+  "registry": "notebooks/phase 2/supervisor-feedback/task_02_robustness_tests/runs/inference-20261003T163224Z-1fde2140/inference-20261003T163224Z-registry.csv",
+  "source_registry": "docs/reports/experiments/phase_1b/final_b_new_recomputed/20260819T043733Z/task-b-17class-20260819T043733Z-registry.csv",
+  "source_run_ids": [
+    "taskB17__main__seed_42__convnext_tiny",
+    "taskB17__main__seed_42__mobilenetv3_large"
+  ],
+  "evaluation_notebook": "notebooks/phase 2/supervisor-feedback/task_02_robustness_tests/robustness_tests.ipynb",
+  "test_dir": "data/task-B-group-split/test",
+  "class_to_idx": {
+    "Araucaria araucana": 0,
+    "Callitris columellaris": 1,
+    "Calocedrus rupestris": 2,
+    "Chamaecyparis obtusa": 3,
+    "Cryptomeria japonica": 4,
+    "Cunninghamia lanceolata": 5,
+    "Fokienia hodginsii": 6,
+    "Picea glauca": 7,
+    "Pinus cernua": 8,
+    "Pinus dalatensis": 9,
+    "Pinus krempfii": 10,
+    "Pinus radiata": 11,
+    "Podocarpus pilgeri": 12,
+    "Pseudotsuga brevifolia": 13,
+    "Taxus wallichiana": 14,
+    "Thujopsis dolabrata": 15,
+    "Xanthocyparis vietnamensis": 16
+  },
+  "evaluation_batch_size": 32,
+  "device": "cuda",
+  "precision": "float32; no autocast",
+  "conditions": [
+    "baseline",
+    "center_crop_70",
+    "edge_mask_15",
+    "grayscale"
+  ],
+  "preprocessing": "Resize((224,224)) -> probe -> ToTensor -> ImageNet normalize",
+  "probe_parameters": {
+    "center_crop_ratio": 0.7,
+    "edge_mask_ratio": 0.15,
+    "grayscale_channels": 3,
+    "degraded_size": 16,
+    "blur_5": {
+      "sigma": 5,
+      "kernel_size": 31
+    },
+    "blur_10": {
+      "sigma": 10,
+      "kernel_size": 61
+    }
+  },
+  "drop_unit": "percentage points; own model baseline minus perturbed accuracy",
+  "training_registry_rule": "one row per training run; all probes reuse its run_id",
+  "checkpoint_selection": "recorded explicitly in registry checkpoint_path",
+  "inference_only": true
+}

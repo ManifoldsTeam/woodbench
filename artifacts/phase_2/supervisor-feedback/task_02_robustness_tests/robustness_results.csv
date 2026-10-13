@@ -1,0 +1,6 @@
+test,description,accuracy,drop_from_baseline
+baseline,Standard resize to 224x224,0.9981203007518797,0.0
+center_crop_70,"Center crop to 70%, resize back (removes edge info)",0.9774436090225563,0.020676691729323404
+edge_mask_15,Mask 15% border with black (removes edge features),0.9943609022556391,0.003759398496240629
+grayscale,Convert to grayscale (removes color info),0.7368421052631579,0.2612781954887219
+random_crop_70,Random crop at 70% (tests spatial invariance),0.9793233082706767,0.018796992481203034

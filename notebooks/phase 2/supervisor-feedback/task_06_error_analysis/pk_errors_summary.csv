@@ -1,16 +1,1 @@
-backbone,seed,pk_total,errors
-convnext_tiny,42,144,10
-convnext_tiny,123,36,1
-convnext_tiny,456,36,5
-swin_tiny,42,144,11
-swin_tiny,123,36,2
-swin_tiny,456,36,6
-efficientnet_b3,42,144,18
-efficientnet_b3,123,36,4
-efficientnet_b3,456,36,4
-mobilenetv3_large,42,144,19
-mobilenetv3_large,123,36,6
-mobilenetv3_large,456,36,4
-resnet50,42,144,23
-resnet50,123,36,6
-resnet50,456,36,6
+../../../../artifacts/phase_2/supervisor-feedback/task_06_error_analysis/pk_errors_summary.csv

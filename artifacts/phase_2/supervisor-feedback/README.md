@@ -1,0 +1,31 @@
+# Supervisor-feedback artifacts
+
+Canonical location since 2026-10-13 for outputs formerly stored beside the
+Phase 2 notebooks. Notebook/script sources remain in
+`notebooks/phase 2/supervisor-feedback/` (paths here are relative to woodbench).
+
+| Directory | Contents |
+|---|---|
+| `reports/` | Combined inference summary, metadata and registry |
+| `task_01_fivefold_cv_training/` | Launcher logs and exit records only |
+| `task_02_robustness_tests/` | Historical plots/CSV plus timestamped inference runs |
+| `task_03_dark_artifact_check/` | Brightness CSV and inspection figures |
+| `task_04_degradation_rerun/` | Historical plots/CSV plus timestamped inference runs |
+| `task_06_error_analysis/` | Error CSVs and origin plot |
+
+Checkpoints, fold outputs and LR tuning remain under `data/experiments/`.
+No experiment was rerun and no metric, run ID or historical registry content
+was edited during this move. Historical flat CSVs and timestamped inference
+exports remain distinct; moving them does not validate their scientific claims.
+
+`relocation-20261013.json` records old/new repository-relative paths, sizes and
+SHA-256 hashes for every moved file. Relative symlinks at the old locations
+preserve historical references without keeping duplicate payloads. Keep those
+links with the artifacts; removing them breaks paths embedded in old registries.
+Notebook output configuration now uses this canonical directory.
+
+The report document `SUPERVISOR_REPORT_2026-10-03.md` stays beside the source
+notebooks; its legacy output links resolve through the compatibility links.
+Existing log/checkpoint ignore rules still apply. These artifacts may contain
+source-image previews and metadata: this is a local organization change, not
+a public release. Only code is authorized for public release.

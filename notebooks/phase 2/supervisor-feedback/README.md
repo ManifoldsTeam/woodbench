@@ -1,5 +1,17 @@
 # Phase 2: Supervisor Feedback Tasks
 
+## Output location (updated 2026-10-13)
+
+Notebook/script sources stay here. Generated CSV, figures, inference runs,
+registries, summary exports and launcher logs now live in
+[`artifacts/phase_2/supervisor-feedback/`](../../../artifacts/phase_2/supervisor-feedback/).
+The original output paths are relative compatibility symlinks so immutable
+historical registries and existing consumers still resolve. Do not replace
+these symlinks with new copies. New notebook exports use the canonical path.
+Training checkpoints and CV/LR-tuning outputs already under `data/experiments/`
+are unchanged. See the artifact README and relocation manifest for file hashes.
+This local reorganization is not authorization to publish images or metadata.
+
 ## 6 Tasks from Supervisor (30-09-2026)
 
 | # | Task | Type | Status | Time |

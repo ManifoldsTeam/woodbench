@@ -1,0 +1,533 @@
+run_id,backbone,test,path,true_label,predicted_label,true_species,predicted_species
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(215).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(216).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(217).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(218).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(219).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(220).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(221).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(222).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(223).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(224).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(225).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(226).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(227).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(228).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(229).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(230).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(231).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(232).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(233).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(234).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(235).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(236).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(237).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(238).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(239).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(240).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(241).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(242).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(243).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Araucaria araucana/3351. Araucaria araucana.8.(244).png,0,0,Araucaria araucana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/1103.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/1103__from-val__0332dace.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/1108.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/112.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/112__from-test__69edd7a8.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/112__from-val__3cbca1d9.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/115.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/115__from-val__b515b113.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/127.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/127__from-test__0ef75dcb.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/127__from-val__06c2f2ac.png,1,5,Callitris columellaris,Cunninghamia lanceolata
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/132.png,1,3,Callitris columellaris,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/132__from-val__8eb6cdbb.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/138.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/14.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/144.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/144__from-val__d2fec060.png,1,3,Callitris columellaris,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/148.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/153.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/153__from-test__8ea6613d.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/162.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/162__from-test__ac827de2.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/165.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/165__from-val__4e0827da.png,1,3,Callitris columellaris,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/188.png,1,3,Callitris columellaris,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/188__from-test__f5dfa516.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/193.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/193__from-test__64a06b29.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/193__from-val__af1879b2.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/196.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/198.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/198__from-test__11871ea7.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/199.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Callitris columellaris/199__from-val__b45c3492.png,1,1,Callitris columellaris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(183).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(184).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(185).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(186).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(187).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(188).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(189).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(190).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(191).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(192).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(193).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(194).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(195).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(196).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(197).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(198).png,2,14,Calocedrus rupestris,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(200).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(204).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(205).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(206).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(208).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(210).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(211).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(212).png,2,1,Calocedrus rupestris,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(127).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(128).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(129).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(130).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(131).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(132).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(133).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(134).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(135).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(136).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(137).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(138).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(139).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(140).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(141).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(142).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(143).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(144).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(145).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(146).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(147).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(148).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(149).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(150).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(151).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(152).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(153).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(154).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(155).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(156).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(157).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(158).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.5(159).png,3,3,Chamaecyparis obtusa,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(102).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(103).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(104).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(105).png,4,3,Cryptomeria japonica,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(106).png,4,3,Cryptomeria japonica,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(107).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(108).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(109).png,4,3,Cryptomeria japonica,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(110).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(111).png,4,14,Cryptomeria japonica,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(112).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(113).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(114).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(115).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(116).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(117).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(118).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(119).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(120).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(121).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(122).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(123).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(124).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(125).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(126).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(127).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(128).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(129).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(130).png,4,1,Cryptomeria japonica,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(131).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(132).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(133).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cryptomeria japonica/3350. Cryptomeria japonica.4.(134).png,4,4,Cryptomeria japonica,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/10.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/10__from-val__e5e826b0.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/110.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/110__from-test__5b86b018.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/113.png,5,3,Cunninghamia lanceolata,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/113__from-test__8a08ff44.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/113__from-val__091ca36d.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/120.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/120__from-val__020ef0b4.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/133.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/133__from-test__2b166407.png,5,3,Cunninghamia lanceolata,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/133__from-val__2774c445.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/138.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/138__from-val__e5e1865d.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/156.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/156__from-test__9843c409.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/16.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/16__from-val__98d74a4d.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/171.png,5,3,Cunninghamia lanceolata,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/171__from-test__b6a0030b.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/174.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/174__from-test__8b69b6d4.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/174__from-val__3cc28a2f.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/184.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/185.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/19.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Cunninghamia lanceolata/19__from-test__5275ec17.png,5,1,Cunninghamia lanceolata,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu104.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu109.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu24.png,6,1,Fokienia hodginsii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu3.png,6,1,Fokienia hodginsii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu34.png,6,1,Fokienia hodginsii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu39.png,6,1,Fokienia hodginsii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu4.png,6,1,Fokienia hodginsii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu46.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu62.png,6,1,Fokienia hodginsii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu63.png,6,1,Fokienia hodginsii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu70.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu79.png,6,1,Fokienia hodginsii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu8.png,6,1,Fokienia hodginsii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu82.png,6,1,Fokienia hodginsii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu85.png,6,1,Fokienia hodginsii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu86.png,6,1,Fokienia hodginsii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu87.png,6,1,Fokienia hodginsii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu92.png,6,1,Fokienia hodginsii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu95.png,6,1,Fokienia hodginsii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơ mu97.png,6,1,Fokienia hodginsii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơmu1.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơmu10.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơmu103.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơmu10__from-test__da7ae17d.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơmu10__from-val__58568861.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơmu1__from-test__ead46148.png,6,1,Fokienia hodginsii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơmu3.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơmu32.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơmu3__from-val__4146cc1b.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơmu5.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơmu69.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơmu72.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơmu72__from-test__4c62b5b8.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơmu79.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơmu90.png,6,1,Fokienia hodginsii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơmu90__from-val__846ad5ec.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơmu91.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơmu91__from-test__e361231b.png,6,3,Fokienia hodginsii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Fokienia hodginsii/pơmu91__from-val__c420bf18.png,6,1,Fokienia hodginsii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (31).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (34).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (35).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (36).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (39).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (41).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (43).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (45).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (46).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (49).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (50).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (51).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (52).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (53).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (55).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (56).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (57).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (58).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (59).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (60).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (61).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (62).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (63).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (64).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Picea glauca/3378. Picea glauca (65).png,7,0,Picea glauca,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (165).png,8,4,Pinus cernua,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (166).png,8,4,Pinus cernua,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (167).png,8,4,Pinus cernua,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (168).png,8,1,Pinus cernua,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (169).png,8,1,Pinus cernua,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (170).png,8,1,Pinus cernua,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (171).png,8,4,Pinus cernua,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (172).png,8,1,Pinus cernua,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (173).png,8,14,Pinus cernua,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (174).png,8,14,Pinus cernua,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (175).png,8,14,Pinus cernua,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (176).png,8,14,Pinus cernua,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (177).png,8,1,Pinus cernua,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (178).png,8,14,Pinus cernua,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (179).png,8,14,Pinus cernua,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (180).png,8,1,Pinus cernua,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (181).png,8,1,Pinus cernua,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (182).png,8,1,Pinus cernua,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (183).png,8,3,Pinus cernua,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (184).png,8,1,Pinus cernua,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (185).png,8,14,Pinus cernua,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (186).png,8,1,Pinus cernua,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (187).png,8,1,Pinus cernua,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (188).png,8,3,Pinus cernua,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (189).png,8,1,Pinus cernua,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (190).png,8,1,Pinus cernua,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (191).png,8,3,Pinus cernua,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (192).png,8,1,Pinus cernua,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (193).png,8,1,Pinus cernua,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (194).png,8,4,Pinus cernua,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus cernua/3385. Pinus cernua.7 (195).png,8,3,Pinus cernua,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (29).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (30).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (31).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (32).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (33).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (34).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (35).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (36).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (37).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (38).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (39).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (40).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (41).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (42).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (43).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (44).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (45).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (46).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (47).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (48).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (49).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (50).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (51).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (52).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (53).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (54).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (55).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (56).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (57).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (58).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (59).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus dalatensis/3393. Pinus dalatensis.2 (60).png,9,3,Pinus dalatensis,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (102).png,10,1,Pinus krempfii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (103).png,10,1,Pinus krempfii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (104).png,10,1,Pinus krempfii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (105).png,10,1,Pinus krempfii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (106).png,10,1,Pinus krempfii,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (107).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (108).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (109).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (110).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (111).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (112).png,10,4,Pinus krempfii,Cryptomeria japonica
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (113).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (114).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (115).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (116).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (117).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (118).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (119).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (120).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (121).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (122).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (123).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (124).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (125).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (127).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (128).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (129).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (130).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (131).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (132).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (133).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (134).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (135).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (136).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (137).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus krempfii/3384. Pinus krempfii.4 (138).png,10,3,Pinus krempfii,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (138).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (139).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (140).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (141).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (142).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (143).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (144).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (145).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (146).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (147).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (148).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (149).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (150).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (151).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (152).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (153).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (154).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (155).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (156).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (157).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (158).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (159).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (160).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (161).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (162).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (163).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (164).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (165).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (166).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (167).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pinus radiata/3379. Pinus radiata.5 (168).png,11,0,Pinus radiata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (1).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (10).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (11).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (12).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (13).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (14).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (15).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (16).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (17).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (18).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (19).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (2).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (20).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (21).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (22).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (23).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (24).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (25).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (26).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (27).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (28).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (29).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (3).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (30).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (31).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (32).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (33).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (34).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (35).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (36).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (4).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (5).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (6).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (7).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (8).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Podocarpus pilgeri/3386. Podocarpus pilgeri.1 (9).png,12,3,Podocarpus pilgeri,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (145).png,13,3,Pseudotsuga brevifolia,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (146).png,13,3,Pseudotsuga brevifolia,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (147).png,13,3,Pseudotsuga brevifolia,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (148).png,13,1,Pseudotsuga brevifolia,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (149).png,13,14,Pseudotsuga brevifolia,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (150).png,13,1,Pseudotsuga brevifolia,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (151).png,13,1,Pseudotsuga brevifolia,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (152).png,13,1,Pseudotsuga brevifolia,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (153).png,13,14,Pseudotsuga brevifolia,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (154).png,13,3,Pseudotsuga brevifolia,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (155).png,13,1,Pseudotsuga brevifolia,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (156).png,13,14,Pseudotsuga brevifolia,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (157).png,13,14,Pseudotsuga brevifolia,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (158).png,13,1,Pseudotsuga brevifolia,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (159).png,13,1,Pseudotsuga brevifolia,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (160).png,13,14,Pseudotsuga brevifolia,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (161).png,13,14,Pseudotsuga brevifolia,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (162).png,13,14,Pseudotsuga brevifolia,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (163).png,13,14,Pseudotsuga brevifolia,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (164).png,13,14,Pseudotsuga brevifolia,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (165).png,13,1,Pseudotsuga brevifolia,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (166).png,13,1,Pseudotsuga brevifolia,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (167).png,13,3,Pseudotsuga brevifolia,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (168).png,13,14,Pseudotsuga brevifolia,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (169).png,13,14,Pseudotsuga brevifolia,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (170).png,13,14,Pseudotsuga brevifolia,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (171).png,13,1,Pseudotsuga brevifolia,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (172).png,13,1,Pseudotsuga brevifolia,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.6 (173).png,13,14,Pseudotsuga brevifolia,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (10).png,14,14,Taxus wallichiana,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (11).png,14,1,Taxus wallichiana,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (12).png,14,1,Taxus wallichiana,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (13).png,14,1,Taxus wallichiana,Callitris columellaris
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (14).png,14,3,Taxus wallichiana,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (15).png,14,3,Taxus wallichiana,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (16).png,14,3,Taxus wallichiana,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (17).png,14,14,Taxus wallichiana,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (18).png,14,14,Taxus wallichiana,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (19).png,14,0,Taxus wallichiana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (2).png,14,3,Taxus wallichiana,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (20).png,14,14,Taxus wallichiana,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (21).png,14,0,Taxus wallichiana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (22).png,14,3,Taxus wallichiana,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (23).png,14,3,Taxus wallichiana,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (24).png,14,14,Taxus wallichiana,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (25).png,14,14,Taxus wallichiana,Taxus wallichiana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (26).png,14,0,Taxus wallichiana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (27).png,14,0,Taxus wallichiana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (28).png,14,0,Taxus wallichiana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (29).png,14,3,Taxus wallichiana,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (30).png,14,3,Taxus wallichiana,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (5).png,14,3,Taxus wallichiana,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (7).png,14,3,Taxus wallichiana,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (8).png,14,3,Taxus wallichiana,Chamaecyparis obtusa
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Taxus wallichiana/3391. Taxus wallichiana.1 (9).png,14,0,Taxus wallichiana,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (261).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (262).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (263).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (264).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (265).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (266).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (267).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (268).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (269).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (270).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (271).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (272).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (273).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (274).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (275).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (276).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (277).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (278).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (279).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (280).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (281).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (282).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (283).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (284).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (285).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (286).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (287).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (288).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (289).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (290).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (291).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (292).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (293).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (294).png,15,0,Thujopsis dolabrata,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(283).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(284).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(285).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(286).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(287).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(288).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(289).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(290).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(291).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(292).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(293).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(294).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(295).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(296).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(297).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(298).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(299).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(302).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(304).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(305).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(308).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(309).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(310).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(311).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(312).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(313).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(314).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(315).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(316).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(317).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(318).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana
+taskB17__main__seed_42__convnext_tiny,convnext_tiny,blur_10,data/task-B-group-split/test/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.10.(319).png,16,0,Xanthocyparis vietnamensis,Araucaria araucana

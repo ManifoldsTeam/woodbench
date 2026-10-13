@@ -1,0 +1,29 @@
+{
+  "created_at_utc": "20261003T164818Z",
+  "registry": "notebooks/phase 2/supervisor-feedback/reports/inference-summary-20261003T164818Z-8d57aa9f/supervisor-inference-20261003T164818Z-registry.csv",
+  "source_run_ids": [
+    "taskB17__main__seed_42__convnext_tiny",
+    "taskB17__main__seed_42__mobilenetv3_large"
+  ],
+  "source_exports": {
+    "task_2": {
+      "metadata": "notebooks/phase 2/supervisor-feedback/task_02_robustness_tests/runs/inference-20261003T163224Z-1fde2140/metadata.json",
+      "registry": "notebooks/phase 2/supervisor-feedback/task_02_robustness_tests/runs/inference-20261003T163224Z-1fde2140/inference-20261003T163224Z-registry.csv",
+      "results": "notebooks/phase 2/supervisor-feedback/task_02_robustness_tests/runs/inference-20261003T163224Z-1fde2140/results.csv",
+      "evaluation_notebook": "notebooks/phase 2/supervisor-feedback/task_02_robustness_tests/robustness_tests.ipynb"
+    },
+    "task_4": {
+      "metadata": "notebooks/phase 2/supervisor-feedback/task_04_degradation_rerun/runs/inference-20261003T163731Z-63675241/metadata.json",
+      "registry": "notebooks/phase 2/supervisor-feedback/task_04_degradation_rerun/runs/inference-20261003T163731Z-63675241/inference-20261003T163731Z-registry.csv",
+      "results": "notebooks/phase 2/supervisor-feedback/task_04_degradation_rerun/runs/inference-20261003T163731Z-63675241/results.csv",
+      "evaluation_notebook": "notebooks/phase 2/supervisor-feedback/task_04_degradation_rerun/degradation_rerun.ipynb"
+    }
+  },
+  "validation": "All 16 metrics independently recomputed from 8512 prediction rows; same 532 image paths and labels; baseline predictions and checkpoint SHA256 match between both notebooks",
+  "scope": "Phase 1 main, seed 42, best checkpoints; two training runs; no new training",
+  "metric_units": {
+    "accuracy": "fraction in CSV; percentage in Markdown",
+    "macro_f1": "fraction in CSV; percentage in Markdown",
+    "drop_pp": "percentage points relative to same-model baseline"
+  }
+}

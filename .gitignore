@@ -237,7 +237,12 @@ archive_duplicate_date.tar.gz
 data-taskB/data-B
 data-taskB/data-B.tar.zst
 data-taskB/preview_flash_images.ipynb
-artifacts/
+# Historical artifacts remain local; Phase 2 feedback outputs have a canonical home.
+/artifacts/*
+!/artifacts/phase_2/
+/artifacts/phase_2/*
+!/artifacts/phase_2/supervisor-feedback/
+/artifacts/phase_2/supervisor-feedback/task_01_fivefold_cv_training/logs/.launcher.lock
 
 # Local Git worktrees used for branch review
 /.worktree/

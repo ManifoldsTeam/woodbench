@@ -3,7 +3,7 @@
 set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PYTHON="${PYTHON:-python}"
-LOG_ROOT="${LOG_ROOT:-$SCRIPT_DIR/logs}"
+LOG_ROOT="${LOG_ROOT:-$SCRIPT_DIR/../../../../artifacts/phase_2/supervisor-feedback/task_01_fivefold_cv_training/logs}"
 MAX_PARALLEL="${MAX_PARALLEL:-5}"
 export PYTHONUNBUFFERED="${PYTHONUNBUFFERED:-1}"
 if ! [[ "$MAX_PARALLEL" =~ ^[1-9][0-9]*$ ]]; then
