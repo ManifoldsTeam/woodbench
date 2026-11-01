@@ -1,26 +1,35 @@
-# Task 1 — Grouped 5-fold CV
+# Task 1 — Grouped 5-fold CV (giao thức v2)
 
 Train 5 model độc lập theo origin của lần Phase 1 cuối. Mỗi model chạy lần lượt
-5 fold; mỗi fold khởi tạo lại từ ImageNet, train đủ số epoch đã chốt, rồi đánh giá
-held-out đúng một lần. Không chọn checkpoint bằng kết quả held-out.
+5 fold; mỗi fold khởi tạo lại từ ImageNet. Trong phần train của fold, khoảng 20%
+origin mỗi loài được tách làm val; train đến khi val acc không tăng 10 epoch, rồi
+chấm fold held-out **một lần** bằng `best.pth`. Held-out không dùng để chọn gì.
+
+v2 (`protocol: best-val-origin-cv-v2`, 01-11-2026) thay v1 (fixed 50 epoch,
+`final.pth`, FP32, không val). Output v1 ở `data/experiments/Task-B-origin-cv/` giữ
+nguyên; v2 ghi vào `Task-B-origin-cv-v2/` và resume không trộn hai bản. Lý do:
+[handoff 01-11-2026](../../../../docs/timeline/01-11-2026-handoff-vast.md), mục 6.
 
 ## Cấu hình mặc định
 
 | Tham số | Giá trị |
 |---|---|
 | Models | ConvNeXt-Tiny, MobileNetV3-Large, ResNet-50, EfficientNet-B3, Swin-Tiny |
-| Epochs | **50 mỗi fold** |
+| Epochs | Tối đa **50**; early stopping patience 10 theo inner-val acc (`EARLY_STOPPING_PATIENCE=0` tắt) |
+| Inner val | `round(0.2 × số origin)` origin mỗi loài trong phần train của fold (ít nhất 1, chừa ít nhất 1 để train); loài 10 origin: 2 test / 2 val / 6 train |
 | Batch | **64** cho ResNet/MobileNet; **32** cho ba model còn lại |
-| Optimizer / LR | AdamW; backbone `1e-5`, head `1e-4`; weight decay `1e-4` |
-| Scheduler / loss | Cosine, `T_max=50`; label smoothing `0.1` |
-| Seed | `42` để chia 5 fold theo origin từng loài và khởi tạo lại mỗi model/fold |
+| Optimizer / LR | AdamW, weight decay `1e-4`; head `1e-4` trên `model.get_classifier()`; backbone LR **bắt buộc**, lấy từ [bước 1](../task_07_lr_selection/README.md) |
+| Scheduler / loss | Warmup tuyến tính 5 epoch rồi cosine; label smoothing `0.1`; AMP trên CUDA |
+| Checkpoint | `best.pth` theo inner-val acc; held-out chấm từ checkpoint này |
+| Input | `INPUT_VARIANT=rgb` (mặc định), `grayscale` hoặc `px16` (resize 224→16→224), áp dụng cho mọi split |
+| Seed | `42` để chia fold và inner val (`default_rng([seed, fold])`), khởi tạo lại mỗi model/fold |
 | Augmentation | Resize 224×224, H/VFlip p=0.5, rotation ±30°, brightness/contrast jitter 0.2, ImageNet normalize |
 | Held-out | Resize 224×224 và normalize; không augmentation/crop |
 
 Engine dùng cùng transform với Phase 1. `USE_90ROTATION=0` là main;
 `1` là ablation chọn góc 0/90/180/270°. Không đặt `BATCH_SIZE` để giữ batch theo model.
-Training hiện dùng FP32; Phase 1 dùng AMP và chọn best checkpoint/early stopping.
-CV dùng fixed epochs và `final.pth`, nên ghi rõ khác biệt protocol khi đối chiếu.
+Giao thức v2 giống Final-B main (warmup + cosine, AMP, early stopping, best checkpoint);
+khác ở chỗ head là classifier thật và val tách theo origin trong từng fold.
 
 Origin được đọc từ manifest
 `docs/reports/phase_1/phase_1_leakage_origin_investigation/task-B-clean_group_split_plan.csv`.
@@ -41,23 +50,27 @@ conda activate wood
 cd '/workspace/woodbench/notebooks/phase 2/supervisor-feedback/task_01_fivefold_cv_training'
 python -c "import torch; assert torch.cuda.is_available(); print(torch.cuda.get_device_name(0))"
 
-# Kiểm tra cấu trúc data/model/checkpoint, chưa chạy forward/backward.
-python train_kfold.py --backbone convnext_tiny --dryrun
+# Kiểm fold, inner val, nhóm tham số, JSON và checkpoint; chưa train.
+python train_kfold.py --backbone convnext_tiny --backbone_lr 1e-5 --dryrun
 
-# Một epoch cho mỗi model, output riêng; không dùng kết quả smoke để báo cáo.
+# Hai epoch cho mỗi model, output riêng; không dùng kết quả smoke để báo cáo.
 smoke_root="/workspace/woodbench/data/experiments/Task-B-origin-cv-smoke-$(date -u +%Y%m%dT%H%M%SZ)"
 for model in convnext_tiny mobilenetv3_large resnet50 efficientnet_b3 swin_tiny; do
-  python train_kfold.py --backbone "$model" --fold 1 --epochs 1 --output_root "$smoke_root"
+  python train_kfold.py --backbone "$model" --backbone_lr 1e-5 --fold 1 \
+    --epochs 2 --warmup_epochs 1 --output_root "$smoke_root"
 done
 ```
 
-## 2. Chạy ngầm 5 model, giữ chạy khi mất SSH
+## 2. Bước 2: chạy ngầm 5 model, giữ chạy khi mất SSH
 
-Từ folder Task 1, sau khi smoke test thành công:
+Từ folder Task 1, sau khi smoke test thành công. Launcher dừng (mã 2) nếu model nào
+chưa có backbone LR. `BACKBONE_LR` áp dụng cho mọi model; `BACKBONE_LRS` ghi đè cho
+từng model theo `decisions.csv` của bước 1. Ví dụ (thay bằng LR đã chọn):
 
 ```zsh
-unset MODELS BATCH_SIZE
-N_FOLDS=5 EPOCHS=50 MAX_PARALLEL=5 USE_90ROTATION=0 RESUME=0 \
+unset MODELS BATCH_SIZE INPUT_VARIANT
+BACKBONE_LR=1e-5 BACKBONE_LRS="resnet50:1e-4 efficientnet_b3:1e-4" \
+N_FOLDS=5 MAX_PARALLEL=5 USE_90ROTATION=0 RESUME=0 \
 nohup bash run_all_models.sh \
   > "launch-$(date -u +%Y%m%dT%H%M%SZ).log" 2>&1 < /dev/null &
 disown
@@ -78,7 +91,7 @@ python check_progress.py --watch --verbose
 ```
 
 Monitor cập nhật mỗi 30 giây: tổng fold đã hoàn thành, trạng thái từng fold,
-`epoch=12/50` và held-out accuracy của fold hoàn thành. `Ctrl-C` chỉ dừng monitor.
+`epoch=12/50`, held-out accuracy và best epoch của fold hoàn thành. `Ctrl-C` chỉ dừng monitor.
 `in_progress` là process đang sống; `interrupted` là fold dở đã ngừng; `error`
 là config/artifact không hợp lệ. Khi đủ kết quả: `25/25 folds completed`.
 
@@ -93,11 +106,13 @@ nvidia-smi
 
 ## 4. Resume và các kịch bản
 
-Nếu process đã ngừng, chạy lại với **cùng code, dữ liệu và cấu hình**:
+Nếu process đã ngừng, chạy lại với **cùng code, dữ liệu và cấu hình** (cùng
+`BACKBONE_LR`/`BACKBONE_LRS`):
 
 ```zsh
-unset MODELS BATCH_SIZE
-N_FOLDS=5 EPOCHS=50 MAX_PARALLEL=5 USE_90ROTATION=0 RESUME=1 \
+unset MODELS BATCH_SIZE INPUT_VARIANT
+BACKBONE_LR=1e-5 BACKBONE_LRS="resnet50:1e-4 efficientnet_b3:1e-4" \
+N_FOLDS=5 MAX_PARALLEL=5 USE_90ROTATION=0 RESUME=1 \
 nohup bash run_all_models.sh \
   > "launch-$(date -u +%Y%m%dT%H%M%SZ).log" 2>&1 < /dev/null &
 disown
@@ -110,29 +125,51 @@ lại từ epoch 0**, không tiếp tục epoch cuối. Output cũ khác cấu h
 |---|---|
 | Mất SSH nhưng training vẫn sống | Kết nối lại và monitor; không launch thêm |
 | Process ngừng / instance restart | Dùng lệnh `RESUME=1` ở trên |
-| Chạy lại riêng fold 3 | `python train_kfold.py --backbone convnext_tiny --fold 3 --resume` |
+| Chạy lại riêng fold 3 | `python train_kfold.py --backbone convnext_tiny --backbone_lr <lr> --fold 3 --resume` |
 | OOM khi chạy song song | Giảm `MAX_PARALLEL` rồi resume, giữ nguyên batch |
 | Đổi batch, epoch, LR, seed, augmentation hoặc code | Chọn `OUTPUT_ROOT` mới; không trộn với run cũ |
 | Output riêng | Launcher đặt `OUTPUT_ROOT=/đường/dẫn`; monitor dùng `--output /đường/dẫn` |
 | Chuyển instance | Copy code, dataset, manifest và toàn bộ output; dùng lại cấu hình cũ |
 
 Override tùy chọn: `MODELS`, `MAX_PARALLEL`, `N_FOLDS`, `EPOCHS`, `BATCH_SIZE`,
-`BACKBONE_LR`, `HEAD_LR`, `WEIGHT_DECAY`, `LABEL_SMOOTHING`, `SEED`, `NUM_WORKERS`,
-`DATA_ROOT`, `MANIFEST_PATH`, `OUTPUT_ROOT`, `LOG_ROOT`, `PYTHON`, `WANDB_PROJECT`.
+`BACKBONE_LR`, `BACKBONE_LRS`, `HEAD_LR`, `WEIGHT_DECAY`, `LABEL_SMOOTHING`, `SEED`,
+`NUM_WORKERS`, `WARMUP_EPOCHS`, `EARLY_STOPPING_PATIENCE`, `INNER_VAL_FRACTION`,
+`INPUT_VARIANT`, `DATA_ROOT`, `MANIFEST_PATH`, `OUTPUT_ROOT`, `LOG_ROOT`, `PYTHON`,
+`WANDB_PROJECT`.
 `BATCH_SIZE` nếu đặt sẽ áp dụng cho mọi model. Có thể đặt `WANDB_API_KEY` trước
 launch nếu cần tracking. Giữ nguyên các override đó khi resume.
 
-## 5. Xuất kết quả và backup
+## 5. Bước 3–4: ConvNeXt grayscale và 16px, fold 1
 
-Output: `data/experiments/Task-B-origin-cv/<model>/fold_<n>/` chứa `final.pth`,
-`predictions.csv`, `metrics.json`, `run.json`, `history.json`.
+Cùng giao thức và cùng fold 1 với ConvNeXt RGB của bước 2, nên chênh lệch là do input.
+Mỗi biến thể một output riêng (`<lr>` là LR ConvNeXt đã chọn ở bước 1):
+
+```zsh
+for variant in grayscale px16; do
+  nohup python train_kfold.py --backbone convnext_tiny --backbone_lr <lr> --fold 1 \
+    --input_variant "$variant" \
+    --output_root "/workspace/woodbench/data/experiments/Task-B-origin-cv-v2-$variant" \
+    > "launch-$variant-$(date -u +%Y%m%dT%H%M%SZ).log" 2>&1 < /dev/null &
+done
+python check_progress.py --model convnext_tiny --verbose \
+  --output /workspace/woodbench/data/experiments/Task-B-origin-cv-v2-px16
+```
+
+Số 16px mới **thay** số Swin 20 epoch tháng 7, không so trực tiếp với số đó.
+
+## 6. Xuất kết quả và backup
+
+Output: `data/experiments/Task-B-origin-cv-v2/<model>/fold_<n>/` chứa `best.pth`,
+`predictions.csv`, `metrics.json` (best epoch, origin train/val/test, per-class
+P/R/F1), `run.json`, `history.json`.
 Sau khi đủ fold, mở [evaluate_and_register_cv.ipynb](evaluate_and_register_cv.ipynb)
 và chạy các cell: mỗi lần xuất tạo registry CSV riêng, một dòng/run, cùng
-per-class metrics, OOF và summary trong `reports/<session>/`; giữ
+per-class metrics, OOF, summary và `per_species_summary.csv` (F1/precision/recall
+từng loài, mean ± std qua fold) trong `reports/<session>/`; giữ
 `run_id`/`source_run_ids` và đường dẫn tương đối theo repo ROOT.
 Backup toàn bộ output, code và logs trước khi Destroy instance.
 
 Notebook [fivefold_cv_training.ipynb](fivefold_cv_training.ipynb) gọi cùng engine
 nhưng chạy các model tuần tự; dùng launcher ở trên để chạy song song.
 Từ repo root, kiểm tra bằng:
-`PYTHONPATH="$PWD" pytest -q tests/test_origin_cv.py tests/test_cv_training_runs.py`.
+`PYTHONPATH="$PWD" pytest -q tests/test_origin_cv.py tests/test_cv_training_runs.py tests/test_optimizer_head_selector.py`.

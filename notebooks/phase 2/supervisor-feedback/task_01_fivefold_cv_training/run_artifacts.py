@@ -14,7 +14,10 @@ import uuid
 import torch
 
 ROOT = Path(__file__).resolve().parents[4]
-PROTOCOL = "fixed-epochs-origin-cv-v1"
+PROTOCOL = "best-val-origin-cv-v2"
+CHECKPOINT = "best.pth"
+# Input degradations applied before augmentation, to train, val and held-out alike.
+INPUT_VARIANTS = {"rgb": "", "grayscale": "grayscale3|", "px16": "resize224-16-224|"}
 
 
 def utc_now():
@@ -60,13 +63,22 @@ def make_config(args, dataset, splits):
             "seed",
             "use_90rotation",
             "num_workers",
+            "warmup_epochs",
+            "early_stopping_patience",
+            "inner_val_fraction",
+            "input_variant",
         )
     }
     config.update(
         protocol=PROTOCOL,
         image_size=224,
         pretrained=True,
-        augmentation="resize224|hflip0.5|vflip0.5|"
+        head_selector="classifier",
+        amp=True,
+        scheduler="linear-warmup+cosine",
+        selection="best inner-val accuracy; held-out evaluated once with best.pth",
+        augmentation=INPUT_VARIANTS[args.input_variant]
+        + "resize224|hflip0.5|vflip0.5|"
         + ("random_90" if args.use_90rotation else "random_rotation30")
         + "|color_jitter0.2",
         manifest_path=relative_path(args.manifest_path),
@@ -83,12 +95,16 @@ def make_config(args, dataset, splits):
         for r in dataset.records
     ]
     config["split_version"] = digest(
-        {"records": plan, "held_out": [s["val_idx"].tolist() for s in splits]}
+        {
+            "records": plan,
+            "held_out": [s["val_idx"].tolist() for s in splits],
+            "inner_val": [s["inner_val_idx"].tolist() for s in splits],
+        }
     )
     source_paths = [
         Path(__file__).parent / name
         for name in ("train_kfold.py", "origin_cv.py", "run_artifacts.py")
-    ] + [ROOT / "src/data/transforms.py"]
+    ] + [ROOT / "src/data/transforms.py", ROOT / "src/train/optimizer.py"]
     config["code_sha256"] = digest(
         {relative_path(path): file_sha256(path) for path in source_paths}
     )
@@ -156,11 +172,11 @@ def completed_fold(folder, fingerprint, verify_checksums=True):
     if (
         metrics.get("fold") != int(folder.name.removeprefix("fold_"))
         or digest(metrics.get("config")) != fingerprint
-        or metrics.get("checkpoint_path") != relative_path(folder / "final.pth")
+        or metrics.get("checkpoint_path") != relative_path(folder / CHECKPOINT)
         or metrics.get("prediction_path") != relative_path(folder / "predictions.csv")
     ):
         raise ValueError(f"Completed fold identity mismatch: {folder}")
-    for name in ("final.pth", "predictions.csv"):
+    for name in (CHECKPOINT, "predictions.csv"):
         artifact = folder / name
         if not artifact.is_file() or not artifact.stat().st_size:
             raise ValueError(f"Completed fold has missing artifact: {artifact}")

@@ -127,8 +127,57 @@ def load_origin_samples(data_root: Path, manifest_path: Path, splits: tuple) -> 
     return records
 
 
-def make_origin_folds(records: list, n_folds: int = 5, seed: int = 42) -> list:
-    """Shuffle origins separately per species, as in Phase 1, then partition."""
+def split_inner_validation(
+    records: list, train_idx, fraction: float, seed: int, fold: int
+) -> dict:
+    """Hold out whole origins of the outer-train part as inner validation.
+
+    Per species, round(fraction * n_origins) origins (at least one, leaving at
+    least one for training) go to validation. The generator is seeded with
+    (seed, fold) and is independent of the outer fold assignment.
+    """
+    if not 0 < fraction < 1:
+        raise ValueError("inner_val_fraction must be between 0 and 1")
+    rng = np.random.default_rng([seed, fold])
+    keys = np.array([records[i]["origin_key"] for i in train_idx])
+    species = np.array([records[i]["species"] for i in train_idx])
+    val_origins = set()
+    for name in sorted(set(species)):
+        origins = np.array(sorted(set(keys[species == name])))
+        if len(origins) < 2:
+            raise ValueError(f"{name} has fewer than 2 training origins in fold {fold + 1}")
+        n_val = min(max(1, round(fraction * len(origins))), len(origins) - 1)
+        rng.shuffle(origins)
+        val_origins.update(origins[:n_val])
+    val_mask = np.isin(keys, list(val_origins))
+    inner_train_idx = np.asarray(train_idx)[~val_mask]
+    inner_val_idx = np.asarray(train_idx)[val_mask]
+    inner_train_origins = {records[i]["origin_key"] for i in inner_train_idx}
+    if inner_train_origins & val_origins:
+        raise ValueError("Origin leakage between inner train and validation")
+    if {records[i]["md5"] for i in inner_train_idx} & {
+        records[i]["md5"] for i in inner_val_idx
+    }:
+        raise ValueError("MD5 leakage between inner train and validation")
+    return {
+        "inner_train_idx": inner_train_idx,
+        "inner_val_idx": inner_val_idx,
+        "inner_train_origins": inner_train_origins,
+        "inner_val_origins": val_origins,
+    }
+
+
+def make_origin_folds(
+    records: list,
+    n_folds: int = 5,
+    seed: int = 42,
+    inner_val_fraction: float | None = None,
+) -> list:
+    """Shuffle origins separately per species, as in Phase 1, then partition.
+
+    "val_*" keys are the outer held-out fold. With inner_val_fraction, each
+    fold also gets "inner_train_*"/"inner_val_*" keys from its training part.
+    """
     if n_folds < 2:
         raise ValueError("CV requires at least two folds")
     rng = np.random.default_rng(seed)
@@ -158,17 +207,20 @@ def make_origin_folds(records: list, n_folds: int = 5, seed: int = 42) -> list:
         val_hashes = {records[i]["md5"] for i in val_idx}
         if train_hashes & val_hashes:
             raise ValueError("MD5 leakage across CV fold")
-        splits.append(
-            {
-                "fold": fold,
-                "train_idx": train_idx,
-                "val_idx": val_idx,
-                "train_origins": train_origins,
-                "val_origins": val_origins,
-                "n_train": len(train_idx),
-                "n_val": len(val_idx),
-            }
-        )
+        split = {
+            "fold": fold,
+            "train_idx": train_idx,
+            "val_idx": val_idx,
+            "train_origins": train_origins,
+            "val_origins": val_origins,
+            "n_train": len(train_idx),
+            "n_val": len(val_idx),
+        }
+        if inner_val_fraction is not None:
+            split.update(
+                split_inner_validation(records, train_idx, inner_val_fraction, seed, fold)
+            )
+        splits.append(split)
     return splits
 
 
@@ -205,8 +257,10 @@ class OriginKFoldDataset(Dataset):
             image = self.transform(image)
         return image, label, origin_key
 
-    def get_splits_by_origin(self, n_folds: int = 5, seed: int = 42):
-        return make_origin_folds(self.records, n_folds, seed)
+    def get_splits_by_origin(
+        self, n_folds: int = 5, seed: int = 42, inner_val_fraction: float | None = None
+    ):
+        return make_origin_folds(self.records, n_folds, seed, inner_val_fraction)
 
 
 class SubsetWithTransform(Dataset):

@@ -60,6 +60,10 @@ Hệ quả cho bước 1: nếu không sửa, nhánh "1e-5" của ConvNeXt/Swin 
 sánh vô nghĩa. Khi `backbone_lr == head_lr` thì `create_optimizer` dùng một nhóm duy nhất, nên nhánh 1e-4 không
 bị ảnh hưởng.
 
+**Đã sửa (01-11):** `split_head_parameters(model, head_selector)` trong `src/train/optimizer.py`;
+`create_optimizer(..., head_selector="classifier")` lấy đúng `model.get_classifier()`. Mặc định vẫn là
+`"substring"` để run cũ tái lập được; script bước 1–4 truyền `"classifier"`.
+
 ### 3.2 Final-B chấm test trên model cuối, không nạp lại best
 
 `notebooks/phase 1/task-B-17-new/final_b_17class.py`, hàm `train_one`: `engine.fit(save_best_only=True, ...)` có
@@ -90,14 +94,18 @@ checksum của bản local (mục 4).
 
 ```zsh
 cd /workspace
-git clone git@github.com:ManifoldsTeam/woodbench.git
+git clone -b docs/handoff-2026-11-01 git@github.com:ManifoldsTeam/woodbench.git   # nhánh có code bước 1–4
 cd woodbench
-git checkout -b exp/supervisor-2026-11   # mọi sửa đổi đi vào nhánh này
 conda activate wood                       # tạo theo scripts/setup_ssh_server.sh nếu chưa có
+pip install -r requirements.txt           # nếu env mới
+PYTHONPATH="$PWD" pytest -q tests/test_lr_selection.py tests/test_optimizer_head_selector.py \
+  tests/test_origin_cv.py tests/test_cv_training_runs.py
 python -c "import torch, timm; assert torch.cuda.is_available(); print(torch.cuda.get_device_name(0), timm.__version__)"
 ```
 
-Trước khi sửa bất kỳ hàm nào: chạy `gitnexus_impact` theo quy định trong `CLAUDE.md`.
+Code đã viết và test trên máy local (01-11): dry-run cả hai script trên dữ liệu thật và train thử 2 epoch
+MobileNet trên RTX 3060. Trên Vast chỉ cần chạy; nếu phải sửa hàm nào, chạy `gitnexus_impact` theo
+`CLAUDE.md` trước.
 
 ### 4.2 Dữ liệu (19 GB, 4.800 ảnh)
 
@@ -145,18 +153,16 @@ cầu.
 
 ## 5. Bước 1: chọn LR
 
-### 5.1 Code cần sửa (chưa làm)
+### 5.1 Code (đã làm)
 
-1. **Chọn head bằng classifier thật.** Thêm vào `create_optimizer` một tùy chọn, ví dụ
-   `head_selector: str = "substring"`, với giá trị mới `"classifier"` lấy
-   `{id(p) for p in model.get_classifier().parameters()}` làm head. Giữ mặc định cũ để các run cũ vẫn tái lập
-   được; script mới truyền `"classifier"` một cách tường minh.
-2. **Chấm bằng best.** Sau `engine.fit`, nạp `*_best.pth` vào model rồi mới chấm val và test.
-3. **Tham số hóa** `backbone_lr`, `head_selector` và thư mục output trong `train_one`, không sửa giá trị
-   hard-code cho Final-B cũ.
-4. Ghi vào `run_config.json`: `backbone_lr`, `head_lr`, `head_selector`, số tham số mỗi nhóm, `git_commit`.
+`notebooks/phase 2/supervisor-feedback/task_07_lr_selection/`, hướng dẫn chi tiết trong
+[README](../../notebooks/phase%202/supervisor-feedback/task_07_lr_selection/README.md):
 
-Đề xuất đặt script/notebook mới ở `notebooks/phase 2/supervisor-feedback/task_07_lr_selection/`.
+- `train_lr_select.py`: một run = một model × một backbone LR. Dùng lại cấu hình Final-B main
+  (`final_b_17class.py` không bị sửa), head bằng classifier thật, sau khi train nạp `model_best.pth` rồi chấm
+  val và test. `run_config.json` ghi LR, `head_selector`, số tham số mỗi nhóm, `git_commit`, phiên bản, GPU.
+- `run_lr_select.sh`: chạy 10 run, giới hạn số run song song bằng `MAX_PARALLEL`.
+- `summarize_lr_select.py`: bảng 10 run và LR được chọn cho từng model theo quy tắc mục 5.3.
 
 ### 5.2 Ma trận chạy (10 run)
 
@@ -168,13 +174,24 @@ cầu.
 | Thay đổi | backbone LR ∈ {1e-5, 1e-4} × 5 model |
 | Output | `data/experiments/Task-B-lr-select/bblr_<1e-5|1e-4>/seed_42/<backbone>/` |
 
-Không resume run dùng để báo cáo: nếu gián đoạn, xóa thư mục run đó và chạy lại từ đầu.
+Không resume run dùng để báo cáo: nếu gián đoạn, xóa thư mục run đó và chạy lại từ đầu (script từ chối ghi vào
+thư mục đã có file).
+
+```zsh
+cd '/workspace/woodbench/notebooks/phase 2/supervisor-feedback/task_07_lr_selection'
+python train_lr_select.py --backbone convnext_tiny --backbone_lr 1e-5 --dryrun
+MAX_PARALLEL=5 nohup bash run_lr_select.sh > "launch-$(date -u +%Y%m%dT%H%M%SZ).log" 2>&1 < /dev/null &
+disown
+# khi đủ 10 metrics.json:
+python summarize_lr_select.py
+```
 
 ### 5.3 Quy tắc chọn
 
 - Dùng `best.pth` của mỗi run, tính trên **val**: macro-F1 (chính), acc, loss.
 - Chênh macro-F1 < 0,5 điểm (khoảng 4–5 ảnh val) thì coi là hòa và xét val loss.
-- Hòa cả hai thì chọn chung một LR cho mọi model (dễ bảo vệ hơn trong paper).
+- Hòa cả hai thì chọn chung một LR cho mọi model (dễ bảo vệ hơn trong paper). Bước này `summarize_lr_select.py`
+  không tự làm: nó chọn theo hai tiêu chí trên và ghi lý do vào `decisions.csv`.
 - Ghi số test vào bảng nhưng **không dùng test để chọn**.
 
 Suy luận (chưa kiểm): ResNet, EfficientNet, MobileNet có best epoch muộn (40–50) ở cấu hình cũ, nên nhiều khả
@@ -187,38 +204,39 @@ Bảng 5 model × 2 LR (val macro-F1/acc/loss, best epoch, epochs trained, test 
 
 ## 6. Bước 2–4: CV mới, grayscale, 16px
 
-### 6.1 Code cần sửa trong `train_kfold.py` (chưa làm)
+### 6.1 Code (đã làm, giao thức `best-val-origin-cv-v2`)
 
-1. **Val theo origin bên trong phần train của mỗi fold.** Với 14 loài có 10 origin: fold test lấy 2 origin,
-   còn 8; trong 8 lấy 2 làm val, 6 để train. Ba loài lớn (Cunninghamia 86, Callitris 115, Fokienia 211 origin)
-   lấy khoảng 20% origin làm val. Cố định bằng seed, ghi danh sách origin train/val/test vào `run.json`, kiểm
-   không có origin hoặc ảnh nào trùng giữa 3 phần.
-2. **Giao thức giống bước 1:** warmup + cosine, early stopping patience 10 theo val acc, lưu `best.pth`, chấm
-   fold held-out **một lần** bằng `best.pth`. Thống nhất AMP với Final-B.
-3. **LR** theo kết quả bước 1 (qua `BACKBONE_LR`/`HEAD_LR`), head chọn bằng classifier thật như mục 5.1.
-4. **Per-species F1:** `metrics.json` mỗi fold có precision/recall/F1 từng loài; notebook tổng hợp tính mean
-   ± std qua 5 fold cho từng loài và cho cả model.
-5. **Biến thể input** cho bước 3–4, ví dụ `--input_variant {rgb,grayscale,px16}`, áp dụng cho cả train, val và
-   test:
-   - `grayscale`: `transforms.Grayscale(num_output_channels=3)` trước `ToTensor`.
-   - `px16`: resize 224→16→224 bilinear (đúng định nghĩa probe tháng 7).
-6. Đổi `protocol` thành tên mới (ví dụ `best-val-origin-cv-v2`) để resume không trộn với output v1.
+Chi tiết trong [README Task 1](../../notebooks/phase%202/supervisor-feedback/task_01_fivefold_cv_training/README.md).
 
-Cập nhật `README.md` của Task 1 cho giao thức mới; README hiện tại mô tả v1.
+1. **Val theo origin trong phần train của mỗi fold** (`origin_cv.split_inner_validation`): mỗi loài lấy
+   `round(0.2 × số origin)` origin làm val (ít nhất 1, chừa ít nhất 1 để train). Loài 10 origin: 2 test / 2 val
+   / 6 train. Seed `[42, fold]`, nên 5 fold test giữ nguyên như v1. `metrics.json` ghi danh sách origin
+   train/val/test; code kiểm không trùng origin hay md5 giữa 3 phần.
+2. **Giao thức giống bước 1:** warmup 5 + cosine, AMP, early stopping patience 10 theo val acc, lưu `best.pth`,
+   chấm fold held-out **một lần** bằng `best.pth`.
+3. **LR:** `--backbone_lr` bắt buộc. Launcher nhận `BACKBONE_LR` (chung) và `BACKBONE_LRS="model:lr ..."`
+   (riêng từng model), dừng nếu model nào thiếu LR. Head chọn bằng classifier thật.
+4. **Per-species F1:** `metrics.json` mỗi fold có P/R/F1 từng loài. `evaluate_and_register_cv.ipynb` xuất
+   thêm `per_species_summary.csv` (mean ± std qua fold).
+5. **`--input_variant {rgb,grayscale,px16}`** áp dụng cho cả train, val và held-out. `grayscale` là
+   `Grayscale(3)`; `px16` là resize 224→16→224 bilinear như probe tháng 7.
+6. Output mặc định `data/experiments/Task-B-origin-cv-v2`; resume không nhận output v1.
 
 ### 6.2 Chạy
 
-- Dry-run, rồi smoke test 1 epoch cho cả 5 model vào output riêng, như README Task 1.
-- Bước 2: 25 run, `OUTPUT_ROOT=data/experiments/Task-B-origin-cv-v2`.
-- Bước 3, 4: ConvNeXt, fold 1, `input_variant` = `grayscale` và `px16`, output riêng
-  (`Task-B-origin-cv-v2-grayscale`, `Task-B-origin-cv-v2-px16`). So với ConvNeXt RGB fold 1 của bước 2: cùng
-  fold, cùng giao thức, nên phần chênh lệch là do input.
+- Dry-run, rồi smoke test 2 epoch cho cả 5 model vào output riêng (README Task 1, mục 1).
+- Bước 2: 25 run. Đặt LR theo `decisions.csv` của bước 1, ví dụ
+  `BACKBONE_LR=1e-5 BACKBONE_LRS="resnet50:1e-4" bash run_all_models.sh` (lệnh `nohup` đầy đủ ở README mục 2).
+- Bước 3, 4: ConvNeXt, `--fold 1`, `--input_variant grayscale` và `px16`, output riêng
+  (`Task-B-origin-cv-v2-grayscale`, `Task-B-origin-cv-v2-px16`; lệnh ở README mục 5). So với ConvNeXt RGB fold
+  1 của bước 2: cùng fold, cùng giao thức, nên phần chênh lệch là do input.
 - Khi báo thầy: số 16px mới là ConvNeXt theo giao thức mới, **thay** chứ không so trực tiếp với số Swin tháng 7.
 
 ### 6.3 Kết quả cần mang về
 
 Toàn bộ thư mục output (có `best.pth`, `predictions.csv`, `metrics.json`, `run.json`, `history.json`), log
-session, registry/summary từ `evaluate_and_register_cv.ipynb` (phải sửa notebook này để đọc per-species F1).
+session, registry/summary/`per_species_summary.csv` từ `evaluate_and_register_cv.ipynb`. Với grayscale/px16,
+đổi `OUTPUT_ROOT` trong notebook sang thư mục tương ứng.
 Backup trước khi Destroy instance.
 
 ## 7. Bước 5: latency/VRAM

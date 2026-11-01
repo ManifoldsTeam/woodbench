@@ -11,6 +11,17 @@ if ! [[ "$MAX_PARALLEL" =~ ^[1-9][0-9]*$ ]]; then
     exit 2
 fi
 read -r -a models <<< "${MODELS:-convnext_tiny mobilenetv3_large resnet50 efficientnet_b3 swin_tiny}"
+# Step 1 picks the backbone LR per model: BACKBONE_LRS="resnet50:1e-4 swin_tiny:1e-5"
+# overrides BACKBONE_LR for the models it names. Every model needs one before launch.
+declare -A model_lr=()
+for pair in ${BACKBONE_LRS:-}; do model_lr["${pair%%:*}"]="${pair#*:}"; done
+for model in "${models[@]}"; do
+    model_lr["$model"]="${model_lr[$model]:-${BACKBONE_LR:-}}"
+    if [[ -z "${model_lr[$model]}" ]]; then
+        echo "No backbone LR for $model: set BACKBONE_LR or BACKBONE_LRS (step 1, task_07_lr_selection)" >&2
+        exit 2
+    fi
+done
 mkdir -p "$LOG_ROOT"
 # Serialize launches sharing a log root. Python also locks each model output.
 exec 9> "$LOG_ROOT/.launcher.lock"
@@ -50,12 +61,14 @@ wait_batch() {
 }
 for model in "${models[@]}"; do
     # Omitted overrides use the CLI defaults, including each model's batch size.
-    args=(--backbone "$model")
+    args=(--backbone "$model" --backbone_lr "${model_lr[$model]}")
     for setting in N_FOLDS:n_folds EPOCHS:epochs BATCH_SIZE:batch_size \
-                   BACKBONE_LR:backbone_lr HEAD_LR:head_lr WEIGHT_DECAY:weight_decay \
+                   HEAD_LR:head_lr WEIGHT_DECAY:weight_decay \
                    LABEL_SMOOTHING:label_smoothing SEED:seed NUM_WORKERS:num_workers \
                    WANDB_PROJECT:wandb_project OUTPUT_ROOT:output_root \
-                   DATA_ROOT:data_root MANIFEST_PATH:manifest_path; do
+                   DATA_ROOT:data_root MANIFEST_PATH:manifest_path \
+                   WARMUP_EPOCHS:warmup_epochs EARLY_STOPPING_PATIENCE:early_stopping_patience \
+                   INNER_VAL_FRACTION:inner_val_fraction INPUT_VARIANT:input_variant; do
         env_name="${setting%%:*}"
         flag="${setting#*:}"
         value="${!env_name:-}"

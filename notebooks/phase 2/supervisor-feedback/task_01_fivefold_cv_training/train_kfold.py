@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Origin CV with fixed epochs and fold-level restart; held-out evaluated once."""
+"""Origin CV with inner origin validation, best-val checkpoint and fold restart.
+
+Each fold trains on its outer-train origins minus an inner validation set of
+whole origins, keeps the checkpoint with the best inner-val accuracy (early
+stopping as in Phase 1 Final-B) and evaluates the outer held-out fold once.
+"""
 
 import argparse
 import gc
@@ -10,14 +15,17 @@ import uuid
 
 import timm
 import torch
+from sklearn.metrics import f1_score, precision_recall_fscore_support
 from torch.utils.data import DataLoader
+from torchvision import transforms as T
 from tqdm import tqdm
 
 ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(ROOT))
 from src.data.transforms import get_train_transforms, get_val_transforms
 from src.models.factory import BACKBONE_NAMES
-from src.train import WandbTracker
+from src.train import WandbTracker, create_optimizer, create_scheduler
+from src.train.optimizer import split_head_parameters
 from src.utils import set_seed
 from origin_cv import (
     PHASE1_MANIFEST,
@@ -25,6 +33,8 @@ from origin_cv import (
     SubsetWithTransform,
 )
 from run_artifacts import (
+    CHECKPOINT,
+    INPUT_VARIANTS,
     PROTOCOL,
     completed_fold,
     git_commit,
@@ -50,24 +60,49 @@ PHASE1_BATCH_SIZES = {
 }
 
 
-def get_transforms(img_size=224, use_90rotation=False):
+def degrade_input(input_variant, img_size=224):
+    """Input degradation applied before augmentation to every split."""
+    if input_variant == "rgb":
+        return []
+    if input_variant == "grayscale":
+        return [T.Grayscale(num_output_channels=3)]
+    if input_variant == "px16":
+        # Same as the July anatomy probe: resize 224 -> 16 -> 224, bilinear.
+        return [
+            T.Resize((img_size, img_size)),
+            T.Resize((16, 16)),
+            T.Resize((img_size, img_size)),
+        ]
+    raise ValueError(f"Unknown input_variant: {input_variant}")
+
+
+def get_transforms(img_size=224, use_90rotation=False, input_variant="rgb"):
     """Reuse Phase 1 main augmentation; 90-degree rotation is an opt-in ablation."""
-    return (
-        get_train_transforms(img_size=img_size, use_90rotation=use_90rotation),
-        get_val_transforms(img_size=img_size),
-    )
+    train = get_train_transforms(img_size=img_size, use_90rotation=use_90rotation)
+    held_out = get_val_transforms(img_size=img_size)
+    degrade = degrade_input(input_variant, img_size)
+    if not degrade:
+        return train, held_out
+    return T.Compose(degrade + [train]), T.Compose(degrade + [held_out])
 
 
-def train_epoch(model, loader, criterion, optimizer, device):
+def train_epoch(model, loader, criterion, optimizer, device, scaler=None):
+    """One epoch; with a GradScaler, AMP exactly as src/train/trainer.py."""
     model.train()
     loss_sum = correct = total = 0
     for images, labels in tqdm(loader, desc="Train", leave=False):
         images, labels = images.to(device), labels.to(device)
         optimizer.zero_grad()
-        outputs = model(images)
-        loss = criterion(outputs, labels)
-        loss.backward()
-        optimizer.step()
+        with torch.autocast(device.type, enabled=scaler is not None):
+            outputs = model(images)
+            loss = criterion(outputs, labels)
+        if scaler is not None:
+            scaler.scale(loss).backward()
+            scaler.step(optimizer)
+            scaler.update()
+        else:
+            loss.backward()
+            optimizer.step()
         loss_sum += loss.item() * len(labels)
         correct += (outputs.argmax(1) == labels).sum().item()
         total += len(labels)
@@ -75,8 +110,46 @@ def train_epoch(model, loader, criterion, optimizer, device):
 
 
 @torch.no_grad()
+def validate(model, loader, criterion, device, use_amp=False):
+    """Inner-validation loss/accuracy, computed like TrainingEngine.validate."""
+    model.eval()
+    loss_sum = correct = total = 0
+    for images, labels in tqdm(loader, desc="Val", leave=False):
+        images, labels = images.to(device), labels.to(device)
+        with torch.autocast(device.type, enabled=use_amp):
+            outputs = model(images)
+            loss = criterion(outputs, labels)
+        loss_sum += loss.item()
+        correct += (outputs.argmax(1) == labels).sum().item()
+        total += len(labels)
+    return loss_sum / len(loader), correct / total
+
+
+def class_metrics(labels, predictions, classes):
+    """Macro and per-species precision/recall/F1 for one fold."""
+    indices = list(range(len(classes)))
+    precision, recall, f1, support = precision_recall_fscore_support(
+        labels, predictions, labels=indices, zero_division=0
+    )
+    return {
+        "f1_macro": float(
+            f1_score(labels, predictions, labels=indices, average="macro", zero_division=0)
+        ),
+        "per_class": {
+            name: {
+                "precision": float(precision[i]),
+                "recall": float(recall[i]),
+                "f1": float(f1[i]),
+                "support": int(support[i]),
+            }
+            for i, name in enumerate(classes)
+        },
+    }
+
+
+@torch.no_grad()
 def evaluate_full(model, loader, device):
-    """Return predictions in dataset order; called once after fixed epochs."""
+    """Return predictions in dataset order; called once with the best checkpoint."""
     model.eval()
     labels, predictions, confidence = [], [], []
     for images, targets in tqdm(loader, desc="Held-out", leave=False):
@@ -99,8 +172,29 @@ def build_parser():
         type=int,
         help="Override Phase 1 batch: ResNet/MobileNet 64; other models 32",
     )
-    parser.add_argument("--backbone_lr", type=float, default=1e-5)
+    parser.add_argument(
+        "--backbone_lr",
+        type=float,
+        required=True,
+        help="Chosen in step 1 (task_07_lr_selection); no default on purpose",
+    )
     parser.add_argument("--head_lr", type=float, default=1e-4)
+    parser.add_argument("--warmup_epochs", type=int, default=5)
+    parser.add_argument(
+        "--early_stopping_patience",
+        type=int,
+        default=10,
+        help="Epochs without inner-val accuracy gain; 0 disables",
+    )
+    parser.add_argument(
+        "--inner_val_fraction",
+        type=float,
+        default=0.2,
+        help="Share of each species' outer-train origins used for validation",
+    )
+    parser.add_argument(
+        "--input_variant", choices=list(INPUT_VARIANTS), default="rgb"
+    )
     parser.add_argument("--weight_decay", type=float, default=1e-4)
     parser.add_argument("--label_smoothing", type=float, default=0.1)
     parser.add_argument("--seed", type=int, default=42)
@@ -109,7 +203,7 @@ def build_parser():
         "--data_root", type=Path, default=ROOT / "data/task-B-group-split"
     )
     parser.add_argument(
-        "--output_root", type=Path, default=ROOT / "data/experiments/Task-B-origin-cv"
+        "--output_root", type=Path, default=ROOT / "data/experiments/Task-B-origin-cv-v2"
     )
     parser.add_argument("--manifest_path", type=Path, default=PHASE1_MANIFEST)
     parser.add_argument("--wandb_project", default="woodbench-origin-cv")
@@ -150,12 +244,13 @@ def run_fold(args, dataset, split, config, fingerprint, output_dir, device, tran
         "split_version": config["split_version"],
         "class_to_idx": dataset.class_to_idx,
         "num_classes": len(dataset.classes),
-        "n_train": split["n_train"],
-        "n_val": 0,
+        "n_train": len(split["inner_train_idx"]),
+        "n_val": len(split["inner_val_idx"]),
         "n_test": split["n_val"],
-        "train_origins": sorted(split["train_origins"]),
+        "train_origins": sorted(split["inner_train_origins"]),
+        "val_origins": sorted(split["inner_val_origins"]),
         "test_origins": sorted(split["val_origins"]),
-        "checkpoint_path": relative_path(folder / "final.pth"),
+        "checkpoint_path": relative_path(folder / CHECKPOINT),
         "prediction_path": relative_path(folder / "predictions.csv"),
         "pid": os.getpid(),
         "process_token": process_token(os.getpid()),
@@ -166,7 +261,8 @@ def run_fold(args, dataset, split, config, fingerprint, output_dir, device, tran
     try:
         # Seed before constructing a fresh model, also when restarting a fold.
         set_seed(args.seed)
-        train_data = SubsetWithTransform(dataset, split["train_idx"], transforms[0])
+        train_data = SubsetWithTransform(dataset, split["inner_train_idx"], transforms[0])
+        val_data = SubsetWithTransform(dataset, split["inner_val_idx"], transforms[1])
         test_data = SubsetWithTransform(dataset, split["val_idx"], transforms[1])
         loader_args = dict(
             batch_size=args.batch_size,
@@ -174,58 +270,99 @@ def run_fold(args, dataset, split, config, fingerprint, output_dir, device, tran
             pin_memory=device.type == "cuda",
         )
         train_loader = DataLoader(train_data, shuffle=True, **loader_args)
+        val_loader = DataLoader(val_data, shuffle=False, **loader_args)
         test_loader = DataLoader(test_data, shuffle=False, **loader_args)
         model = timm.create_model(
             BACKBONE_NAMES[args.backbone],
             pretrained=True,
             num_classes=len(dataset.classes),
         ).to(device)
-        head, backbone = [], []
-        for name, parameter in model.named_parameters():
-            if any(key in name for key in ("head", "fc", "classifier")):
-                head.append(parameter)
-            else:
-                backbone.append(parameter)
-        optimizer = torch.optim.AdamW(
-            [
-                {"params": backbone, "lr": args.backbone_lr},
-                {"params": head, "lr": args.head_lr},
-            ],
+        head, backbone = split_head_parameters(model, config["head_selector"])
+        metadata["parameter_groups"] = {
+            "head": sum(p.numel() for p in head),
+            "backbone": sum(p.numel() for p in backbone),
+        }
+        optimizer = create_optimizer(
+            model,
+            lr=args.head_lr,
             weight_decay=args.weight_decay,
+            backbone_lr=args.backbone_lr,
+            head_selector=config["head_selector"],
         )
-        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
-            optimizer, T_max=args.epochs
+        scheduler = create_scheduler(
+            optimizer,
+            epochs=args.epochs,
+            scheduler_type="cosine",
+            warmup_epochs=args.warmup_epochs,
         )
         criterion = torch.nn.CrossEntropyLoss(label_smoothing=args.label_smoothing)
+        use_amp = device.type == "cuda"
+        scaler = torch.amp.GradScaler(device.type) if use_amp else None
         if os.getenv("WANDB_API_KEY"):
             tracker = WandbTracker.start(
                 project=args.wandb_project, name=run_id, config=config
             )
         history = []
+        best = {"val_accuracy": -1.0}
+        stale = 0
         for epoch in range(args.epochs):
             loss, accuracy = train_epoch(
-                model, train_loader, criterion, optimizer, device
+                model, train_loader, criterion, optimizer, device, scaler
             )
+            val_loss, val_accuracy = validate(
+                model, val_loader, criterion, device, use_amp
+            )
+            lr = {group.get("name", "all"): group["lr"] for group in optimizer.param_groups}
             scheduler.step()
+            improved = val_accuracy > best["val_accuracy"]
+            if improved:
+                best = {
+                    "epoch": epoch + 1,
+                    "val_accuracy": val_accuracy,
+                    "val_loss": val_loss,
+                }
+                stale = 0
+                save_checkpoint(
+                    folder / CHECKPOINT,
+                    {
+                        "model_state_dict": model.state_dict(),
+                        "epoch": epoch,
+                        "run_id": run_id,
+                        "config": config,
+                        "fingerprint": fingerprint,
+                        "val_accuracy": val_accuracy,
+                        "val_loss": val_loss,
+                    },
+                )
+            else:
+                stale += 1
             history.append(
-                {"epoch": epoch + 1, "train_loss": loss, "train_accuracy": accuracy}
+                {
+                    "epoch": epoch + 1,
+                    "train_loss": loss,
+                    "train_accuracy": accuracy,
+                    "val_loss": val_loss,
+                    "val_accuracy": val_accuracy,
+                    "lr": lr,
+                    "best": improved,
+                }
             )
             save_json(folder / "history.json", history)
             metadata["epoch"] = epoch + 1
             save_json(folder / "run.json", metadata)
             if tracker:
                 tracker.log(history[-1], step=epoch + 1)
-            print(f"Fold {fold}, epoch {epoch + 1}/{args.epochs}: train={accuracy:.4f}")
-        save_checkpoint(
-            folder / "final.pth",
-            {
-                "model_state_dict": model.state_dict(),
-                "epoch": args.epochs - 1,
-                "run_id": run_id,
-                "config": config,
-                "fingerprint": fingerprint,
-            },
-        )
+            print(
+                f"Fold {fold}, epoch {epoch + 1}/{args.epochs}: train={accuracy:.4f} "
+                f"val={val_accuracy:.4f} loss={val_loss:.4f}{' [best]' if improved else ''}"
+            )
+            if args.early_stopping_patience and stale >= args.early_stopping_patience:
+                print(f"Early stopping after {args.early_stopping_patience} epochs without gain")
+                break
+        checkpoint = torch.load(folder / CHECKPOINT, map_location="cpu", weights_only=True)
+        if checkpoint["run_id"] != run_id:
+            raise ValueError("Best checkpoint belongs to another run")
+        model.load_state_dict(checkpoint["model_state_dict"])
         labels, predictions, confidences = evaluate_full(model, test_loader, device)
         rows = []
         for index, label, prediction, confidence in zip(
@@ -250,24 +387,30 @@ def run_fold(args, dataset, split, config, fingerprint, output_dir, device, tran
         if len(rows) != split["n_val"]:
             raise ValueError("Held-out prediction count does not match split")
         save_csv(folder / "predictions.csv", rows)
-        # Full per-class/OOF/report and registry export is in evaluate_and_register_cv.ipynb.
+        # Registry, OOF and per-species fold summaries are in evaluate_and_register_cv.ipynb.
         metadata.update(
             status="completed",
             finished_at=utc_now(),
+            best_epoch=best["epoch"],
+            best_val_accuracy=best["val_accuracy"],
+            best_val_loss=best["val_loss"],
+            epochs_trained=len(history),
+            stopped_early=len(history) < args.epochs,
             accuracy=sum(
                 label == prediction for label, prediction in zip(labels, predictions)
             )
             / len(labels),
+            **class_metrics(labels, predictions, dataset.classes),
             artifact_sha256={
                 name: file_sha256(folder / name)
-                for name in ("final.pth", "predictions.csv")
+                for name in (CHECKPOINT, "predictions.csv")
             },
         )
         save_json(folder / "metrics.json", metadata)  # completion marker written last
         save_json(folder / "run.json", metadata)
         if tracker:
             tracker.log(
-                {"held_out_accuracy": metadata["accuracy"]}, step=args.epochs + 1
+                {"held_out_accuracy": metadata["accuracy"]}, step=len(history) + 1
             )
         return metadata
     except BaseException:
@@ -290,25 +433,41 @@ def main(argv=None):
         raise ValueError(
             "epochs/batch_size must be positive; num_workers must be nonnegative"
         )
+    if not 0 <= args.warmup_epochs < args.epochs or args.early_stopping_patience < 0:
+        raise ValueError(
+            "warmup_epochs must be in [0, epochs); early_stopping_patience nonnegative"
+        )
     if args.fold is not None and not 1 <= args.fold <= args.n_folds:
         raise ValueError(f"Fold must be between 1 and {args.n_folds}")
     dataset = OriginKFoldDataset(
         args.data_root, "all", manifest_path=args.manifest_path
     )
-    splits = dataset.get_splits_by_origin(args.n_folds, seed=args.seed)
+    splits = dataset.get_splits_by_origin(
+        args.n_folds, seed=args.seed, inner_val_fraction=args.inner_val_fraction
+    )
     config = make_config(args, dataset, splits)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Device: {device}; dataset: {len(dataset)}; classes: {len(dataset.classes)}")
-    print(f"Training: {args.epochs} epochs/fold, batch={args.batch_size}")
+    print(
+        f"Training: up to {args.epochs} epochs/fold, batch={args.batch_size}, "
+        f"backbone_lr={args.backbone_lr}, head_lr={args.head_lr}, "
+        f"input={args.input_variant}"
+    )
     for split in splits:
         print(
-            f"Fold {split['fold'] + 1}: {split['n_train']} train, {split['n_val']} held-out"
+            f"Fold {split['fold'] + 1}: {len(split['inner_train_idx'])} train, "
+            f"{len(split['inner_val_idx'])} val, {split['n_val']} held-out"
         )
     if args.dryrun:
         model = timm.create_model(
             BACKBONE_NAMES[args.backbone],
             pretrained=False,
             num_classes=len(dataset.classes),
+        )
+        head, backbone = split_head_parameters(model, config["head_selector"])
+        print(
+            f"Head LR {args.head_lr} on {sum(p.numel() for p in head):,} params; "
+            f"backbone LR {args.backbone_lr} on {sum(p.numel() for p in backbone):,}"
         )
         import tempfile
 
@@ -320,12 +479,14 @@ def main(argv=None):
             )
             torch.load(path / "model.pth", map_location="cpu", weights_only=True)
             save_json(path / "config.json", config)
-        print("DRYRUN PASSED: origin folds, model, JSON and checkpoint round-trip")
+        print("DRYRUN PASSED: origin folds, inner val, model, JSON and checkpoint round-trip")
         return
     output_dir = args.output_root / args.backbone
     with model_lock(output_dir):
         fingerprint = prepare_run(output_dir, config, args.resume)
-        transforms = get_transforms(use_90rotation=args.use_90rotation)
+        transforms = get_transforms(
+            use_90rotation=args.use_90rotation, input_variant=args.input_variant
+        )
         for split in splits:
             if args.fold is not None and split["fold"] + 1 != args.fold:
                 continue

@@ -10,7 +10,7 @@ import time
 
 from run_artifacts import ROOT, completed_fold, digest, process_token
 
-OUTPUT_ROOT = ROOT / "data/experiments/Task-B-origin-cv"
+OUTPUT_ROOT = ROOT / "data/experiments/Task-B-origin-cv-v2"
 MODELS = [
     "convnext_tiny",
     "mobilenetv3_large",
@@ -45,6 +45,7 @@ def get_model_progress(model_dir: Path, n_folds: int = 5):
             "accuracy": None,
             "epoch": None,
             "epochs": epochs,
+            "best_epoch": None,
         }
         try:
             if config_error:
@@ -62,6 +63,7 @@ def get_model_progress(model_dir: Path, n_folds: int = 5):
                     status="completed",
                     accuracy=metrics["accuracy"],
                     epoch=metrics.get("epoch"),
+                    best_epoch=metrics.get("best_epoch"),
                 )
             elif (folder / "run.json").exists():
                 run = json.loads((folder / "run.json").read_text())
@@ -113,6 +115,7 @@ def print_progress(model_results, output_root, verbose=False):
                     f"  Fold {fold['fold']}: {fold['status']}, "
                     f"epoch={fold['epoch'] or 0}/{fold['epochs'] or '?'}, "
                     f"accuracy={fold['accuracy']}"
+                    + (f", best_epoch={fold['best_epoch']}" if fold["best_epoch"] else "")
                 )
                 if fold.get("error"):
                     print(f"    {fold['error']}")

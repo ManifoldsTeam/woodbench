@@ -11,11 +11,48 @@ import torch.nn as nn
 from .loss import LabelSmoothingCrossEntropy
 
 
+HEAD_SELECTORS = ("substring", "classifier")
+
+
+def split_head_parameters(
+    model: nn.Module, head_selector: str = "substring"
+) -> tuple[list[nn.Parameter], list[nn.Parameter]]:
+    """Return trainable (head, backbone) parameters.
+
+    "substring" is the historical rule: any parameter whose name contains
+    "head", "fc" or "classifier" is head. In timm this also matches the MLP
+    blocks of ConvNeXt/Swin (mlp.fc1/fc2) and conv_head of EfficientNet and
+    MobileNetV3, so most ConvNeXt/Swin weights get the head LR. Kept as the
+    default so earlier runs stay reproducible.
+
+    "classifier" uses only the final classifier, model.get_classifier().
+    """
+    if head_selector not in HEAD_SELECTORS:
+        raise ValueError(f"head_selector must be one of {HEAD_SELECTORS}")
+    if head_selector == "classifier":
+        if not hasattr(model, "get_classifier"):
+            raise ValueError("head_selector='classifier' needs model.get_classifier()")
+        head_ids = {id(p) for p in model.get_classifier().parameters()}
+        if not head_ids:
+            raise ValueError("model.get_classifier() has no parameters")
+        is_head = lambda name, param: id(param) in head_ids
+    else:
+        is_head = lambda name, param: (
+            "head" in name or "fc" in name or "classifier" in name
+        )
+    head_params, backbone_params = [], []
+    for name, param in model.named_parameters():
+        if param.requires_grad:
+            (head_params if is_head(name, param) else backbone_params).append(param)
+    return head_params, backbone_params
+
+
 def create_optimizer(
     model: nn.Module,
     lr: float = 1e-4,
     weight_decay: float = 1e-4,
     backbone_lr: float | None = None,
+    head_selector: str = "substring",
 ) -> torch.optim.Optimizer:
     """Create AdamW optimizer with optional differential learning rates.
 
@@ -31,20 +68,13 @@ def create_optimizer(
         weight_decay: Weight decay
         backbone_lr: Optional lower learning rate for the backbone.
             If None, all parameters use `lr`. Recommended: lr / 10 (e.g., 1e-5).
+        head_selector: Which parameters count as head, see split_head_parameters.
 
     Returns:
         AdamW optimizer with param groups
     """
     if backbone_lr is not None and backbone_lr != lr:
-        head_params = []
-        backbone_params = []
-
-        for name, param in model.named_parameters():
-            if param.requires_grad:
-                if "head" in name or "fc" in name or "classifier" in name:
-                    head_params.append(param)
-                else:
-                    backbone_params.append(param)
+        head_params, backbone_params = split_head_parameters(model, head_selector)
 
         # Fallback: if no head params found, use all non-head params as backbone
         # and everything as head (for models where timm uses different naming)

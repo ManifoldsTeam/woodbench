@@ -23,7 +23,7 @@ from run_artifacts import (
 
 def export_reports(output_root):
     output_root = Path(output_root)
-    registry_rows, per_class, predictions, summaries = [], [], [], []
+    registry_rows, per_class, predictions, summaries, per_species = [], [], [], [], []
     for model_dir in sorted(output_root.iterdir()):
         config_path = model_dir / "run_config.json"
         if not config_path.is_file():
@@ -82,6 +82,11 @@ def export_reports(output_root):
                     "backbone",
                     "fold",
                     "fingerprint",
+                    "best_epoch",
+                    "best_val_accuracy",
+                    "best_val_loss",
+                    "epochs_trained",
+                    "stopped_early",
                 )
             }
             row.update(
@@ -90,6 +95,7 @@ def export_reports(output_root):
                     {"backbone": config["backbone_lr"], "head": config["head_lr"]}
                 ),
                 epochs=config["epochs"],
+                input_variant=config["input_variant"],
                 batch=config["batch_size"],
                 image_size=config["image_size"],
                 label_smoothing=config["label_smoothing"],
@@ -117,7 +123,9 @@ def export_reports(output_root):
             for prediction in rows:
                 prediction["backbone"] = run["backbone"]
             model_predictions.extend(rows)
-        expected = model_rows[0]["n_train"] + model_rows[0]["n_test"]
+        expected = (
+            model_rows[0]["n_train"] + model_rows[0]["n_val"] + model_rows[0]["n_test"]
+        )
         if (
             len(model_predictions) != expected
             or len({r["path"] for r in model_predictions}) != expected
@@ -150,6 +158,31 @@ def export_reports(output_root):
             [r["predicted_label"] for r in model_predictions],
         )
         summaries.append(summary)
+        classes = json.loads(model_rows[0]["class_to_idx"])
+        for name, _ in sorted(classes.items(), key=lambda pair: pair[1]):
+            rows = [
+                r
+                for r in per_class
+                if r["backbone"] == summary["backbone"] and r["species"] == name
+            ]
+            per_species.append(
+                {
+                    "backbone": summary["backbone"],
+                    "species": name,
+                    "n_folds": len(rows),
+                    "support_total": sum(r["support"] for r in rows),
+                    **{
+                        f"{metric}_{stat}": float(
+                            np.mean([r[metric] for r in rows])
+                            if stat == "mean"
+                            else np.std([r[metric] for r in rows], ddof=1)
+                        )
+                        for metric in ("f1", "precision", "recall")
+                        for stat in ("mean", "std")
+                    },
+                    "source_run_ids": json.dumps([r["run_id"] for r in rows]),
+                }
+            )
     if not registry_rows:
         raise ValueError(f"No completed CV runs in {output_root}")
     if len({r["run_id"] for r in registry_rows}) != len(registry_rows):
@@ -161,6 +194,7 @@ def export_reports(output_root):
     save_csv(registry, registry_rows)
     save_csv(directory / "per_class.csv", per_class)
     save_csv(directory / "summary.csv", summaries)
+    save_csv(directory / "per_species_summary.csv", per_species)
     save_csv(directory / "oof_predictions.csv", predictions)
     save_json(
         directory / "metadata.json",
@@ -170,7 +204,8 @@ def export_reports(output_root):
             "protocol": PROTOCOL,
             "std": "sample standard deviation across folds; not CI",
             "source_run_ids": [r["run_id"] for r in registry_rows],
-            "validation": "No inner validation; fixed epochs, outer held-out evaluated once",
+            "validation": "Inner validation of whole origins inside each outer-train fold; best inner-val accuracy checkpoint; outer held-out evaluated once",
+            "per_species": "per_species_summary.csv: mean and sample std across folds of per-fold precision/recall/F1",
             "comparison": "Fixed-split baseline comparison requires explicit baseline_run_id and registry",
         },
     )

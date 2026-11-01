@@ -259,7 +259,7 @@ def test_real_dataset_shares_origin_folds_with_training_notebook():
         "OriginKFoldDataset": cv.OriginKFoldDataset,
         "DATA_DIR": data,
         "ROOT": root,
-        "CONFIG": {"n_folds": 5, "seed": 42},
+        "CONFIG": {"n_folds": 5, "seed": 42, "inner_val_fraction": 0.2},
         "pd": pd,
         "Path": Path,
     }
@@ -274,3 +274,65 @@ def test_real_dataset_shares_origin_folds_with_training_notebook():
         np.array_equal(a["val_idx"], b["val_idx"])
         for a, b in zip(splits, namespace["cv_splits"])
     )
+    inner = dataset.get_splits_by_origin(5, seed=42, inner_val_fraction=0.2)
+    assert all(
+        np.array_equal(a["inner_val_idx"], b["inner_val_idx"])
+        for a, b in zip(inner, namespace["cv_splits"])
+    )
+    for split in inner:
+        val_species = {dataset.records[i]["species"] for i in split["inner_val_idx"]}
+        assert val_species == set(dataset.classes)
+
+
+def test_inner_validation_holds_out_whole_training_origins_per_species(tmp_path):
+    data, manifest, _ = _dataset(tmp_path)
+    dataset = cv.OriginKFoldDataset(data, "all", manifest_path=manifest)
+    plain = dataset.get_splits_by_origin(5, seed=42)
+    splits = dataset.get_splits_by_origin(5, seed=42, inner_val_fraction=0.2)
+    for outer, split in zip(plain, splits):
+        # The outer held-out folds are unchanged by the inner split.
+        assert np.array_equal(outer["val_idx"], split["val_idx"])
+        assert sorted(split["inner_train_idx"].tolist() + split["inner_val_idx"].tolist()) == sorted(
+            split["train_idx"].tolist()
+        )
+        assert split["inner_train_origins"].isdisjoint(split["inner_val_origins"])
+        assert split["inner_val_origins"] <= split["train_origins"]
+        for species in ["A", "B"]:
+            # 8 training origins per species -> round(0.2 * 8) = 2 validation origins.
+            assert sum(k.startswith(f"{species}::") for k in split["inner_val_origins"]) == 2
+    repeated = dataset.get_splits_by_origin(5, seed=42, inner_val_fraction=0.2)
+    assert all(
+        np.array_equal(a["inner_val_idx"], b["inner_val_idx"]) for a, b in zip(splits, repeated)
+    )
+
+
+def test_inner_validation_rejects_species_without_spare_training_origin():
+    records = [
+        {"species": "A", "origin_key": "A::only", "md5": "a" * 32},
+        {"species": "B", "origin_key": "B::1", "md5": "b" * 32},
+        {"species": "B", "origin_key": "B::2", "md5": "c" * 32},
+    ]
+    with pytest.raises(ValueError, match="fewer than 2 training origins"):
+        origins.split_inner_validation(records, [0, 1, 2], 0.2, seed=42, fold=0)
+
+
+def test_input_variants_degrade_every_split_before_augmentation():
+    import torch
+    from src.data.transforms import get_val_transforms
+
+    image = Image.fromarray(
+        np.random.default_rng(3).integers(0, 256, (96, 160, 3), dtype=np.uint8)
+    )
+    _, gray = cv.get_transforms(input_variant="grayscale")
+    tensor = gray(image)
+    restored = tensor * torch.tensor([0.229, 0.224, 0.225])[:, None, None] + torch.tensor(
+        [0.485, 0.456, 0.406]
+    )[:, None, None]
+    torch.testing.assert_close(restored[0], restored[1], rtol=0, atol=1e-6)
+    torch.testing.assert_close(restored[1], restored[2], rtol=0, atol=1e-6)
+    _, px16 = cv.get_transforms(input_variant="px16")
+    small = image.resize((224, 224), Image.BILINEAR).resize((16, 16), Image.BILINEAR)
+    expected = get_val_transforms()(small.resize((224, 224), Image.BILINEAR))
+    torch.testing.assert_close(px16(image), expected, rtol=0, atol=1e-6)
+    with pytest.raises(ValueError, match="input_variant"):
+        cv.get_transforms(input_variant="sepia")

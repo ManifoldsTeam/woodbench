@@ -98,9 +98,10 @@ def test_launcher_defers_defaults_and_forwards_explicit_overrides(
         MODELS="resnet50",
         RESUME="1",
         OUTPUT_ROOT=str(tmp_path / "runs"),
+        BACKBONE_LR="0.0001",
     )
     if batch_override:
-        env.update(BATCH_SIZE=batch_override, EPOCHS="7", BACKBONE_LR="0.0001")
+        env.update(BATCH_SIZE=batch_override, EPOCHS="7", INPUT_VARIANT="px16")
     result = subprocess.run(
         ["bash", str(TASK_DIR / "run_all_models.sh")],
         cwd=tmp_path,
@@ -112,12 +113,58 @@ def test_launcher_defers_defaults_and_forwards_explicit_overrides(
     argv = json.loads((tmp_path / "calls").read_text())
     assert "--resume" in argv
     assert argv[argv.index("--output_root") + 1] == str(tmp_path / "runs")
+    assert argv[argv.index("--backbone_lr") + 1] == "0.0001"
     if batch_override:
         assert argv[argv.index("--batch_size") + 1] == "16"
         assert argv[argv.index("--epochs") + 1] == "7"
-        assert argv[argv.index("--backbone_lr") + 1] == "0.0001"
+        assert argv[argv.index("--input_variant") + 1] == "px16"
     else:
-        assert {"--batch_size", "--epochs", "--backbone_lr"}.isdisjoint(argv)
+        assert {"--batch_size", "--epochs", "--input_variant"}.isdisjoint(argv)
+
+
+def test_launcher_uses_per_model_backbone_lr(tmp_path):
+    runner = tmp_path / "python-stub"
+    runner.write_text('#!/bin/bash\nprintf "%s\\n" "$*" >> "$CALLS"\n')
+    runner.chmod(0o755)
+    env = dict(
+        os.environ,
+        PYTHON=str(runner),
+        LOG_ROOT=str(tmp_path / "logs"),
+        CALLS=str(tmp_path / "calls"),
+        MODELS="convnext_tiny resnet50 swin_tiny",
+        BACKBONE_LR="1e-5",
+        BACKBONE_LRS="resnet50:1e-4",
+    )
+    result = subprocess.run(
+        ["bash", str(TASK_DIR / "run_all_models.sh")],
+        cwd=tmp_path, env=env, capture_output=True, text=True,
+    )
+    assert result.returncode == 0, result.stderr
+    calls = {
+        c.split("--backbone ")[1].split()[0]: c.split("--backbone_lr ")[1].split()[0]
+        for c in (tmp_path / "calls").read_text().splitlines()
+    }
+    assert calls == {"convnext_tiny": "1e-5", "resnet50": "1e-4", "swin_tiny": "1e-5"}
+    env.pop("BACKBONE_LR")
+    result = subprocess.run(
+        ["bash", str(TASK_DIR / "run_all_models.sh")],
+        cwd=tmp_path, env=env, capture_output=True, text=True,
+    )
+    assert result.returncode == 2 and "No backbone LR for convnext_tiny" in result.stderr
+
+
+def test_launcher_refuses_to_start_without_chosen_backbone_lr(tmp_path):
+    env = dict(os.environ, LOG_ROOT=str(tmp_path / "logs"), PYTHON="false")
+    env.pop("BACKBONE_LR", None)
+    result = subprocess.run(
+        ["bash", str(TASK_DIR / "run_all_models.sh")],
+        cwd=tmp_path,
+        env=env,
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 2
+    assert "BACKBONE_LR" in result.stderr
 
 
 def test_monitor_displays_completed_epochs_against_training_budget(training):
@@ -214,9 +261,16 @@ def test_resume_identity_includes_shared_phase1_transform_code(tmp_path, monkeyp
     data, manifest, _ = _dataset(tmp_path)
     dataset = cv.OriginKFoldDataset(data, "all", manifest_path=manifest)
     args = cv.build_parser().parse_args(
-        ["--backbone", "convnext_tiny", "--manifest_path", str(manifest)]
+        [
+            "--backbone",
+            "convnext_tiny",
+            "--manifest_path",
+            str(manifest),
+            "--backbone_lr",
+            "1e-4",
+        ]
     )
-    splits = dataset.get_splits_by_origin(5, seed=42)
+    splits = dataset.get_splits_by_origin(5, seed=42, inner_val_fraction=0.2)
     original = artifacts.make_config(args, dataset, splits)
     hash_file = artifacts.file_sha256
 
@@ -257,7 +311,7 @@ def training(tmp_path, monkeypatch):
 
     def create_model(*args, **kwargs):
         calls.append("model")
-        return torch.nn.Sequential(torch.nn.Flatten(), torch.nn.Linear(3 * 8 * 8, 2))
+        return TinyClassifier()
 
     monkeypatch.setattr(cv.timm, "create_model", create_model)
     transform = transforms.Compose([transforms.Resize((8, 8)), transforms.ToTensor()])
@@ -278,11 +332,30 @@ def training(tmp_path, monkeypatch):
         "32",
         "--num_workers",
         "0",
+        "--backbone_lr",
+        "1e-5",
+        "--warmup_epochs",
+        "0",
     ]
     return output, argv, calls
 
 
-def test_fixed_epochs_evaluate_once_and_write_safe_traceable_artifacts(
+class TinyClassifier(torch.nn.Module):
+    """Stands in for a timm model: a body plus get_classifier()."""
+
+    def __init__(self):
+        super().__init__()
+        self.body = torch.nn.Sequential(torch.nn.Flatten(), torch.nn.Linear(3 * 8 * 8, 4))
+        self.fc = torch.nn.Linear(4, 2)
+
+    def forward(self, images):
+        return self.fc(self.body(images))
+
+    def get_classifier(self):
+        return self.fc
+
+
+def test_best_checkpoint_evaluated_once_and_write_safe_traceable_artifacts(
     training, monkeypatch
 ):
     output, argv, calls = training
@@ -296,21 +369,55 @@ def test_fixed_epochs_evaluate_once_and_write_safe_traceable_artifacts(
     monkeypatch.setattr(cv, "evaluate_full", evaluate)
     cv.main(argv + ["--fold", "1"])
     folder = output / "convnext_tiny/fold_1"
-    checkpoint = torch.load(folder / "final.pth", map_location="cpu")
-    assert checkpoint["epoch"] == 1
+    checkpoint = torch.load(folder / "best.pth", map_location="cpu")
+    assert checkpoint["epoch"] in (0, 1)
     assert "optimizer_state_dict" not in checkpoint
     assert "scheduler_state_dict" not in checkpoint
     assert evaluations == [1]
-    assert not (folder / "best.pth").exists()
+    assert not (folder / "final.pth").exists()
     metrics = json.loads((folder / "metrics.json").read_text())
     assert metrics["run_id"] == checkpoint["run_id"]
-    assert metrics["protocol"] == "fixed-epochs-origin-cv-v1"
+    assert metrics["protocol"] == "best-val-origin-cv-v2"
+    assert metrics["best_epoch"] == checkpoint["epoch"] + 1
     assert metrics["class_to_idx"] == {"A": 0, "B": 1}
     assert isinstance(metrics["config"]["manifest_path"], str)
+    assert metrics["config"]["head_selector"] == "classifier"
+    assert metrics["parameter_groups"] == {"head": 4 * 2 + 2, "backbone": 192 * 4 + 4}
+    assert set(metrics["per_class"]) == {"A", "B"}
     rows = list(csv.DictReader((folder / "predictions.csv").open()))
     assert len(rows) == metrics["n_test"] == 8
-    assert {r["origin_key"] for r in rows}.isdisjoint(metrics["train_origins"])
+    assert metrics["n_train"] == metrics["n_val"] * 3 == 24
+    test_origins = {r["origin_key"] for r in rows}
+    assert test_origins == set(metrics["test_origins"])
+    for a, b in [("train", "val"), ("train", "test"), ("val", "test")]:
+        assert set(metrics[f"{a}_origins"]).isdisjoint(metrics[f"{b}_origins"])
     assert {r["run_id"] for r in rows} == {metrics["run_id"]}
+
+
+def test_early_stopping_keeps_best_inner_val_checkpoint_for_held_out(
+    training, monkeypatch
+):
+    output, argv, _ = training
+    scores = iter([(0.9, 0.5), (0.8, 0.4), (0.7, 0.3), (0.6, 0.2)])
+    monkeypatch.setattr(cv, "validate", lambda *args, **kwargs: next(scores))
+    states = []
+    original = cv.evaluate_full
+
+    def evaluate(model, *args, **kwargs):
+        states.append({k: v.detach().cpu().clone() for k, v in model.state_dict().items()})
+        return original(model, *args, **kwargs)
+
+    monkeypatch.setattr(cv, "evaluate_full", evaluate)
+    options = argv + ["--fold", "1", "--epochs", "4", "--early_stopping_patience", "2"]
+    cv.main(options)
+    folder = output / "convnext_tiny/fold_1"
+    metrics = json.loads((folder / "metrics.json").read_text())
+    history = json.loads((folder / "history.json").read_text())
+    assert [row["epoch"] for row in history] == [1, 2, 3]
+    assert metrics["best_epoch"] == 1 and metrics["best_val_accuracy"] == 0.5
+    assert metrics["stopped_early"] is True and metrics["epochs_trained"] == 3
+    best = torch.load(folder / "best.pth", map_location="cpu")["model_state_dict"]
+    assert all(torch.equal(best[k], states[0][k]) for k in best)
 
 
 def test_resume_keeps_completed_folds_and_restarts_only_unfinished_fold(training):
@@ -327,7 +434,7 @@ def test_resume_keeps_completed_folds_and_restarts_only_unfinished_fold(training
     assert all(
         (output / f"convnext_tiny/fold_{i}/metrics.json").exists() for i in range(1, 6)
     )
-    assert torch.load(unfinished / "final.pth", map_location="cpu")["epoch"] == 1
+    assert torch.load(unfinished / "best.pth", map_location="cpu")["run_id"]
     assert not (unfinished / "last.pth").exists()
 
 
@@ -370,10 +477,10 @@ def test_fold_restart_reproduces_initial_model_and_final_weights(training):
     output, argv, _ = training
     cv.main(argv + ["--fold", "1"])
     folder = output / "convnext_tiny/fold_1"
-    state = torch.load(folder / "final.pth", map_location="cpu")["model_state_dict"]
+    state = torch.load(folder / "best.pth", map_location="cpu")["model_state_dict"]
     (folder / "metrics.json").unlink()
     cv.main(argv + ["--fold", "1", "--resume"])
-    repeated = torch.load(folder / "final.pth", map_location="cpu")["model_state_dict"]
+    repeated = torch.load(folder / "best.pth", map_location="cpu")["model_state_dict"]
     assert all(torch.equal(state[k], repeated[k]) for k in state)
 
 
@@ -411,7 +518,7 @@ def test_real_interruption_keeps_completed_fold_and_retrains_failed_fold(
     assert len(restarted_epochs) == 2
     assert len(calls) == 3
     assert (
-        torch.load(folder / "final.pth", map_location="cpu")["run_id"]
+        torch.load(folder / "best.pth", map_location="cpu")["run_id"]
         != partial["run_id"]
     )
 
@@ -520,6 +627,14 @@ def test_registry_is_immutable_and_reports_link_to_actual_runs(training):
     oof = list(csv.DictReader((first.parent / "oof_predictions.csv").open()))
     assert len(oof) == 40
     assert len({r["path"] for r in oof}) == 40
+    species = list(csv.DictReader((first.parent / "per_species_summary.csv").open()))
+    assert [r["species"] for r in species] == ["A", "B"]
+    for row in species:
+        folds = [float(r["f1"]) for r in report if r["species"] == row["species"]]
+        assert int(row["n_folds"]) == 5
+        assert float(row["f1_mean"]) == pytest.approx(statistics.mean(folds))
+        assert float(row["f1_std"]) == pytest.approx(statistics.stdev(folds))
+    assert {"best_epoch", "best_val_accuracy", "input_variant"} <= rows[0].keys()
 
 
 def test_missing_output_monitor_does_not_crash(tmp_path):
@@ -558,7 +673,7 @@ def test_monitor_distinguishes_interrupted_and_zero_accuracy(tmp_path):
 def test_monitor_marks_missing_completed_artifact_as_error(training):
     output, argv, _ = training
     cv.main(argv + ["--fold", "1"])
-    (output / "convnext_tiny/fold_1/final.pth").unlink()
+    (output / "convnext_tiny/fold_1/best.pth").unlink()
     result = subprocess.run(
         [
             sys.executable,
@@ -611,6 +726,7 @@ def test_launcher_tracks_failure_limits_concurrency_and_preserves_logs(tmp_path)
         CALLS=str(tmp_path / "calls"),
         MODELS="convnext_tiny mobilenetv3_large",
         MAX_PARALLEL="1",
+        BACKBONE_LR="1e-4",
     )
     result = subprocess.run(
         ["bash", str(TASK_DIR / "run_all_models.sh")],
@@ -654,6 +770,7 @@ change(-1)
         LOG_ROOT=str(tmp_path / "logs"),
         COUNTER=str(counter),
         MODELS="convnext_tiny mobilenetv3_large resnet50 efficientnet_b3 swin_tiny",
+        BACKBONE_LR="1e-4",
     )
     env.pop("MAX_PARALLEL", None)
     if limit:
@@ -688,6 +805,10 @@ def test_notebook_calls_shared_engine_and_separate_report_export():
             "num_workers": 0,
             "use_90rotation": True,
             "resume": True,
+            "warmup_epochs": 5,
+            "early_stopping_patience": 10,
+            "inner_val_fraction": 0.2,
+            "input_variant": "grayscale",
         },
         "DATA_DIR": Path("data"),
         "OUTPUT_DIR": Path("runs"),
@@ -705,6 +826,7 @@ def test_notebook_calls_shared_engine_and_separate_report_export():
     with patch.dict(sys.modules, {"train_kfold": fake}):
         exec(source, namespace)
     assert "--resume" in calls[0] and "--use_90rotation" in calls[0]
+    assert calls[0][calls[0].index("--input_variant") + 1] == "grayscale"
     report = json.loads((TASK_DIR / "evaluate_and_register_cv.ipynb").read_text())
     assert any(
         "export_reports(OUTPUT_ROOT)" in "".join(c["source"]) for c in report["cells"]
