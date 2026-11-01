@@ -1,0 +1,6 @@
+backbone,seed,chosen_backbone_lr,reason
+convnext_tiny,42,0.0001,tie on val macro-F1 (0.17 pt < 0.5); lower val loss (0.5867)
+efficientnet_b3,42,0.0001,val macro-F1 higher by 2.99 pt
+mobilenetv3_large,42,0.0001,val macro-F1 higher by 5.23 pt
+resnet50,42,0.0001,val macro-F1 higher by 9.42 pt
+swin_tiny,42,0.0001,tie on val macro-F1 (0.19 pt < 0.5); lower val loss (0.5759)

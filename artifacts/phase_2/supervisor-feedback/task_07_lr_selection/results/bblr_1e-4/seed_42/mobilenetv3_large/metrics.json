@@ -1,0 +1,62 @@
+{
+  "backbone": "mobilenetv3_large",
+  "seed": 42,
+  "backbone_lr": 0.0001,
+  "head_lr": 0.0001,
+  "head_selector": "classifier",
+  "checkpoint": "data/experiments/Task-B-lr-select/bblr_1e-4/seed_42/mobilenetv3_large/model_best.pth",
+  "best_epoch": 34,
+  "epochs_trained": 44,
+  "stopped_early": true,
+  "engine_best_val_acc": 98.78183831672204,
+  "val": {
+    "loss": 0.6182024784526423,
+    "accuracy": 0.9867109634551495,
+    "f1_macro": 0.9866241717709088,
+    "f1_per_class": {
+      "Araucaria araucana": 1.0,
+      "Callitris columellaris": 1.0,
+      "Calocedrus rupestris": 1.0,
+      "Chamaecyparis obtusa": 1.0,
+      "Cryptomeria japonica": 1.0,
+      "Cunninghamia lanceolata": 1.0,
+      "Fokienia hodginsii": 1.0,
+      "Picea glauca": 0.9908256880733946,
+      "Pinus cernua": 0.9541284403669725,
+      "Pinus dalatensis": 0.9705882352941176,
+      "Pinus krempfii": 0.9787234042553191,
+      "Pinus radiata": 1.0,
+      "Podocarpus pilgeri": 0.9833333333333333,
+      "Pseudotsuga brevifolia": 0.967032967032967,
+      "Taxus wallichiana": 0.961038961038961,
+      "Thujopsis dolabrata": 0.9836065573770492,
+      "Xanthocyparis vietnamensis": 0.9833333333333333
+    },
+    "n": 903
+  },
+  "test": {
+    "loss": 0.6149487894280512,
+    "accuracy": 0.9887218045112782,
+    "f1_macro": 0.9896103896103897,
+    "f1_per_class": {
+      "Araucaria araucana": 1.0,
+      "Callitris columellaris": 1.0,
+      "Calocedrus rupestris": 1.0,
+      "Chamaecyparis obtusa": 1.0,
+      "Cryptomeria japonica": 1.0,
+      "Cunninghamia lanceolata": 1.0,
+      "Fokienia hodginsii": 1.0,
+      "Picea glauca": 1.0,
+      "Pinus cernua": 1.0,
+      "Pinus dalatensis": 0.9142857142857143,
+      "Pinus krempfii": 0.9090909090909091,
+      "Pinus radiata": 1.0,
+      "Podocarpus pilgeri": 1.0,
+      "Pseudotsuga brevifolia": 1.0,
+      "Taxus wallichiana": 1.0,
+      "Thujopsis dolabrata": 1.0,
+      "Xanthocyparis vietnamensis": 1.0
+    },
+    "n": 532
+  }
+}

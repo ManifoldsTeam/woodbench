@@ -1,0 +1,9 @@
+                  latency_median_ms             peak_allocated_vram_mib            
+weights                  checkpoint random_init              checkpoint random_init
+display_name                                                                       
+ConvNeXt-Tiny                  4.19        4.21                  138.83      138.83
+EfficientNet-B3               10.00       10.03                   60.83       60.83
+MobileNetV3-Large              4.79        4.81                   24.51       40.71
+ResNet-50                      4.74        4.77                  102.06      102.06
+Swin-Tiny                      8.03        8.05                  149.56      149.56
+Output: /root/woodbench/artifacts/phase_2/supervisor-feedback/task_08_efficiency_rtx4090/profile-20261101T094606Z

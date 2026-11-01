@@ -50,6 +50,17 @@ tail -f "$session_dir/convnext_tiny_bblr1e-5.log"
 ls ../../../../data/experiments/Task-B-lr-select/bblr_*/seed_42/*/metrics.json | wc -l   # đủ: 10
 ```
 
+### Máy ít CPU: dùng cache 224×224
+
+Nếu GPU dùng ít vì CPU không giải nén kịp PNG 1280×1024, tạo cache một lần rồi trỏ `DATA_ROOT`
+(launcher) hoặc `--data_root` (script) vào đó. Input của model không đổi, vì pipeline bắt đầu bằng
+`Resize((224,224))`. Lần chạy 01-11-2026 dùng cách này; chi tiết ở
+[báo cáo 01-11](../SUPERVISOR_REPORT_2026-11-01.md), mục 6.1.
+
+```zsh
+python scripts/build_resized_cache.py data/task-B-group-split data/task-B-group-split-224   # từ repo root
+```
+
 ## Chọn LR
 
 ```zsh

@@ -1,0 +1,38 @@
+ORIGIN CV PROGRESS
+Output: /root/woodbench/data/experiments/Task-B-origin-cv-v2
+convnext_tiny: completed=5, in_progress=0, interrupted=0, error=0, not_started=0
+  Held-out accuracy mean=0.9913; fold std=0.003923113465813211
+  Fold 1: completed, epoch=22/50, accuracy=0.9916579770594369, best_epoch=12
+  Fold 2: completed, epoch=21/50, accuracy=0.9937759336099585, best_epoch=11
+  Fold 3: completed, epoch=13/50, accuracy=0.9847094801223242, best_epoch=3
+  Fold 4: completed, epoch=31/50, accuracy=0.9947368421052631, best_epoch=21
+  Fold 5: completed, epoch=21/50, accuracy=0.9915433403805497, best_epoch=11
+mobilenetv3_large: completed=5, in_progress=0, interrupted=0, error=0, not_started=0
+  Held-out accuracy mean=0.9661; fold std=0.008812674496766332
+  Fold 1: completed, epoch=50/50, accuracy=0.9697601668404588, best_epoch=48
+  Fold 2: completed, epoch=47/50, accuracy=0.9605809128630706, best_epoch=37
+  Fold 3: completed, epoch=45/50, accuracy=0.9602446483180428, best_epoch=35
+  Fold 4: completed, epoch=41/50, accuracy=0.98, best_epoch=31
+  Fold 5: completed, epoch=50/50, accuracy=0.959830866807611, best_epoch=41
+resnet50: completed=5, in_progress=0, interrupted=0, error=0, not_started=0
+  Held-out accuracy mean=0.9725; fold std=0.010225809339248073
+  Fold 1: completed, epoch=38/50, accuracy=0.9645464025026069, best_epoch=28
+  Fold 2: completed, epoch=45/50, accuracy=0.9605809128630706, best_epoch=35
+  Fold 3: completed, epoch=38/50, accuracy=0.9745158002038736, best_epoch=28
+  Fold 4: completed, epoch=41/50, accuracy=0.9863157894736843, best_epoch=31
+  Fold 5: completed, epoch=41/50, accuracy=0.9767441860465116, best_epoch=31
+efficientnet_b3: completed=5, in_progress=0, interrupted=0, error=0, not_started=0
+  Held-out accuracy mean=0.9773; fold std=0.00864604258848358
+  Fold 1: completed, epoch=34/50, accuracy=0.9645464025026069, best_epoch=24
+  Fold 2: completed, epoch=39/50, accuracy=0.9740663900414938, best_epoch=29
+  Fold 3: completed, epoch=50/50, accuracy=0.9775739041794088, best_epoch=42
+  Fold 4: completed, epoch=43/50, accuracy=0.9852631578947368, best_epoch=33
+  Fold 5: completed, epoch=50/50, accuracy=0.985200845665962, best_epoch=41
+swin_tiny: completed=5, in_progress=0, interrupted=0, error=0, not_started=0
+  Held-out accuracy mean=0.9899; fold std=0.010068755695709778
+  Fold 1: completed, epoch=23/50, accuracy=0.9874869655891554, best_epoch=13
+  Fold 2: completed, epoch=31/50, accuracy=0.995850622406639, best_epoch=21
+  Fold 3: completed, epoch=21/50, accuracy=0.9938837920489296, best_epoch=11
+  Fold 4: completed, epoch=31/50, accuracy=0.9989473684210526, best_epoch=21
+  Fold 5: completed, epoch=15/50, accuracy=0.9735729386892178, best_epoch=5
+SUMMARY: 25/25 folds completed

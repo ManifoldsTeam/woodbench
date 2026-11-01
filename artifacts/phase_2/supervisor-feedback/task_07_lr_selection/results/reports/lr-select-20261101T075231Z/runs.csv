@@ -1,0 +1,11 @@
+backbone,seed,backbone_lr,head_lr,head_selector,best_epoch,epochs_trained,val_f1_macro,val_accuracy,val_loss,test_f1_macro,test_accuracy,checkpoint
+convnext_tiny,42,0.0001,0.0001,classifier,12,22,0.9968155683325961,0.9966777408637874,0.586687855612268,0.994374787398756,0.9943609022556391,data/experiments/Task-B-lr-select/bblr_1e-4/seed_42/convnext_tiny/model_best.pth
+efficientnet_b3,42,0.0001,0.0001,classifier,17,27,0.9843686268082896,0.9844961240310077,0.624320687909723,0.9840063339649089,0.9830827067669173,data/experiments/Task-B-lr-select/bblr_1e-4/seed_42/efficientnet_b3/model_best.pth
+mobilenetv3_large,42,0.0001,0.0001,classifier,34,44,0.9866241717709088,0.9867109634551495,0.6182024784526423,0.9896103896103897,0.9887218045112782,data/experiments/Task-B-lr-select/bblr_1e-4/seed_42/mobilenetv3_large/model_best.pth
+resnet50,42,0.0001,0.0001,classifier,31,41,0.9868851322139255,0.9867109634551495,0.6229217600980866,0.9820659961836433,0.981203007518797,data/experiments/Task-B-lr-select/bblr_1e-4/seed_42/resnet50/model_best.pth
+swin_tiny,42,0.0001,0.0001,classifier,26,36,1.0,1.0,0.5759223462603285,0.9965600586703852,0.9962406015037594,data/experiments/Task-B-lr-select/bblr_1e-4/seed_42/swin_tiny/model_best.pth
+convnext_tiny,42,1e-05,0.0001,classifier,10,20,0.9985120119039048,0.9988925802879292,0.6052434570501545,0.9879039260705906,0.9868421052631579,data/experiments/Task-B-lr-select/bblr_1e-5/seed_42/convnext_tiny/model_best.pth
+efficientnet_b3,42,1e-05,0.0001,classifier,31,41,0.9544598935893525,0.9568106312292359,0.7064890625204887,0.9558194377123648,0.956766917293233,data/experiments/Task-B-lr-select/bblr_1e-5/seed_42/efficientnet_b3/model_best.pth
+mobilenetv3_large,42,1e-05,0.0001,classifier,37,47,0.934368593850194,0.9368770764119602,0.7768137837829252,0.9773609280962892,0.9774436090225563,data/experiments/Task-B-lr-select/bblr_1e-5/seed_42/mobilenetv3_large/model_best.pth
+resnet50,42,1e-05,0.0001,classifier,41,50,0.8926508068103605,0.9036544850498339,0.9110978435176288,0.9332639663929692,0.9304511278195489,data/experiments/Task-B-lr-select/bblr_1e-5/seed_42/resnet50/model_best.pth
+swin_tiny,42,1e-05,0.0001,classifier,18,28,0.9980970649129216,0.9977851605758582,0.5988971279441057,0.9927232069462097,0.9924812030075187,data/experiments/Task-B-lr-select/bblr_1e-5/seed_42/swin_tiny/model_best.pth

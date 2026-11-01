@@ -1,0 +1,10 @@
+ORIGIN CV PROGRESS
+Output: /root/woodbench/data/experiments/Task-B-origin-cv-v2-grayscale
+convnext_tiny: completed=1, in_progress=0, interrupted=0, error=0, not_started=4
+  Held-out accuracy mean=0.9468; fold std=None
+  Fold 1: completed, epoch=33/50, accuracy=0.9468196037539103, best_epoch=23
+  Fold 2: not_started, epoch=0/50, accuracy=None
+  Fold 3: not_started, epoch=0/50, accuracy=None
+  Fold 4: not_started, epoch=0/50, accuracy=None
+  Fold 5: not_started, epoch=0/50, accuracy=None
+SUMMARY: 1/5 folds completed

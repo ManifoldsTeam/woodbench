@@ -1,0 +1,41 @@
+{
+  "created_utc": "20261101T094606Z",
+  "scope": "Task B, 17 classes, step-1 checkpoints (backbone LR 1e-4, seed 42, Final-B split)",
+  "protocol": {
+    "input": [
+      1,
+      3,
+      224,
+      224
+    ],
+    "precision": "FP32",
+    "warmup_runs": 50,
+    "timed_runs": 200,
+    "latency_timer": "torch.cuda.Event; one synchronization per sample (phase2_benchmark.measure_latency)",
+    "vram": "torch.cuda.max_memory_allocated after warmup",
+    "macs": "THOP multiply-accumulate count",
+    "torch_cpu_threads": 8,
+    "control": "each architecture also timed with random weights (torch.manual_seed(0))"
+  },
+  "environment": {
+    "hostname": "c8f530e3bde2",
+    "platform": "Linux-6.5.0-18-generic-x86_64-with-glibc2.39",
+    "cpu": "x86_64",
+    "python": "3.12.16",
+    "pytorch": "2.15.0+cu132",
+    "cuda_runtime": "13.2",
+    "cudnn": "92600",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_memory_mib": 24082,
+    "nvidia_smi": "NVIDIA GeForce RTX 4090, 595.99.02, 24564 MiB",
+    "packages": {
+      "timm": "1.0.30",
+      "thop": "0.1.1-2209072238",
+      "numpy": "2.5.4",
+      "pandas": "3.1.0"
+    }
+  },
+  "woodbench_git_commit": "36dd63e98e92b49128bcd0b6b568de8582a32b4b",
+  "note": "RTX 4090 numbers are not comparable with the RTX 3060 table in the paper; compare models within one GPU only."
+}

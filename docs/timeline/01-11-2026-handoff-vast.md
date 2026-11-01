@@ -1,5 +1,9 @@
 # Handoff 01-11-2026: chạy yêu cầu mới của thầy trên Vast
 
+> **Trạng thái (01-11-2026, 10:00 UTC): cả 5 bước đã xong trên Vast (RTX 4090).** Báo cáo cho thầy:
+> [SUPERVISOR_REPORT_2026-11-01.md](../../notebooks/phase%202/supervisor-feedback/SUPERVISOR_REPORT_2026-11-01.md).
+> Kết quả tóm tắt và các điểm lệch so với runbook ở [mục 9](#9-kết-quả-thực-hiện-01-11-2026).
+
 Tài liệu này đủ để tiếp tục trên một instance Vast **chỉ có repo woodbench** (không có WoodID, WoodID-demo).
 Mọi số liệu dưới đây đã được kiểm lại trên máy local ngày 01-11-2026 (woodbench `7f004df`), trừ chỗ ghi
 "suy luận".
@@ -265,3 +269,41 @@ acc/F1 mới là phần thay đổi.
 2. Mô tả "backbone 1e-5, head 1e-4" trong paper chưa đúng với ConvNeXt/Swin/MobileNet (mục 3.1). Cần báo thầy.
 3. Grayscale/16px: tài liệu này chọn fold 1 của CV v2. Nếu thầy muốn so với split Final-B thì chạy trên split
    đó thay vì fold 1.
+
+## 9. Kết quả thực hiện 01-11-2026
+
+Chạy trên Vast, RTX 4090 24 GB, quota CPU khoảng 24 core, repo tại `/root/woodbench`, nhánh `docs/handoff-2026-11-01`
+(commit `36dd63e`). Env conda `wood` (Python 3.12, torch 2.15.0+cu132, timm 1.0.30); danh sách gói đầy đủ ở
+`pip_freeze.txt`/`conda_env.yaml` trong mỗi thư mục `launch-*`.
+
+| Bước | Kết quả | Minh chứng |
+|---|---|---|
+| Dữ liệu | Tarball `data-B-new.tar.zst` đúng thư mục `task-B-group-split/`; 4.800/4.800 sha256 khớp; train 3365 / val 903 / test 532 | — |
+| 1 | Cả 5 model chọn backbone LR **1e-4** | `artifacts/phase_2/supervisor-feedback/task_07_lr_selection/results/` |
+| 2 | 25/25 fold; ConvNeXt 99,13 ± 0,39, Swin 98,99 ± 1,01, EfficientNet 97,73 ± 0,86, ResNet 97,25 ± 1,02, MobileNet 96,61 ± 0,88 | `.../task_01_fivefold_cv_training/results-v2/` |
+| 3 | ConvNeXt grayscale fold 1: 94,68% (RGB 99,17%) | `.../results-v2-grayscale/` |
+| 4 | ConvNeXt 16px fold 1: 92,81% | `.../results-v2-px16/` |
+| 5 | Đo trên **RTX 4090** (theo yêu cầu, không đo trên 3060); latency/VRAM của checkpoint mới bằng trọng số ngẫu nhiên | `.../task_08_efficiency_rtx4090/` |
+
+**Lệch so với runbook:**
+
+1. **Cache ảnh 224×224.** Mọi pipeline bắt đầu bằng `Resize((224,224))`. Ảnh gốc là PNG 1280×1024; với quota khoảng
+   24 core, GPU chỉ dùng khoảng 6% và bước 1 ước tính mất 8–14 giờ. `scripts/build_resized_cache.py` resize trước một
+   lần bằng đúng phép đó, lưu PNG lossless vào `data/task-B-group-split-224`. Kiểm tra 300 ảnh ngẫu nhiên: tensor đưa
+   vào model giống hệt. Tốc độ tăng khoảng 20 lần. Checksum của cache nằm ở
+   [01-11-2026-task-B-group-split-224.sha256](01-11-2026-task-B-group-split-224.sha256). Với grayscale có thể lệch
+   ±1 mức xám, vì pipeline chuyển xám trước khi resize.
+2. **Lần chạy đầu của bước 1 đã bị hủy** sau 1–3 epoch (nghẽn đọc ảnh). Output dở đã xóa; log giữ lại ở
+   `task_07_lr_selection/ABORTED-slow-io-*`.
+3. **Bước 5 đo trên 4090.** `phase2_benchmark.run_efficiency_profile` chặn mọi GPU khác 3060, nên dùng script mới
+   `task_08_efficiency_rtx4090/profile_efficiency.py`, tái sử dụng `measure_latency`/`live_environment`. Script giới hạn
+   PyTorch còn 8 thread CPU, vì với 255 thread trên quota 24 core, chỉ riêng khởi tạo model đã mất khoảng 40 giây.
+4. Smoke test (2 epoch × 5 model) ghi vào `data/experiments/Task-B-origin-cv-smoke-*`; đây không phải kết quả báo cáo.
+
+**Checkpoint:** 47 file `.pth` (khoảng 6,6 GB) chỉ có trên instance, ở `data/experiments/Task-B-lr-select/` và
+`Task-B-origin-cv-v2*/`; sha256 ở `artifacts/phase_2/supervisor-feedback/checkpoints_2026-11-01.sha256`. Instance không
+có volume (`workspace_is_volume`), nên phải tải về trước khi destroy.
+
+**Câu hỏi mở** (thay mục 8): xem mục 8 của báo cáo cho thầy. Ngoài ra, best-val theo val acc đôi khi rơi vào epoch rất
+sớm (ConvNeXt fold 3 epoch 3, Swin fold 5 epoch 5) trong khi val loss vẫn giảm (báo cáo, mục 6.2).
+

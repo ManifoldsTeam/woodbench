@@ -12,6 +12,22 @@ Training checkpoints and CV/LR-tuning outputs already under `data/experiments/`
 are unchanged. See the artifact README and relocation manifest for file hashes.
 This local reorganization is not authorization to publish images or metadata.
 
+## Follow-up requests (01-11-2026) — done
+
+Report: [SUPERVISOR_REPORT_2026-11-01.md](SUPERVISOR_REPORT_2026-11-01.md). Context:
+[handoff 01-11-2026](../../../docs/timeline/01-11-2026-handoff-vast.md).
+
+| Step | Request | Code | Result |
+|---|---|---|---|
+| 1 | Backbone LR 1e-5 vs 1e-4 on val | [task_07_lr_selection](task_07_lr_selection/) | 1e-4 for all 5 models |
+| 2 | Origin CV v2, 5 models × 5 folds, best-val, per-species F1 | [task_01](task_01_fivefold_cv_training/) | ConvNeXt 99,13 ± 0,39 … MobileNet 96,61 ± 0,88 |
+| 3 | ConvNeXt retrained on grayscale, fold 1 | task_01 `--input_variant grayscale` | 94,68% (RGB 99,17%) |
+| 4 | ConvNeXt retrained on 16px, fold 1 | task_01 `--input_variant px16` | 92,81% |
+| 5 | Latency/VRAM of new checkpoints | [task_08_efficiency_rtx4090](task_08_efficiency_rtx4090/) | RTX 4090; unchanged vs random weights |
+
+All runs read `data/task-B-group-split-224`, a lossless pre-resized copy made by
+`scripts/build_resized_cache.py` (identical model input, ~20× faster on CPU-limited hosts).
+
 ## 6 Tasks from Supervisor (30-09-2026)
 
 | # | Task | Type | Status | Time |

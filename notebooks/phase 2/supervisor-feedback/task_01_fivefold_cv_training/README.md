@@ -157,6 +157,17 @@ python check_progress.py --model convnext_tiny --verbose \
 
 Số 16px mới **thay** số Swin 20 epoch tháng 7, không so trực tiếp với số đó.
 
+### Máy ít CPU: dùng cache 224×224
+
+Nếu GPU dùng ít vì CPU không giải nén kịp PNG 1280×1024, tạo cache một lần rồi trỏ `DATA_ROOT`
+(launcher) hoặc `--data_root` (script) vào đó. Input của model không đổi, vì pipeline bắt đầu bằng
+`Resize((224,224))`. Lần chạy 01-11-2026 dùng cách này; chi tiết ở
+[báo cáo 01-11](../SUPERVISOR_REPORT_2026-11-01.md), mục 6.1.
+
+```zsh
+python scripts/build_resized_cache.py data/task-B-group-split data/task-B-group-split-224   # từ repo root
+```
+
 ## 6. Xuất kết quả và backup
 
 Output: `data/experiments/Task-B-origin-cv-v2/<model>/fold_<n>/` chứa `best.pth`,
