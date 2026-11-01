@@ -301,8 +301,11 @@ Chạy trên Vast, RTX 4090 24 GB, quota CPU khoảng 24 core, repo tại `/root
 4. Smoke test (2 epoch × 5 model) ghi vào `data/experiments/Task-B-origin-cv-smoke-*`; đây không phải kết quả báo cáo.
 
 **Checkpoint:** 47 file `.pth` (khoảng 6,6 GB) chỉ có trên instance, ở `data/experiments/Task-B-lr-select/` và
-`Task-B-origin-cv-v2*/`; sha256 ở `artifacts/phase_2/supervisor-feedback/checkpoints_2026-11-01.sha256`. Instance không
-có volume (`workspace_is_volume`), nên phải tải về trước khi destroy.
+`Task-B-origin-cv-v2*/`; sha256 ở `artifacts/phase_2/supervisor-feedback/checkpoints_2026-11-01.sha256`.
+**Đã backup lên Google Drive** `drive:wood/2026-11-01-lr-select-cv-v2/`, gồm 4 file tar của toàn bộ thư mục
+experiment (khoảng 6,6 GB): `Task-B-lr-select.tar`, `Task-B-origin-cv-v2.tar`, `Task-B-origin-cv-v2-grayscale.tar`,
+`Task-B-origin-cv-v2-px16.tar`. Kèm theo là `README.txt`, `tar.md5` và `checkpoints_2026-11-01.sha256`. md5 của cả 4
+file tar trên Drive khớp với md5 tính lúc upload (01-11, 09:58 UTC). Giải nén vào `woodbench/data/experiments/`.
 
 **Câu hỏi mở** (thay mục 8): xem mục 8 của báo cáo cho thầy. Ngoài ra, best-val theo val acc đôi khi rơi vào epoch rất
 sớm (ConvNeXt fold 3 epoch 3, Swin fold 5 epoch 5) trong khi val loss vẫn giảm (báo cáo, mục 6.2).

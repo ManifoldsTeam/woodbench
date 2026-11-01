@@ -238,6 +238,7 @@ xem kết quả. Nếu thầy muốn, có thể chạy lại các fold đó vớ
 | Bước 2–4: log, môi trường, GPU monitor, smoke test | `.../task_01_fivefold_cv_training/launch-step2-*`, `launch-step34-*`, `logs/20261101T080223Z-4riqUX/`, `smoke-*` |
 | Bước 5 | `artifacts/phase_2/supervisor-feedback/task_08_efficiency_rtx4090/` |
 | sha256 của 47 checkpoint (`.pth` không đưa vào git, khoảng 6,6 GB) | `artifacts/phase_2/supervisor-feedback/checkpoints_2026-11-01.sha256` |
+| Checkpoint và toàn bộ thư mục experiment (bản backup) | Google Drive `wood/2026-11-01-lr-select-cv-v2/` (4 file tar, md5 đã đối chiếu) |
 
 Log dạng `*.log.gz` (đọc bằng `zcat`). `oof_predictions.csv` được nén thành `.csv.gz`.
 
