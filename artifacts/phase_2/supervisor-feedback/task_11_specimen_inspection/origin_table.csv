@@ -1,0 +1,21 @@
+species,origin,target,split,images,cv_error_rate_pct,images_wrong_by_3plus_models,height_min,height_max,sharpness_median,brightness_median,contrast_median,hue_median,saturation_median,glare_pct_median
+Pinus dalatensis,3393.1,True,train,28,32.1,12,2048,2048,902.69,141.59,25.86,14.37,156.56,0.03
+Pinus dalatensis,3393.10,False,train,36,0.0,0,2048,2048,411.79,142.79,19.84,14.47,152.51,0.0
+Pinus dalatensis,3393.2,False,test,32,1.9,0,2048,2048,749.6,140.56,23.73,13.11,154.29,0.01
+Pinus dalatensis,3393.3,False,train,34,0.6,0,2048,2048,1120.64,140.79,26.02,12.46,141.5,0.01
+Pinus dalatensis,3393.4,False,train,38,3.7,1,2048,2048,732.59,141.75,23.34,13.12,153.06,0.01
+Pinus dalatensis,3393.5,False,val,34,0.6,0,2048,2048,476.98,143.37,19.36,15.88,162.59,0.0
+Pinus dalatensis,3393.6,False,train,32,14.4,2,2048,2048,901.86,141.56,25.04,14.46,151.9,0.01
+Pinus dalatensis,3393.7,False,train,32,0.6,0,2048,2048,1086.13,142.76,25.4,13.54,152.94,0.01
+Pinus dalatensis,3393.8,False,train,34,2.9,0,2048,2048,295.77,143.48,18.5,14.14,148.33,0.0
+Pinus dalatensis,3393.9,False,val,34,11.8,5,2048,2048,768.94,142.17,24.15,14.48,149.29,0.01
+Pinus krempfii,3384,False,train,37,0.0,0,1892,1944,383.24,148.4,20.74,15.33,150.43,0.0
+Pinus krempfii,3384.1,False,train,34,2.4,0,1888,1910,393.11,148.06,21.31,15.8,155.52,0.0
+Pinus krempfii,3384.10,False,val,24,0.0,0,1875,1909,340.57,148.56,20.59,15.42,162.48,0.0
+Pinus krempfii,3384.3,False,train,30,1.3,0,1897,1944,439.39,148.16,21.55,15.36,149.92,0.0
+Pinus krempfii,3384.4,True,test,36,13.9,5,1899,1944,500.04,148.81,22.95,14.94,146.19,0.0
+Pinus krempfii,3384.5,False,train,34,1.8,0,1888,1910,459.57,149.16,22.18,15.43,151.65,0.0
+Pinus krempfii,3384.6,False,train,30,0.0,0,1895,1944,432.08,149.06,21.07,15.12,151.94,0.0
+Pinus krempfii,3384.7,False,train,29,6.2,2,1905,1944,324.83,148.14,19.77,15.52,148.21,0.0
+Pinus krempfii,3384.8,False,val,22,0.0,0,1856,1944,348.64,149.82,19.96,15.42,157.34,0.0
+Pinus krempfii,3384.9,False,train,28,0.0,0,1890,1944,342.38,147.91,20.3,15.84,152.63,0.0
