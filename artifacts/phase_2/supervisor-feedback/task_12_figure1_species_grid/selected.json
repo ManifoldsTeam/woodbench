@@ -1,0 +1,138 @@
+{
+  "Araucaria araucana": {
+    "path": "data/task-B-group-split/train/Araucaria araucana/3351. Araucaria araucana.5.(146).png",
+    "size": [
+      2560,
+      2048
+    ],
+    "override": false
+  },
+  "Callitris columellaris": {
+    "path": "data/task-B-group-split/val/Callitris columellaris/135__from-test__76165962.png",
+    "size": [
+      1280,
+      1024
+    ],
+    "override": false
+  },
+  "Calocedrus rupestris": {
+    "path": "data/task-B-group-split/test/Calocedrus rupestris/3342. Calocedrus rupestris.7.(185).png",
+    "size": [
+      2560,
+      1908
+    ],
+    "override": false
+  },
+  "Chamaecyparis obtusa": {
+    "path": "data/task-B-group-split/train/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.9 (266).png",
+    "size": [
+      2560,
+      2048
+    ],
+    "override": false
+  },
+  "Cryptomeria japonica": {
+    "path": "data/task-B-group-split/train/Cryptomeria japonica/3350. Cryptomeria japonica.3.(93).png",
+    "size": [
+      2560,
+      1920
+    ],
+    "override": false
+  },
+  "Cunninghamia lanceolata": {
+    "path": "data/task-B-group-split/val/Cunninghamia lanceolata/135__from-val__8efd84e0.png",
+    "size": [
+      1280,
+      1024
+    ],
+    "override": false
+  },
+  "Fokienia hodginsii": {
+    "path": "data/task-B-group-split/train/Fokienia hodginsii/pơ mu41.png",
+    "size": [
+      1280,
+      1024
+    ],
+    "override": false
+  },
+  "Picea glauca": {
+    "path": "data/task-B-group-split/train/Picea glauca/3378. Picea glauca.9 (268).png",
+    "size": [
+      2560,
+      1908
+    ],
+    "override": false
+  },
+  "Pinus cernua": {
+    "path": "data/task-B-group-split/train/Pinus cernua/3385. Pinus cernua.6 (142).png",
+    "size": [
+      2560,
+      2048
+    ],
+    "override": false
+  },
+  "Pinus dalatensis": {
+    "path": "data/task-B-group-split/train/Pinus dalatensis/3393. Pinus dalatensis.4 (126).png",
+    "size": [
+      2560,
+      2048
+    ],
+    "override": false
+  },
+  "Pinus krempfii": {
+    "path": "data/task-B-group-split/train/Pinus krempfii/3384. Pinus krempfii.6 (182).png",
+    "size": [
+      2560,
+      1909
+    ],
+    "override": false
+  },
+  "Pinus radiata": {
+    "path": "data/task-B-group-split/train/Pinus radiata/3379. Pinus radiata.6 (170).png",
+    "size": [
+      2560,
+      1920
+    ],
+    "override": false
+  },
+  "Podocarpus pilgeri": {
+    "path": "data/task-B-group-split/train/Podocarpus pilgeri/3386. Podocarpus pilgeri.5 (161).png",
+    "size": [
+      2560,
+      2048
+    ],
+    "override": false
+  },
+  "Pseudotsuga brevifolia": {
+    "path": "data/task-B-group-split/train/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.5 (125).png",
+    "size": [
+      2560,
+      2048
+    ],
+    "override": false
+  },
+  "Taxus wallichiana": {
+    "path": "data/task-B-group-split/train/Taxus wallichiana/3391. Taxus wallichiana.8 (223).png",
+    "size": [
+      2560,
+      1908
+    ],
+    "override": false
+  },
+  "Thujopsis dolabrata": {
+    "path": "data/task-B-group-split/test/Thujopsis dolabrata/3387. Thujopsis dolabrata.9 (280).png",
+    "size": [
+      2560,
+      2048
+    ],
+    "override": false
+  },
+  "Xanthocyparis vietnamensis": {
+    "path": "data/task-B-group-split/train/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.1.(23).png",
+    "size": [
+      2560,
+      1909
+    ],
+    "override": false
+  }
+}

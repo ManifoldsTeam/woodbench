@@ -15,6 +15,7 @@ Phase 2 notebooks. Notebook/script sources remain in
 | `task_09_checkpoint_selection/` | 06-11-2026: val-loss / skip-warmup selection, trial run outputs and env record |
 | `task_10_near_duplicate_grouping/` | 06-11-2026: image -> near-duplicate group table for Callitris, Cunninghamia, Fokienia |
 | `task_11_specimen_inspection/` | 06-11-2026: error, quality and overlap checks of specimens 3384.4 and 3393.1 |
+| `task_12_figure1_species_grid/` | 06-11-2026: Fig. 1, 17-species grid (PDF/PNG), candidate sheet and selection table |
 
 Checkpoints, fold outputs and LR tuning remain under `data/experiments/`.
 No experiment was rerun and no metric, run ID or historical registry content
