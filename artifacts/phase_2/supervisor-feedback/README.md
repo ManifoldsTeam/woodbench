@@ -12,6 +12,7 @@ Phase 2 notebooks. Notebook/script sources remain in
 | `task_03_dark_artifact_check/` | Brightness CSV and inspection figures |
 | `task_04_degradation_rerun/` | Historical plots/CSV plus timestamped inference runs |
 | `task_06_error_analysis/` | Error CSVs and origin plot |
+| `task_09_checkpoint_selection/` | 06-11-2026: val-loss / skip-warmup selection, trial run outputs and env record |
 
 Checkpoints, fold outputs and LR tuning remain under `data/experiments/`.
 No experiment was rerun and no metric, run ID or historical registry content
