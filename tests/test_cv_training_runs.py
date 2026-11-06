@@ -420,6 +420,71 @@ def test_early_stopping_keeps_best_inner_val_checkpoint_for_held_out(
     assert all(torch.equal(best[k], states[0][k]) for k in best)
 
 
+def test_val_loss_selection_skips_warmup_epochs(training, monkeypatch):
+    output, argv, _ = training
+    # (val_loss, val_accuracy): epoch 1 has the best accuracy but is warmup;
+    # epoch 4 has the lowest loss after warmup; patience 2 stops at epoch 6.
+    scores = iter(
+        [(0.50, 0.99), (0.60, 0.90), (0.45, 0.80), (0.40, 0.70),
+         (0.50, 0.95), (0.60, 0.96), (0.30, 0.50), (0.20, 0.50)]
+    )
+    monkeypatch.setattr(cv, "validate", lambda *args, **kwargs: next(scores))
+    states = []
+    original = cv.evaluate_full
+
+    def evaluate(model, *args, **kwargs):
+        states.append({k: v.detach().cpu().clone() for k, v in model.state_dict().items()})
+        return original(model, *args, **kwargs)
+
+    monkeypatch.setattr(cv, "evaluate_full", evaluate)
+    saved = []
+    save_checkpoint = cv.save_checkpoint
+
+    def capture(path, checkpoint):
+        saved.append(
+            (
+                checkpoint["epoch"],
+                {k: v.detach().cpu().clone() for k, v in checkpoint["model_state_dict"].items()},
+            )
+        )
+        save_checkpoint(path, checkpoint)
+
+    monkeypatch.setattr(cv, "save_checkpoint", capture)
+    cv.main(
+        argv
+        + ["--fold", "1", "--epochs", "8", "--warmup_epochs", "2",
+           "--early_stopping_patience", "2",
+           "--selection_metric", "val_loss", "--select_after_warmup"]
+    )
+    folder = output / "convnext_tiny/fold_1"
+    metrics = json.loads((folder / "metrics.json").read_text())
+    history = json.loads((folder / "history.json").read_text())
+    assert [row["epoch"] for row in history] == [1, 2, 3, 4, 5, 6]
+    assert [row["eligible"] for row in history] == [False, False, True, True, True, True]
+    assert [row["best"] for row in history] == [False, False, True, True, False, False]
+    assert metrics["best_epoch"] == 4 and metrics["best_val_loss"] == 0.40
+    assert metrics["stopped_early"] is True
+    assert metrics["config"]["selection_metric"] == "val_loss"
+    assert metrics["config"]["select_after_warmup"] is True
+    assert "lowest inner-val loss, epochs 3+ only" in metrics["config"]["selection"]
+    assert [epoch for epoch, _ in saved] == [2, 3]
+    best = torch.load(folder / "best.pth", map_location="cpu")["model_state_dict"]
+    assert all(torch.equal(best[k], saved[-1][1][k]) for k in best)
+    assert all(torch.equal(best[k], states[0][k]) for k in best)
+
+
+def test_default_selection_keeps_config_fingerprint_keys(training):
+    output, argv, _ = training
+    cv.main(argv + ["--fold", "1"])
+    config = json.loads(
+        (output / "convnext_tiny/fold_1/metrics.json").read_text()
+    )["config"]
+    assert "selection_metric" not in config and "select_after_warmup" not in config
+    assert config["selection"] == (
+        "best inner-val accuracy; held-out evaluated once with best.pth"
+    )
+
+
 def test_resume_keeps_completed_folds_and_restarts_only_unfinished_fold(training):
     output, argv, calls = training
     cv.main(argv + ["--fold", "1"])

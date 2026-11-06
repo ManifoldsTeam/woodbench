@@ -2,8 +2,10 @@
 """Origin CV with inner origin validation, best-val checkpoint and fold restart.
 
 Each fold trains on its outer-train origins minus an inner validation set of
-whole origins, keeps the checkpoint with the best inner-val accuracy (early
-stopping as in Phase 1 Final-B) and evaluates the outer held-out fold once.
+whole origins, keeps the best inner-val checkpoint and evaluates the outer
+held-out fold once. Default selection matches Phase 1 Final-B (best val
+accuracy from epoch 1, patience 10). The 06-11-2026 supervisor rule is
+``--selection_metric val_loss --select_after_warmup --early_stopping_patience 15``.
 """
 
 import argparse
@@ -57,6 +59,12 @@ PHASE1_BATCH_SIZES = {
     "mobilenetv3_large": 64,
     "convnext_tiny": 32,
     "swin_tiny": 32,
+}
+
+# Checkpoint selection: True when the first value is better than the second.
+SELECTION_METRICS = {
+    "val_accuracy": lambda value, best: value > best,
+    "val_loss": lambda value, best: value < best,
 }
 
 
@@ -184,7 +192,18 @@ def build_parser():
         "--early_stopping_patience",
         type=int,
         default=10,
-        help="Epochs without inner-val accuracy gain; 0 disables",
+        help="Epochs without improvement of --selection_metric; 0 disables",
+    )
+    parser.add_argument(
+        "--selection_metric",
+        choices=list(SELECTION_METRICS),
+        default="val_accuracy",
+        help="Inner-val metric that picks best.pth and drives early stopping",
+    )
+    parser.add_argument(
+        "--select_after_warmup",
+        action="store_true",
+        help="Ignore the warmup epochs for best.pth and early stopping",
     )
     parser.add_argument(
         "--inner_val_fraction",
@@ -303,8 +322,12 @@ def run_fold(args, dataset, split, config, fingerprint, output_dir, device, tran
                 project=args.wandb_project, name=run_id, config=config
             )
         history = []
-        best = {"val_accuracy": -1.0}
+        best = None
         stale = 0
+        better = SELECTION_METRICS[args.selection_metric]
+        # Epochs up to first_eligible - 1 are trained and logged, but can neither
+        # become best.pth nor count towards early stopping.
+        first_eligible = args.warmup_epochs + 1 if args.select_after_warmup else 1
         for epoch in range(args.epochs):
             loss, accuracy = train_epoch(
                 model, train_loader, criterion, optimizer, device, scaler
@@ -314,7 +337,12 @@ def run_fold(args, dataset, split, config, fingerprint, output_dir, device, tran
             )
             lr = {group.get("name", "all"): group["lr"] for group in optimizer.param_groups}
             scheduler.step()
-            improved = val_accuracy > best["val_accuracy"]
+            current = {"val_accuracy": val_accuracy, "val_loss": val_loss}
+            eligible = epoch + 1 >= first_eligible
+            improved = eligible and (
+                best is None
+                or better(current[args.selection_metric], best[args.selection_metric])
+            )
             if improved:
                 best = {
                     "epoch": epoch + 1,
@@ -334,7 +362,7 @@ def run_fold(args, dataset, split, config, fingerprint, output_dir, device, tran
                         "val_loss": val_loss,
                     },
                 )
-            else:
+            elif eligible:
                 stale += 1
             history.append(
                 {
@@ -345,6 +373,7 @@ def run_fold(args, dataset, split, config, fingerprint, output_dir, device, tran
                     "val_accuracy": val_accuracy,
                     "lr": lr,
                     "best": improved,
+                    "eligible": eligible,
                 }
             )
             save_json(folder / "history.json", history)
@@ -357,7 +386,10 @@ def run_fold(args, dataset, split, config, fingerprint, output_dir, device, tran
                 f"val={val_accuracy:.4f} loss={val_loss:.4f}{' [best]' if improved else ''}"
             )
             if args.early_stopping_patience and stale >= args.early_stopping_patience:
-                print(f"Early stopping after {args.early_stopping_patience} epochs without gain")
+                print(
+                    f"Early stopping after {args.early_stopping_patience} epochs "
+                    f"without {args.selection_metric} improvement"
+                )
                 break
         checkpoint = torch.load(folder / CHECKPOINT, map_location="cpu", weights_only=True)
         if checkpoint["run_id"] != run_id:
@@ -433,6 +465,8 @@ def main(argv=None):
         raise ValueError(
             "epochs/batch_size must be positive; num_workers must be nonnegative"
         )
+    # warmup_epochs < epochs also guarantees that --select_after_warmup leaves
+    # at least one epoch eligible for best.pth.
     if not 0 <= args.warmup_epochs < args.epochs or args.early_stopping_patience < 0:
         raise ValueError(
             "warmup_epochs must be in [0, epochs); early_stopping_patience nonnegative"
@@ -452,6 +486,10 @@ def main(argv=None):
         f"Training: up to {args.epochs} epochs/fold, batch={args.batch_size}, "
         f"backbone_lr={args.backbone_lr}, head_lr={args.head_lr}, "
         f"input={args.input_variant}"
+    )
+    print(
+        f"Selection: {config['selection']}; early stopping patience "
+        f"{args.early_stopping_patience}"
     )
     for split in splits:
         print(

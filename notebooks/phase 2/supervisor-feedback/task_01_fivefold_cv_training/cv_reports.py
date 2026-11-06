@@ -24,6 +24,7 @@ from run_artifacts import (
 def export_reports(output_root):
     output_root = Path(output_root)
     registry_rows, per_class, predictions, summaries, per_species = [], [], [], [], []
+    selection_rules = set()
     for model_dir in sorted(output_root.iterdir()):
         config_path = model_dir / "run_config.json"
         if not config_path.is_file():
@@ -32,6 +33,7 @@ def export_reports(output_root):
         config, fingerprint = identity["config"], identity["fingerprint"]
         if config["protocol"] != PROTOCOL or digest(config) != fingerprint:
             raise ValueError(f"Unsupported or changed run config: {config_path}")
+        selection_rules.add(config["selection"])
         model_rows, model_predictions = [], []
         for fold in range(1, config["n_folds"] + 1):
             folder = model_dir / f"fold_{fold}"
@@ -204,7 +206,8 @@ def export_reports(output_root):
             "protocol": PROTOCOL,
             "std": "sample standard deviation across folds; not CI",
             "source_run_ids": [r["run_id"] for r in registry_rows],
-            "validation": "Inner validation of whole origins inside each outer-train fold; best inner-val accuracy checkpoint; outer held-out evaluated once",
+            "validation": "Inner validation of whole origins inside each outer-train fold; checkpoint: "
+            + " | ".join(sorted(selection_rules)),
             "per_species": "per_species_summary.csv: mean and sample std across folds of per-fold precision/recall/F1",
             "comparison": "Fixed-split baseline comparison requires explicit baseline_run_id and registry",
         },

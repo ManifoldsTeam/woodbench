@@ -48,6 +48,28 @@ def git_commit():
     return result.stdout.strip()
 
 
+def default_selection(args):
+    """Phase 1 Final-B rule: best inner-val accuracy, every epoch eligible."""
+    return (
+        getattr(args, "selection_metric", "val_accuracy") == "val_accuracy"
+        and not getattr(args, "select_after_warmup", False)
+    )
+
+
+def selection_rule(args):
+    if default_selection(args):
+        return "best inner-val accuracy; held-out evaluated once with best.pth"
+    metric = {"val_accuracy": "highest inner-val accuracy", "val_loss": "lowest inner-val loss"}[
+        args.selection_metric
+    ]
+    start = (
+        f"epochs {args.warmup_epochs + 1}+ only (warmup excluded)"
+        if args.select_after_warmup
+        else "all epochs"
+    )
+    return f"{metric}, {start}; held-out evaluated once with best.pth"
+
+
 def make_config(args, dataset, splits):
     config = {
         name: getattr(args, name)
@@ -76,7 +98,7 @@ def make_config(args, dataset, splits):
         head_selector="classifier",
         amp=True,
         scheduler="linear-warmup+cosine",
-        selection="best inner-val accuracy; held-out evaluated once with best.pth",
+        selection=selection_rule(args),
         augmentation=INPUT_VARIANTS[args.input_variant]
         + "resize224|hflip0.5|vflip0.5|"
         + ("random_90" if args.use_90rotation else "random_rotation30")
@@ -85,6 +107,13 @@ def make_config(args, dataset, splits):
         manifest_sha256=file_sha256(args.manifest_path),
         class_to_idx=dataset.class_to_idx,
     )
+    if not default_selection(args):
+        # Only non-default rules add keys, so the 01-11-2026 runs keep their
+        # fingerprint and can still be verified or resumed.
+        config.update(
+            selection_metric=args.selection_metric,
+            select_after_warmup=args.select_after_warmup,
+        )
     plan = [
         {
             "path": Path(r["path"]).relative_to(dataset.data_root).as_posix(),
