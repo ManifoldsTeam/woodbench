@@ -1,0 +1,1158 @@
+species,image_a,image_b,orb_inliers,phash_distance,scale,rotation_deg,same_origin,linked
+Callitris columellaris,test/Callitris columellaris/1103.png,train/Callitris columellaris/1105.png,28,34,1.001,-3.7,False,False
+Callitris columellaris,test/Callitris columellaris/1103.png,train/Callitris columellaris/119.png,57,28,0.993,175.5,False,True
+Callitris columellaris,test/Callitris columellaris/1103.png,train/Callitris columellaris/124__from-val__cba041e5.png,20,30,0.983,177.2,False,False
+Callitris columellaris,test/Callitris columellaris/1103.png,train/Callitris columellaris/133.png,29,24,0.997,178.1,False,False
+Callitris columellaris,test/Callitris columellaris/1103.png,train/Callitris columellaris/134.png,25,30,1.007,178.0,False,False
+Callitris columellaris,test/Callitris columellaris/1103.png,train/Callitris columellaris/141.png,23,28,0.98,88.3,False,False
+Callitris columellaris,test/Callitris columellaris/1103.png,train/Callitris columellaris/167__from-test__f019f145.png,41,28,0.993,-173.7,False,True
+Callitris columellaris,test/Callitris columellaris/1103.png,train/Callitris columellaris/184__from-test__e69bf946.png,60,30,0.993,-174.1,False,True
+Callitris columellaris,test/Callitris columellaris/1103.png,train/Callitris columellaris/185__from-val__a49b5dd1.png,59,26,0.99,-174.4,False,True
+Callitris columellaris,test/Callitris columellaris/1103.png,val/Callitris columellaris/122.png,83,34,0.994,179.5,False,True
+Callitris columellaris,test/Callitris columellaris/1103.png,val/Callitris columellaris/139__from-test__72a88d8f.png,12,34,0.979,88.6,False,False
+Callitris columellaris,test/Callitris columellaris/1103.png,val/Callitris columellaris/169__from-test__870c9f33.png,26,22,0.99,-177.8,False,False
+Callitris columellaris,test/Callitris columellaris/1103__from-val__0332dace.png,test/Callitris columellaris/112__from-val__3cbca1d9.png,17,32,1.013,-1.2,False,False
+Callitris columellaris,test/Callitris columellaris/1103__from-val__0332dace.png,test/Callitris columellaris/115__from-val__b515b113.png,94,38,1.005,-91.7,False,True
+Callitris columellaris,test/Callitris columellaris/1103__from-val__0332dace.png,test/Callitris columellaris/196.png,93,32,1.003,-6.5,False,True
+Callitris columellaris,test/Callitris columellaris/1103__from-val__0332dace.png,train/Callitris columellaris/11.png,19,36,1.009,2.2,False,False
+Callitris columellaris,test/Callitris columellaris/1103__from-val__0332dace.png,train/Callitris columellaris/1102.png,280,24,1.005,4.7,False,True
+Callitris columellaris,test/Callitris columellaris/1103__from-val__0332dace.png,train/Callitris columellaris/111.png,19,30,1.011,0.7,False,False
+Callitris columellaris,test/Callitris columellaris/1103__from-val__0332dace.png,train/Callitris columellaris/114__from-val__c982f8c9.png,12,28,1.01,-86.8,False,False
+Callitris columellaris,test/Callitris columellaris/1103__from-val__0332dace.png,train/Callitris columellaris/141__from-test__7fc14db3.png,11,34,1.001,-0.9,False,False
+Callitris columellaris,test/Callitris columellaris/1103__from-val__0332dace.png,train/Callitris columellaris/142.png,11,34,1.002,-0.2,False,False
+Callitris columellaris,test/Callitris columellaris/1103__from-val__0332dace.png,train/Callitris columellaris/17.png,12,32,1.006,-88.5,False,False
+Callitris columellaris,test/Callitris columellaris/1103__from-val__0332dace.png,train/Callitris columellaris/197.png,261,32,1.004,-3.9,False,True
+Callitris columellaris,test/Callitris columellaris/1103__from-val__0332dace.png,val/Callitris columellaris/135.png,38,34,1.011,-2.6,False,True
+Callitris columellaris,test/Callitris columellaris/1108.png,train/Callitris columellaris/1107.png,42,26,0.999,-2.7,False,True
+Callitris columellaris,test/Callitris columellaris/1108.png,train/Callitris columellaris/1109.png,10,30,0.98,-5.2,False,False
+Callitris columellaris,test/Callitris columellaris/1108.png,train/Callitris columellaris/167__from-val__5b739dcd.png,25,34,0.983,92.5,False,False
+Callitris columellaris,test/Callitris columellaris/1108.png,train/Callitris columellaris/168__from-test__84bf972d.png,15,30,0.989,4.2,False,False
+Callitris columellaris,test/Callitris columellaris/1108.png,train/Callitris columellaris/173.png,55,30,0.984,91.8,False,True
+Callitris columellaris,test/Callitris columellaris/1108.png,train/Callitris columellaris/194__from-val__2872c5e2.png,29,32,0.993,-0.6,False,False
+Callitris columellaris,test/Callitris columellaris/1108.png,train/Callitris columellaris/195.png,38,32,0.993,-2.4,False,True
+Callitris columellaris,test/Callitris columellaris/1108.png,val/Callitris columellaris/156.png,12,34,0.994,1.1,False,False
+Callitris columellaris,test/Callitris columellaris/1108.png,val/Callitris columellaris/15__from-val__b003c744.png,10,26,0.985,-173.7,False,False
+Callitris columellaris,test/Callitris columellaris/112.png,train/Callitris columellaris/129.png,103,24,0.998,0.0,False,True
+Callitris columellaris,test/Callitris columellaris/112.png,train/Callitris columellaris/174__from-test__714f108c.png,273,36,0.998,177.3,False,True
+Callitris columellaris,test/Callitris columellaris/112.png,train/Callitris columellaris/177.png,10,34,0.993,-1.8,False,False
+Callitris columellaris,test/Callitris columellaris/112.png,val/Callitris columellaris/1112.png,27,28,1.006,172.0,False,False
+Callitris columellaris,test/Callitris columellaris/112__from-test__69edd7a8.png,test/Callitris columellaris/112__from-val__3cbca1d9.png,18,34,1.004,87.1,True,False
+Callitris columellaris,test/Callitris columellaris/112__from-test__69edd7a8.png,test/Callitris columellaris/196.png,17,26,0.997,81.1,False,False
+Callitris columellaris,test/Callitris columellaris/112__from-test__69edd7a8.png,train/Callitris columellaris/10__from-val__aa5ebc63.png,19,34,1.006,88.0,False,False
+Callitris columellaris,test/Callitris columellaris/112__from-test__69edd7a8.png,train/Callitris columellaris/11.png,21,36,1.004,90.0,False,False
+Callitris columellaris,test/Callitris columellaris/112__from-test__69edd7a8.png,train/Callitris columellaris/113.png,33,32,1.008,86.0,False,True
+Callitris columellaris,test/Callitris columellaris/112__from-test__69edd7a8.png,train/Callitris columellaris/113__from-test__4a8fb286.png,273,34,0.997,0.1,False,True
+Callitris columellaris,test/Callitris columellaris/112__from-test__69edd7a8.png,train/Callitris columellaris/114__from-val__c982f8c9.png,55,30,0.998,1.2,False,True
+Callitris columellaris,test/Callitris columellaris/112__from-test__69edd7a8.png,train/Callitris columellaris/140__from-test__4594b2f9.png,17,24,0.996,86.3,False,False
+Callitris columellaris,test/Callitris columellaris/112__from-test__69edd7a8.png,train/Callitris columellaris/143__from-test__1e2d9808.png,68,28,0.994,89.0,False,True
+Callitris columellaris,test/Callitris columellaris/112__from-test__69edd7a8.png,val/Callitris columellaris/139__from-val__2cb76975.png,187,34,0.998,85.0,False,True
+Callitris columellaris,test/Callitris columellaris/112__from-val__3cbca1d9.png,test/Callitris columellaris/115__from-val__b515b113.png,51,28,0.995,-91.0,False,True
+Callitris columellaris,test/Callitris columellaris/112__from-val__3cbca1d9.png,test/Callitris columellaris/196.png,43,24,0.995,-5.6,False,True
+Callitris columellaris,test/Callitris columellaris/112__from-val__3cbca1d9.png,train/Callitris columellaris/10__from-val__aa5ebc63.png,46,34,0.999,1.0,False,True
+Callitris columellaris,test/Callitris columellaris/112__from-val__3cbca1d9.png,train/Callitris columellaris/11.png,239,32,0.999,3.3,False,True
+Callitris columellaris,test/Callitris columellaris/112__from-val__3cbca1d9.png,train/Callitris columellaris/111.png,167,42,0.999,1.6,False,True
+Callitris columellaris,test/Callitris columellaris/112__from-val__3cbca1d9.png,train/Callitris columellaris/113.png,262,30,0.998,-1.2,False,True
+Callitris columellaris,test/Callitris columellaris/112__from-val__3cbca1d9.png,train/Callitris columellaris/113__from-test__4a8fb286.png,10,34,1.0,-86.7,False,False
+Callitris columellaris,test/Callitris columellaris/112__from-val__3cbca1d9.png,train/Callitris columellaris/114__from-val__c982f8c9.png,33,28,0.994,-85.9,False,True
+Callitris columellaris,test/Callitris columellaris/112__from-val__3cbca1d9.png,train/Callitris columellaris/140__from-test__4594b2f9.png,212,30,0.991,-0.6,False,True
+Callitris columellaris,test/Callitris columellaris/112__from-val__3cbca1d9.png,train/Callitris columellaris/141__from-test__7fc14db3.png,74,34,0.989,-0.1,False,True
+Callitris columellaris,test/Callitris columellaris/112__from-val__3cbca1d9.png,train/Callitris columellaris/17.png,19,26,0.993,-87.6,False,False
+Callitris columellaris,test/Callitris columellaris/112__from-val__3cbca1d9.png,train/Callitris columellaris/197.png,18,30,0.995,-2.8,False,False
+Callitris columellaris,test/Callitris columellaris/112__from-val__3cbca1d9.png,val/Callitris columellaris/135.png,261,34,1.0,-1.7,False,True
+Callitris columellaris,test/Callitris columellaris/112__from-val__3cbca1d9.png,val/Callitris columellaris/139__from-val__2cb76975.png,62,24,0.992,-1.9,False,True
+Callitris columellaris,test/Callitris columellaris/115.png,train/Callitris columellaris/134__from-val__aae1835a.png,216,32,1.001,-2.6,False,True
+Callitris columellaris,test/Callitris columellaris/115.png,train/Callitris columellaris/136__from-test__b4dd4aa5.png,108,28,1.004,-1.0,False,True
+Callitris columellaris,test/Callitris columellaris/115.png,train/Callitris columellaris/137__from-val__8ee058f1.png,71,32,1.006,-1.7,False,True
+Callitris columellaris,test/Callitris columellaris/115.png,train/Callitris columellaris/16__from-test__f31ec144.png,137,28,0.993,5.4,False,True
+Callitris columellaris,test/Callitris columellaris/115.png,val/Callitris columellaris/135__from-test__76165962.png,217,24,1.001,-2.4,False,True
+Callitris columellaris,test/Callitris columellaris/115.png,val/Callitris columellaris/15.png,13,28,0.993,4.5,False,False
+Callitris columellaris,test/Callitris columellaris/115__from-val__b515b113.png,test/Callitris columellaris/196.png,25,38,0.999,85.1,False,False
+Callitris columellaris,test/Callitris columellaris/115__from-val__b515b113.png,train/Callitris columellaris/1102.png,21,36,1.002,96.3,False,False
+Callitris columellaris,test/Callitris columellaris/115__from-val__b515b113.png,train/Callitris columellaris/111.png,20,30,1.001,92.5,False,False
+Callitris columellaris,test/Callitris columellaris/115__from-val__b515b113.png,train/Callitris columellaris/114__from-val__c982f8c9.png,10,30,1.0,7.1,False,False
+Callitris columellaris,test/Callitris columellaris/115__from-val__b515b113.png,train/Callitris columellaris/140__from-test__4594b2f9.png,80,30,0.995,90.4,False,True
+Callitris columellaris,test/Callitris columellaris/115__from-val__b515b113.png,train/Callitris columellaris/141__from-test__7fc14db3.png,121,34,0.998,90.9,False,True
+Callitris columellaris,test/Callitris columellaris/115__from-val__b515b113.png,train/Callitris columellaris/142.png,32,30,0.994,91.5,False,True
+Callitris columellaris,test/Callitris columellaris/115__from-val__b515b113.png,train/Callitris columellaris/17.png,30,26,1.002,3.0,False,True
+Callitris columellaris,test/Callitris columellaris/115__from-val__b515b113.png,train/Callitris columellaris/197.png,27,34,1.0,88.0,False,False
+Callitris columellaris,test/Callitris columellaris/115__from-val__b515b113.png,val/Callitris columellaris/135.png,172,32,1.006,89.3,False,True
+Callitris columellaris,test/Callitris columellaris/127.png,train/Callitris columellaris/119__from-test__c18a8e71.png,23,34,1.001,90.9,False,False
+Callitris columellaris,test/Callitris columellaris/127.png,train/Callitris columellaris/121__from-test__7d68e0d3.png,130,32,0.998,0.9,False,True
+Callitris columellaris,test/Callitris columellaris/127.png,train/Callitris columellaris/182__from-val__24d4c685.png,32,30,0.99,2.5,False,True
+Callitris columellaris,test/Callitris columellaris/127.png,train/Callitris columellaris/189.png,159,34,0.991,1.9,False,True
+Callitris columellaris,test/Callitris columellaris/127.png,val/Callitris columellaris/122__from-test__e9edb2ae.png,104,30,0.999,5.6,False,True
+Callitris columellaris,test/Callitris columellaris/127.png,val/Callitris columellaris/126.png,175,32,1.001,1.0,False,True
+Callitris columellaris,test/Callitris columellaris/127.png,val/Callitris columellaris/128.png,105,26,1.001,-0.2,False,True
+Callitris columellaris,test/Callitris columellaris/127.png,val/Callitris columellaris/128__from-test__12efe5d9.png,178,42,1.004,90.5,False,True
+Callitris columellaris,test/Callitris columellaris/127.png,val/Callitris columellaris/190__from-test__d12db15c.png,81,32,0.987,2.8,False,True
+Callitris columellaris,test/Callitris columellaris/127__from-test__0ef75dcb.png,test/Callitris columellaris/132__from-val__8eb6cdbb.png,72,28,1.001,-0.5,False,True
+Callitris columellaris,test/Callitris columellaris/127__from-test__0ef75dcb.png,train/Callitris columellaris/117__from-test__58192eef.png,129,32,1.001,-1.8,False,True
+Callitris columellaris,test/Callitris columellaris/127__from-test__0ef75dcb.png,train/Callitris columellaris/118__from-test__a0c186bc.png,26,34,1.003,-1.7,False,False
+Callitris columellaris,test/Callitris columellaris/127__from-val__06c2f2ac.png,train/Callitris columellaris/1104.png,208,26,1.002,1.5,False,True
+Callitris columellaris,test/Callitris columellaris/127__from-val__06c2f2ac.png,train/Callitris columellaris/17__from-test__996e2bc5.png,230,32,0.999,6.5,False,True
+Callitris columellaris,test/Callitris columellaris/127__from-val__06c2f2ac.png,val/Callitris columellaris/128__from-val__7d4c5343.png,53,38,1.003,0.7,False,True
+Callitris columellaris,test/Callitris columellaris/132.png,train/Callitris columellaris/129__from-val__bb164646.png,12,32,1.009,-2.2,False,False
+Callitris columellaris,test/Callitris columellaris/132.png,train/Callitris columellaris/159.png,33,32,0.996,-3.7,False,True
+Callitris columellaris,test/Callitris columellaris/132.png,val/Callitris columellaris/169.png,62,34,0.997,1.5,False,True
+Callitris columellaris,test/Callitris columellaris/132__from-val__8eb6cdbb.png,train/Callitris columellaris/117__from-test__58192eef.png,310,26,1.001,-1.2,False,True
+Callitris columellaris,test/Callitris columellaris/132__from-val__8eb6cdbb.png,train/Callitris columellaris/118__from-test__a0c186bc.png,208,26,1.001,-1.1,False,True
+Callitris columellaris,test/Callitris columellaris/132__from-val__8eb6cdbb.png,train/Callitris columellaris/119.png,62,32,0.999,-1.6,False,True
+Callitris columellaris,test/Callitris columellaris/132__from-val__8eb6cdbb.png,train/Callitris columellaris/124__from-val__cba041e5.png,99,26,1.001,0.5,False,True
+Callitris columellaris,test/Callitris columellaris/132__from-val__8eb6cdbb.png,train/Callitris columellaris/134.png,28,34,0.999,1.0,False,False
+Callitris columellaris,test/Callitris columellaris/138.png,train/Callitris columellaris/1100__from-test__b3471df9.png,47,24,0.992,9.1,False,True
+Callitris columellaris,test/Callitris columellaris/138.png,train/Callitris columellaris/12.png,17,28,1.004,9.1,False,False
+Callitris columellaris,test/Callitris columellaris/138.png,train/Callitris columellaris/130.png,13,36,1.001,6.1,False,False
+Callitris columellaris,test/Callitris columellaris/138.png,train/Callitris columellaris/131.png,90,22,1.005,5.4,False,True
+Callitris columellaris,test/Callitris columellaris/138.png,val/Callitris columellaris/1106.png,92,30,0.998,4.8,False,True
+Callitris columellaris,test/Callitris columellaris/14.png,test/Callitris columellaris/165.png,10,36,0.992,-92.4,False,False
+Callitris columellaris,test/Callitris columellaris/14.png,train/Callitris columellaris/110__from-test__b0475143.png,33,26,0.997,-1.8,False,True
+Callitris columellaris,test/Callitris columellaris/14.png,train/Callitris columellaris/12__from-val__bd7ff236.png,508,28,1.001,3.6,False,True
+Callitris columellaris,test/Callitris columellaris/14.png,train/Callitris columellaris/13.png,574,26,1.0,-1.3,False,True
+Callitris columellaris,test/Callitris columellaris/14.png,train/Callitris columellaris/16.png,123,34,1.001,0.4,False,True
+Callitris columellaris,test/Callitris columellaris/14.png,train/Callitris columellaris/19__from-val__5e14930b.png,529,30,1.0,-2.6,False,True
+Callitris columellaris,test/Callitris columellaris/14.png,val/Callitris columellaris/15__from-val__b003c744.png,41,30,1.001,0.2,False,True
+Callitris columellaris,test/Callitris columellaris/144.png,train/Callitris columellaris/145.png,272,32,1.0,0.3,False,True
+Callitris columellaris,test/Callitris columellaris/144.png,train/Callitris columellaris/150.png,157,30,1.0,-4.2,False,True
+Callitris columellaris,test/Callitris columellaris/144.png,train/Callitris columellaris/160.png,34,30,1.01,92.6,False,True
+Callitris columellaris,test/Callitris columellaris/144.png,train/Callitris columellaris/163__from-test__d47f81f6.png,31,32,1.009,91.5,False,True
+Callitris columellaris,test/Callitris columellaris/144.png,train/Callitris columellaris/175__from-val__b2724d3b.png,59,34,1.008,90.3,False,True
+Callitris columellaris,test/Callitris columellaris/144.png,train/Callitris columellaris/176__from-test__461f7105.png,42,38,1.009,89.7,False,True
+Callitris columellaris,test/Callitris columellaris/144.png,train/Callitris columellaris/179.png,55,32,0.997,-1.6,False,True
+Callitris columellaris,test/Callitris columellaris/144.png,val/Callitris columellaris/151__from-val__6a4bce5e.png,334,34,1.0,-4.2,False,True
+Callitris columellaris,test/Callitris columellaris/144__from-val__d2fec060.png,train/Callitris columellaris/143.png,53,34,1.002,0.4,False,True
+Callitris columellaris,test/Callitris columellaris/148.png,train/Callitris columellaris/149.png,12,24,0.985,-0.3,False,False
+Callitris columellaris,test/Callitris columellaris/148.png,train/Callitris columellaris/155.png,23,36,1.007,2.2,False,False
+Callitris columellaris,test/Callitris columellaris/153.png,train/Callitris columellaris/152.png,93,34,1.001,-2.1,False,True
+Callitris columellaris,test/Callitris columellaris/153.png,train/Callitris columellaris/174.png,110,40,1.003,-4.1,False,True
+Callitris columellaris,test/Callitris columellaris/153.png,train/Callitris columellaris/175.png,50,36,1.0,-0.6,False,True
+Callitris columellaris,test/Callitris columellaris/153__from-test__8ea6613d.png,train/Callitris columellaris/146__from-val__935fa2f5.png,18,32,1.0,-3.6,False,False
+Callitris columellaris,test/Callitris columellaris/153__from-test__8ea6613d.png,train/Callitris columellaris/147__from-test__1d085063.png,151,30,1.0,-3.7,False,True
+Callitris columellaris,test/Callitris columellaris/153__from-test__8ea6613d.png,train/Callitris columellaris/152__from-test__c67365b0.png,16,26,0.994,-0.1,False,False
+Callitris columellaris,test/Callitris columellaris/153__from-test__8ea6613d.png,train/Callitris columellaris/179__from-val__c8749c15.png,63,26,0.997,-3.7,False,True
+Callitris columellaris,test/Callitris columellaris/153__from-test__8ea6613d.png,train/Callitris columellaris/181.png,91,26,0.997,-3.0,False,True
+Callitris columellaris,test/Callitris columellaris/153__from-test__8ea6613d.png,train/Callitris columellaris/182.png,34,26,0.999,-1.2,False,True
+Callitris columellaris,test/Callitris columellaris/162.png,test/Callitris columellaris/165__from-val__4e0827da.png,18,34,0.992,3.9,False,False
+Callitris columellaris,test/Callitris columellaris/162.png,train/Callitris columellaris/161.png,112,32,0.999,-0.2,False,True
+Callitris columellaris,test/Callitris columellaris/162.png,train/Callitris columellaris/191__from-val__78eb6909.png,19,30,0.994,0.8,False,False
+Callitris columellaris,test/Callitris columellaris/162.png,val/Callitris columellaris/190__from-val__24eaae71.png,41,36,0.999,-1.8,False,True
+Callitris columellaris,test/Callitris columellaris/162__from-test__ac827de2.png,train/Callitris columellaris/160__from-test__97905399.png,12,26,1.003,-9.5,False,False
+Callitris columellaris,test/Callitris columellaris/162__from-test__ac827de2.png,train/Callitris columellaris/170.png,24,38,1.004,-2.8,False,False
+Callitris columellaris,test/Callitris columellaris/162__from-test__ac827de2.png,train/Callitris columellaris/171__from-val__d3d0f738.png,29,26,1.001,-4.9,False,False
+Callitris columellaris,test/Callitris columellaris/162__from-test__ac827de2.png,train/Callitris columellaris/172__from-test__a160b3a4.png,31,34,1.0,-5.9,False,True
+Callitris columellaris,test/Callitris columellaris/162__from-test__ac827de2.png,val/Callitris columellaris/180.png,67,34,1.005,87.5,False,True
+Callitris columellaris,test/Callitris columellaris/165.png,train/Callitris columellaris/12__from-val__bd7ff236.png,16,34,1.007,95.9,False,False
+Callitris columellaris,test/Callitris columellaris/165.png,train/Callitris columellaris/13.png,13,28,1.011,91.1,False,False
+Callitris columellaris,test/Callitris columellaris/165.png,train/Callitris columellaris/164.png,162,32,1.002,-0.2,False,True
+Callitris columellaris,test/Callitris columellaris/165.png,train/Callitris columellaris/167__from-val__5b739dcd.png,13,32,0.996,-0.8,False,False
+Callitris columellaris,test/Callitris columellaris/165.png,train/Callitris columellaris/182__from-test__fb41945e.png,96,38,1.005,94.2,False,True
+Callitris columellaris,test/Callitris columellaris/165__from-val__4e0827da.png,train/Callitris columellaris/142__from-test__902bad9d.png,86,38,0.998,-0.7,False,True
+Callitris columellaris,test/Callitris columellaris/165__from-val__4e0827da.png,train/Callitris columellaris/191__from-val__78eb6909.png,230,26,1.0,-3.1,False,True
+Callitris columellaris,test/Callitris columellaris/165__from-val__4e0827da.png,train/Callitris columellaris/192.png,201,30,1.0,-2.7,False,True
+Callitris columellaris,test/Callitris columellaris/188__from-test__f5dfa516.png,test/Callitris columellaris/193__from-test__64a06b29.png,23,34,1.007,0.9,False,False
+Callitris columellaris,test/Callitris columellaris/188__from-test__f5dfa516.png,train/Callitris columellaris/1107__from-test__157fd3d5.png,16,30,1.003,8.7,False,False
+Callitris columellaris,test/Callitris columellaris/188__from-test__f5dfa516.png,train/Callitris columellaris/121__from-test__7d68e0d3.png,30,30,1.007,-90.9,False,True
+Callitris columellaris,test/Callitris columellaris/188__from-test__f5dfa516.png,train/Callitris columellaris/13__from-val__303e3302.png,21,32,1.001,-92.6,False,False
+Callitris columellaris,test/Callitris columellaris/188__from-test__f5dfa516.png,train/Callitris columellaris/186__from-val__fe651e1e.png,15,36,0.999,-0.6,False,False
+Callitris columellaris,test/Callitris columellaris/188__from-test__f5dfa516.png,train/Callitris columellaris/189__from-val__6bcfe17c.png,320,26,1.0,0.1,False,True
+Callitris columellaris,test/Callitris columellaris/188__from-test__f5dfa516.png,val/Callitris columellaris/122__from-test__e9edb2ae.png,26,30,1.006,-86.5,False,False
+Callitris columellaris,test/Callitris columellaris/188__from-test__f5dfa516.png,val/Callitris columellaris/128.png,14,26,1.005,-92.7,False,False
+Callitris columellaris,test/Callitris columellaris/188__from-test__f5dfa516.png,val/Callitris columellaris/128__from-test__12efe5d9.png,32,32,1.011,-1.2,False,True
+Callitris columellaris,test/Callitris columellaris/188__from-test__f5dfa516.png,val/Callitris columellaris/190.png,20,34,1.005,-0.3,False,False
+Callitris columellaris,test/Callitris columellaris/193.png,train/Callitris columellaris/121.png,98,24,1.015,86.2,False,True
+Callitris columellaris,test/Callitris columellaris/193.png,train/Callitris columellaris/124.png,14,26,1.015,-3.8,False,False
+Callitris columellaris,test/Callitris columellaris/193.png,train/Callitris columellaris/125.png,72,30,1.011,-5.0,False,True
+Callitris columellaris,test/Callitris columellaris/193__from-test__64a06b29.png,train/Callitris columellaris/1107__from-test__157fd3d5.png,155,34,1.001,9.0,False,True
+Callitris columellaris,test/Callitris columellaris/193__from-test__64a06b29.png,train/Callitris columellaris/121__from-test__7d68e0d3.png,14,30,0.999,-91.0,False,False
+Callitris columellaris,test/Callitris columellaris/193__from-test__64a06b29.png,train/Callitris columellaris/189.png,12,26,1.012,-90.7,False,False
+Callitris columellaris,test/Callitris columellaris/193__from-test__64a06b29.png,train/Callitris columellaris/189__from-val__6bcfe17c.png,18,28,1.001,-0.1,False,False
+Callitris columellaris,test/Callitris columellaris/193__from-test__64a06b29.png,val/Callitris columellaris/122__from-test__e9edb2ae.png,38,32,1.004,-87.4,False,True
+Callitris columellaris,test/Callitris columellaris/193__from-test__64a06b29.png,val/Callitris columellaris/128.png,22,30,0.996,-93.0,False,False
+Callitris columellaris,test/Callitris columellaris/193__from-val__af1879b2.png,test/Callitris columellaris/198__from-test__11871ea7.png,13,32,1.017,-3.2,False,False
+Callitris columellaris,test/Callitris columellaris/193__from-val__af1879b2.png,train/Callitris columellaris/166.png,137,24,1.001,-3.7,False,True
+Callitris columellaris,test/Callitris columellaris/193__from-val__af1879b2.png,train/Callitris columellaris/167.png,22,22,1.0,-2.3,False,False
+Callitris columellaris,test/Callitris columellaris/193__from-val__af1879b2.png,train/Callitris columellaris/171.png,33,28,1.003,-4.2,False,True
+Callitris columellaris,test/Callitris columellaris/196.png,train/Callitris columellaris/10__from-val__aa5ebc63.png,19,42,1.006,6.6,False,False
+Callitris columellaris,test/Callitris columellaris/196.png,train/Callitris columellaris/11.png,65,34,1.006,8.9,False,True
+Callitris columellaris,test/Callitris columellaris/196.png,train/Callitris columellaris/1102.png,17,28,1.002,11.5,False,False
+Callitris columellaris,test/Callitris columellaris/196.png,train/Callitris columellaris/111.png,21,38,1.007,7.2,False,False
+Callitris columellaris,test/Callitris columellaris/196.png,train/Callitris columellaris/113.png,17,28,1.002,4.4,False,False
+Callitris columellaris,test/Callitris columellaris/196.png,train/Callitris columellaris/114__from-val__c982f8c9.png,25,32,1.002,-80.5,False,False
+Callitris columellaris,test/Callitris columellaris/196.png,train/Callitris columellaris/140__from-test__4594b2f9.png,31,20,0.994,5.0,False,True
+Callitris columellaris,test/Callitris columellaris/196.png,train/Callitris columellaris/141__from-test__7fc14db3.png,14,28,0.997,5.6,False,False
+Callitris columellaris,test/Callitris columellaris/196.png,train/Callitris columellaris/197.png,327,28,0.999,2.6,False,True
+Callitris columellaris,test/Callitris columellaris/196.png,val/Callitris columellaris/135.png,18,36,1.006,3.9,False,False
+Callitris columellaris,test/Callitris columellaris/196.png,val/Callitris columellaris/139__from-val__2cb76975.png,15,34,1.0,3.9,False,False
+Callitris columellaris,test/Callitris columellaris/198__from-test__11871ea7.png,test/Callitris columellaris/199__from-val__b45c3492.png,224,28,1.0,1.1,False,True
+Callitris columellaris,test/Callitris columellaris/198__from-test__11871ea7.png,train/Callitris columellaris/133__from-val__44bed539.png,43,34,0.987,87.9,False,True
+Callitris columellaris,test/Callitris columellaris/198__from-test__11871ea7.png,train/Callitris columellaris/170.png,98,32,0.983,92.5,False,True
+Callitris columellaris,test/Callitris columellaris/198__from-test__11871ea7.png,train/Callitris columellaris/171__from-val__d3d0f738.png,86,30,0.984,90.3,False,True
+Callitris columellaris,test/Callitris columellaris/198__from-test__11871ea7.png,train/Callitris columellaris/172__from-test__a160b3a4.png,66,24,0.983,89.3,False,True
+Callitris columellaris,test/Callitris columellaris/198__from-test__11871ea7.png,val/Callitris columellaris/169.png,33,30,0.984,91.4,False,True
+Callitris columellaris,test/Callitris columellaris/199__from-val__b45c3492.png,train/Callitris columellaris/133__from-val__44bed539.png,45,22,0.985,86.4,False,True
+Callitris columellaris,test/Callitris columellaris/199__from-val__b45c3492.png,train/Callitris columellaris/166.png,17,34,0.995,-1.9,False,False
+Callitris columellaris,test/Callitris columellaris/199__from-val__b45c3492.png,train/Callitris columellaris/170.png,75,32,0.986,91.2,False,True
+Callitris columellaris,test/Callitris columellaris/199__from-val__b45c3492.png,train/Callitris columellaris/171__from-val__d3d0f738.png,50,32,0.985,89.1,False,True
+Callitris columellaris,test/Callitris columellaris/199__from-val__b45c3492.png,val/Callitris columellaris/169.png,89,34,0.987,90.3,False,True
+Callitris columellaris,train/Callitris columellaris/10.png,train/Callitris columellaris/119__from-test__c18a8e71.png,113,38,1.006,93.4,False,True
+Callitris columellaris,train/Callitris columellaris/10.png,train/Callitris columellaris/120.png,64,38,1.005,94.7,False,True
+Callitris columellaris,train/Callitris columellaris/10.png,train/Callitris columellaris/125.png,63,32,1.004,3.3,False,True
+Callitris columellaris,train/Callitris columellaris/10.png,train/Callitris columellaris/186__from-val__fe651e1e.png,27,32,1.003,94.1,False,False
+Callitris columellaris,train/Callitris columellaris/10.png,val/Callitris columellaris/126.png,32,32,1.004,4.0,False,True
+Callitris columellaris,train/Callitris columellaris/10__from-val__aa5ebc63.png,train/Callitris columellaris/11.png,160,40,1.001,2.2,False,True
+Callitris columellaris,train/Callitris columellaris/10__from-val__aa5ebc63.png,train/Callitris columellaris/113.png,106,32,1.002,-2.3,False,True
+Callitris columellaris,train/Callitris columellaris/10__from-val__aa5ebc63.png,train/Callitris columellaris/113__from-test__4a8fb286.png,35,38,0.99,-88.2,False,True
+Callitris columellaris,train/Callitris columellaris/10__from-val__aa5ebc63.png,train/Callitris columellaris/114__from-val__c982f8c9.png,25,20,0.998,-87.0,False,False
+Callitris columellaris,train/Callitris columellaris/10__from-val__aa5ebc63.png,train/Callitris columellaris/143__from-test__1e2d9808.png,61,32,0.992,0.9,False,True
+Callitris columellaris,train/Callitris columellaris/10__from-val__aa5ebc63.png,val/Callitris columellaris/139__from-val__2cb76975.png,35,32,0.996,-3.1,False,True
+Callitris columellaris,train/Callitris columellaris/11.png,train/Callitris columellaris/111.png,72,26,0.997,-1.8,False,True
+Callitris columellaris,train/Callitris columellaris/11.png,train/Callitris columellaris/113.png,142,24,0.999,-4.4,False,True
+Callitris columellaris,train/Callitris columellaris/11.png,train/Callitris columellaris/113__from-test__4a8fb286.png,20,28,1.003,-90.4,False,False
+Callitris columellaris,train/Callitris columellaris/11.png,train/Callitris columellaris/114__from-val__c982f8c9.png,22,38,1.0,-89.3,False,False
+Callitris columellaris,train/Callitris columellaris/11.png,train/Callitris columellaris/140__from-test__4594b2f9.png,78,28,0.991,-3.9,False,True
+Callitris columellaris,train/Callitris columellaris/11.png,train/Callitris columellaris/141__from-test__7fc14db3.png,23,34,0.992,-3.1,False,False
+Callitris columellaris,train/Callitris columellaris/11.png,train/Callitris columellaris/143__from-test__1e2d9808.png,17,38,0.989,-1.3,False,False
+Callitris columellaris,train/Callitris columellaris/11.png,train/Callitris columellaris/197.png,19,34,0.993,-6.3,False,False
+Callitris columellaris,train/Callitris columellaris/11.png,val/Callitris columellaris/135.png,64,32,1.001,-4.9,False,True
+Callitris columellaris,train/Callitris columellaris/11.png,val/Callitris columellaris/139__from-val__2cb76975.png,65,34,0.99,-5.2,False,True
+Callitris columellaris,train/Callitris columellaris/110.png,train/Callitris columellaris/142.png,10,38,0.963,89.6,False,False
+Callitris columellaris,train/Callitris columellaris/110.png,train/Callitris columellaris/17.png,32,28,1.002,1.4,False,True
+Callitris columellaris,train/Callitris columellaris/110.png,train/Callitris columellaris/18__from-val__0f9dedad.png,552,28,0.999,-0.3,False,True
+Callitris columellaris,train/Callitris columellaris/1100__from-test__b3471df9.png,train/Callitris columellaris/130.png,122,36,0.999,-2.7,False,True
+Callitris columellaris,train/Callitris columellaris/1100__from-test__b3471df9.png,train/Callitris columellaris/19.png,15,32,0.992,1.7,False,False
+Callitris columellaris,train/Callitris columellaris/1100__from-test__b3471df9.png,val/Callitris columellaris/1106.png,199,36,0.999,-4.0,False,True
+Callitris columellaris,train/Callitris columellaris/1101.png,train/Callitris columellaris/155__from-val__a77a393f.png,24,32,0.998,-2.8,False,False
+Callitris columellaris,train/Callitris columellaris/1101.png,train/Callitris columellaris/167.png,18,30,0.991,0.1,False,False
+Callitris columellaris,train/Callitris columellaris/1101.png,train/Callitris columellaris/173.png,21,26,0.986,88.6,False,False
+Callitris columellaris,train/Callitris columellaris/1101.png,train/Callitris columellaris/195.png,13,36,0.993,-5.5,False,False
+Callitris columellaris,train/Callitris columellaris/1101.png,val/Callitris columellaris/180.png,16,26,0.996,-177.4,False,False
+Callitris columellaris,train/Callitris columellaris/1102.png,train/Callitris columellaris/111.png,20,36,1.01,-3.9,False,False
+Callitris columellaris,train/Callitris columellaris/1102.png,train/Callitris columellaris/142.png,11,28,0.999,-4.9,False,False
+Callitris columellaris,train/Callitris columellaris/1102.png,train/Callitris columellaris/17.png,38,24,1.003,-93.2,False,True
+Callitris columellaris,train/Callitris columellaris/1102.png,train/Callitris columellaris/18__from-val__0f9dedad.png,11,30,1.008,-94.8,False,False
+Callitris columellaris,train/Callitris columellaris/1102.png,train/Callitris columellaris/197.png,196,32,0.999,-8.6,False,True
+Callitris columellaris,train/Callitris columellaris/1102__from-val__d1d5b6ab.png,val/Callitris columellaris/128__from-val__7d4c5343.png,35,30,0.999,-1.4,False,True
+Callitris columellaris,train/Callitris columellaris/1104.png,train/Callitris columellaris/17__from-test__996e2bc5.png,144,28,1.001,5.2,False,True
+Callitris columellaris,train/Callitris columellaris/1104__from-val__6d8b4b79.png,train/Callitris columellaris/1105.png,105,36,0.999,2.9,False,True
+Callitris columellaris,train/Callitris columellaris/1104__from-val__6d8b4b79.png,train/Callitris columellaris/1113.png,118,24,0.999,0.9,False,True
+Callitris columellaris,train/Callitris columellaris/1104__from-val__6d8b4b79.png,train/Callitris columellaris/133.png,12,30,0.997,-174.7,False,False
+Callitris columellaris,train/Callitris columellaris/1104__from-val__6d8b4b79.png,val/Callitris columellaris/139__from-test__72a88d8f.png,16,32,0.985,94.8,False,False
+Callitris columellaris,train/Callitris columellaris/1105.png,train/Callitris columellaris/1113.png,128,34,0.998,-1.9,False,True
+Callitris columellaris,train/Callitris columellaris/1105.png,train/Callitris columellaris/133.png,40,26,0.999,-177.9,False,True
+Callitris columellaris,train/Callitris columellaris/1105.png,train/Callitris columellaris/184__from-test__e69bf946.png,17,34,0.994,-170.6,False,False
+Callitris columellaris,train/Callitris columellaris/1105.png,val/Callitris columellaris/139__from-test__72a88d8f.png,16,34,0.985,91.8,False,False
+Callitris columellaris,train/Callitris columellaris/1107.png,train/Callitris columellaris/110__from-test__b0475143.png,99,34,0.998,-172.2,False,True
+Callitris columellaris,train/Callitris columellaris/1107.png,train/Callitris columellaris/1113.png,11,30,1.004,-0.8,False,False
+Callitris columellaris,train/Callitris columellaris/1107.png,train/Callitris columellaris/11__from-test__7ed9f3a1.png,20,30,1.002,-167.5,False,False
+Callitris columellaris,train/Callitris columellaris/1107.png,train/Callitris columellaris/16.png,49,30,0.994,-170.1,False,True
+Callitris columellaris,train/Callitris columellaris/1107.png,train/Callitris columellaris/168__from-test__84bf972d.png,70,30,0.995,6.9,False,True
+Callitris columellaris,train/Callitris columellaris/1107.png,train/Callitris columellaris/182__from-test__fb41945e.png,26,28,0.994,-168.8,False,False
+Callitris columellaris,train/Callitris columellaris/1107.png,train/Callitris columellaris/194__from-val__2872c5e2.png,42,34,0.992,2.1,False,True
+Callitris columellaris,train/Callitris columellaris/1107.png,val/Callitris columellaris/15__from-val__b003c744.png,54,30,0.996,-170.5,False,True
+Callitris columellaris,train/Callitris columellaris/1107__from-test__157fd3d5.png,train/Callitris columellaris/121__from-test__7d68e0d3.png,21,36,1.004,-100.7,False,False
+Callitris columellaris,train/Callitris columellaris/1107__from-test__157fd3d5.png,train/Callitris columellaris/13__from-val__303e3302.png,16,36,0.992,-101.7,False,False
+Callitris columellaris,train/Callitris columellaris/1107__from-test__157fd3d5.png,train/Callitris columellaris/189__from-val__6bcfe17c.png,37,32,0.99,-9.3,False,True
+Callitris columellaris,train/Callitris columellaris/1107__from-test__157fd3d5.png,val/Callitris columellaris/122__from-test__e9edb2ae.png,45,34,1.001,-96.2,False,True
+Callitris columellaris,train/Callitris columellaris/1107__from-test__157fd3d5.png,val/Callitris columellaris/128.png,38,26,1.0,-102.0,False,True
+Callitris columellaris,train/Callitris columellaris/1107__from-test__157fd3d5.png,val/Callitris columellaris/190.png,17,28,0.987,-10.4,False,False
+Callitris columellaris,train/Callitris columellaris/1109.png,train/Callitris columellaris/1113.png,75,26,0.996,2.6,False,True
+Callitris columellaris,train/Callitris columellaris/1109.png,train/Callitris columellaris/1114.png,486,34,0.998,-0.1,False,True
+Callitris columellaris,train/Callitris columellaris/1109.png,train/Callitris columellaris/157__from-val__09d46afe.png,278,28,0.995,6.7,False,True
+Callitris columellaris,train/Callitris columellaris/1109.png,train/Callitris columellaris/194__from-val__2872c5e2.png,21,34,0.995,5.8,False,False
+Callitris columellaris,train/Callitris columellaris/110__from-test__b0475143.png,train/Callitris columellaris/11__from-test__7ed9f3a1.png,114,36,1.0,5.0,False,True
+Callitris columellaris,train/Callitris columellaris/110__from-test__b0475143.png,train/Callitris columellaris/12__from-val__bd7ff236.png,26,38,1.0,5.4,False,False
+Callitris columellaris,train/Callitris columellaris/110__from-test__b0475143.png,train/Callitris columellaris/13.png,60,28,1.002,0.6,False,True
+Callitris columellaris,train/Callitris columellaris/110__from-test__b0475143.png,train/Callitris columellaris/16.png,393,26,1.001,2.1,False,True
+Callitris columellaris,train/Callitris columellaris/110__from-test__b0475143.png,train/Callitris columellaris/168__from-test__84bf972d.png,405,34,0.998,179.3,False,True
+Callitris columellaris,train/Callitris columellaris/110__from-test__b0475143.png,train/Callitris columellaris/194__from-val__2872c5e2.png,130,30,0.999,174.7,False,True
+Callitris columellaris,train/Callitris columellaris/110__from-test__b0475143.png,val/Callitris columellaris/15__from-val__b003c744.png,344,30,1.001,1.9,False,True
+Callitris columellaris,train/Callitris columellaris/111.png,train/Callitris columellaris/140__from-test__4594b2f9.png,72,26,0.991,-2.2,False,True
+Callitris columellaris,train/Callitris columellaris/111.png,train/Callitris columellaris/141__from-test__7fc14db3.png,62,36,0.991,-1.4,False,True
+Callitris columellaris,train/Callitris columellaris/111.png,train/Callitris columellaris/142.png,22,28,0.991,-1.1,False,False
+Callitris columellaris,train/Callitris columellaris/111.png,train/Callitris columellaris/17.png,105,32,0.994,-89.3,False,True
+Callitris columellaris,train/Callitris columellaris/111.png,train/Callitris columellaris/197.png,30,32,0.992,-4.8,False,True
+Callitris columellaris,train/Callitris columellaris/111.png,val/Callitris columellaris/135.png,114,34,1.001,-3.3,False,True
+Callitris columellaris,train/Callitris columellaris/111.png,val/Callitris columellaris/139__from-val__2cb76975.png,17,32,0.992,-3.7,False,False
+Callitris columellaris,train/Callitris columellaris/1110.png,train/Callitris columellaris/136.png,24,34,0.995,-171.3,False,False
+Callitris columellaris,train/Callitris columellaris/1110.png,train/Callitris columellaris/173__from-val__9db96401.png,34,28,0.997,6.5,False,True
+Callitris columellaris,train/Callitris columellaris/1110.png,val/Callitris columellaris/1111.png,35,28,0.996,2.4,False,True
+Callitris columellaris,train/Callitris columellaris/1113.png,train/Callitris columellaris/1114.png,204,32,1.002,-2.4,False,True
+Callitris columellaris,train/Callitris columellaris/1113.png,train/Callitris columellaris/133.png,40,26,1.0,-176.2,False,True
+Callitris columellaris,train/Callitris columellaris/1114.png,train/Callitris columellaris/157__from-val__09d46afe.png,143,36,0.997,6.8,False,True
+Callitris columellaris,train/Callitris columellaris/1114.png,train/Callitris columellaris/194__from-val__2872c5e2.png,37,38,0.996,6.0,False,True
+Callitris columellaris,train/Callitris columellaris/113.png,train/Callitris columellaris/113__from-test__4a8fb286.png,48,34,0.988,-85.8,True,True
+Callitris columellaris,train/Callitris columellaris/113.png,train/Callitris columellaris/114__from-val__c982f8c9.png,148,38,0.995,-84.7,False,True
+Callitris columellaris,train/Callitris columellaris/113.png,train/Callitris columellaris/140__from-test__4594b2f9.png,39,28,0.99,0.4,False,True
+Callitris columellaris,train/Callitris columellaris/113.png,train/Callitris columellaris/143__from-test__1e2d9808.png,49,38,0.993,3.1,False,True
+Callitris columellaris,train/Callitris columellaris/113.png,train/Callitris columellaris/187.png,11,28,0.988,-95.4,False,False
+Callitris columellaris,train/Callitris columellaris/113.png,val/Callitris columellaris/135.png,28,34,1.0,-0.4,False,False
+Callitris columellaris,train/Callitris columellaris/113.png,val/Callitris columellaris/139__from-val__2cb76975.png,61,32,0.994,-0.9,False,True
+Callitris columellaris,train/Callitris columellaris/113__from-test__4a8fb286.png,train/Callitris columellaris/114__from-val__c982f8c9.png,154,34,1.001,1.1,False,True
+Callitris columellaris,train/Callitris columellaris/113__from-test__4a8fb286.png,train/Callitris columellaris/143__from-test__1e2d9808.png,170,30,0.998,89.0,False,True
+Callitris columellaris,train/Callitris columellaris/113__from-test__4a8fb286.png,val/Callitris columellaris/139__from-val__2cb76975.png,79,28,1.0,84.9,False,True
+Callitris columellaris,train/Callitris columellaris/114.png,train/Callitris columellaris/134__from-val__aae1835a.png,11,30,1.01,-2.1,False,False
+Callitris columellaris,train/Callitris columellaris/114.png,val/Callitris columellaris/123.png,30,34,1.002,1.1,False,True
+Callitris columellaris,train/Callitris columellaris/114.png,val/Callitris columellaris/15.png,82,38,0.995,4.6,False,True
+Callitris columellaris,train/Callitris columellaris/114__from-val__c982f8c9.png,train/Callitris columellaris/140__from-test__4594b2f9.png,25,34,1.0,85.4,False,False
+Callitris columellaris,train/Callitris columellaris/114__from-val__c982f8c9.png,train/Callitris columellaris/143__from-test__1e2d9808.png,88,30,0.993,88.0,False,True
+Callitris columellaris,train/Callitris columellaris/114__from-val__c982f8c9.png,train/Callitris columellaris/187.png,15,30,0.988,-10.5,False,False
+Callitris columellaris,train/Callitris columellaris/114__from-val__c982f8c9.png,val/Callitris columellaris/135.png,11,24,1.008,84.7,False,False
+Callitris columellaris,train/Callitris columellaris/114__from-val__c982f8c9.png,val/Callitris columellaris/139__from-val__2cb76975.png,40,32,1.0,83.9,False,True
+Callitris columellaris,train/Callitris columellaris/117.png,train/Callitris columellaris/121__from-test__7d68e0d3.png,37,30,0.998,-96.7,False,True
+Callitris columellaris,train/Callitris columellaris/117.png,train/Callitris columellaris/13__from-val__303e3302.png,80,36,0.992,-98.2,False,True
+Callitris columellaris,train/Callitris columellaris/117.png,train/Callitris columellaris/182__from-val__24d4c685.png,14,36,0.98,-94.7,False,False
+Callitris columellaris,train/Callitris columellaris/117.png,train/Callitris columellaris/183.png,34,28,0.99,-93.5,False,True
+Callitris columellaris,train/Callitris columellaris/117.png,train/Callitris columellaris/189__from-val__6bcfe17c.png,10,30,0.991,-6.0,False,False
+Callitris columellaris,train/Callitris columellaris/117.png,val/Callitris columellaris/122__from-test__e9edb2ae.png,53,36,0.999,-92.0,False,True
+Callitris columellaris,train/Callitris columellaris/117.png,val/Callitris columellaris/128.png,40,34,0.995,-97.7,False,True
+Callitris columellaris,train/Callitris columellaris/117.png,val/Callitris columellaris/190.png,15,36,0.99,-6.3,False,False
+Callitris columellaris,train/Callitris columellaris/117__from-test__58192eef.png,train/Callitris columellaris/118__from-test__a0c186bc.png,526,30,1.0,0.1,False,True
+Callitris columellaris,train/Callitris columellaris/117__from-test__58192eef.png,train/Callitris columellaris/119.png,158,32,0.999,-0.4,False,True
+Callitris columellaris,train/Callitris columellaris/117__from-test__58192eef.png,train/Callitris columellaris/124__from-val__cba041e5.png,179,28,1.0,1.7,False,True
+Callitris columellaris,train/Callitris columellaris/117__from-test__58192eef.png,train/Callitris columellaris/134.png,48,32,0.999,2.3,False,True
+Callitris columellaris,train/Callitris columellaris/117__from-test__58192eef.png,val/Callitris columellaris/122.png,17,40,0.996,4.2,False,False
+Callitris columellaris,train/Callitris columellaris/118.png,train/Callitris columellaris/129__from-test__5dc60587.png,75,30,0.998,-3.1,False,True
+Callitris columellaris,train/Callitris columellaris/118.png,train/Callitris columellaris/18.png,41,28,0.999,3.5,False,True
+Callitris columellaris,train/Callitris columellaris/118__from-test__a0c186bc.png,train/Callitris columellaris/119.png,308,32,1.0,-0.6,False,True
+Callitris columellaris,train/Callitris columellaris/118__from-test__a0c186bc.png,train/Callitris columellaris/124__from-val__cba041e5.png,273,30,1.0,1.5,False,True
+Callitris columellaris,train/Callitris columellaris/118__from-test__a0c186bc.png,train/Callitris columellaris/134.png,145,34,0.999,2.1,False,True
+Callitris columellaris,train/Callitris columellaris/118__from-test__a0c186bc.png,val/Callitris columellaris/122.png,80,38,1.0,3.3,False,True
+Callitris columellaris,train/Callitris columellaris/119.png,train/Callitris columellaris/124__from-val__cba041e5.png,490,36,1.0,2.1,False,True
+Callitris columellaris,train/Callitris columellaris/119.png,train/Callitris columellaris/133.png,199,28,1.0,2.9,False,True
+Callitris columellaris,train/Callitris columellaris/119.png,train/Callitris columellaris/134.png,467,28,0.999,2.7,False,True
+Callitris columellaris,train/Callitris columellaris/119.png,train/Callitris columellaris/184__from-test__e69bf946.png,14,38,1.003,10.2,False,False
+Callitris columellaris,train/Callitris columellaris/119.png,train/Callitris columellaris/185__from-val__a49b5dd1.png,11,24,1.0,9.9,False,False
+Callitris columellaris,train/Callitris columellaris/119.png,val/Callitris columellaris/122.png,325,28,1.001,3.8,False,True
+Callitris columellaris,train/Callitris columellaris/119__from-test__c18a8e71.png,train/Callitris columellaris/120.png,109,32,0.996,1.4,False,True
+Callitris columellaris,train/Callitris columellaris/119__from-test__c18a8e71.png,train/Callitris columellaris/186__from-val__fe651e1e.png,49,34,0.992,0.7,False,True
+Callitris columellaris,train/Callitris columellaris/119__from-test__c18a8e71.png,val/Callitris columellaris/126.png,93,28,0.998,-89.5,False,True
+Callitris columellaris,train/Callitris columellaris/119__from-test__c18a8e71.png,val/Callitris columellaris/128__from-test__12efe5d9.png,102,26,1.004,0.1,False,True
+Callitris columellaris,train/Callitris columellaris/11__from-test__7ed9f3a1.png,train/Callitris columellaris/12__from-val__bd7ff236.png,35,30,0.999,0.3,False,True
+Callitris columellaris,train/Callitris columellaris/11__from-test__7ed9f3a1.png,train/Callitris columellaris/13.png,13,32,0.998,-4.7,False,False
+Callitris columellaris,train/Callitris columellaris/11__from-test__7ed9f3a1.png,train/Callitris columellaris/16.png,212,26,0.999,-3.0,False,True
+Callitris columellaris,train/Callitris columellaris/11__from-test__7ed9f3a1.png,train/Callitris columellaris/168__from-test__84bf972d.png,115,26,0.998,174.3,False,True
+Callitris columellaris,train/Callitris columellaris/11__from-test__7ed9f3a1.png,val/Callitris columellaris/15__from-val__b003c744.png,346,34,0.999,-3.2,False,True
+Callitris columellaris,train/Callitris columellaris/120.png,train/Callitris columellaris/125.png,132,32,0.996,-91.6,False,True
+Callitris columellaris,train/Callitris columellaris/120.png,val/Callitris columellaris/126.png,10,32,1.011,-92.1,False,False
+Callitris columellaris,train/Callitris columellaris/121.png,train/Callitris columellaris/125.png,59,30,0.996,-90.9,False,True
+Callitris columellaris,train/Callitris columellaris/121__from-test__7d68e0d3.png,train/Callitris columellaris/13__from-val__303e3302.png,174,42,0.993,-1.5,False,True
+Callitris columellaris,train/Callitris columellaris/121__from-test__7d68e0d3.png,train/Callitris columellaris/182__from-val__24d4c685.png,76,28,0.991,1.4,False,True
+Callitris columellaris,train/Callitris columellaris/121__from-test__7d68e0d3.png,train/Callitris columellaris/189.png,29,34,0.992,1.0,False,False
+Callitris columellaris,train/Callitris columellaris/121__from-test__7d68e0d3.png,train/Callitris columellaris/189__from-val__6bcfe17c.png,32,36,0.991,91.5,False,True
+Callitris columellaris,train/Callitris columellaris/121__from-test__7d68e0d3.png,val/Callitris columellaris/122__from-test__e9edb2ae.png,668,34,1.0,4.6,False,True
+Callitris columellaris,train/Callitris columellaris/121__from-test__7d68e0d3.png,val/Callitris columellaris/128.png,401,30,1.0,-1.2,False,True
+Callitris columellaris,train/Callitris columellaris/121__from-test__7d68e0d3.png,val/Callitris columellaris/128__from-test__12efe5d9.png,57,32,1.007,89.6,False,True
+Callitris columellaris,train/Callitris columellaris/121__from-test__7d68e0d3.png,val/Callitris columellaris/190__from-test__d12db15c.png,36,30,0.991,2.0,False,True
+Callitris columellaris,train/Callitris columellaris/124__from-val__cba041e5.png,train/Callitris columellaris/133.png,188,34,1.001,0.7,False,True
+Callitris columellaris,train/Callitris columellaris/124__from-val__cba041e5.png,train/Callitris columellaris/134.png,519,36,0.999,0.6,False,True
+Callitris columellaris,train/Callitris columellaris/124__from-val__cba041e5.png,val/Callitris columellaris/122.png,125,30,0.999,1.5,False,True
+Callitris columellaris,train/Callitris columellaris/125.png,val/Callitris columellaris/126.png,28,34,1.026,1.2,False,False
+Callitris columellaris,train/Callitris columellaris/129__from-test__5dc60587.png,train/Callitris columellaris/130.png,27,30,0.999,1.9,False,False
+Callitris columellaris,train/Callitris columellaris/129__from-test__5dc60587.png,train/Callitris columellaris/18.png,45,30,1.002,6.4,False,True
+Callitris columellaris,train/Callitris columellaris/129__from-test__5dc60587.png,train/Callitris columellaris/19.png,46,32,1.001,5.8,False,True
+Callitris columellaris,train/Callitris columellaris/129__from-val__bb164646.png,train/Callitris columellaris/130__from-val__7eecace4.png,175,18,0.991,1.3,False,True
+Callitris columellaris,train/Callitris columellaris/129__from-val__bb164646.png,train/Callitris columellaris/158.png,58,28,0.992,0.3,False,True
+Callitris columellaris,train/Callitris columellaris/12__from-val__bd7ff236.png,train/Callitris columellaris/13.png,721,28,0.999,-4.9,False,True
+Callitris columellaris,train/Callitris columellaris/12__from-val__bd7ff236.png,train/Callitris columellaris/16.png,228,26,0.998,-3.4,False,True
+Callitris columellaris,train/Callitris columellaris/12__from-val__bd7ff236.png,train/Callitris columellaris/19__from-val__5e14930b.png,263,30,1.0,-6.3,False,True
+Callitris columellaris,train/Callitris columellaris/12__from-val__bd7ff236.png,val/Callitris columellaris/15__from-val__b003c744.png,89,38,0.999,-3.5,False,True
+Callitris columellaris,train/Callitris columellaris/13.png,train/Callitris columellaris/16.png,264,30,1.0,1.5,False,True
+Callitris columellaris,train/Callitris columellaris/13.png,train/Callitris columellaris/19__from-val__5e14930b.png,319,32,1.0,-1.4,False,True
+Callitris columellaris,train/Callitris columellaris/13.png,val/Callitris columellaris/15__from-val__b003c744.png,95,34,1.0,1.4,False,True
+Callitris columellaris,train/Callitris columellaris/130.png,train/Callitris columellaris/19.png,66,32,0.998,4.3,False,True
+Callitris columellaris,train/Callitris columellaris/130__from-val__7eecace4.png,train/Callitris columellaris/158.png,43,30,1.0,-0.9,False,True
+Callitris columellaris,train/Callitris columellaris/131.png,val/Callitris columellaris/1106.png,70,30,0.998,-0.5,False,True
+Callitris columellaris,train/Callitris columellaris/133.png,train/Callitris columellaris/134.png,343,28,0.999,0.0,False,True
+Callitris columellaris,train/Callitris columellaris/133.png,train/Callitris columellaris/184__from-test__e69bf946.png,13,30,1.002,7.4,False,False
+Callitris columellaris,train/Callitris columellaris/133.png,train/Callitris columellaris/19__from-val__5e14930b.png,16,32,1.004,5.0,False,False
+Callitris columellaris,train/Callitris columellaris/133.png,val/Callitris columellaris/122.png,147,24,1.003,1.0,False,True
+Callitris columellaris,train/Callitris columellaris/133__from-val__44bed539.png,train/Callitris columellaris/170.png,154,28,1.001,4.6,False,True
+Callitris columellaris,train/Callitris columellaris/133__from-val__44bed539.png,train/Callitris columellaris/171__from-val__d3d0f738.png,132,26,1.002,2.6,False,True
+Callitris columellaris,train/Callitris columellaris/133__from-val__44bed539.png,train/Callitris columellaris/172__from-test__a160b3a4.png,129,34,1.001,1.3,False,True
+Callitris columellaris,train/Callitris columellaris/133__from-val__44bed539.png,val/Callitris columellaris/169.png,40,30,0.998,3.6,False,True
+Callitris columellaris,train/Callitris columellaris/134.png,train/Callitris columellaris/185__from-val__a49b5dd1.png,11,36,0.997,7.4,False,False
+Callitris columellaris,train/Callitris columellaris/134.png,val/Callitris columellaris/122.png,191,32,0.999,1.0,False,True
+Callitris columellaris,train/Callitris columellaris/134__from-val__aae1835a.png,train/Callitris columellaris/136__from-test__b4dd4aa5.png,103,28,1.002,1.7,False,True
+Callitris columellaris,train/Callitris columellaris/134__from-val__aae1835a.png,train/Callitris columellaris/137__from-val__8ee058f1.png,39,34,1.001,1.0,False,True
+Callitris columellaris,train/Callitris columellaris/134__from-val__aae1835a.png,train/Callitris columellaris/16__from-test__f31ec144.png,122,24,0.995,7.9,False,True
+Callitris columellaris,train/Callitris columellaris/134__from-val__aae1835a.png,val/Callitris columellaris/123.png,36,34,0.998,3.9,False,True
+Callitris columellaris,train/Callitris columellaris/134__from-val__aae1835a.png,val/Callitris columellaris/135__from-test__76165962.png,324,28,1.0,0.1,False,True
+Callitris columellaris,train/Callitris columellaris/134__from-val__aae1835a.png,val/Callitris columellaris/15.png,31,28,0.994,7.2,False,True
+Callitris columellaris,train/Callitris columellaris/136.png,train/Callitris columellaris/137.png,162,32,0.998,-2.1,False,True
+Callitris columellaris,train/Callitris columellaris/136.png,train/Callitris columellaris/173__from-val__9db96401.png,496,28,0.998,177.6,False,True
+Callitris columellaris,train/Callitris columellaris/136__from-test__b4dd4aa5.png,train/Callitris columellaris/137__from-val__8ee058f1.png,650,26,1.0,-0.7,False,True
+Callitris columellaris,train/Callitris columellaris/136__from-test__b4dd4aa5.png,val/Callitris columellaris/135__from-test__76165962.png,426,30,0.998,-1.4,False,True
+Callitris columellaris,train/Callitris columellaris/137.png,train/Callitris columellaris/173__from-val__9db96401.png,278,38,0.999,179.7,False,True
+Callitris columellaris,train/Callitris columellaris/137__from-val__8ee058f1.png,val/Callitris columellaris/135__from-test__76165962.png,314,28,0.998,-0.8,False,True
+Callitris columellaris,train/Callitris columellaris/13__from-val__303e3302.png,train/Callitris columellaris/182__from-val__24d4c685.png,99,32,0.993,3.0,False,True
+Callitris columellaris,train/Callitris columellaris/13__from-val__303e3302.png,train/Callitris columellaris/183.png,69,28,0.992,4.8,False,True
+Callitris columellaris,train/Callitris columellaris/13__from-val__303e3302.png,train/Callitris columellaris/189__from-val__6bcfe17c.png,44,32,0.995,93.0,False,True
+Callitris columellaris,train/Callitris columellaris/13__from-val__303e3302.png,val/Callitris columellaris/122__from-test__e9edb2ae.png,142,32,1.008,6.0,False,True
+Callitris columellaris,train/Callitris columellaris/13__from-val__303e3302.png,val/Callitris columellaris/128.png,118,32,1.008,0.3,False,True
+Callitris columellaris,train/Callitris columellaris/13__from-val__303e3302.png,val/Callitris columellaris/190.png,60,26,0.997,91.6,False,True
+Callitris columellaris,train/Callitris columellaris/140.png,train/Callitris columellaris/191.png,38,30,0.998,176.0,False,True
+Callitris columellaris,train/Callitris columellaris/140.png,val/Callitris columellaris/139.png,58,32,1.005,0.0,False,True
+Callitris columellaris,train/Callitris columellaris/140__from-test__4594b2f9.png,train/Callitris columellaris/141__from-test__7fc14db3.png,353,36,1.0,0.6,False,True
+Callitris columellaris,train/Callitris columellaris/140__from-test__4594b2f9.png,train/Callitris columellaris/142.png,39,26,0.999,1.4,False,True
+Callitris columellaris,train/Callitris columellaris/140__from-test__4594b2f9.png,train/Callitris columellaris/17.png,23,24,1.001,-87.0,False,False
+Callitris columellaris,train/Callitris columellaris/140__from-test__4594b2f9.png,val/Callitris columellaris/135.png,243,34,1.009,-1.0,False,True
+Callitris columellaris,train/Callitris columellaris/140__from-test__4594b2f9.png,val/Callitris columellaris/139__from-val__2cb76975.png,150,26,0.999,-1.3,False,True
+Callitris columellaris,train/Callitris columellaris/141.png,train/Callitris columellaris/167__from-test__f019f145.png,50,24,1.012,98.4,False,True
+Callitris columellaris,train/Callitris columellaris/141.png,train/Callitris columellaris/172__from-val__3f3ac912.png,26,30,1.007,92.2,False,False
+Callitris columellaris,train/Callitris columellaris/141.png,train/Callitris columellaris/184__from-test__e69bf946.png,67,36,1.009,97.8,False,True
+Callitris columellaris,train/Callitris columellaris/141.png,train/Callitris columellaris/185__from-val__a49b5dd1.png,141,32,1.007,97.4,False,True
+Callitris columellaris,train/Callitris columellaris/141.png,val/Callitris columellaris/139__from-test__72a88d8f.png,126,28,0.997,0.1,False,True
+Callitris columellaris,train/Callitris columellaris/141.png,val/Callitris columellaris/169__from-test__870c9f33.png,110,34,1.009,94.5,False,True
+Callitris columellaris,train/Callitris columellaris/141__from-test__7fc14db3.png,train/Callitris columellaris/142.png,294,34,1.0,0.6,False,True
+Callitris columellaris,train/Callitris columellaris/141__from-test__7fc14db3.png,train/Callitris columellaris/17.png,68,36,1.001,-87.8,False,True
+Callitris columellaris,train/Callitris columellaris/141__from-test__7fc14db3.png,train/Callitris columellaris/197.png,20,22,0.999,-3.1,False,False
+Callitris columellaris,train/Callitris columellaris/141__from-test__7fc14db3.png,val/Callitris columellaris/135.png,256,30,1.008,-1.7,False,True
+Callitris columellaris,train/Callitris columellaris/141__from-test__7fc14db3.png,val/Callitris columellaris/139__from-val__2cb76975.png,24,32,1.0,-1.9,False,False
+Callitris columellaris,train/Callitris columellaris/142.png,train/Callitris columellaris/17.png,38,26,1.003,-88.2,False,True
+Callitris columellaris,train/Callitris columellaris/142.png,train/Callitris columellaris/18__from-val__0f9dedad.png,21,34,1.009,-90.4,False,False
+Callitris columellaris,train/Callitris columellaris/142.png,val/Callitris columellaris/135.png,49,28,1.007,-2.3,False,True
+Callitris columellaris,train/Callitris columellaris/142__from-test__902bad9d.png,train/Callitris columellaris/164__from-test__783a7624.png,10,38,1.003,-1.1,False,False
+Callitris columellaris,train/Callitris columellaris/142__from-test__902bad9d.png,train/Callitris columellaris/191__from-val__78eb6909.png,57,38,1.003,-2.5,False,True
+Callitris columellaris,train/Callitris columellaris/142__from-test__902bad9d.png,train/Callitris columellaris/192.png,89,24,1.003,-2.0,False,True
+Callitris columellaris,train/Callitris columellaris/143__from-test__1e2d9808.png,train/Callitris columellaris/17__from-val__659dee2a.png,10,30,1.003,-4.0,False,False
+Callitris columellaris,train/Callitris columellaris/143__from-test__1e2d9808.png,val/Callitris columellaris/139__from-val__2cb76975.png,80,34,1.002,-3.8,False,True
+Callitris columellaris,train/Callitris columellaris/145.png,train/Callitris columellaris/150.png,375,32,1.0,-4.5,False,True
+Callitris columellaris,train/Callitris columellaris/145.png,train/Callitris columellaris/163__from-test__d47f81f6.png,82,26,1.007,91.2,False,True
+Callitris columellaris,train/Callitris columellaris/145.png,train/Callitris columellaris/175__from-val__b2724d3b.png,16,28,1.006,89.9,False,False
+Callitris columellaris,train/Callitris columellaris/145.png,train/Callitris columellaris/176__from-test__461f7105.png,40,30,1.01,89.3,False,True
+Callitris columellaris,train/Callitris columellaris/145.png,train/Callitris columellaris/179.png,61,30,0.995,-2.1,False,True
+Callitris columellaris,train/Callitris columellaris/145.png,val/Callitris columellaris/151__from-val__6a4bce5e.png,298,30,1.0,-4.5,False,True
+Callitris columellaris,train/Callitris columellaris/145__from-test__bcca80a1.png,train/Callitris columellaris/146__from-val__935fa2f5.png,36,34,1.0,1.3,False,True
+Callitris columellaris,train/Callitris columellaris/145__from-test__bcca80a1.png,train/Callitris columellaris/179__from-val__c8749c15.png,12,38,0.996,1.3,False,False
+Callitris columellaris,train/Callitris columellaris/145__from-test__bcca80a1.png,val/Callitris columellaris/178.png,34,28,1.0,1.4,False,True
+Callitris columellaris,train/Callitris columellaris/146__from-test__1fe9e703.png,train/Callitris columellaris/147.png,316,38,1.001,0.3,False,True
+Callitris columellaris,train/Callitris columellaris/146__from-test__1fe9e703.png,train/Callitris columellaris/163__from-test__d47f81f6.png,43,34,1.009,92.8,False,True
+Callitris columellaris,train/Callitris columellaris/146__from-val__935fa2f5.png,train/Callitris columellaris/179__from-val__c8749c15.png,337,34,0.997,-0.1,False,True
+Callitris columellaris,train/Callitris columellaris/147__from-test__1d085063.png,train/Callitris columellaris/179__from-val__c8749c15.png,24,30,0.997,0.3,False,False
+Callitris columellaris,train/Callitris columellaris/147__from-test__1d085063.png,train/Callitris columellaris/181.png,56,34,0.996,0.9,False,True
+Callitris columellaris,train/Callitris columellaris/147__from-test__1d085063.png,train/Callitris columellaris/182.png,32,34,0.997,2.6,False,True
+Callitris columellaris,train/Callitris columellaris/149.png,train/Callitris columellaris/155.png,25,24,1.008,3.6,False,False
+Callitris columellaris,train/Callitris columellaris/150.png,train/Callitris columellaris/163__from-test__d47f81f6.png,147,36,1.005,95.8,False,True
+Callitris columellaris,train/Callitris columellaris/150.png,train/Callitris columellaris/176__from-test__461f7105.png,66,34,1.008,93.9,False,True
+Callitris columellaris,train/Callitris columellaris/150.png,train/Callitris columellaris/177.png,52,24,1.008,93.2,False,True
+Callitris columellaris,train/Callitris columellaris/150.png,train/Callitris columellaris/179.png,77,28,0.999,2.6,False,True
+Callitris columellaris,train/Callitris columellaris/150.png,val/Callitris columellaris/151__from-val__6a4bce5e.png,181,34,1.0,0.0,False,True
+Callitris columellaris,train/Callitris columellaris/150__from-test__1bdbefd7.png,train/Callitris columellaris/158.png,17,28,0.993,-91.6,False,False
+Callitris columellaris,train/Callitris columellaris/150__from-test__1bdbefd7.png,val/Callitris columellaris/151.png,44,30,1.0,-1.4,False,True
+Callitris columellaris,train/Callitris columellaris/150__from-val__8876b233.png,train/Callitris columellaris/152__from-test__c67365b0.png,11,28,0.991,3.5,False,False
+Callitris columellaris,train/Callitris columellaris/150__from-val__8876b233.png,train/Callitris columellaris/159__from-val__f0d4d690.png,349,32,0.999,2.3,False,True
+Callitris columellaris,train/Callitris columellaris/150__from-val__8876b233.png,train/Callitris columellaris/163.png,15,28,0.995,4.5,False,False
+Callitris columellaris,train/Callitris columellaris/150__from-val__8876b233.png,train/Callitris columellaris/182.png,30,26,0.994,2.5,False,True
+Callitris columellaris,train/Callitris columellaris/152.png,train/Callitris columellaris/154__from-test__76e92e67.png,108,36,1.001,1.9,False,True
+Callitris columellaris,train/Callitris columellaris/152.png,train/Callitris columellaris/172.png,47,26,1.0,-2.6,False,True
+Callitris columellaris,train/Callitris columellaris/152.png,train/Callitris columellaris/174.png,10,30,1.005,-1.9,False,False
+Callitris columellaris,train/Callitris columellaris/152__from-test__c67365b0.png,train/Callitris columellaris/159__from-val__f0d4d690.png,54,24,1.003,-1.1,False,True
+Callitris columellaris,train/Callitris columellaris/152__from-test__c67365b0.png,train/Callitris columellaris/163.png,58,30,1.001,1.2,False,True
+Callitris columellaris,train/Callitris columellaris/152__from-test__c67365b0.png,train/Callitris columellaris/181.png,114,30,0.998,-2.9,False,True
+Callitris columellaris,train/Callitris columellaris/152__from-test__c67365b0.png,train/Callitris columellaris/182.png,195,28,0.998,-1.0,False,True
+Callitris columellaris,train/Callitris columellaris/154.png,train/Callitris columellaris/155__from-val__a77a393f.png,571,36,0.997,-1.6,False,True
+Callitris columellaris,train/Callitris columellaris/154.png,train/Callitris columellaris/171.png,170,34,0.997,-1.0,False,True
+Callitris columellaris,train/Callitris columellaris/154.png,train/Callitris columellaris/176__from-val__005463a2.png,438,30,0.999,-2.0,False,True
+Callitris columellaris,train/Callitris columellaris/154.png,train/Callitris columellaris/195.png,11,30,0.993,-4.4,False,False
+Callitris columellaris,train/Callitris columellaris/154.png,val/Callitris columellaris/156.png,352,24,0.999,-1.0,False,True
+Callitris columellaris,train/Callitris columellaris/154__from-test__76e92e67.png,train/Callitris columellaris/172.png,266,30,1.0,-4.5,False,True
+Callitris columellaris,train/Callitris columellaris/154__from-test__76e92e67.png,train/Callitris columellaris/181__from-test__0d3a2f06.png,17,32,1.009,-2.3,False,False
+Callitris columellaris,train/Callitris columellaris/155__from-val__a77a393f.png,train/Callitris columellaris/167.png,56,34,0.997,2.8,False,True
+Callitris columellaris,train/Callitris columellaris/155__from-val__a77a393f.png,train/Callitris columellaris/171.png,118,30,1.001,0.7,False,True
+Callitris columellaris,train/Callitris columellaris/155__from-val__a77a393f.png,train/Callitris columellaris/176__from-val__005463a2.png,357,24,1.002,-0.4,False,True
+Callitris columellaris,train/Callitris columellaris/155__from-val__a77a393f.png,train/Callitris columellaris/195.png,84,26,0.998,-2.8,False,True
+Callitris columellaris,train/Callitris columellaris/155__from-val__a77a393f.png,val/Callitris columellaris/156.png,364,36,1.002,0.6,False,True
+Callitris columellaris,train/Callitris columellaris/157.png,train/Callitris columellaris/168.png,22,20,0.993,-1.4,False,False
+Callitris columellaris,train/Callitris columellaris/157.png,train/Callitris columellaris/185.png,17,32,1.007,1.0,False,False
+Callitris columellaris,train/Callitris columellaris/157__from-val__09d46afe.png,train/Callitris columellaris/194__from-val__2872c5e2.png,97,36,0.996,-0.9,False,True
+Callitris columellaris,train/Callitris columellaris/158__from-test__638e3c8a.png,train/Callitris columellaris/168.png,23,34,0.999,3.5,False,False
+Callitris columellaris,train/Callitris columellaris/159.png,val/Callitris columellaris/169.png,80,34,0.999,5.0,False,True
+Callitris columellaris,train/Callitris columellaris/159__from-val__f0d4d690.png,train/Callitris columellaris/181.png,19,32,0.995,-1.6,False,False
+Callitris columellaris,train/Callitris columellaris/159__from-val__f0d4d690.png,train/Callitris columellaris/182.png,159,36,0.996,0.3,False,True
+Callitris columellaris,train/Callitris columellaris/16.png,train/Callitris columellaris/168__from-test__84bf972d.png,177,40,0.998,177.3,False,True
+Callitris columellaris,train/Callitris columellaris/16.png,train/Callitris columellaris/194__from-val__2872c5e2.png,10,36,0.998,172.5,False,False
+Callitris columellaris,train/Callitris columellaris/16.png,val/Callitris columellaris/15__from-val__b003c744.png,466,36,1.0,-0.2,False,True
+Callitris columellaris,train/Callitris columellaris/160.png,train/Callitris columellaris/175__from-val__b2724d3b.png,40,34,1.0,-2.4,False,True
+Callitris columellaris,train/Callitris columellaris/160.png,val/Callitris columellaris/151__from-val__6a4bce5e.png,30,28,0.995,-96.8,False,True
+Callitris columellaris,train/Callitris columellaris/160.png,val/Callitris columellaris/169__from-test__870c9f33.png,11,32,0.998,2.4,False,False
+Callitris columellaris,train/Callitris columellaris/160__from-test__97905399.png,train/Callitris columellaris/170.png,36,30,1.0,6.8,False,True
+Callitris columellaris,train/Callitris columellaris/160__from-test__97905399.png,train/Callitris columellaris/171__from-val__d3d0f738.png,28,36,0.998,4.7,False,False
+Callitris columellaris,train/Callitris columellaris/160__from-test__97905399.png,val/Callitris columellaris/169.png,32,30,1.002,5.8,False,True
+Callitris columellaris,train/Callitris columellaris/161.png,val/Callitris columellaris/190__from-val__24eaae71.png,28,24,0.998,-1.8,False,False
+Callitris columellaris,train/Callitris columellaris/163.png,train/Callitris columellaris/182.png,10,36,0.991,0.3,False,False
+Callitris columellaris,train/Callitris columellaris/163__from-test__d47f81f6.png,train/Callitris columellaris/177.png,124,28,0.996,-2.4,False,True
+Callitris columellaris,train/Callitris columellaris/163__from-test__d47f81f6.png,val/Callitris columellaris/151__from-val__6a4bce5e.png,28,32,0.997,-95.9,False,False
+Callitris columellaris,train/Callitris columellaris/164.png,train/Callitris columellaris/167__from-val__5b739dcd.png,51,32,0.99,-0.6,False,True
+Callitris columellaris,train/Callitris columellaris/164.png,train/Callitris columellaris/182__from-test__fb41945e.png,161,28,1.005,94.4,False,True
+Callitris columellaris,train/Callitris columellaris/164__from-test__783a7624.png,train/Callitris columellaris/192.png,36,30,1.0,-0.6,False,True
+Callitris columellaris,train/Callitris columellaris/164__from-test__783a7624.png,train/Callitris columellaris/194.png,52,40,1.0,3.7,False,True
+Callitris columellaris,train/Callitris columellaris/166.png,val/Callitris columellaris/178.png,162,28,1.005,-3.0,False,True
+Callitris columellaris,train/Callitris columellaris/167.png,train/Callitris columellaris/195.png,308,34,0.999,-5.7,False,True
+Callitris columellaris,train/Callitris columellaris/167__from-test__f019f145.png,train/Callitris columellaris/172__from-val__3f3ac912.png,29,26,0.986,-3.3,False,False
+Callitris columellaris,train/Callitris columellaris/167__from-test__f019f145.png,train/Callitris columellaris/184__from-test__e69bf946.png,137,28,0.998,-0.8,False,True
+Callitris columellaris,train/Callitris columellaris/167__from-test__f019f145.png,train/Callitris columellaris/185__from-val__a49b5dd1.png,58,32,0.998,-0.8,False,True
+Callitris columellaris,train/Callitris columellaris/167__from-test__f019f145.png,val/Callitris columellaris/139__from-test__72a88d8f.png,23,32,0.99,-98.0,False,False
+Callitris columellaris,train/Callitris columellaris/167__from-test__f019f145.png,val/Callitris columellaris/169__from-test__870c9f33.png,91,36,0.998,-4.0,False,True
+Callitris columellaris,train/Callitris columellaris/167__from-val__5b739dcd.png,train/Callitris columellaris/173.png,156,36,1.0,-0.5,False,True
+Callitris columellaris,train/Callitris columellaris/167__from-val__5b739dcd.png,train/Callitris columellaris/182__from-test__fb41945e.png,66,30,1.006,95.8,False,True
+Callitris columellaris,train/Callitris columellaris/168__from-test__84bf972d.png,train/Callitris columellaris/194__from-val__2872c5e2.png,325,26,1.001,-4.7,False,True
+Callitris columellaris,train/Callitris columellaris/168__from-test__84bf972d.png,val/Callitris columellaris/15__from-val__b003c744.png,308,32,1.001,-177.4,False,True
+Callitris columellaris,train/Callitris columellaris/16__from-test__f31ec144.png,val/Callitris columellaris/135__from-test__76165962.png,52,24,1.007,-7.8,False,True
+Callitris columellaris,train/Callitris columellaris/16__from-test__f31ec144.png,val/Callitris columellaris/15.png,116,30,1.0,-0.4,False,True
+Callitris columellaris,train/Callitris columellaris/17.png,train/Callitris columellaris/18__from-val__0f9dedad.png,46,20,0.999,-1.6,False,True
+Callitris columellaris,train/Callitris columellaris/17.png,train/Callitris columellaris/197.png,20,36,0.996,84.6,False,False
+Callitris columellaris,train/Callitris columellaris/17.png,val/Callitris columellaris/135.png,54,32,1.007,86.1,False,True
+Callitris columellaris,train/Callitris columellaris/170.png,train/Callitris columellaris/171__from-val__d3d0f738.png,671,30,1.0,-2.1,False,True
+Callitris columellaris,train/Callitris columellaris/170.png,train/Callitris columellaris/172__from-test__a160b3a4.png,303,30,0.999,-3.2,False,True
+Callitris columellaris,train/Callitris columellaris/170.png,val/Callitris columellaris/169.png,135,34,1.001,-1.0,False,True
+Callitris columellaris,train/Callitris columellaris/171.png,train/Callitris columellaris/176__from-val__005463a2.png,53,30,1.002,-1.2,False,True
+Callitris columellaris,train/Callitris columellaris/171.png,val/Callitris columellaris/156.png,17,32,1.005,-0.3,False,False
+Callitris columellaris,train/Callitris columellaris/171__from-val__d3d0f738.png,train/Callitris columellaris/172__from-test__a160b3a4.png,346,24,1.0,-1.1,False,True
+Callitris columellaris,train/Callitris columellaris/171__from-val__d3d0f738.png,val/Callitris columellaris/169.png,90,28,1.001,1.1,False,True
+Callitris columellaris,train/Callitris columellaris/172__from-test__a160b3a4.png,val/Callitris columellaris/169.png,25,30,1.0,2.0,False,False
+Callitris columellaris,train/Callitris columellaris/172__from-test__a160b3a4.png,val/Callitris columellaris/180.png,37,30,1.007,93.2,False,True
+Callitris columellaris,train/Callitris columellaris/172__from-val__3f3ac912.png,train/Callitris columellaris/184__from-test__e69bf946.png,20,22,1.01,-0.2,False,False
+Callitris columellaris,train/Callitris columellaris/172__from-val__3f3ac912.png,train/Callitris columellaris/185__from-val__a49b5dd1.png,50,28,1.002,5.2,False,True
+Callitris columellaris,train/Callitris columellaris/172__from-val__3f3ac912.png,val/Callitris columellaris/169__from-test__870c9f33.png,21,36,0.998,2.1,False,False
+Callitris columellaris,train/Callitris columellaris/173.png,train/Callitris columellaris/182__from-test__fb41945e.png,12,36,1.017,96.7,False,False
+Callitris columellaris,train/Callitris columellaris/174.png,train/Callitris columellaris/175.png,212,28,0.998,3.4,False,True
+Callitris columellaris,train/Callitris columellaris/174.png,train/Callitris columellaris/181__from-test__0d3a2f06.png,20,36,0.998,1.9,False,False
+Callitris columellaris,train/Callitris columellaris/174__from-test__714f108c.png,val/Callitris columellaris/1112.png,29,32,1.007,-5.4,False,False
+Callitris columellaris,train/Callitris columellaris/175.png,train/Callitris columellaris/176.png,186,28,1.001,0.1,False,True
+Callitris columellaris,train/Callitris columellaris/175__from-val__b2724d3b.png,train/Callitris columellaris/176__from-test__461f7105.png,396,34,1.0,-0.5,False,True
+Callitris columellaris,train/Callitris columellaris/175__from-val__b2724d3b.png,train/Callitris columellaris/179.png,190,30,0.99,-91.9,False,True
+Callitris columellaris,train/Callitris columellaris/175__from-val__b2724d3b.png,val/Callitris columellaris/1112.png,30,32,1.005,172.1,False,True
+Callitris columellaris,train/Callitris columellaris/175__from-val__b2724d3b.png,val/Callitris columellaris/151__from-val__6a4bce5e.png,94,22,0.993,-94.4,False,True
+Callitris columellaris,train/Callitris columellaris/176__from-test__461f7105.png,train/Callitris columellaris/177.png,39,22,0.997,-0.9,False,True
+Callitris columellaris,train/Callitris columellaris/176__from-test__461f7105.png,train/Callitris columellaris/179.png,322,30,0.989,-91.4,False,True
+Callitris columellaris,train/Callitris columellaris/176__from-test__461f7105.png,val/Callitris columellaris/1112.png,70,26,1.004,172.4,False,True
+Callitris columellaris,train/Callitris columellaris/176__from-test__461f7105.png,val/Callitris columellaris/151__from-val__6a4bce5e.png,110,30,0.994,-94.0,False,True
+Callitris columellaris,train/Callitris columellaris/176__from-val__005463a2.png,train/Callitris columellaris/195.png,11,26,0.999,-2.3,False,False
+Callitris columellaris,train/Callitris columellaris/176__from-val__005463a2.png,val/Callitris columellaris/156.png,457,30,1.0,1.0,False,True
+Callitris columellaris,train/Callitris columellaris/177.png,train/Callitris columellaris/179.png,10,34,0.994,-90.7,False,False
+Callitris columellaris,train/Callitris columellaris/177.png,val/Callitris columellaris/1111.png,75,32,1.003,170.8,False,True
+Callitris columellaris,train/Callitris columellaris/177.png,val/Callitris columellaris/1112.png,11,24,1.008,173.1,False,False
+Callitris columellaris,train/Callitris columellaris/179.png,val/Callitris columellaris/1112.png,26,32,1.013,-96.1,False,False
+Callitris columellaris,train/Callitris columellaris/179.png,val/Callitris columellaris/151__from-val__6a4bce5e.png,140,30,1.003,-2.6,False,True
+Callitris columellaris,train/Callitris columellaris/17__from-test__996e2bc5.png,val/Callitris columellaris/128__from-val__7d4c5343.png,29,30,1.001,-5.7,False,False
+Callitris columellaris,train/Callitris columellaris/17__from-val__659dee2a.png,val/Callitris columellaris/116.png,21,32,1.001,-1.9,False,False
+Callitris columellaris,train/Callitris columellaris/18.png,val/Callitris columellaris/128__from-val__7d4c5343.png,46,32,0.999,-6.2,False,True
+Callitris columellaris,train/Callitris columellaris/181.png,train/Callitris columellaris/182.png,341,32,1.001,1.9,False,True
+Callitris columellaris,train/Callitris columellaris/182__from-val__24d4c685.png,train/Callitris columellaris/183.png,22,30,1.004,2.8,False,False
+Callitris columellaris,train/Callitris columellaris/182__from-val__24d4c685.png,train/Callitris columellaris/189__from-val__6bcfe17c.png,10,32,1.0,90.0,False,False
+Callitris columellaris,train/Callitris columellaris/182__from-val__24d4c685.png,val/Callitris columellaris/122__from-test__e9edb2ae.png,41,28,1.009,3.1,False,True
+Callitris columellaris,train/Callitris columellaris/182__from-val__24d4c685.png,val/Callitris columellaris/128.png,65,32,1.009,-2.8,False,True
+Callitris columellaris,train/Callitris columellaris/182__from-val__24d4c685.png,val/Callitris columellaris/190.png,10,34,0.996,88.5,False,False
+Callitris columellaris,train/Callitris columellaris/182__from-val__24d4c685.png,val/Callitris columellaris/190__from-test__d12db15c.png,28,24,0.997,0.8,False,False
+Callitris columellaris,train/Callitris columellaris/183.png,train/Callitris columellaris/184.png,219,32,0.998,0.4,False,True
+Callitris columellaris,train/Callitris columellaris/183.png,val/Callitris columellaris/116.png,15,20,1.006,93.8,False,False
+Callitris columellaris,train/Callitris columellaris/183.png,val/Callitris columellaris/190.png,20,26,1.002,87.6,False,False
+Callitris columellaris,train/Callitris columellaris/184.png,train/Callitris columellaris/185__from-test__78bcae18.png,297,22,1.0,-0.3,False,True
+Callitris columellaris,train/Callitris columellaris/184.png,train/Callitris columellaris/186.png,65,30,1.001,-1.3,False,True
+Callitris columellaris,train/Callitris columellaris/184.png,val/Callitris columellaris/116.png,30,30,1.018,93.0,False,True
+Callitris columellaris,train/Callitris columellaris/184__from-test__e69bf946.png,train/Callitris columellaris/185__from-val__a49b5dd1.png,99,38,0.996,-0.4,False,True
+Callitris columellaris,train/Callitris columellaris/184__from-test__e69bf946.png,val/Callitris columellaris/122.png,16,32,1.004,-6.3,False,False
+Callitris columellaris,train/Callitris columellaris/184__from-test__e69bf946.png,val/Callitris columellaris/139__from-test__72a88d8f.png,96,36,0.989,-97.8,False,True
+Callitris columellaris,train/Callitris columellaris/185__from-test__78bcae18.png,train/Callitris columellaris/186.png,291,28,0.997,-0.9,False,True
+Callitris columellaris,train/Callitris columellaris/185__from-val__a49b5dd1.png,val/Callitris columellaris/139__from-test__72a88d8f.png,85,32,0.991,-97.4,False,True
+Callitris columellaris,train/Callitris columellaris/185__from-val__a49b5dd1.png,val/Callitris columellaris/169__from-test__870c9f33.png,119,30,1.002,-2.9,False,True
+Callitris columellaris,train/Callitris columellaris/186.png,train/Callitris columellaris/187.png,61,26,1.003,0.8,False,True
+Callitris columellaris,train/Callitris columellaris/186__from-val__fe651e1e.png,val/Callitris columellaris/128__from-test__12efe5d9.png,18,34,1.007,-1.0,False,False
+Callitris columellaris,train/Callitris columellaris/189.png,val/Callitris columellaris/122__from-test__e9edb2ae.png,36,24,1.006,3.5,False,True
+Callitris columellaris,train/Callitris columellaris/189.png,val/Callitris columellaris/126.png,41,28,1.009,-1.0,False,True
+Callitris columellaris,train/Callitris columellaris/189.png,val/Callitris columellaris/128.png,47,40,1.009,-2.2,False,True
+Callitris columellaris,train/Callitris columellaris/189.png,val/Callitris columellaris/128__from-test__12efe5d9.png,49,38,1.01,88.3,False,True
+Callitris columellaris,train/Callitris columellaris/189.png,val/Callitris columellaris/190__from-test__d12db15c.png,402,32,0.998,0.9,False,True
+Callitris columellaris,train/Callitris columellaris/189__from-val__6bcfe17c.png,val/Callitris columellaris/122__from-test__e9edb2ae.png,25,32,1.003,-86.8,False,False
+Callitris columellaris,train/Callitris columellaris/189__from-val__6bcfe17c.png,val/Callitris columellaris/128.png,20,26,1.006,-92.7,False,False
+Callitris columellaris,train/Callitris columellaris/189__from-val__6bcfe17c.png,val/Callitris columellaris/190.png,162,36,1.001,-0.5,False,True
+Callitris columellaris,train/Callitris columellaris/191__from-val__78eb6909.png,train/Callitris columellaris/192.png,189,26,1.0,0.4,False,True
+Callitris columellaris,train/Callitris columellaris/191__from-val__78eb6909.png,val/Callitris columellaris/190__from-val__24eaae71.png,27,34,1.004,-2.8,False,False
+Callitris columellaris,train/Callitris columellaris/194__from-val__2872c5e2.png,val/Callitris columellaris/15__from-val__b003c744.png,17,40,1.004,-172.8,False,False
+Callitris columellaris,train/Callitris columellaris/195.png,val/Callitris columellaris/156.png,67,36,1.004,3.1,False,True
+Callitris columellaris,train/Callitris columellaris/197.png,val/Callitris columellaris/135.png,27,26,1.008,1.4,False,False
+Callitris columellaris,train/Callitris columellaris/19__from-val__5e14930b.png,val/Callitris columellaris/122.png,22,28,1.007,-2.9,False,False
+Callitris columellaris,val/Callitris columellaris/1111.png,val/Callitris columellaris/1112.png,19,34,1.003,2.4,False,False
+Callitris columellaris,val/Callitris columellaris/122__from-test__e9edb2ae.png,val/Callitris columellaris/128.png,555,22,1.0,-5.9,False,True
+Callitris columellaris,val/Callitris columellaris/122__from-test__e9edb2ae.png,val/Callitris columellaris/128__from-test__12efe5d9.png,33,30,1.008,85.1,False,True
+Callitris columellaris,val/Callitris columellaris/122__from-test__e9edb2ae.png,val/Callitris columellaris/190__from-test__d12db15c.png,68,26,0.991,-2.7,False,True
+Callitris columellaris,val/Callitris columellaris/126.png,val/Callitris columellaris/128__from-test__12efe5d9.png,70,34,1.001,89.3,False,True
+Callitris columellaris,val/Callitris columellaris/126.png,val/Callitris columellaris/190__from-test__d12db15c.png,14,26,0.994,0.8,False,False
+Callitris columellaris,val/Callitris columellaris/128.png,val/Callitris columellaris/128__from-test__12efe5d9.png,17,30,1.01,91.2,True,False
+Callitris columellaris,val/Callitris columellaris/128.png,val/Callitris columellaris/190__from-test__d12db15c.png,117,32,0.991,3.3,False,True
+Callitris columellaris,val/Callitris columellaris/128__from-test__12efe5d9.png,val/Callitris columellaris/190__from-test__d12db15c.png,16,38,0.977,-87.9,False,False
+Callitris columellaris,val/Callitris columellaris/135.png,val/Callitris columellaris/139__from-val__2cb76975.png,35,30,0.991,-0.3,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/10.png,train/Cunninghamia lanceolata/11.png,94,28,0.993,-3.1,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/10.png,train/Cunninghamia lanceolata/11__from-val__979242aa.png,27,26,0.993,-89.4,False,False
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/110.png,val/Cunninghamia lanceolata/112__from-test__76a334a1.png,11,36,0.993,89.9,False,False
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/110__from-test__5b86b018.png,train/Cunninghamia lanceolata/115.png,165,28,1.001,-89.4,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/113.png,train/Cunninghamia lanceolata/123__from-test__e00710c4.png,33,30,0.981,3.7,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/113.png,val/Cunninghamia lanceolata/112.png,12,28,0.975,-87.9,False,False
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/113__from-val__091ca36d.png,train/Cunninghamia lanceolata/124__from-val__f062be1b.png,37,34,1.0,-92.0,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/120.png,train/Cunninghamia lanceolata/116.png,372,40,1.001,1.7,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/120.png,train/Cunninghamia lanceolata/122.png,539,32,1.002,-85.9,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/120.png,train/Cunninghamia lanceolata/129__from-val__1aaf580b.png,74,24,1.0,-0.3,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/120.png,train/Cunninghamia lanceolata/18__from-val__4f504d7f.png,38,34,0.998,-8.8,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/120.png,val/Cunninghamia lanceolata/117__from-val__96c9e7f1.png,11,28,0.989,1.0,False,False
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/120__from-val__020ef0b4.png,train/Cunninghamia lanceolata/182.png,273,34,0.995,2.4,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/120__from-val__020ef0b4.png,val/Cunninghamia lanceolata/119__from-val__1ac17c39.png,168,26,1.003,-95.0,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/133.png,train/Cunninghamia lanceolata/132.png,21,30,0.997,-0.9,False,False
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/133.png,train/Cunninghamia lanceolata/134.png,21,34,0.995,-91.8,False,False
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/133__from-test__2b166407.png,train/Cunninghamia lanceolata/144__from-test__f04d5159.png,36,36,0.995,-1.3,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/138.png,train/Cunninghamia lanceolata/132.png,20,38,1.0,4.1,False,False
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/138__from-val__e5e1865d.png,train/Cunninghamia lanceolata/139__from-val__e1fcb385.png,20,38,1.005,0.1,False,False
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/138__from-val__e5e1865d.png,train/Cunninghamia lanceolata/153.png,10,30,0.99,90.4,False,False
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/156.png,train/Cunninghamia lanceolata/158.png,13,34,0.999,-87.3,False,False
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/16.png,train/Cunninghamia lanceolata/15.png,69,32,0.998,-5.6,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/16.png,val/Cunninghamia lanceolata/17__from-val__84dccac4.png,28,34,1.003,-1.3,False,False
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/16__from-val__98d74a4d.png,train/Cunninghamia lanceolata/18__from-val__4f504d7f.png,90,30,1.0,83.8,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/16__from-val__98d74a4d.png,val/Cunninghamia lanceolata/117.png,135,22,1.0,2.9,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/171__from-test__b6a0030b.png,train/Cunninghamia lanceolata/170__from-test__0722cde7.png,156,32,1.003,90.2,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/171__from-test__b6a0030b.png,train/Cunninghamia lanceolata/172__from-val__8e780353.png,39,30,0.999,1.0,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/171__from-test__b6a0030b.png,train/Cunninghamia lanceolata/173.png,13,32,1.004,-0.6,False,False
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/174__from-test__8b69b6d4.png,train/Cunninghamia lanceolata/164.png,60,24,1.002,-91.1,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/174__from-test__8b69b6d4.png,train/Cunninghamia lanceolata/165__from-val__1d0f8c3b.png,22,34,1.006,-91.9,False,False
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/174__from-test__8b69b6d4.png,val/Cunninghamia lanceolata/162__from-val__4bb98b30.png,10,34,1.003,2.8,False,False
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/174__from-test__8b69b6d4.png,val/Cunninghamia lanceolata/176__from-val__cc4a56f4.png,331,36,1.001,-91.3,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/174__from-val__3cc28a2f.png,train/Cunninghamia lanceolata/143.png,31,34,1.0,-93.9,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/174__from-val__3cc28a2f.png,train/Cunninghamia lanceolata/154.png,499,38,1.0,-5.3,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/174__from-val__3cc28a2f.png,train/Cunninghamia lanceolata/155.png,111,30,1.001,-3.1,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/184.png,train/Cunninghamia lanceolata/116__from-test__863ede90.png,37,26,1.022,-0.8,False,True
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/184.png,train/Cunninghamia lanceolata/116__from-val__730ecde8.png,19,36,1.011,-90.9,False,False
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/185.png,train/Cunninghamia lanceolata/116__from-test__863ede90.png,17,36,1.0,1.0,False,False
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/185.png,train/Cunninghamia lanceolata/118__from-test__f997871e.png,21,30,1.0,2.6,False,False
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/19.png,train/Cunninghamia lanceolata/18.png,16,28,0.998,-7.3,False,False
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/19__from-test__5275ec17.png,train/Cunninghamia lanceolata/115__from-test__307438ca.png,17,26,1.001,90.9,False,False
+Cunninghamia lanceolata,test/Cunninghamia lanceolata/19__from-test__5275ec17.png,train/Cunninghamia lanceolata/116__from-test__863ede90.png,72,36,0.998,90.5,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/11.png,train/Cunninghamia lanceolata/11__from-val__979242aa.png,238,30,0.997,-86.0,True,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/111.png,train/Cunninghamia lanceolata/114__from-test__ccace5d2.png,109,26,1.0,91.7,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/111.png,val/Cunninghamia lanceolata/112.png,192,30,0.996,1.4,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/114.png,train/Cunninghamia lanceolata/121.png,71,30,1.001,88.4,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/114.png,train/Cunninghamia lanceolata/123__from-test__e00710c4.png,193,34,0.999,93.2,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/114__from-test__ccace5d2.png,train/Cunninghamia lanceolata/115__from-test__307438ca.png,46,28,0.994,-1.6,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/114__from-test__ccace5d2.png,train/Cunninghamia lanceolata/121.png,71,32,1.0,-2.7,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/114__from-test__ccace5d2.png,train/Cunninghamia lanceolata/123__from-test__e00710c4.png,11,30,1.004,2.3,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/114__from-val__f17b306e.png,train/Cunninghamia lanceolata/122__from-test__4926aeda.png,545,22,1.0,-2.5,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/114__from-val__f17b306e.png,train/Cunninghamia lanceolata/124__from-val__f062be1b.png,54,32,1.004,-91.7,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/114__from-val__f17b306e.png,train/Cunninghamia lanceolata/126__from-test__5963e544.png,351,36,0.996,-4.9,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/114__from-val__f17b306e.png,val/Cunninghamia lanceolata/125__from-test__52862d0b.png,44,32,0.996,-2.4,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/115.png,val/Cunninghamia lanceolata/17.png,95,30,0.996,-0.8,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/116.png,train/Cunninghamia lanceolata/122.png,205,32,1.001,-87.6,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/116.png,train/Cunninghamia lanceolata/129__from-val__1aaf580b.png,13,34,0.999,-1.6,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/116.png,train/Cunninghamia lanceolata/18__from-val__4f504d7f.png,314,26,0.998,-10.4,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/116.png,val/Cunninghamia lanceolata/117__from-val__96c9e7f1.png,18,38,0.994,-1.2,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/118__from-test__f997871e.png,train/Cunninghamia lanceolata/183.png,99,34,0.991,3.0,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/11__from-test__147ad9cf.png,train/Cunninghamia lanceolata/12.png,34,32,0.996,-2.5,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/121.png,train/Cunninghamia lanceolata/123__from-test__e00710c4.png,283,34,0.999,4.9,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/121__from-test__ce19488f.png,train/Cunninghamia lanceolata/129__from-val__1aaf580b.png,114,36,0.999,89.8,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/121__from-test__ce19488f.png,val/Cunninghamia lanceolata/117__from-val__96c9e7f1.png,56,30,0.986,89.3,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/121__from-test__ce19488f.png,val/Cunninghamia lanceolata/119.png,75,36,1.001,1.2,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/121__from-val__6c03f62d.png,train/Cunninghamia lanceolata/126__from-val__136db19e.png,128,26,1.002,90.3,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/121__from-val__6c03f62d.png,train/Cunninghamia lanceolata/129__from-test__0be663d5.png,212,38,0.999,88.0,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/121__from-val__6c03f62d.png,val/Cunninghamia lanceolata/125__from-val__81e1b6c2.png,30,28,0.997,91.3,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/122.png,train/Cunninghamia lanceolata/129__from-val__1aaf580b.png,109,32,1.001,85.8,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/122__from-test__4926aeda.png,train/Cunninghamia lanceolata/124__from-val__f062be1b.png,41,30,1.007,-89.0,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/122__from-test__4926aeda.png,train/Cunninghamia lanceolata/126__from-test__5963e544.png,486,28,0.996,-2.3,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/122__from-test__4926aeda.png,val/Cunninghamia lanceolata/125__from-test__52862d0b.png,44,38,0.993,0.3,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/122__from-val__327666e3.png,train/Cunninghamia lanceolata/127.png,199,34,1.0,92.6,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/122__from-val__327666e3.png,val/Cunninghamia lanceolata/125__from-val__81e1b6c2.png,60,40,1.0,94.9,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/123.png,val/Cunninghamia lanceolata/146__from-test__53c781bf.png,137,28,1.0,1.1,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/124.png,val/Cunninghamia lanceolata/125.png,50,34,1.004,5.4,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/124__from-val__f062be1b.png,train/Cunninghamia lanceolata/126__from-test__5963e544.png,27,28,0.995,87.0,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/124__from-val__f062be1b.png,val/Cunninghamia lanceolata/125__from-test__52862d0b.png,121,32,0.998,89.5,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/126__from-test__5963e544.png,train/Cunninghamia lanceolata/127__from-val__30afd756.png,11,30,1.005,3.7,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/126__from-test__5963e544.png,val/Cunninghamia lanceolata/125__from-test__52862d0b.png,44,34,1.0,2.5,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/126__from-val__136db19e.png,train/Cunninghamia lanceolata/129__from-test__0be663d5.png,552,38,1.0,-2.3,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/126__from-val__136db19e.png,val/Cunninghamia lanceolata/131__from-val__46461d8c.png,62,34,0.996,-1.2,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/127.png,val/Cunninghamia lanceolata/125__from-val__81e1b6c2.png,135,26,0.999,2.2,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/127__from-val__30afd756.png,val/Cunninghamia lanceolata/176.png,160,30,1.0,0.8,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/129.png,train/Cunninghamia lanceolata/179.png,232,28,0.989,87.5,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/129.png,val/Cunninghamia lanceolata/128.png,25,30,1.0,-1.9,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/129__from-test__0be663d5.png,val/Cunninghamia lanceolata/131__from-val__46461d8c.png,44,34,0.996,1.1,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/12__from-test__e7dec03d.png,train/Cunninghamia lanceolata/14__from-test__0ed88e74.png,18,26,0.992,81.4,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/12__from-test__e7dec03d.png,val/Cunninghamia lanceolata/13__from-val__97b90c8c.png,291,34,0.998,87.6,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/132.png,train/Cunninghamia lanceolata/134.png,44,32,0.997,-91.0,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/132__from-test__b5ed478f.png,train/Cunninghamia lanceolata/178.png,224,30,0.998,90.1,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/132__from-val__a0afc8b2.png,train/Cunninghamia lanceolata/180.png,119,26,0.981,4.6,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/134__from-val__8a0192b7.png,val/Cunninghamia lanceolata/135.png,136,34,0.996,5.9,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/136.png,val/Cunninghamia lanceolata/135__from-val__8efd84e0.png,13,34,0.999,94.9,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/136__from-test__4ef83d90.png,val/Cunninghamia lanceolata/128.png,19,30,1.0,-90.5,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/136__from-val__2a6d984e.png,val/Cunninghamia lanceolata/135.png,10,26,0.989,-2.6,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/137.png,train/Cunninghamia lanceolata/178.png,10,30,1.005,-3.0,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/137__from-val__787f98ce.png,train/Cunninghamia lanceolata/154__from-test__aeec7453.png,95,28,1.003,89.7,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/139__from-test__2a1cf1c6.png,val/Cunninghamia lanceolata/176__from-test__245381cc.png,94,30,1.013,1.0,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/139__from-val__e1fcb385.png,train/Cunninghamia lanceolata/153.png,144,30,0.993,90.2,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/139__from-val__e1fcb385.png,train/Cunninghamia lanceolata/153__from-val__aee86f57.png,19,32,0.999,86.6,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/14.png,train/Cunninghamia lanceolata/15__from-val__6d0a1d70.png,163,28,1.0,88.0,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/14.png,val/Cunninghamia lanceolata/13.png,10,32,0.99,4.2,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/140__from-test__56c8c19d.png,val/Cunninghamia lanceolata/176__from-test__245381cc.png,10,32,1.01,0.8,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/141.png,train/Cunninghamia lanceolata/149.png,45,26,0.997,0.5,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/142.png,train/Cunninghamia lanceolata/151.png,191,28,0.999,-85.9,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/143.png,train/Cunninghamia lanceolata/150__from-test__ea222134.png,34,28,1.008,91.5,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/143.png,train/Cunninghamia lanceolata/154.png,31,30,0.999,88.0,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/143.png,train/Cunninghamia lanceolata/155.png,95,26,0.999,90.3,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/143__from-test__3439982e.png,train/Cunninghamia lanceolata/177.png,220,26,1.003,-86.7,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/144.png,train/Cunninghamia lanceolata/154__from-val__aad8250a.png,13,32,1.011,1.8,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/144.png,train/Cunninghamia lanceolata/157.png,10,26,1.018,89.2,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/144__from-test__f04d5159.png,val/Cunninghamia lanceolata/131.png,455,26,1.006,3.5,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/144__from-val__377a94e8.png,train/Cunninghamia lanceolata/145.png,12,32,1.005,-95.7,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/147__from-test__1c8eda2e.png,train/Cunninghamia lanceolata/153.png,115,28,0.996,91.4,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/14__from-test__0ed88e74.png,val/Cunninghamia lanceolata/13.png,35,32,1.001,-78.4,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/150.png,train/Cunninghamia lanceolata/160__from-val__34ca8c98.png,185,32,1.0,89.1,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/150__from-test__ea222134.png,train/Cunninghamia lanceolata/155.png,105,30,1.0,-0.5,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/150__from-test__ea222134.png,train/Cunninghamia lanceolata/175.png,12,26,0.996,3.3,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/150__from-val__2e4b36f1.png,train/Cunninghamia lanceolata/151__from-val__27436418.png,12,32,1.001,-2.9,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/151__from-test__b13a2826.png,val/Cunninghamia lanceolata/152.png,12,36,0.999,0.8,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/153.png,train/Cunninghamia lanceolata/153__from-val__aee86f57.png,13,34,0.999,-3.8,True,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/153.png,val/Cunninghamia lanceolata/146.png,16,30,1.007,-92.1,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/154.png,train/Cunninghamia lanceolata/155.png,81,32,1.0,2.3,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/154__from-val__aad8250a.png,train/Cunninghamia lanceolata/157.png,420,32,0.993,87.7,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/154__from-val__aad8250a.png,train/Cunninghamia lanceolata/158__from-val__3340bd44.png,84,30,0.999,90.3,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/154__from-val__aad8250a.png,val/Cunninghamia lanceolata/146.png,81,28,0.998,-0.0,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/157.png,train/Cunninghamia lanceolata/158__from-val__3340bd44.png,163,32,1.005,2.6,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/157.png,val/Cunninghamia lanceolata/146.png,126,34,1.006,-87.8,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/157__from-val__06cfc23a.png,train/Cunninghamia lanceolata/163__from-val__707fc01b.png,36,32,0.998,-7.3,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/158__from-val__3340bd44.png,train/Cunninghamia lanceolata/175__from-test__aa286414.png,74,26,1.004,-91.3,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/160__from-test__d490a248.png,train/Cunninghamia lanceolata/170.png,116,30,0.992,89.7,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/163.png,train/Cunninghamia lanceolata/163__from-val__707fc01b.png,37,26,1.009,-5.3,True,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/163.png,train/Cunninghamia lanceolata/168__from-test__c8de964a.png,142,22,0.991,-1.7,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/164.png,val/Cunninghamia lanceolata/176__from-val__cc4a56f4.png,92,32,1.001,-0.2,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/164__from-val__1085283c.png,train/Cunninghamia lanceolata/167__from-val__8497f236.png,193,30,0.992,92.4,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/164__from-val__1085283c.png,train/Cunninghamia lanceolata/169.png,20,38,1.006,91.3,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/165.png,val/Cunninghamia lanceolata/162.png,178,32,0.994,7.0,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/165__from-val__1d0f8c3b.png,val/Cunninghamia lanceolata/176__from-val__cc4a56f4.png,34,30,0.997,0.6,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/166.png,train/Cunninghamia lanceolata/167.png,78,30,1.002,-92.0,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/166__from-val__f1b4bfbc.png,train/Cunninghamia lanceolata/172.png,183,32,1.013,-4.4,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/167.png,train/Cunninghamia lanceolata/168.png,71,28,0.999,0.2,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/167__from-test__19f476b8.png,train/Cunninghamia lanceolata/168__from-test__c8de964a.png,187,32,1.002,88.1,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/169__from-test__c180acdc.png,train/Cunninghamia lanceolata/170__from-test__0722cde7.png,13,28,1.005,0.3,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/169__from-test__c180acdc.png,train/Cunninghamia lanceolata/170__from-val__8c409621.png,98,32,1.0,-89.7,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/170__from-test__0722cde7.png,train/Cunninghamia lanceolata/170__from-val__8c409621.png,23,26,0.997,-90.2,True,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/172__from-val__8e780353.png,train/Cunninghamia lanceolata/173.png,139,28,1.002,-1.7,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/179.png,val/Cunninghamia lanceolata/128.png,56,26,1.007,-89.7,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/179.png,val/Cunninghamia lanceolata/131__from-val__46461d8c.png,25,36,1.007,1.5,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/181.png,val/Cunninghamia lanceolata/119__from-val__1ac17c39.png,22,34,1.021,-96.9,False,False
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/182.png,val/Cunninghamia lanceolata/119__from-val__1ac17c39.png,111,32,1.008,-97.6,False,True
+Cunninghamia lanceolata,train/Cunninghamia lanceolata/18__from-val__4f504d7f.png,val/Cunninghamia lanceolata/117__from-val__96c9e7f1.png,55,34,0.999,8.9,False,True
+Cunninghamia lanceolata,val/Cunninghamia lanceolata/117__from-val__96c9e7f1.png,val/Cunninghamia lanceolata/119.png,27,30,0.998,-88.2,False,False
+Cunninghamia lanceolata,val/Cunninghamia lanceolata/128.png,val/Cunninghamia lanceolata/131__from-val__46461d8c.png,208,30,0.994,90.8,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu104.png,train/Fokienia hodginsii/pơ mu103.png,304,30,1.001,-0.4,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu104.png,train/Fokienia hodginsii/pơmu24__from-test__458f9daf.png,10,34,0.995,6.0,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu109.png,test/Fokienia hodginsii/pơ mu46.png,100,32,1.003,6.3,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu109.png,train/Fokienia hodginsii/pơ mu41.png,175,26,0.998,12.8,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu109.png,train/Fokienia hodginsii/pơ mu42.png,250,28,1.001,9.2,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu109.png,train/Fokienia hodginsii/pơ mu47.png,27,34,1.006,5.0,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu24.png,train/Fokienia hodginsii/pơ mu20.png,45,28,0.997,-6.3,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu24.png,train/Fokienia hodginsii/pơmu65.png,11,34,1.0,90.4,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu3.png,test/Fokienia hodginsii/pơ mu4.png,156,32,0.998,-7.9,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu34.png,test/Fokienia hodginsii/pơ mu39.png,11,28,1.002,2.8,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu34.png,train/Fokienia hodginsii/pơ mu38.png,54,30,1.002,-0.1,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu34.png,train/Fokienia hodginsii/pơmu88.png,42,36,0.994,4.3,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu34.png,val/Fokienia hodginsii/pơ mu35.png,108,38,1.0,-0.7,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu34.png,val/Fokienia hodginsii/pơmu62.png,12,38,1.001,92.8,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu39.png,train/Fokienia hodginsii/pơ mu36.png,12,34,1.008,1.6,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu39.png,train/Fokienia hodginsii/pơ mu38.png,249,30,1.001,-2.4,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu39.png,train/Fokienia hodginsii/pơ mu40.png,214,32,1.0,0.9,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu39.png,train/Fokienia hodginsii/pơ mu42.png,42,32,0.997,2.6,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu39.png,val/Fokienia hodginsii/pơ mu35.png,26,30,0.996,-3.6,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu4.png,train/Fokienia hodginsii/pơ mu5.png,105,30,1.0,-2.4,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu46.png,train/Fokienia hodginsii/pơ mu47.png,143,26,1.001,-1.4,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu46.png,train/Fokienia hodginsii/pơmu81__from-test__c1c48a18.png,21,32,0.994,-4.8,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu46.png,val/Fokienia hodginsii/pơ mu45.png,18,28,1.002,4.6,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu46.png,val/Fokienia hodginsii/pơmu82__from-test__8479f819.png,10,32,1.002,-4.6,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu62.png,test/Fokienia hodginsii/pơ mu63.png,435,30,0.999,-1.4,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu62.png,test/Fokienia hodginsii/pơmu69.png,16,34,0.99,-3.6,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu62.png,train/Fokienia hodginsii/pơ mu61.png,41,34,1.0,1.4,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu62.png,train/Fokienia hodginsii/pơmu70.png,39,34,0.997,-5.2,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu62.png,train/Fokienia hodginsii/pơmu89__from-val__46fe4d08.png,187,34,1.002,87.3,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu63.png,test/Fokienia hodginsii/pơmu69.png,24,28,0.996,-2.3,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu63.png,train/Fokienia hodginsii/pơ mu64.png,80,32,1.001,0.6,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu63.png,train/Fokienia hodginsii/pơmu70.png,11,38,0.994,-3.7,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu63.png,train/Fokienia hodginsii/pơmu89__from-val__46fe4d08.png,82,32,1.005,88.8,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu70.png,train/Fokienia hodginsii/pơ mu69.png,126,32,1.001,1.6,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu70.png,train/Fokienia hodginsii/pơ mu71.png,236,28,0.999,-0.3,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu70.png,train/Fokienia hodginsii/pơmu87.png,190,38,1.002,80.5,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu79.png,train/Fokienia hodginsii/pơ mu78.png,399,34,1.001,-3.3,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu79.png,train/Fokienia hodginsii/pơ mu80.png,347,38,1.0,-1.8,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu79.png,val/Fokienia hodginsii/pơmu52.png,34,34,0.993,5.5,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu8.png,train/Fokienia hodginsii/pơ mu11.png,366,28,1.001,0.7,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu8.png,train/Fokienia hodginsii/pơ mu12.png,250,32,1.002,1.0,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu8.png,train/Fokienia hodginsii/pơmu99.png,11,32,0.996,5.3,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu8.png,val/Fokienia hodginsii/pơ mu7.png,59,34,1.0,-0.8,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu82.png,train/Fokienia hodginsii/pơ mu81.png,22,26,1.002,1.0,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu82.png,val/Fokienia hodginsii/pơ mu83.png,88,24,0.999,-0.7,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu82.png,val/Fokienia hodginsii/pơmu50.png,15,36,0.996,9.7,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu85.png,test/Fokienia hodginsii/pơ mu86.png,119,30,0.998,-1.9,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu86.png,test/Fokienia hodginsii/pơ mu87.png,280,24,0.999,-1.3,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu86.png,train/Fokienia hodginsii/pơmu45.png,19,34,0.996,6.3,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu87.png,train/Fokienia hodginsii/pơ mu88.png,229,32,0.998,-0.5,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu87.png,train/Fokienia hodginsii/pơmu36.png,12,30,0.999,89.9,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu87.png,train/Fokienia hodginsii/pơmu44.png,15,28,0.995,9.2,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu92.png,val/Fokienia hodginsii/pơ mu91.png,288,24,1.001,1.6,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu92.png,val/Fokienia hodginsii/pơmu40.png,35,32,0.993,23.9,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu95.png,train/Fokienia hodginsii/pơ mu94.png,73,24,1.001,0.0,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu95.png,train/Fokienia hodginsii/pơ mu96.png,270,26,0.999,-1.1,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơ mu97.png,train/Fokienia hodginsii/pơmu34.png,26,38,0.994,2.8,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu1.png,test/Fokienia hodginsii/pơmu3.png,10,38,0.995,-87.0,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu1.png,test/Fokienia hodginsii/pơmu3__from-val__4146cc1b.png,12,30,1.005,4.7,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu1.png,val/Fokienia hodginsii/pơmu2.png,107,28,0.982,-87.6,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu10.png,test/Fokienia hodginsii/pơmu10__from-val__58568861.png,13,18,0.999,87.1,True,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu10.png,test/Fokienia hodginsii/pơmu91.png,26,28,1.007,84.6,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu10__from-test__da7ae17d.png,train/Fokienia hodginsii/pơmu9__from-val__4e2bba9a.png,232,40,0.998,-1.1,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu10__from-val__58568861.png,test/Fokienia hodginsii/pơmu91.png,179,30,1.0,-2.9,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu10__from-val__58568861.png,train/Fokienia hodginsii/pơmu11.png,49,32,0.995,-88.2,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu10__from-val__58568861.png,train/Fokienia hodginsii/pơmu14__from-test__a1d376c8.png,78,30,0.992,-87.7,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu10__from-val__58568861.png,val/Fokienia hodginsii/pơmu75.png,182,26,1.001,0.4,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu3.png,test/Fokienia hodginsii/pơmu3__from-val__4146cc1b.png,131,30,1.011,91.2,True,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu3.png,val/Fokienia hodginsii/pơmu2.png,124,34,1.0,0.0,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu32.png,train/Fokienia hodginsii/pơ mu100.png,24,34,0.999,-8.9,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu32.png,train/Fokienia hodginsii/pơmu24.png,196,32,1.008,85.8,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu32.png,train/Fokienia hodginsii/pơmu25__from-test__a3150c8f.png,57,36,1.009,83.1,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu5.png,test/Fokienia hodginsii/pơmu90__from-val__846ad5ec.png,89,26,1.0,-1.1,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu5.png,train/Fokienia hodginsii/pơmu74__from-val__e0f73ce8.png,131,22,1.002,5.4,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu5.png,val/Fokienia hodginsii/pơmu6.png,102,34,0.992,-85.7,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu69.png,train/Fokienia hodginsii/pơmu70.png,197,40,1.001,-1.5,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu69.png,train/Fokienia hodginsii/pơmu89__from-val__46fe4d08.png,10,28,1.007,90.8,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu72.png,train/Fokienia hodginsii/pơ mu60.png,45,30,1.012,3.1,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu72__from-test__4c62b5b8.png,train/Fokienia hodginsii/pơmu71__from-test__142033bf.png,373,28,0.998,1.4,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu72__from-test__4c62b5b8.png,train/Fokienia hodginsii/pơmu73.png,115,36,1.002,-2.8,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu79.png,train/Fokienia hodginsii/pơ mu53.png,34,36,1.007,-0.3,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu79.png,train/Fokienia hodginsii/pơmu56.png,30,24,0.998,93.4,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu79.png,train/Fokienia hodginsii/pơmu78__from-val__0bbefe5e.png,165,40,1.0,0.8,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu90.png,test/Fokienia hodginsii/pơmu91__from-val__c420bf18.png,554,34,1.0,-2.2,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu90.png,train/Fokienia hodginsii/pơmu85.png,82,34,0.997,1.3,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu90.png,train/Fokienia hodginsii/pơmu86__from-test__56e9e3a2.png,11,26,1.002,-0.5,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu90__from-val__846ad5ec.png,train/Fokienia hodginsii/pơmu7.png,38,28,0.993,-85.8,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu90__from-val__846ad5ec.png,train/Fokienia hodginsii/pơmu74__from-val__e0f73ce8.png,592,32,1.0,6.5,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu90__from-val__846ad5ec.png,train/Fokienia hodginsii/pơmu7__from-test__06a74d65.png,79,30,1.001,3.3,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu90__from-val__846ad5ec.png,val/Fokienia hodginsii/pơmu6.png,145,28,0.993,-84.8,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu91.png,train/Fokienia hodginsii/pơmu11.png,15,32,0.991,-85.0,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu91.png,train/Fokienia hodginsii/pơmu14__from-test__a1d376c8.png,111,40,0.993,-84.9,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu91.png,val/Fokienia hodginsii/pơmu13.png,10,36,0.987,-85.0,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu91.png,val/Fokienia hodginsii/pơmu75.png,235,28,1.002,3.2,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu91__from-test__e361231b.png,train/Fokienia hodginsii/pơ mu25.png,24,28,0.994,-1.1,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu91__from-test__e361231b.png,train/Fokienia hodginsii/pơmu64.png,70,32,1.001,103.0,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu91__from-test__e361231b.png,train/Fokienia hodginsii/pơmu65.png,110,26,1.003,90.8,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu91__from-test__e361231b.png,val/Fokienia hodginsii/pơ mu26.png,15,24,0.994,-2.4,False,False
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu91__from-val__c420bf18.png,train/Fokienia hodginsii/pơmu85.png,73,26,0.996,3.4,False,True
+Fokienia hodginsii,test/Fokienia hodginsii/pơmu91__from-val__c420bf18.png,train/Fokienia hodginsii/pơmu86__from-test__56e9e3a2.png,22,26,1.0,1.6,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu0.png,train/Fokienia hodginsii/pơ mu1.png,16,28,0.998,1.7,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu1.png,train/Fokienia hodginsii/pơ mu2.png,387,30,0.999,0.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu10.png,train/Fokienia hodginsii/pơ mu11.png,102,26,0.999,-1.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu10.png,train/Fokienia hodginsii/pơ mu6.png,20,30,0.999,-3.0,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu10.png,train/Fokienia hodginsii/pơmu100.png,34,26,0.996,0.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu10.png,val/Fokienia hodginsii/pơ mu7.png,178,30,1.0,-2.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu100.png,train/Fokienia hodginsii/pơ mu99.png,299,36,1.001,-0.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu102.png,train/Fokienia hodginsii/pơ mu103.png,76,36,0.997,-0.8,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu102.png,train/Fokienia hodginsii/pơmu26__from-test__154b719d.png,11,26,0.992,1.8,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu103.png,train/Fokienia hodginsii/pơmu21__from-val__c49bf5e7.png,11,28,1.0,91.7,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu105.png,val/Fokienia hodginsii/pơ mu106.png,108,32,0.998,-1.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu108.png,train/Fokienia hodginsii/pơmu20.png,10,34,0.986,6.6,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu108.png,val/Fokienia hodginsii/pơ mu107.png,440,30,1.001,1.0,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu108.png,val/Fokienia hodginsii/pơmu16.png,12,30,0.999,101.2,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu11.png,train/Fokienia hodginsii/pơ mu12.png,349,30,1.0,0.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu11.png,train/Fokienia hodginsii/pơmu99.png,10,22,0.995,4.4,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu11.png,val/Fokienia hodginsii/pơ mu7.png,64,34,1.001,-1.5,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu12.png,train/Fokienia hodginsii/pơmu99.png,16,28,0.996,4.4,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu15.png,train/Fokienia hodginsii/pơ mu16.png,130,32,1.0,-0.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu15.png,train/Fokienia hodginsii/pơmu96__from-test__853d5bd0.png,27,26,0.987,6.2,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu15.png,train/Fokienia hodginsii/pơmu97__from-test__819b03ed.png,21,30,0.996,5.7,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu16.png,train/Fokienia hodginsii/pơmu96__from-test__853d5bd0.png,15,32,0.975,7.1,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu17.png,train/Fokienia hodginsii/pơ mu18.png,16,30,1.002,-1.8,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu17.png,train/Fokienia hodginsii/pơ mu20.png,45,34,1.005,-2.8,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu17.png,train/Fokienia hodginsii/pơmu95.png,12,32,0.996,1.4,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu18.png,train/Fokienia hodginsii/pơ mu19.png,80,32,0.999,-0.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu18.png,train/Fokienia hodginsii/pơ mu22.png,46,32,1.003,0.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu18.png,train/Fokienia hodginsii/pơmu68.png,23,28,0.999,96.5,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu18.png,train/Fokienia hodginsii/pơmu93.png,10,34,1.002,5.8,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu19.png,train/Fokienia hodginsii/pơ mu23.png,60,32,1.001,0.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu19.png,train/Fokienia hodginsii/pơmu67__from-test__ed85edd0.png,21,30,1.001,95.7,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu19.png,train/Fokienia hodginsii/pơmu93.png,16,26,0.998,6.1,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu20.png,train/Fokienia hodginsii/pơ mu25.png,15,26,0.991,5.4,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu20.png,train/Fokienia hodginsii/pơmu95.png,52,34,0.998,4.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu20.png,val/Fokienia hodginsii/pơ mu21.png,19,34,1.003,-0.4,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu22.png,train/Fokienia hodginsii/pơ mu23.png,50,30,0.998,1.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu22.png,train/Fokienia hodginsii/pơmu93.png,10,32,0.993,6.4,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu22.png,val/Fokienia hodginsii/pơ mu21.png,276,30,1.002,-1.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu23.png,train/Fokienia hodginsii/pơmu93.png,18,26,0.992,5.2,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu25.png,train/Fokienia hodginsii/pơmu65.png,10,30,1.002,91.8,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu25.png,val/Fokienia hodginsii/pơ mu21.png,144,34,0.998,-5.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu25.png,val/Fokienia hodginsii/pơ mu26.png,72,32,1.001,-1.8,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu27.png,train/Fokienia hodginsii/pơmu64.png,31,32,0.999,103.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu27.png,val/Fokienia hodginsii/pơ mu26.png,425,22,1.001,-2.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu30.png,val/Fokienia hodginsii/pơ mu29.png,15,28,1.001,4.5,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu30.png,val/Fokienia hodginsii/pơ mu31.png,128,28,0.998,-3.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu32.png,val/Fokienia hodginsii/pơ mu31.png,78,34,1.001,-1.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu33.png,train/Fokienia hodginsii/pơmu63.png,16,26,1.006,84.9,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu33.png,train/Fokienia hodginsii/pơmu89.png,39,26,0.994,-4.5,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu33.png,val/Fokienia hodginsii/pơ mu29.png,15,30,1.009,0.1,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu33.png,val/Fokienia hodginsii/pơ mu37.png,17,26,1.0,-6.1,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu36.png,train/Fokienia hodginsii/pơ mu40.png,26,34,1.0,-1.4,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu36.png,train/Fokienia hodginsii/pơmu87__from-test__f757257c.png,54,36,0.995,2.0,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu36.png,val/Fokienia hodginsii/pơ mu35.png,260,30,0.999,-5.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu38.png,train/Fokienia hodginsii/pơ mu42.png,64,34,0.999,5.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu40.png,val/Fokienia hodginsii/pơ mu35.png,26,28,1.003,-4.3,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu41.png,train/Fokienia hodginsii/pơ mu42.png,12,28,1.003,-3.6,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu41.png,val/Fokienia hodginsii/pơ mu37.png,53,34,0.996,-6.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu41.png,val/Fokienia hodginsii/pơ mu45.png,26,30,1.003,-1.7,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu42.png,train/Fokienia hodginsii/pơ mu43.png,67,36,1.002,-1.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu43.png,train/Fokienia hodginsii/pơ mu44.png,234,30,1.005,-0.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu43.png,train/Fokienia hodginsii/pơ mu47.png,16,22,1.006,-2.5,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu43.png,train/Fokienia hodginsii/pơ mu48.png,15,26,1.005,-2.5,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu44.png,train/Fokienia hodginsii/pơ mu48.png,12,30,1.003,-1.7,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu47.png,train/Fokienia hodginsii/pơ mu48.png,22,32,1.001,-0.0,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu47.png,train/Fokienia hodginsii/pơmu81__from-test__c1c48a18.png,42,32,0.997,-2.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu49.png,train/Fokienia hodginsii/pơ mu50.png,41,26,0.996,-5.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu49.png,train/Fokienia hodginsii/pơmu56.png,34,32,1.001,85.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu50.png,train/Fokienia hodginsii/pơ mu51.png,251,30,1.0,-1.5,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu50.png,train/Fokienia hodginsii/pơmu55__from-test__df3074bb.png,30,28,1.004,85.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu50.png,train/Fokienia hodginsii/pơmu56.png,31,34,1.004,91.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu50.png,train/Fokienia hodginsii/pơmu78__from-val__0bbefe5e.png,10,32,0.991,-0.9,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu50.png,val/Fokienia hodginsii/pơmu82__from-test__8479f819.png,10,30,1.016,-2.6,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu51.png,train/Fokienia hodginsii/pơ mu52.png,99,32,1.001,-0.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu51.png,train/Fokienia hodginsii/pơmu55__from-test__df3074bb.png,197,32,1.002,87.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu52.png,train/Fokienia hodginsii/pơmu55__from-test__df3074bb.png,74,34,0.998,87.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu52.png,train/Fokienia hodginsii/pơmu76.png,33,28,0.999,3.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu53.png,train/Fokienia hodginsii/pơ mu54.png,291,30,0.997,-2.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu53.png,train/Fokienia hodginsii/pơmu78__from-val__0bbefe5e.png,34,32,0.994,1.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu54.png,train/Fokienia hodginsii/pơ mu55.png,101,28,0.999,1.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu54.png,train/Fokienia hodginsii/pơmu78__from-val__0bbefe5e.png,42,32,0.996,3.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu55.png,train/Fokienia hodginsii/pơ mu56.png,103,24,1.001,-0.5,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu55.png,train/Fokienia hodginsii/pơmu77.png,25,24,0.99,2.6,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu57.png,train/Fokienia hodginsii/pơ mu58.png,23,28,0.999,-2.3,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu58.png,train/Fokienia hodginsii/pơmu74.png,20,28,0.996,1.1,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu58.png,val/Fokienia hodginsii/pơ mu59.png,257,34,0.999,2.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu6.png,train/Fokienia hodginsii/pơ mu9.png,66,30,1.005,5.0,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu6.png,train/Fokienia hodginsii/pơmu101.png,12,22,0.998,-0.9,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu60.png,val/Fokienia hodginsii/pơ mu59.png,49,26,1.0,-0.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu61.png,train/Fokienia hodginsii/pơmu89__from-val__46fe4d08.png,26,32,1.002,85.9,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu65.png,train/Fokienia hodginsii/pơ mu66.png,42,30,0.998,-1.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu65.png,train/Fokienia hodginsii/pơmu67.png,82,30,0.992,-1.0,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu66.png,train/Fokienia hodginsii/pơ mu67.png,120,28,0.999,0.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu66.png,train/Fokienia hodginsii/pơmu67.png,17,28,0.994,0.7,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu66.png,val/Fokienia hodginsii/pơmu50__from-val__1bab5c15.png,96,32,1.001,82.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu67.png,train/Fokienia hodginsii/pơ mu68.png,172,32,0.999,-0.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu67.png,val/Fokienia hodginsii/pơmu50__from-val__1bab5c15.png,81,34,1.003,82.0,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu68.png,train/Fokienia hodginsii/pơmu64__from-val__f3c209ba.png,32,24,0.991,2.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu69.png,train/Fokienia hodginsii/pơmu63__from-test__011d5181.png,55,28,0.995,-2.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu71.png,train/Fokienia hodginsii/pơ mu72.png,124,32,0.998,0.8,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu71.png,train/Fokienia hodginsii/pơmu46__from-val__ab600e0a.png,40,30,0.999,88.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu71.png,train/Fokienia hodginsii/pơmu61__from-test__d4ac65cc.png,32,28,0.999,-2.5,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu71.png,train/Fokienia hodginsii/pơmu87.png,118,24,1.005,81.0,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu72.png,train/Fokienia hodginsii/pơmu46__from-val__ab600e0a.png,116,30,1.003,87.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu72.png,train/Fokienia hodginsii/pơmu61__from-test__d4ac65cc.png,13,30,0.998,-2.6,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu73.png,train/Fokienia hodginsii/pơ mu74.png,63,30,0.999,-2.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu73.png,train/Fokienia hodginsii/pơmu58.png,22,28,0.993,-0.4,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu74.png,train/Fokienia hodginsii/pơ mu75.png,218,30,0.998,-1.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu74.png,train/Fokienia hodginsii/pơmu44__from-val__e58d53f5.png,20,34,0.998,82.2,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu74.png,train/Fokienia hodginsii/pơmu57.png,32,30,0.995,2.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu74.png,train/Fokienia hodginsii/pơmu58.png,43,24,0.995,1.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu75.png,train/Fokienia hodginsii/pơ mu76.png,95,40,0.999,1.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu75.png,train/Fokienia hodginsii/pơmu44__from-val__e58d53f5.png,41,34,1.0,83.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu75.png,train/Fokienia hodginsii/pơmu56__from-val__1ac2142d.png,11,38,0.992,5.0,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu75.png,train/Fokienia hodginsii/pơmu57.png,45,30,0.996,4.0,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu76.png,train/Fokienia hodginsii/pơmu56__from-val__1ac2142d.png,82,40,0.992,3.5,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu77.png,train/Fokienia hodginsii/pơmu55__from-val__34aeccac.png,16,34,0.999,7.2,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu77.png,val/Fokienia hodginsii/pơmu54__from-val__13e21438.png,27,36,0.992,6.9,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu78.png,train/Fokienia hodginsii/pơ mu80.png,47,30,1.0,1.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu78.png,train/Fokienia hodginsii/pơmu53.png,27,28,0.996,6.7,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu78.png,val/Fokienia hodginsii/pơmu52.png,15,26,0.995,8.8,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu80.png,val/Fokienia hodginsii/pơmu52.png,27,26,0.995,7.5,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu81.png,train/Fokienia hodginsii/pơmu51__from-test__17b7c447.png,22,36,0.995,8.0,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu84.png,train/Fokienia hodginsii/pơmu48__from-val__2f4a7924.png,30,28,0.996,9.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu84.png,train/Fokienia hodginsii/pơmu49.png,38,34,0.997,8.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu84.png,val/Fokienia hodginsii/pơ mu83.png,542,30,1.002,-2.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu84.png,val/Fokienia hodginsii/pơmu40__from-test__f82aecab.png,43,34,1.002,87.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu88.png,train/Fokienia hodginsii/pơmu35.png,12,28,1.002,93.4,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu88.png,train/Fokienia hodginsii/pơmu36.png,10,34,0.995,90.2,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu88.png,train/Fokienia hodginsii/pơmu44.png,48,20,0.994,9.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu89.png,train/Fokienia hodginsii/pơ mu90.png,298,26,1.0,-2.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu9.png,train/Fokienia hodginsii/pơmu101.png,50,28,0.995,-5.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu90.png,train/Fokienia hodginsii/pơmu80__from-val__57c09910.png,13,24,1.0,92.3,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu90.png,train/Fokienia hodginsii/pơmu95__from-test__957d0ed6.png,19,32,1.005,93.8,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu90.png,val/Fokienia hodginsii/pơ mu91.png,55,28,1.001,0.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu93.png,train/Fokienia hodginsii/pơ mu94.png,378,34,1.0,-0.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu98.png,train/Fokienia hodginsii/pơ mu99.png,254,32,0.997,-0.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơ mu98.png,train/Fokienia hodginsii/pơmu33.png,14,22,0.999,6.4,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu0.png,train/Fokienia hodginsii/pơmu0__from-val__cdced608.png,249,28,0.988,-86.2,True,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu100.png,train/Fokienia hodginsii/pơmu101.png,129,32,0.999,-3.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu100.png,train/Fokienia hodginsii/pơmu99.png,136,36,1.001,3.0,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu100.png,val/Fokienia hodginsii/pơ mu7.png,12,30,1.009,-2.9,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu100__from-test__17aa787e.png,train/Fokienia hodginsii/pơmu96.png,31,32,0.999,0.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu102.png,train/Fokienia hodginsii/pơmu98__from-val__c1ca2564.png,15,28,0.998,-0.5,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu12.png,val/Fokienia hodginsii/pơmu13.png,30,32,0.999,-2.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu12__from-test__047f340f.png,val/Fokienia hodginsii/pơmu13__from-test__90ac9c65.png,160,24,0.996,-4.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu12__from-test__047f340f.png,val/Fokienia hodginsii/pơmu16__from-test__f215b54f.png,46,28,0.991,-93.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu12__from-val__583eb949.png,train/Fokienia hodginsii/pơmu9__from-val__4e2bba9a.png,21,38,0.996,-2.2,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu12__from-val__583eb949.png,val/Fokienia hodginsii/pơmu13__from-val__1f18f0e0.png,104,34,1.001,-0.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu12__from-val__583eb949.png,val/Fokienia hodginsii/pơmu8.png,45,34,0.999,-1.8,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu14.png,train/Fokienia hodginsii/pơmu18__from-test__b3548f06.png,40,26,0.994,-87.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu14.png,train/Fokienia hodginsii/pơmu19.png,141,28,0.996,-87.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu14.png,train/Fokienia hodginsii/pơmu92__from-val__282cc434.png,76,36,0.996,-5.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu14.png,val/Fokienia hodginsii/pơmu13__from-test__90ac9c65.png,138,34,0.999,1.0,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu14.png,val/Fokienia hodginsii/pơmu15__from-val__eb3734ff.png,243,32,1.004,3.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu14__from-test__a1d376c8.png,train/Fokienia hodginsii/pơmu92__from-val__282cc434.png,80,28,1.009,84.5,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu14__from-test__a1d376c8.png,val/Fokienia hodginsii/pơmu13.png,44,26,0.998,-0.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu14__from-test__a1d376c8.png,val/Fokienia hodginsii/pơmu13__from-test__90ac9c65.png,35,32,1.003,91.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu14__from-test__a1d376c8.png,val/Fokienia hodginsii/pơmu75.png,147,24,1.009,88.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu17.png,train/Fokienia hodginsii/pơmu18.png,173,30,1.001,-3.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu17.png,train/Fokienia hodginsii/pơmu21.png,279,30,0.993,-92.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu17.png,val/Fokienia hodginsii/pơmu16.png,181,38,1.0,3.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu18.png,train/Fokienia hodginsii/pơmu18__from-test__b3548f06.png,18,26,0.986,-91.1,True,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu18.png,train/Fokienia hodginsii/pơmu19.png,14,28,0.999,-90.9,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu18.png,train/Fokienia hodginsii/pơmu19__from-val__8b54ea0c.png,331,26,1.001,-1.8,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu18.png,train/Fokienia hodginsii/pơmu21.png,46,34,0.993,-88.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu18.png,train/Fokienia hodginsii/pơmu93__from-val__337f2c2c.png,168,26,1.004,-10.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu18__from-test__b3548f06.png,train/Fokienia hodginsii/pơmu19.png,200,30,1.001,0.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu18__from-test__b3548f06.png,train/Fokienia hodginsii/pơmu21.png,81,28,0.996,2.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu18__from-test__b3548f06.png,val/Fokienia hodginsii/pơmu13__from-test__90ac9c65.png,80,30,1.004,88.5,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu18__from-test__b3548f06.png,val/Fokienia hodginsii/pơmu15__from-val__eb3734ff.png,48,28,1.006,91.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu19.png,train/Fokienia hodginsii/pơmu19__from-val__8b54ea0c.png,13,26,1.011,89.5,True,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu19.png,val/Fokienia hodginsii/pơmu15__from-val__eb3734ff.png,228,32,1.007,90.8,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu19__from-val__8b54ea0c.png,train/Fokienia hodginsii/pơmu93__from-val__337f2c2c.png,202,34,0.999,-8.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu20.png,val/Fokienia hodginsii/pơmu16.png,66,30,1.025,93.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu20.png,val/Fokienia hodginsii/pơmu16__from-test__f215b54f.png,28,30,1.002,-4.0,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu20__from-val__8bd3c24e.png,train/Fokienia hodginsii/pơmu21__from-val__c49bf5e7.png,282,26,0.998,1.0,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu20__from-val__8bd3c24e.png,train/Fokienia hodginsii/pơmu24__from-test__458f9daf.png,11,28,0.995,-84.4,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu20__from-val__8bd3c24e.png,train/Fokienia hodginsii/pơmu26__from-test__154b719d.png,21,30,0.994,-88.0,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu20__from-val__8bd3c24e.png,train/Fokienia hodginsii/pơmu28.png,29,30,0.995,-84.5,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu20__from-val__8bd3c24e.png,train/Fokienia hodginsii/pơmu29__from-val__19ba9128.png,250,30,0.991,-86.0,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu20__from-val__8bd3c24e.png,train/Fokienia hodginsii/pơmu30__from-val__45738855.png,19,28,0.989,-86.1,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu20__from-val__8bd3c24e.png,val/Fokienia hodginsii/pơmu22.png,21,30,1.001,0.8,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu21.png,train/Fokienia hodginsii/pơmu26__from-test__154b719d.png,11,32,0.989,-1.8,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu21.png,val/Fokienia hodginsii/pơ mu106.png,11,22,1.014,-4.0,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu21.png,val/Fokienia hodginsii/pơ mu107.png,12,20,1.006,-4.6,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu21.png,val/Fokienia hodginsii/pơmu16.png,103,34,1.014,94.8,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu21__from-val__c49bf5e7.png,train/Fokienia hodginsii/pơmu26__from-test__154b719d.png,155,38,0.993,-89.0,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu21__from-val__c49bf5e7.png,train/Fokienia hodginsii/pơmu29__from-val__19ba9128.png,83,26,0.994,-87.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu21__from-val__c49bf5e7.png,train/Fokienia hodginsii/pơmu30__from-val__45738855.png,97,30,0.976,-87.5,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu21__from-val__c49bf5e7.png,val/Fokienia hodginsii/pơmu22.png,301,26,1.001,-0.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu24.png,train/Fokienia hodginsii/pơmu25__from-test__a3150c8f.png,77,28,1.001,-2.5,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu24__from-test__458f9daf.png,train/Fokienia hodginsii/pơmu28.png,109,42,0.994,0.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu25.png,train/Fokienia hodginsii/pơmu27.png,11,28,1.002,2.3,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu25__from-test__a3150c8f.png,train/Fokienia hodginsii/pơmu26.png,133,28,1.001,-1.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu25__from-test__a3150c8f.png,train/Fokienia hodginsii/pơmu33.png,201,28,0.994,-84.8,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu26.png,train/Fokienia hodginsii/pơmu33.png,203,26,0.993,-83.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu26.png,train/Fokienia hodginsii/pơmu34.png,79,30,0.999,-86.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu26__from-test__154b719d.png,train/Fokienia hodginsii/pơmu29__from-val__19ba9128.png,33,26,1.002,2.0,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu26__from-test__154b719d.png,train/Fokienia hodginsii/pơmu30__from-val__45738855.png,93,30,0.976,1.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu26__from-test__154b719d.png,val/Fokienia hodginsii/pơmu22.png,91,34,1.006,88.8,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu28.png,train/Fokienia hodginsii/pơmu29__from-val__19ba9128.png,23,36,0.996,-1.6,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu29.png,train/Fokienia hodginsii/pơmu30.png,92,30,1.002,-2.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu29.png,train/Fokienia hodginsii/pơmu31__from-val__e3524c57.png,94,32,1.002,3.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu29__from-val__19ba9128.png,train/Fokienia hodginsii/pơmu30__from-val__45738855.png,36,32,0.995,0.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu30.png,train/Fokienia hodginsii/pơmu31__from-val__e3524c57.png,365,32,0.998,6.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu30__from-val__45738855.png,val/Fokienia hodginsii/pơmu22.png,186,32,1.021,87.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu31.png,val/Fokienia hodginsii/pơmu22.png,143,28,1.005,87.8,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu33.png,train/Fokienia hodginsii/pơmu34.png,46,34,1.0,-3.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu35.png,train/Fokienia hodginsii/pơmu36.png,20,32,0.999,-2.9,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu35.png,train/Fokienia hodginsii/pơmu44.png,49,24,0.995,-83.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu36.png,train/Fokienia hodginsii/pơmu44.png,83,32,0.994,-80.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu36.png,train/Fokienia hodginsii/pơmu45.png,37,32,0.998,-82.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu36.png,train/Fokienia hodginsii/pơmu81.png,40,32,1.006,6.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu37.png,train/Fokienia hodginsii/pơmu39.png,117,32,1.002,0.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu37.png,val/Fokienia hodginsii/pơmu38.png,243,34,1.0,-2.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu39.png,val/Fokienia hodginsii/pơmu38.png,525,36,1.0,-2.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu41.png,train/Fokienia hodginsii/pơmu51__from-test__17b7c447.png,98,36,0.993,-80.8,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu41.png,train/Fokienia hodginsii/pơmu83__from-val__7ec76edb.png,118,24,1.0,5.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu41.png,train/Fokienia hodginsii/pơmu84__from-val__4dc1c534.png,282,24,1.002,0.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu41.png,val/Fokienia hodginsii/pơmu40__from-test__f82aecab.png,37,30,0.998,-0.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu41.png,val/Fokienia hodginsii/pơmu42.png,240,32,1.003,0.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu41.png,val/Fokienia hodginsii/pơmu50.png,45,30,0.993,-79.8,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu44__from-val__e58d53f5.png,train/Fokienia hodginsii/pơmu53.png,38,32,0.998,-74.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu44__from-val__e58d53f5.png,train/Fokienia hodginsii/pơmu57.png,112,28,0.995,-79.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu44__from-val__e58d53f5.png,train/Fokienia hodginsii/pơmu58.png,49,26,0.994,-80.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu44__from-val__e58d53f5.png,train/Fokienia hodginsii/pơmu85__from-val__843ef9a2.png,15,26,1.004,11.8,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu44__from-val__e58d53f5.png,val/Fokienia hodginsii/pơmu52.png,36,24,0.991,-72.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu45.png,val/Fokienia hodginsii/pơmu82.png,34,36,1.01,89.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu46.png,train/Fokienia hodginsii/pơmu47.png,928,10,1.001,3.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu46.png,train/Fokienia hodginsii/pơmu81.png,14,38,1.007,90.0,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu46.png,val/Fokienia hodginsii/pơmu82.png,138,34,1.009,90.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu47.png,train/Fokienia hodginsii/pơmu81.png,22,34,1.003,87.4,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu47.png,val/Fokienia hodginsii/pơmu82.png,105,36,1.007,87.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu48__from-val__2f4a7924.png,train/Fokienia hodginsii/pơmu49.png,161,22,1.001,-0.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu48__from-val__2f4a7924.png,val/Fokienia hodginsii/pơ mu83.png,11,26,1.008,-11.5,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu48__from-val__2f4a7924.png,val/Fokienia hodginsii/pơmu40__from-test__f82aecab.png,11,34,1.006,78.4,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu49.png,val/Fokienia hodginsii/pơ mu83.png,39,28,1.004,-11.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu49.png,val/Fokienia hodginsii/pơmu40__from-test__f82aecab.png,121,34,1.005,78.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu49.png,val/Fokienia hodginsii/pơmu50.png,129,26,1.0,-0.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu51__from-test__17b7c447.png,train/Fokienia hodginsii/pơmu83__from-val__7ec76edb.png,77,34,1.005,86.8,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu51__from-test__17b7c447.png,train/Fokienia hodginsii/pơmu84__from-val__4dc1c534.png,29,34,1.003,81.9,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu51__from-test__17b7c447.png,val/Fokienia hodginsii/pơmu42.png,87,28,1.011,81.5,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu51__from-test__17b7c447.png,val/Fokienia hodginsii/pơmu50.png,81,28,0.999,1.0,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu53.png,train/Fokienia hodginsii/pơmu85__from-val__843ef9a2.png,129,30,1.01,87.0,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu53.png,val/Fokienia hodginsii/pơmu52.png,61,28,0.998,2.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu53.png,val/Fokienia hodginsii/pơmu54__from-val__13e21438.png,107,32,1.001,0.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu55.png,val/Fokienia hodginsii/pơmu54.png,277,36,0.999,1.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu55__from-test__df3074bb.png,train/Fokienia hodginsii/pơmu77.png,17,34,0.997,-86.3,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu55__from-test__df3074bb.png,train/Fokienia hodginsii/pơmu81__from-test__c1c48a18.png,10,28,0.992,-87.4,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu55__from-val__34aeccac.png,train/Fokienia hodginsii/pơmu85__from-val__843ef9a2.png,41,32,1.008,85.8,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu55__from-val__34aeccac.png,val/Fokienia hodginsii/pơmu54__from-val__13e21438.png,279,32,1.0,-0.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu56.png,val/Fokienia hodginsii/pơmu82__from-test__8479f819.png,39,32,0.993,-93.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu57.png,train/Fokienia hodginsii/pơmu58.png,281,26,1.001,-0.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu57.png,train/Fokienia hodginsii/pơmu86.png,15,28,1.006,84.4,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu58.png,train/Fokienia hodginsii/pơmu86.png,102,36,1.007,85.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu58.png,train/Fokienia hodginsii/pơmu99__from-test__ed1837fb.png,35,26,1.016,84.5,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu58__from-val__d1e07dbc.png,train/Fokienia hodginsii/pơmu59.png,443,26,1.001,-0.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu61.png,train/Fokienia hodginsii/pơmu87__from-test__f757257c.png,90,28,0.992,-89.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu61.png,train/Fokienia hodginsii/pơmu88.png,197,34,0.99,-91.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu61.png,val/Fokienia hodginsii/pơ mu35.png,22,30,1.003,-96.8,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu61.png,val/Fokienia hodginsii/pơmu62.png,215,34,0.998,-3.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu61__from-test__d4ac65cc.png,train/Fokienia hodginsii/pơmu87.png,12,30,1.005,82.8,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu63.png,train/Fokienia hodginsii/pơmu89.png,102,28,0.987,-89.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu63.png,val/Fokienia hodginsii/pơmu62.png,21,32,0.99,-2.1,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu63__from-test__011d5181.png,train/Fokienia hodginsii/pơmu87.png,14,28,1.008,81.4,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu63__from-val__99fea031.png,val/Fokienia hodginsii/pơmu62__from-val__67b68bfb.png,158,40,0.999,1.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu64.png,train/Fokienia hodginsii/pơmu65.png,28,36,1.001,-11.8,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu64.png,val/Fokienia hodginsii/pơ mu26.png,28,34,1.001,-105.5,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu67.png,val/Fokienia hodginsii/pơmu50__from-val__1bab5c15.png,28,32,1.009,81.4,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu67__from-test__ed85edd0.png,train/Fokienia hodginsii/pơmu68.png,151,28,0.999,0.8,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu67__from-test__ed85edd0.png,train/Fokienia hodginsii/pơmu93.png,145,32,0.994,-89.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu67__from-test__ed85edd0.png,train/Fokienia hodginsii/pơmu96__from-test__853d5bd0.png,12,32,0.986,-90.6,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu68.png,train/Fokienia hodginsii/pơmu93.png,152,30,0.998,-90.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu7.png,train/Fokienia hodginsii/pơmu74__from-val__e0f73ce8.png,64,34,1.006,92.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu7.png,train/Fokienia hodginsii/pơmu7__from-test__06a74d65.png,248,38,1.006,89.2,True,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu7.png,val/Fokienia hodginsii/pơmu6.png,35,32,0.999,1.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu70.png,train/Fokienia hodginsii/pơmu89__from-val__46fe4d08.png,138,30,1.007,92.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu74__from-val__e0f73ce8.png,train/Fokienia hodginsii/pơmu7__from-test__06a74d65.png,134,36,1.001,-3.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu74__from-val__e0f73ce8.png,val/Fokienia hodginsii/pơmu6.png,174,36,0.992,-91.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu77.png,train/Fokienia hodginsii/pơmu78__from-val__0bbefe5e.png,70,34,1.0,-0.5,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu7__from-test__06a74d65.png,val/Fokienia hodginsii/pơmu6.png,47,24,0.991,-88.2,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu7__from-val__f320c781.png,val/Fokienia hodginsii/pơmu6__from-val__e5dec751.png,298,34,0.999,-2.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu80__from-val__57c09910.png,train/Fokienia hodginsii/pơmu95__from-test__957d0ed6.png,636,28,1.0,1.6,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu81.png,train/Fokienia hodginsii/pơmu95__from-test__957d0ed6.png,67,32,0.999,3.9,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu81.png,val/Fokienia hodginsii/pơmu82.png,56,24,1.004,0.1,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu83__from-val__7ec76edb.png,train/Fokienia hodginsii/pơmu84__from-val__4dc1c534.png,11,30,1.0,-4.2,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu83__from-val__7ec76edb.png,val/Fokienia hodginsii/pơmu40__from-test__f82aecab.png,93,32,1.0,-6.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu83__from-val__7ec76edb.png,val/Fokienia hodginsii/pơmu42.png,21,28,1.003,-5.2,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu83__from-val__7ec76edb.png,val/Fokienia hodginsii/pơmu50.png,64,38,0.993,-85.8,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu84.png,train/Fokienia hodginsii/pơmu85.png,137,36,0.999,-0.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu84__from-val__4dc1c534.png,val/Fokienia hodginsii/pơmu42.png,193,28,1.003,-0.3,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu85.png,train/Fokienia hodginsii/pơmu86__from-test__56e9e3a2.png,394,32,1.001,-1.5,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu85__from-val__843ef9a2.png,val/Fokienia hodginsii/pơmu54__from-val__13e21438.png,171,26,0.992,-86.5,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu86.png,train/Fokienia hodginsii/pơmu99__from-test__ed1837fb.png,139,28,1.005,-0.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu87__from-test__f757257c.png,val/Fokienia hodginsii/pơ mu31.png,17,24,1.01,-6.6,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu87__from-test__f757257c.png,val/Fokienia hodginsii/pơ mu35.png,17,28,1.006,-7.5,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu88.png,train/Fokienia hodginsii/pơmu89.png,54,36,0.997,-1.0,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu88.png,val/Fokienia hodginsii/pơmu62.png,297,36,1.006,88.8,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu89.png,val/Fokienia hodginsii/pơ mu29.png,11,38,1.036,5.8,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu89.png,val/Fokienia hodginsii/pơmu62.png,29,30,1.019,91.2,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu92__from-val__282cc434.png,val/Fokienia hodginsii/pơmu13__from-test__90ac9c65.png,113,30,0.999,6.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu92__from-val__282cc434.png,val/Fokienia hodginsii/pơmu75.png,32,28,0.997,3.5,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu96.png,train/Fokienia hodginsii/pơmu97.png,113,32,1.001,-0.4,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu96.png,train/Fokienia hodginsii/pơmu98__from-val__c1ca2564.png,10,28,1.001,-1.7,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu96__from-test__853d5bd0.png,train/Fokienia hodginsii/pơmu97__from-test__819b03ed.png,320,32,1.0,-0.5,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu97.png,train/Fokienia hodginsii/pơmu98__from-val__c1ca2564.png,216,32,0.999,-1.7,False,True
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu97__from-test__819b03ed.png,train/Fokienia hodginsii/pơmu98.png,26,36,0.999,-0.5,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu99.png,val/Fokienia hodginsii/pơ mu7.png,12,28,1.005,-5.7,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu9__from-val__4e2bba9a.png,val/Fokienia hodginsii/pơmu13__from-val__1f18f0e0.png,17,38,1.002,1.4,False,False
+Fokienia hodginsii,train/Fokienia hodginsii/pơmu9__from-val__4e2bba9a.png,val/Fokienia hodginsii/pơmu8.png,98,34,0.999,0.7,False,True
+Fokienia hodginsii,val/Fokienia hodginsii/pơ mu106.png,val/Fokienia hodginsii/pơ mu107.png,25,28,0.998,-0.1,False,False
+Fokienia hodginsii,val/Fokienia hodginsii/pơ mu107.png,val/Fokienia hodginsii/pơmu16.png,11,34,1.006,99.8,False,False
+Fokienia hodginsii,val/Fokienia hodginsii/pơ mu31.png,val/Fokienia hodginsii/pơ mu35.png,28,30,1.002,-1.2,False,False
+Fokienia hodginsii,val/Fokienia hodginsii/pơ mu83.png,val/Fokienia hodginsii/pơmu40__from-test__f82aecab.png,40,28,1.001,90.1,False,True
+Fokienia hodginsii,val/Fokienia hodginsii/pơ mu91.png,val/Fokienia hodginsii/pơmu40.png,16,30,0.989,22.3,False,False
+Fokienia hodginsii,val/Fokienia hodginsii/pơmu13.png,val/Fokienia hodginsii/pơmu13__from-test__90ac9c65.png,18,26,1.002,91.3,True,False
+Fokienia hodginsii,val/Fokienia hodginsii/pơmu13__from-test__90ac9c65.png,val/Fokienia hodginsii/pơmu15__from-val__eb3734ff.png,11,30,1.003,3.1,False,False
+Fokienia hodginsii,val/Fokienia hodginsii/pơmu13__from-val__1f18f0e0.png,val/Fokienia hodginsii/pơmu15.png,189,34,1.002,-2.8,False,True
+Fokienia hodginsii,val/Fokienia hodginsii/pơmu22__from-test__f01b9ee6.png,val/Fokienia hodginsii/pơmu23.png,244,26,1.0,-0.1,False,True
+Fokienia hodginsii,val/Fokienia hodginsii/pơmu40__from-test__f82aecab.png,val/Fokienia hodginsii/pơmu50.png,53,32,0.994,-79.8,False,True

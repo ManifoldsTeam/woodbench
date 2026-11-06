@@ -1,0 +1,40 @@
+{
+  "data_root": "data/task-B-group-split",
+  "rule": "link if pHash distance <= 9 or ORB-RANSAC inliers >= 30 (scale 0.9-1.1); groups = connected components",
+  "orb": {
+    "resize": [
+      640,
+      512
+    ],
+    "features": 1500,
+    "ratio": 0.75,
+    "ransac_px": 4
+  },
+  "pairs_compared": 80466,
+  "species": {
+    "Callitris columellaris": {
+      "images": 214,
+      "groups": 35,
+      "multi_image_groups": 15,
+      "images_in_multi_image_groups": 194
+    },
+    "Cunninghamia lanceolata": {
+      "images": 186,
+      "groups": 100,
+      "multi_image_groups": 40,
+      "images_in_multi_image_groups": 126
+    },
+    "Fokienia hodginsii": {
+      "images": 285,
+      "groups": 78,
+      "multi_image_groups": 42,
+      "images_in_multi_image_groups": 249
+    }
+  },
+  "fokienia_groups_mixing_name_schemes": 13,
+  "sheets": [
+    "groups_callitris.jpg",
+    "groups_cunninghamia.jpg",
+    "groups_fokienia.jpg"
+  ]
+}
