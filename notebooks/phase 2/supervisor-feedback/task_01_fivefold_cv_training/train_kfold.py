@@ -31,8 +31,10 @@ from src.train.optimizer import split_head_parameters
 from src.utils import set_seed
 from origin_cv import (
     PHASE1_MANIFEST,
+    SPECIES_SETS,
     OriginKFoldDataset,
     SubsetWithTransform,
+    drop_species,
 )
 from run_artifacts import (
     CHECKPOINT,
@@ -213,6 +215,13 @@ def build_parser():
     )
     parser.add_argument(
         "--input_variant", choices=list(INPUT_VARIANTS), default="rgb"
+    )
+    parser.add_argument(
+        "--species_set",
+        choices=list(SPECIES_SETS),
+        default="all17",
+        help="clean14 drops 3 species after drawing the 17-species folds, "
+        "so the other species keep their CV v2 folds",
     )
     parser.add_argument("--weight_decay", type=float, default=1e-4)
     parser.add_argument("--label_smoothing", type=float, default=0.1)
@@ -479,6 +488,8 @@ def main(argv=None):
     splits = dataset.get_splits_by_origin(
         args.n_folds, seed=args.seed, inner_val_fraction=args.inner_val_fraction
     )
+    if SPECIES_SETS[args.species_set]:
+        dataset, splits = drop_species(dataset, splits, SPECIES_SETS[args.species_set])
     config = make_config(args, dataset, splits)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Device: {device}; dataset: {len(dataset)}; classes: {len(dataset.classes)}")

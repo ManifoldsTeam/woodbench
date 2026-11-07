@@ -28,6 +28,16 @@ PHASE1_EXCLUDED_CLASSES = {
     "Cupressus funebris (Cupressus pendula)",
     "Pinus sp",
 }
+# Supervisor request 06-11-2026: run on 14 species while the near-duplicate
+# crops of these three are being checked (task 10).
+SPECIES_SETS = {
+    "all17": (),
+    "clean14": (
+        "Callitris columellaris",
+        "Cunninghamia lanceolata",
+        "Fokienia hodginsii",
+    ),
+}
 
 
 def infer_origin_key(path: Path) -> str:
@@ -222,6 +232,49 @@ def make_origin_folds(
             )
         splits.append(split)
     return splits
+
+
+def drop_species(dataset, splits: list, names) -> tuple:
+    """Remove species after the folds were drawn on all species.
+
+    make_origin_folds and split_inner_validation shuffle species in one RNG
+    stream each, so drawing folds on a subset would move the origins of every
+    later species. Dropping afterwards keeps each remaining origin in the same
+    outer fold and inner-val set as a run on all species. Class indices are
+    renumbered over the remaining classes, in their original order.
+    """
+    names = set(names)
+    unknown = names - set(dataset.classes)
+    if unknown:
+        raise ValueError(f"Unknown species to drop: {sorted(unknown)}")
+    keep = np.array([row["species"] not in names for row in dataset.records])
+    new_index = np.cumsum(keep) - 1
+    species_of = {row["origin_key"]: row["species"] for row in dataset.records}
+
+    def remap(indices):
+        indices = np.asarray(indices, dtype=int)
+        return new_index[indices[keep[indices]]]
+
+    filtered = []
+    for split in splits:
+        split = dict(split)
+        for key in ("train_idx", "val_idx", "inner_train_idx", "inner_val_idx"):
+            if key in split:
+                split[key] = remap(split[key])
+        for key in ("train_origins", "val_origins", "inner_train_origins", "inner_val_origins"):
+            if key in split:
+                split[key] = {o for o in split[key] if species_of[o] not in names}
+        split.update(n_train=len(split["train_idx"]), n_val=len(split["val_idx"]))
+        filtered.append(split)
+
+    dataset.records = [row for row, kept in zip(dataset.records, keep) if kept]
+    dataset.classes = [name for name in dataset.classes if name not in names]
+    dataset.class_to_idx = {name: index for index, name in enumerate(dataset.classes)}
+    dataset.samples = [
+        (row["path"], dataset.class_to_idx[row["species"]], row["origin_key"])
+        for row in dataset.records
+    ]
+    return dataset, filtered
 
 
 class OriginKFoldDataset(Dataset):

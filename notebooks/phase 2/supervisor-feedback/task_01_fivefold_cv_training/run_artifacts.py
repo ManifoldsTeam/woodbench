@@ -107,6 +107,14 @@ def make_config(args, dataset, splits):
         manifest_sha256=file_sha256(args.manifest_path),
         class_to_idx=dataset.class_to_idx,
     )
+    species_set = getattr(args, "species_set", "all17")
+    if species_set != "all17":
+        # Same rule as below: the 17-species runs keep their fingerprint.
+        from origin_cv import SPECIES_SETS
+
+        config.update(
+            species_set=species_set, excluded_species=sorted(SPECIES_SETS[species_set])
+        )
     if not default_selection(args):
         # Only non-default rules add keys, so the 01-11-2026 runs keep their
         # fingerprint and can still be verified or resumed.

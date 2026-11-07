@@ -68,7 +68,8 @@ for model in "${models[@]}"; do
                    WANDB_PROJECT:wandb_project OUTPUT_ROOT:output_root \
                    DATA_ROOT:data_root MANIFEST_PATH:manifest_path \
                    WARMUP_EPOCHS:warmup_epochs EARLY_STOPPING_PATIENCE:early_stopping_patience \
-                   INNER_VAL_FRACTION:inner_val_fraction INPUT_VARIANT:input_variant; do
+                   INNER_VAL_FRACTION:inner_val_fraction INPUT_VARIANT:input_variant \
+                   SPECIES_SET:species_set; do
         env_name="${setting%%:*}"
         flag="${setting#*:}"
         value="${!env_name:-}"

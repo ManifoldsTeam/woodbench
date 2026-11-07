@@ -18,6 +18,7 @@ Phase 2 notebooks. Notebook/script sources remain in
 | `task_12_figure1_species_grid/` | 06-11-2026: Fig. 1, 17-species grid (PDF/PNG), candidate sheet and selection table |
 | `task_13_imaging_parameters/` | 06-11-2026: imaging facts per species, inconsistencies and questions for the data team |
 | `task_14_august_reproduction/` | 07-11-2026: ConvNeXt seed 42 Final-B rerun: August code vs true 1e-5 without warmup |
+| `task_15_clean14_runs/` | 07-11-2026: 14-species CV (25 runs), Final-B (15 runs), ConvNeXt grayscale/16px CV (10 runs); `results/` is filled on Vast by `summarize_clean14.py` |
 
 Checkpoints, fold outputs and LR tuning remain under `data/experiments/`.
 No experiment was rerun and no metric, run ID or historical registry content
