@@ -9,6 +9,12 @@ Script: `notebooks/phase 2/supervisor-feedback/task_15_clean14_runs/analyze_clea
 
 The summary tables are in `../results/summary.md`. This folder adds the checks and comparisons below.
 
+## 0. Our own counts
+
+- **Image-run:** one (test image, run) pair; an image wrong in 10 runs counts 10 times.
+- **`n_runs_wrong_of_15`:** how many of the 15 Final-B runs (5 models × 3 seeds) misclassify a test image.
+- **`total_errors_5_models`:** wrong OOF images of an origin, summed over 5 models (one image counts up to 5 times).
+
 ## 1. Integrity
 
 `integrity.csv` covers all 50 runs:
