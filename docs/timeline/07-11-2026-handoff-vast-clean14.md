@@ -326,6 +326,10 @@ Mọi đường dẫn tương đối với `artifacts/phase_2/supervisor-feedbac
    1/5 fold ResNet chạy đủ 50 epoch với best epoch ≥ 45; ở Final-B, 2/3 seed MobileNet và 2/3 seed ResNet. Val loss vẫn
    giảm ở epoch cuối, nên số của các model này bị giới hạn bởi số epoch tối đa. ConvNeXt (tối đa 40 epoch) và Swin dừng
    sớm bình thường. Điều này có thể giải thích MobileNet 14 loài thấp hơn model 17 loài (−0,95).
+   **Đính chính (phân tích local 07-11, `analysis/README.md` mục 2):** epoch 50 là điểm kết thúc của lịch cosine; ở
+   epoch 45 LR chỉ còn 4,3e-6. Từ epoch 40 tới epoch best, val loss giảm 0–0,019 và val acc đổi −0,3 đến +0,8 điểm. Val acc
+   trung bình của MobileNet trong CV: 95,68 ở epoch 40, 96,10 ở epoch 45, 96,12 ở epoch 50. Vì vậy câu "bị giới hạn bởi số epoch
+   tối đa" quá mạnh: chạy thêm epoch với cùng lịch không giúp. Lịch dài hơn (ví dụ 100 epoch) có giúp hay không thì chưa thử.
 2. **Final-B: Swin hơn ConvNeXt 0,77 điểm** (lỗi test mỗi seed: Swin 1/1/2, ConvNeXt 6/4/4 trên 432 ảnh), trong khi trên
    CV hai model ngang nhau. Chênh khoảng 3 ảnh, sát ngưỡng nhiễu ở mục 8.
 3. **Cặp khó nhất vẫn là *Pinus krempfii* ↔ *P. dalatensis*:** F1 test trung bình qua 5 model 0,931 và 0,932; mọi loài

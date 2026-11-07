@@ -1,0 +1,14 @@
+comparison,model,a,b,n,acc_a,acc_b,only_a_correct,only_b_correct,p_exact
+"CV OOF: 14-species (new rule) vs CV v2 17-species (old rule), same 4115 images",convnext_tiny,clean14,cv_v2,4115,0.9944106925880923,0.9902794653705954,24,7,0.003326892852783203
+"CV OOF: 14-species (new rule) vs CV v2 17-species (old rule), same 4115 images",swin_tiny,clean14,cv_v2,4115,0.9934386391251518,0.9888213851761847,35,16,0.010973562899720513
+"CV OOF: 14-species (new rule) vs CV v2 17-species (old rule), same 4115 images",efficientnet_b3,clean14,cv_v2,4115,0.9756986634264885,0.974726609963548,44,40,0.7436441861052041
+"CV OOF: 14-species (new rule) vs CV v2 17-species (old rule), same 4115 images",resnet50,clean14,cv_v2,4115,0.9713244228432564,0.9688942891859053,43,33,0.3018724904870079
+"CV OOF: 14-species (new rule) vs CV v2 17-species (old rule), same 4115 images",mobilenetv3_large,clean14,cv_v2,4115,0.9528554070473876,0.9623329283110571,65,104,0.003344626048609461
+"CV OOF 14-species: model vs model, same 4115 images",swin_tiny vs convnext_tiny,swin_tiny,convnext_tiny,4115,0.9934386391251518,0.9944106925880923,9,13,0.5234670639038086
+"CV OOF 14-species: model vs model, same 4115 images",convnext_tiny vs efficientnet_b3,convnext_tiny,efficientnet_b3,4115,0.9944106925880923,0.9756986634264885,81,4,1.0997423112559616e-19
+"CV OOF 14-species: model vs model, same 4115 images",efficientnet_b3 vs resnet50,efficientnet_b3,resnet50,4115,0.9756986634264885,0.9713244228432564,66,48,0.11093931188461242
+"CV OOF 14-species: model vs model, same 4115 images",resnet50 vs mobilenetv3_large,resnet50,mobilenetv3_large,4115,0.9713244228432564,0.9528554070473876,135,59,4.946371630008554e-08
+"Final-B test, seed-matched, pooled over 3 seeds (3 x 432)",swin_tiny vs convnext_tiny,swin_tiny,convnext_tiny,1296,0.9969135802469136,0.9891975308641975,11,1,0.00634765625
+"Final-B test, seed-matched, pooled over 3 seeds (3 x 432)",convnext_tiny vs efficientnet_b3,convnext_tiny,efficientnet_b3,1296,0.9891975308641975,0.9791666666666666,19,6,0.01463329792022705
+"Final-B test, seed-matched, pooled over 3 seeds (3 x 432)",efficientnet_b3 vs resnet50,efficientnet_b3,resnet50,1296,0.9791666666666666,0.9753086419753086,13,8,0.38331031799316406
+"Final-B test, seed-matched, pooled over 3 seeds (3 x 432)",resnet50 vs mobilenetv3_large,resnet50,mobilenetv3_large,1296,0.9753086419753086,0.9853395061728395,5,18,0.010622024536132812
