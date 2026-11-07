@@ -1,0 +1,4 @@
+phases: cv degraded final
+max_parallel: 5
+host: 63da576f4a49
+a496be4cb1d03e56b58b56329df65e29546f15aa

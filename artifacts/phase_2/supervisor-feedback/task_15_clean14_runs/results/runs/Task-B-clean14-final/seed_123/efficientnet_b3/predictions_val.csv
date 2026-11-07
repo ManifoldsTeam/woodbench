@@ -1,0 +1,804 @@
+path,true_label,predicted_label,true_species,predicted_species,confidence
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (134).png,4,4,Picea glauca,Picea glauca,0.8743422031402588
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (152).png,4,4,Picea glauca,Picea glauca,0.9053880572319031
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (80).png,4,4,Picea glauca,Picea glauca,0.8970967531204224
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (146).png,4,4,Picea glauca,Picea glauca,0.9130529165267944
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (151).png,4,4,Picea glauca,Picea glauca,0.9052929282188416
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (139).png,4,4,Picea glauca,Picea glauca,0.9029287695884705
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (137).png,4,4,Picea glauca,Picea glauca,0.8877862691879272
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (77).png,4,4,Picea glauca,Picea glauca,0.8875498175621033
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (130).png,4,4,Picea glauca,Picea glauca,0.914148211479187
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (131).png,4,4,Picea glauca,Picea glauca,0.9177926182746887
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (92).png,4,4,Picea glauca,Picea glauca,0.890488862991333
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (88).png,4,4,Picea glauca,Picea glauca,0.9075413346290588
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (138).png,4,4,Picea glauca,Picea glauca,0.8884897828102112
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (147).png,4,4,Picea glauca,Picea glauca,0.9200125336647034
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (132).png,4,4,Picea glauca,Picea glauca,0.895038902759552
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (66).png,4,4,Picea glauca,Picea glauca,0.8790344595909119
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (82).png,4,4,Picea glauca,Picea glauca,0.9024528861045837
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (95).png,4,4,Picea glauca,Picea glauca,0.8997557163238525
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (149).png,4,4,Picea glauca,Picea glauca,0.8735045790672302
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (75).png,4,4,Picea glauca,Picea glauca,0.9000981450080872
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (126).png,4,4,Picea glauca,Picea glauca,0.896621584892273
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (127).png,4,4,Picea glauca,Picea glauca,0.898235023021698
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (94).png,4,4,Picea glauca,Picea glauca,0.8926552534103394
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (79).png,4,4,Picea glauca,Picea glauca,0.9137861728668213
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (129).png,4,4,Picea glauca,Picea glauca,0.8874362111091614
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (67).png,4,4,Picea glauca,Picea glauca,0.891086757183075
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (128).png,4,4,Picea glauca,Picea glauca,0.8954049944877625
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (89).png,4,4,Picea glauca,Picea glauca,0.9106419682502747
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (93).png,4,4,Picea glauca,Picea glauca,0.8888647556304932
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (72).png,4,4,Picea glauca,Picea glauca,0.8804428577423096
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (143).png,4,4,Picea glauca,Picea glauca,0.915860116481781
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (87).png,4,4,Picea glauca,Picea glauca,0.8831445574760437
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (154).png,4,4,Picea glauca,Picea glauca,0.9139398336410522
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (155).png,4,4,Picea glauca,Picea glauca,0.8893468976020813
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (83).png,4,4,Picea glauca,Picea glauca,0.9081929922103882
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (71).png,4,4,Picea glauca,Picea glauca,0.8943464159965515
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (84).png,4,4,Picea glauca,Picea glauca,0.9032239317893982
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (76).png,4,4,Picea glauca,Picea glauca,0.8643910884857178
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (141).png,4,4,Picea glauca,Picea glauca,0.908417820930481
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (153).png,4,4,Picea glauca,Picea glauca,0.8649957180023193
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (133).png,4,4,Picea glauca,Picea glauca,0.8751237392425537
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (86).png,4,4,Picea glauca,Picea glauca,0.8874527215957642
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (136).png,4,4,Picea glauca,Picea glauca,0.8779467940330505
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (81).png,4,4,Picea glauca,Picea glauca,0.8942574262619019
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (91).png,4,4,Picea glauca,Picea glauca,0.9058151245117188
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (145).png,4,4,Picea glauca,Picea glauca,0.9199280738830566
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (142).png,4,4,Picea glauca,Picea glauca,0.9096498489379883
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (90).png,4,4,Picea glauca,Picea glauca,0.8899332880973816
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (148).png,4,4,Picea glauca,Picea glauca,0.8858473896980286
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (150).png,4,4,Picea glauca,Picea glauca,0.8894026279449463
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (140).png,4,4,Picea glauca,Picea glauca,0.8863738179206848
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (144).png,4,4,Picea glauca,Picea glauca,0.8860464692115784
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.5 (135).png,4,4,Picea glauca,Picea glauca,0.8990164399147034
+data/task-B-group-split-224/val/Picea glauca/3378. Picea glauca.3 (85).png,4,4,Picea glauca,Picea glauca,0.8970366716384888
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (165).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8814061880111694
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(211).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8892255425453186
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(201).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.9054132699966431
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (175).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.883314311504364
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(204).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.9058015942573547
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (163).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8701906204223633
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(213).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8896937966346741
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(220).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8649247884750366
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (184).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.5409077405929565
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (173).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.9337539076805115
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (190).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8756648302078247
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(209).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.9038639068603516
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (183).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8508402705192566
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(207).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.9019708037376404
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (172).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8922234177589417
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(221).png,13,9,Xanthocyparis vietnamensis,Podocarpus pilgeri,0.3463588058948517
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (174).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8830744028091431
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(214).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8932501077651978
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(197).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.893796980381012
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (164).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8970215320587158
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (168).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.9191341400146484
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (186).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8775182962417603
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(205).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8870302438735962
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(216).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8951548337936401
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(208).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8560191988945007
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (187).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8978387713432312
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (170).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.9248738884925842
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(193).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8987608551979065
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(194).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.9029990434646606
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (171).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.9017573595046997
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(200).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.9062325954437256
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(196).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.913345217704773
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (179).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8743491172790527
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (189).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.9076473116874695
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (185).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8843733668327332
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(198).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8955941796302795
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(203).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.9027405381202698
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(219).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8928865790367126
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (167).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.9466042518615723
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(206).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.892924427986145
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(215).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8774530291557312
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (188).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8851476311683655
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (178).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8725006580352783
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(195).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.904427170753479
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (176).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.9063678979873657
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (161).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8917483687400818
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (180).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.9065145254135132
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(212).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8931015133857727
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (169).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.9125182628631592
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (181).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8877737522125244
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (162).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.896277904510498
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(202).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8908929824829102
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(218).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8808704018592834
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(210).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8733218312263489
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (182).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8638617992401123
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (166).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.8914666175842285
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(199).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.904660165309906
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.6.( (177).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.9034265279769897
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(217).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.9042904376983643
+data/task-B-group-split-224/val/Xanthocyparis vietnamensis/3341. Xanthocyparis vietnamensis.7.(192).png,13,13,Xanthocyparis vietnamensis,Xanthocyparis vietnamensis,0.9021492600440979
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (190).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8955281972885132
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (174).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8913055062294006
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (193).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8978967070579529
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (187).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9075185656547546
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (191).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8963399529457092
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (241).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8833853602409363
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (246).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9041455388069153
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (238).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.905033528804779
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (186).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8770243525505066
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (176).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9026882648468018
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (188).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8984444737434387
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (196).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9025633335113525
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (257).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9114583730697632
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (189).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.89496910572052
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (256).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8966128826141357
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (242).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8972942233085632
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (237).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.897000253200531
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (232).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8967287540435791
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (182).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8858954906463623
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (185).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8962509632110596
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (183).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8992034792900085
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (172).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9128521084785461
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (233).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8933194279670715
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (253).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8902201652526855
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (178).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9035145044326782
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (252).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9023087024688721
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (250).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8822330236434937
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (249).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8894500732421875
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (179).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9103816747665405
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (240).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9022340774536133
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (180).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8989476561546326
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (259).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8903062343597412
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (184).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9034823775291443
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (177).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9034479260444641
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (245).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9086440205574036
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (192).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8828751444816589
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (234).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8882244229316711
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (255).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9131360054016113
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (235).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8973868489265442
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (195).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8965814709663391
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (248).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8978207111358643
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (171).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9039284586906433
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (198).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9036390781402588
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (260).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8907191753387451
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (197).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8968551158905029
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (254).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9041064381599426
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (251).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8977251648902893
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (231).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9029470086097717
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (173).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8812234997749329
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (181).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.875918984413147
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (243).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9016246199607849
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (175).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9085404872894287
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (194).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9068469405174255
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (236).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9009398818016052
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (244).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9092587828636169
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (239).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8894224166870117
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (258).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.9045724868774414
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.8 (247).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8831247687339783
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (199).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8916165828704834
+data/task-B-group-split-224/val/Thujopsis dolabrata/3387. Thujopsis dolabrata.6 (200).png,12,12,Thujopsis dolabrata,Thujopsis dolabrata,0.8777505159378052
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (3).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8947449326515198
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (5).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8838267922401428
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.9 (245).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.9004937410354614
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (18).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8910238146781921
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (14).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.9007434844970703
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (9).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8598284721374512
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (17).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.9198457598686218
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.9 (252).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.9339096546173096
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.9 (244).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8938835263252258
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (20).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8621591925621033
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (4).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8973031640052795
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (11).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8636128306388855
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (8).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8883056640625
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (28).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8922099471092224
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.9 (239).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8981645107269287
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.9 (246).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.9063083529472351
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.9 (257).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.889658510684967
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.9 (254).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.9063255786895752
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.9 (248).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.9141150712966919
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.9 (235).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.866058886051178
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.9 (255).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.9058158993721008
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.9 (249).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.9044727683067322
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (22).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8951104283332825
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (7).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8754625916481018
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (2).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8982459306716919
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.9 (241).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.9234424829483032
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.9 (260).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8803545236587524
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (19).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8879444003105164
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (1).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8913796544075012
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (16).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8914531469345093
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.9 (253).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8803260326385498
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (13).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8928399682044983
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.9 (234).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.9033971428871155
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (21).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8918648362159729
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (10).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8733355402946472
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (15).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.9015769958496094
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (6).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8609846830368042
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.9 (243).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.9091984629631042
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.9 (256).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.878578245639801
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.9 (236).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8956180810928345
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (27).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8818701505661011
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (12).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.9124271273612976
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.1 (30).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.8840242028236389
+data/task-B-group-split-224/val/Pseudotsuga brevifolia/3383. Pseudotsuga brevifolia.9 (242).png,10,10,Pseudotsuga brevifolia,Pseudotsuga brevifolia,0.9302940964698792
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.10 (292).png,11,11,Taxus wallichiana,Taxus wallichiana,0.9320295453071594
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (70).png,11,11,Taxus wallichiana,Taxus wallichiana,0.8833863735198975
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.10 (278).png,11,11,Taxus wallichiana,Taxus wallichiana,0.8019285202026367
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (75).png,11,11,Taxus wallichiana,Taxus wallichiana,0.8766211867332458
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (65).png,11,11,Taxus wallichiana,Taxus wallichiana,0.8875860571861267
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (84).png,11,11,Taxus wallichiana,Taxus wallichiana,0.8798327445983887
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.10 (284).png,11,11,Taxus wallichiana,Taxus wallichiana,0.47457781434059143
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.10 (275).png,11,11,Taxus wallichiana,Taxus wallichiana,0.896819531917572
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (64).png,11,11,Taxus wallichiana,Taxus wallichiana,0.8712980151176453
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (80).png,11,11,Taxus wallichiana,Taxus wallichiana,0.8583957552909851
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (69).png,11,11,Taxus wallichiana,Taxus wallichiana,0.7775378227233887
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (67).png,11,11,Taxus wallichiana,Taxus wallichiana,0.7467180490493774
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.10 (291).png,11,11,Taxus wallichiana,Taxus wallichiana,0.9390186667442322
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.10 (289).png,11,11,Taxus wallichiana,Taxus wallichiana,0.6002774238586426
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.10 (273).png,11,11,Taxus wallichiana,Taxus wallichiana,0.9126550555229187
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (61).png,11,11,Taxus wallichiana,Taxus wallichiana,0.8714547157287598
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (85).png,11,11,Taxus wallichiana,Taxus wallichiana,0.8976422548294067
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (74).png,11,11,Taxus wallichiana,Taxus wallichiana,0.9007768630981445
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (73).png,11,11,Taxus wallichiana,Taxus wallichiana,0.8438697457313538
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (66).png,11,11,Taxus wallichiana,Taxus wallichiana,0.9142847061157227
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.10 (279).png,11,11,Taxus wallichiana,Taxus wallichiana,0.6231491565704346
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.10 (281).png,11,11,Taxus wallichiana,Taxus wallichiana,0.7137772440910339
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.10 (271).png,11,11,Taxus wallichiana,Taxus wallichiana,0.6283470392227173
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.10 (290).png,11,9,Taxus wallichiana,Podocarpus pilgeri,0.5341039299964905
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.10 (295).png,11,11,Taxus wallichiana,Taxus wallichiana,0.9345078468322754
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.10 (268).png,11,11,Taxus wallichiana,Taxus wallichiana,0.9325095415115356
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.10 (276).png,11,11,Taxus wallichiana,Taxus wallichiana,0.9147109985351562
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (79).png,11,11,Taxus wallichiana,Taxus wallichiana,0.8446401953697205
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (68).png,11,11,Taxus wallichiana,Taxus wallichiana,0.9222065210342407
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (72).png,11,11,Taxus wallichiana,Taxus wallichiana,0.8988097906112671
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.10 (270).png,11,11,Taxus wallichiana,Taxus wallichiana,0.44247156381607056
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (62).png,11,11,Taxus wallichiana,Taxus wallichiana,0.8813857436180115
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.10 (274).png,11,11,Taxus wallichiana,Taxus wallichiana,0.8884367346763611
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.10 (288).png,11,11,Taxus wallichiana,Taxus wallichiana,0.9116564989089966
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.10 (277).png,11,11,Taxus wallichiana,Taxus wallichiana,0.918415904045105
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (63).png,11,11,Taxus wallichiana,Taxus wallichiana,0.9074472784996033
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (60).png,11,11,Taxus wallichiana,Taxus wallichiana,0.7908827066421509
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.10 (294).png,11,11,Taxus wallichiana,Taxus wallichiana,0.9481872916221619
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (71).png,11,11,Taxus wallichiana,Taxus wallichiana,0.5671674609184265
+data/task-B-group-split-224/val/Taxus wallichiana/3391. Taxus wallichiana.3 (83).png,11,11,Taxus wallichiana,Taxus wallichiana,0.809040367603302
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (39).png,8,8,Pinus radiata,Pinus radiata,0.9036353826522827
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (29).png,8,8,Pinus radiata,Pinus radiata,0.9003463387489319
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (38).png,8,8,Pinus radiata,Pinus radiata,0.9139439463615417
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (40).png,8,8,Pinus radiata,Pinus radiata,0.9142597317695618
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (9).png,8,8,Pinus radiata,Pinus radiata,0.9136276245117188
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (57).png,8,8,Pinus radiata,Pinus radiata,0.8973420262336731
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (18).png,8,8,Pinus radiata,Pinus radiata,0.896392822265625
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (7).png,8,8,Pinus radiata,Pinus radiata,0.9062122106552124
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (64).png,8,8,Pinus radiata,Pinus radiata,0.9071264266967773
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (54).png,8,8,Pinus radiata,Pinus radiata,0.9072182178497314
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (28).png,8,8,Pinus radiata,Pinus radiata,0.8961275815963745
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (55).png,8,8,Pinus radiata,Pinus radiata,0.9052211046218872
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (22).png,8,8,Pinus radiata,Pinus radiata,0.9022608399391174
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (44).png,8,8,Pinus radiata,Pinus radiata,0.913398802280426
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (58).png,8,8,Pinus radiata,Pinus radiata,0.8790096640586853
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (46).png,8,8,Pinus radiata,Pinus radiata,0.9095205664634705
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (33).png,8,8,Pinus radiata,Pinus radiata,0.902511477470398
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (4).png,8,8,Pinus radiata,Pinus radiata,0.8990777730941772
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (21).png,8,8,Pinus radiata,Pinus radiata,0.8848024010658264
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (42).png,8,8,Pinus radiata,Pinus radiata,0.9021411538124084
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (15).png,8,8,Pinus radiata,Pinus radiata,0.904466450214386
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (2).png,8,8,Pinus radiata,Pinus radiata,0.901705801486969
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (68).png,8,8,Pinus radiata,Pinus radiata,0.8717657923698425
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (8).png,8,8,Pinus radiata,Pinus radiata,0.9248232841491699
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (26).png,8,8,Pinus radiata,Pinus radiata,0.8994867205619812
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (52).png,8,8,Pinus radiata,Pinus radiata,0.9113149046897888
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (13).png,8,8,Pinus radiata,Pinus radiata,0.9008129239082336
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (6).png,8,8,Pinus radiata,Pinus radiata,0.903622031211853
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (50).png,8,8,Pinus radiata,Pinus radiata,0.8903883099555969
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (67).png,8,8,Pinus radiata,Pinus radiata,0.9067152142524719
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (51).png,8,8,Pinus radiata,Pinus radiata,0.905818521976471
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (63).png,8,8,Pinus radiata,Pinus radiata,0.8916987776756287
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (3).png,8,8,Pinus radiata,Pinus radiata,0.8983346819877625
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (27).png,8,8,Pinus radiata,Pinus radiata,0.8967832922935486
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (69).png,8,8,Pinus radiata,Pinus radiata,0.8895325660705566
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (49).png,8,8,Pinus radiata,Pinus radiata,0.9028608202934265
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (25).png,8,8,Pinus radiata,Pinus radiata,0.8839694261550903
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (34).png,8,8,Pinus radiata,Pinus radiata,0.8928931355476379
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (43).png,8,8,Pinus radiata,Pinus radiata,0.9106784462928772
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (36).png,8,8,Pinus radiata,Pinus radiata,0.8768123984336853
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (11).png,8,8,Pinus radiata,Pinus radiata,0.9048972129821777
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (35).png,8,8,Pinus radiata,Pinus radiata,0.8998261094093323
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (19).png,8,8,Pinus radiata,Pinus radiata,0.9011518359184265
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (60).png,8,8,Pinus radiata,Pinus radiata,0.8997740745544434
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (17).png,8,8,Pinus radiata,Pinus radiata,0.9105170369148254
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (47).png,8,8,Pinus radiata,Pinus radiata,0.9065544009208679
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (59).png,8,8,Pinus radiata,Pinus radiata,0.913295567035675
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (53).png,8,8,Pinus radiata,Pinus radiata,0.9062754511833191
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (5).png,8,8,Pinus radiata,Pinus radiata,0.9262332916259766
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (37).png,8,8,Pinus radiata,Pinus radiata,0.9037840366363525
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (56).png,8,8,Pinus radiata,Pinus radiata,0.8853970766067505
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (16).png,8,8,Pinus radiata,Pinus radiata,0.8969892859458923
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (48).png,8,8,Pinus radiata,Pinus radiata,0.9019700884819031
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (20).png,8,8,Pinus radiata,Pinus radiata,0.8872103095054626
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (10).png,8,8,Pinus radiata,Pinus radiata,0.8957171440124512
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (1).png,8,8,Pinus radiata,Pinus radiata,0.8801870942115784
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (30).png,8,8,Pinus radiata,Pinus radiata,0.8890146613121033
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (32).png,8,8,Pinus radiata,Pinus radiata,0.9040358066558838
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (41).png,8,8,Pinus radiata,Pinus radiata,0.8979812860488892
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (12).png,8,8,Pinus radiata,Pinus radiata,0.9016225934028625
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (24).png,8,8,Pinus radiata,Pinus radiata,0.8990842700004578
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (61).png,8,8,Pinus radiata,Pinus radiata,0.8968504071235657
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (65).png,8,8,Pinus radiata,Pinus radiata,0.9063503742218018
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (14).png,8,8,Pinus radiata,Pinus radiata,0.9204654693603516
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (66).png,8,8,Pinus radiata,Pinus radiata,0.8844162225723267
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (62).png,8,8,Pinus radiata,Pinus radiata,0.9027109146118164
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.2 (45).png,8,8,Pinus radiata,Pinus radiata,0.9083216786384583
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (31).png,8,8,Pinus radiata,Pinus radiata,0.8795256614685059
+data/task-B-group-split-224/val/Pinus radiata/3379. Pinus radiata.1 (23).png,8,8,Pinus radiata,Pinus radiata,0.8907546401023865
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (207).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8978432416915894
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (286).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.9005375504493713
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (222).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8741890788078308
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (221).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8845457434654236
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (226).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.911639928817749
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (217).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.9070177674293518
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (262).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.891954779624939
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (212).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.9096988439559937
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (276).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.9049256443977356
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (202).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8240984082221985
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (266).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8930455446243286
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (199).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8502873182296753
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (275).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8411833047866821
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (280).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8090168833732605
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (219).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.9306875467300415
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (283).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8842191100120544
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (211).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.912407398223877
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (220).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8865046501159668
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (272).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8979820609092712
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (216).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.5511619448661804
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (269).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.9016702771186829
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (204).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8938830494880676
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (270).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8644735217094421
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (203).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8477234244346619
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (201).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.9038463830947876
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (223).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.895838737487793
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (205).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.9136115908622742
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (261).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.9083431363105774
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (274).png,9,11,Podocarpus pilgeri,Taxus wallichiana,0.3760617971420288
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (264).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.9074544906616211
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (258).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.891242504119873
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (197).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8768879175186157
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (209).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8974084258079529
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (227).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8594378232955933
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (279).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.9306504726409912
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (215).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.7970283627510071
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (271).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8937667012214661
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (206).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8478851914405823
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (225).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8679267168045044
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (268).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.9082795977592468
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (224).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8744713664054871
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (284).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8560907244682312
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (259).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8938511610031128
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (277).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.7992892861366272
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (200).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8227981328964233
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (213).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.9135008454322815
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (198).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8365654349327087
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (281).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.9290958642959595
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (282).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.7221787571907043
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (260).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.9274928569793701
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (208).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.9039576053619385
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (273).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.9201790690422058
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (267).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8401969075202942
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (278).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.9394102096557617
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (265).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.9171153903007507
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (285).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8690519332885742
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (214).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8964053392410278
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.9 (263).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8831360936164856
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (218).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.8681634664535522
+data/task-B-group-split-224/val/Podocarpus pilgeri/3386. Podocarpus pilgeri.7 (210).png,9,9,Podocarpus pilgeri,Podocarpus pilgeri,0.7890903353691101
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(246).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9108266830444336
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(267).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9188529253005981
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(51).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9147610068321228
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(53).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9060884118080139
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(49).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9117113947868347
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(257).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9253754615783691
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(45).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.8747350573539734
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(244).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9108034372329712
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(262).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.903290331363678
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(61).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9027703404426575
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(248).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.8684678077697754
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(268).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9396568536758423
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(39).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9228712320327759
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(50).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9094424247741699
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(55).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.8968746662139893
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(47).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9407158493995667
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(272).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.8650667667388916
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(261).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.8982586860656738
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(40).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9003304243087769
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(57).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9043574333190918
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(42).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9350506663322449
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(243).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9020989537239075
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(36).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.8968035578727722
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(245).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.8874800801277161
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(52).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9146616458892822
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(63).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9011569023132324
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(37).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.8857484459877014
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(38).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9172260165214539
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(62).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.8941718339920044
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(251).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.929366409778595
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(264).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9247259497642517
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(60).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.8767393827438354
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(270).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.917504608631134
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(43).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.8908219933509827
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(253).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9006423354148865
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(247).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.8931732177734375
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(58).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9090537428855896
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(34).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9129684567451477
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(48).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9266952872276306
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(271).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.8851029276847839
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(266).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.916782557964325
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(265).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9080873131752014
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(56).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9014866352081299
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(269).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.893370509147644
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(249).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9105675220489502
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(35).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9174959063529968
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(254).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9088807702064514
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(44).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9010644555091858
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(259).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.8810086846351624
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(260).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.8985471725463867
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(41).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9160327315330505
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(59).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.8972275257110596
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(46).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.8994484543800354
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(258).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9039144515991211
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(252).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9051336646080017
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.2.(54).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9181324243545532
+data/task-B-group-split-224/val/Calocedrus rupestris/3342. Calocedrus rupestris.9.(263).png,1,1,Calocedrus rupestris,Calocedrus rupestris,0.9368629455566406
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (268).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9000346064567566
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (287).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9204728603363037
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (141).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9072557091712952
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (157).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9068074226379395
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (136).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9019776582717896
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (296).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9168137311935425
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (163).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9107644557952881
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (288).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8740511536598206
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (266).png,6,6,Pinus dalatensis,Pinus dalatensis,0.910677433013916
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (267).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9092680811882019
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (273).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8750770092010498
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (138).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9066494107246399
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (155).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8845472931861877
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (149).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8907146453857422
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (152).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9075250625610352
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (161).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8942917585372925
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (271).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9193001389503479
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (292).png,6,7,Pinus dalatensis,Pinus krempfii,0.7354064583778381
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (293).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8993725776672363
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (278).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9002581238746643
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (142).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9081116914749146
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (139).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9102658629417419
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (282).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9057918190956116
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (166).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8920004963874817
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (279).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9028146266937256
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (148).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8955986499786377
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (272).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9266873002052307
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (285).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9128015637397766
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (274).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8995169401168823
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (276).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8532567024230957
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (135).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9069825410842896
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (165).png,6,6,Pinus dalatensis,Pinus dalatensis,0.896065354347229
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (298).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8908603191375732
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (294).png,6,6,Pinus dalatensis,Pinus dalatensis,0.894578754901886
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (265).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9040470123291016
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (286).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8903161883354187
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (159).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8891537189483643
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (144).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9148892164230347
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (146).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8957445025444031
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (270).png,6,6,Pinus dalatensis,Pinus dalatensis,0.890173614025116
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (277).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8757867813110352
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (158).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8951354622840881
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (283).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8961969614028931
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (290).png,6,7,Pinus dalatensis,Pinus krempfii,0.7962517738342285
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (275).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9073694348335266
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (143).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9089701175689697
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (147).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9197502732276917
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (145).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8969781398773193
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (297).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8980075120925903
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (133).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8934287428855896
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (280).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8349587321281433
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (134).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9067206978797913
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (156).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9148663282394409
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (162).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9096766710281372
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (164).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8906664848327637
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (269).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8971039056777954
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (140).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9032886624336243
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (151).png,6,6,Pinus dalatensis,Pinus dalatensis,0.912290632724762
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (289).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9392375946044922
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (153).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8789705038070679
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (137).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9026651382446289
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (281).png,6,7,Pinus dalatensis,Pinus krempfii,0.6824854016304016
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (284).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8967703580856323
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (150).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9008122682571411
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (160).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9031385183334351
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (291).png,6,7,Pinus dalatensis,Pinus krempfii,0.6612991094589233
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.9 (295).png,6,6,Pinus dalatensis,Pinus dalatensis,0.9062088131904602
+data/task-B-group-split-224/val/Pinus dalatensis/3393. Pinus dalatensis.5 (154).png,6,6,Pinus dalatensis,Pinus dalatensis,0.8865241408348083
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(65).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8969229459762573
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(41).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8950127363204956
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(49).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.889940619468689
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(64).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8903868794441223
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(314).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9023945331573486
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(335).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8895775675773621
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(36).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9042142629623413
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(38).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9053463339805603
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(68).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9027830958366394
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(45).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.898198664188385
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(312).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.889448344707489
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(66).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8887013792991638
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(333).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9009569883346558
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(326).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8912718892097473
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(324).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9019296765327454
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(313).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9210071563720703
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(327).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8916800022125244
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(43).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8851611018180847
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(61).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.90015709400177
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(321).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.923304557800293
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(311).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.916559100151062
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(309).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9220786690711975
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(305).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8949567079544067
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(56).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8703738451004028
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(34).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9137802720069885
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(319).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.893063485622406
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(58).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8950162529945374
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(317).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9021702408790588
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(48).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8958225846290588
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(331).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8957414627075195
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(57).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8932502865791321
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(316).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8902950882911682
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(332).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9077836275100708
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(330).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.884261429309845
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(52).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.901439905166626
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(37).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8735119700431824
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(334).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8822426199913025
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(60).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9014691710472107
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(50).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8965251445770264
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(54).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9038046002388
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(323).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8765609860420227
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(59).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8890453577041626
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(320).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8928422927856445
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(307).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8853832483291626
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(315).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9097573757171631
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(40).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9049601554870605
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(44).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9061024785041809
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(67).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9171460866928101
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(308).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8961803317070007
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(42).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8907896280288696
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(325).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8961140513420105
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(304).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8938956260681152
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(55).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.886608362197876
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(63).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8991169929504395
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(39).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8835780024528503
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(53).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9020693302154541
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(306).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9090538620948792
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(46).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8976749181747437
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(51).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.901927649974823
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(35).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8833568096160889
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(328).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9074739217758179
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(302).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9025642275810242
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(303).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9039855599403381
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(318).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8916587829589844
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(47).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.9065811634063721
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(322).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.903928279876709
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(301).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.888366162776947
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.2.(62).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8751455545425415
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(310).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.8971284627914429
+data/task-B-group-split-224/val/Cryptomeria japonica/3350. Cryptomeria japonica.10.(329).png,3,3,Cryptomeria japonica,Cryptomeria japonica,0.885817289352417
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (266).png,5,5,Pinus cernua,Pinus cernua,0.8907146453857422
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (281).png,5,5,Pinus cernua,Pinus cernua,0.9026187062263489
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (80).png,5,5,Pinus cernua,Pinus cernua,0.9136047959327698
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (70).png,5,5,Pinus cernua,Pinus cernua,0.881401002407074
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (85).png,5,5,Pinus cernua,Pinus cernua,0.8936695456504822
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (255).png,5,5,Pinus cernua,Pinus cernua,0.8827101588249207
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (285).png,5,5,Pinus cernua,Pinus cernua,0.860120952129364
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (271).png,5,5,Pinus cernua,Pinus cernua,0.856580376625061
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (283).png,5,5,Pinus cernua,Pinus cernua,0.9028279781341553
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (73).png,5,5,Pinus cernua,Pinus cernua,0.8909284472465515
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (62).png,5,5,Pinus cernua,Pinus cernua,0.8853415846824646
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (78).png,5,5,Pinus cernua,Pinus cernua,0.8826473355293274
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (275).png,5,5,Pinus cernua,Pinus cernua,0.9111487865447998
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (77).png,5,5,Pinus cernua,Pinus cernua,0.9055586457252502
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (63).png,5,5,Pinus cernua,Pinus cernua,0.9026021957397461
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (68).png,5,5,Pinus cernua,Pinus cernua,0.9050365090370178
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (72).png,5,5,Pinus cernua,Pinus cernua,0.8840096592903137
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (256).png,5,5,Pinus cernua,Pinus cernua,0.7205926775932312
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (83).png,5,5,Pinus cernua,Pinus cernua,0.8907961845397949
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (67).png,5,5,Pinus cernua,Pinus cernua,0.8870272636413574
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (81).png,5,5,Pinus cernua,Pinus cernua,0.893204927444458
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (280).png,5,5,Pinus cernua,Pinus cernua,0.9069312214851379
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (84).png,5,5,Pinus cernua,Pinus cernua,0.8422659039497375
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (278).png,5,5,Pinus cernua,Pinus cernua,0.8734301328659058
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (82).png,5,5,Pinus cernua,Pinus cernua,0.9068528413772583
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (267).png,5,5,Pinus cernua,Pinus cernua,0.9201076626777649
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (259).png,5,6,Pinus cernua,Pinus dalatensis,0.7848773002624512
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (272).png,5,5,Pinus cernua,Pinus cernua,0.8984682559967041
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (282).png,5,5,Pinus cernua,Pinus cernua,0.8393789529800415
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (76).png,5,5,Pinus cernua,Pinus cernua,0.8979441523551941
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (262).png,5,5,Pinus cernua,Pinus cernua,0.9186649322509766
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (265).png,5,5,Pinus cernua,Pinus cernua,0.893032968044281
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (69).png,5,5,Pinus cernua,Pinus cernua,0.8790712952613831
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (284).png,5,5,Pinus cernua,Pinus cernua,0.8830702900886536
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (268).png,5,5,Pinus cernua,Pinus cernua,0.8156843781471252
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (286).png,5,5,Pinus cernua,Pinus cernua,0.8580155968666077
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (269).png,5,5,Pinus cernua,Pinus cernua,0.9133175611495972
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (64).png,5,5,Pinus cernua,Pinus cernua,0.863760232925415
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (274).png,5,5,Pinus cernua,Pinus cernua,0.8854129910469055
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (66).png,5,5,Pinus cernua,Pinus cernua,0.8959629535675049
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (258).png,5,5,Pinus cernua,Pinus cernua,0.8341851830482483
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (71).png,5,5,Pinus cernua,Pinus cernua,0.8984944820404053
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (257).png,5,5,Pinus cernua,Pinus cernua,0.5904508829116821
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (287).png,5,5,Pinus cernua,Pinus cernua,0.8747751116752625
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (276).png,5,5,Pinus cernua,Pinus cernua,0.883810818195343
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (75).png,5,5,Pinus cernua,Pinus cernua,0.8885469436645508
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (273).png,5,5,Pinus cernua,Pinus cernua,0.8671751022338867
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (277).png,5,5,Pinus cernua,Pinus cernua,0.9177033305168152
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (264).png,5,6,Pinus cernua,Pinus dalatensis,0.5897068381309509
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (79).png,5,5,Pinus cernua,Pinus cernua,0.8979374766349792
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (65).png,5,5,Pinus cernua,Pinus cernua,0.8682257533073425
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (270).png,5,5,Pinus cernua,Pinus cernua,0.9151842594146729
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (260).png,5,5,Pinus cernua,Pinus cernua,0.857551634311676
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (261).png,5,5,Pinus cernua,Pinus cernua,0.7860506772994995
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.3 (74).png,5,5,Pinus cernua,Pinus cernua,0.9091964364051819
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (263).png,5,5,Pinus cernua,Pinus cernua,0.8923861384391785
+data/task-B-group-split-224/val/Pinus cernua/3385. Pinus cernua.10 (279).png,5,5,Pinus cernua,Pinus cernua,0.8928332924842834
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (248).png,7,7,Pinus krempfii,Pinus krempfii,0.8714755773544312
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (243).png,7,7,Pinus krempfii,Pinus krempfii,0.8307458162307739
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (303).png,7,7,Pinus krempfii,Pinus krempfii,0.8992534279823303
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (300).png,7,7,Pinus krempfii,Pinus krempfii,0.8917122483253479
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (308).png,7,7,Pinus krempfii,Pinus krempfii,0.849484384059906
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (257).png,7,7,Pinus krempfii,Pinus krempfii,0.8010194301605225
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (234).png,7,7,Pinus krempfii,Pinus krempfii,0.902908205986023
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (245).png,7,7,Pinus krempfii,Pinus krempfii,0.8934133052825928
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (296).png,7,7,Pinus krempfii,Pinus krempfii,0.9075780510902405
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (294).png,7,7,Pinus krempfii,Pinus krempfii,0.901627779006958
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (293).png,7,7,Pinus krempfii,Pinus krempfii,0.9151985049247742
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (238).png,7,7,Pinus krempfii,Pinus krempfii,0.8095381259918213
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (244).png,7,7,Pinus krempfii,Pinus krempfii,0.8858574032783508
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (241).png,7,7,Pinus krempfii,Pinus krempfii,0.8912648558616638
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (255).png,7,7,Pinus krempfii,Pinus krempfii,0.875006377696991
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (321).png,7,7,Pinus krempfii,Pinus krempfii,0.8506569266319275
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (239).png,7,7,Pinus krempfii,Pinus krempfii,0.9133766293525696
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (236).png,7,7,Pinus krempfii,Pinus krempfii,0.8811643719673157
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (323).png,7,6,Pinus krempfii,Pinus dalatensis,0.8122435808181763
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (249).png,7,7,Pinus krempfii,Pinus krempfii,0.8874282240867615
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (242).png,7,7,Pinus krempfii,Pinus krempfii,0.8858829140663147
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (295).png,7,7,Pinus krempfii,Pinus krempfii,0.9100912809371948
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (315).png,7,7,Pinus krempfii,Pinus krempfii,0.8815332651138306
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (299).png,7,7,Pinus krempfii,Pinus krempfii,0.8895118236541748
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (250).png,7,7,Pinus krempfii,Pinus krempfii,0.8392383456230164
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (297).png,7,7,Pinus krempfii,Pinus krempfii,0.8838998079299927
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (305).png,7,7,Pinus krempfii,Pinus krempfii,0.8977575302124023
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (317).png,7,7,Pinus krempfii,Pinus krempfii,0.8985738158226013
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (316).png,7,7,Pinus krempfii,Pinus krempfii,0.8889617919921875
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (240).png,7,7,Pinus krempfii,Pinus krempfii,0.8955647349357605
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (233).png,7,7,Pinus krempfii,Pinus krempfii,0.9043095707893372
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (319).png,7,7,Pinus krempfii,Pinus krempfii,0.914387047290802
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (301).png,7,7,Pinus krempfii,Pinus krempfii,0.8599308133125305
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (309).png,7,7,Pinus krempfii,Pinus krempfii,0.8711963891983032
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (292).png,7,7,Pinus krempfii,Pinus krempfii,0.9259126782417297
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (302).png,7,7,Pinus krempfii,Pinus krempfii,0.8866351842880249
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (314).png,7,7,Pinus krempfii,Pinus krempfii,0.7976942658424377
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (304).png,7,7,Pinus krempfii,Pinus krempfii,0.9056258797645569
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (237).png,7,7,Pinus krempfii,Pinus krempfii,0.8998726010322571
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (310).png,7,7,Pinus krempfii,Pinus krempfii,0.89752596616745
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (235).png,7,7,Pinus krempfii,Pinus krempfii,0.8965463638305664
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (232).png,7,7,Pinus krempfii,Pinus krempfii,0.9068811535835266
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (256).png,7,7,Pinus krempfii,Pinus krempfii,0.8847846388816833
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.10 (298).png,7,7,Pinus krempfii,Pinus krempfii,0.893799364566803
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (254).png,7,7,Pinus krempfii,Pinus krempfii,0.8930462002754211
+data/task-B-group-split-224/val/Pinus krempfii/3384. Pinus krempfii.8 (246).png,7,7,Pinus krempfii,Pinus krempfii,0.9063993096351624
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(289).png,0,0,Araucaria araucana,Araucaria araucana,0.886718213558197
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(282).png,0,0,Araucaria araucana,Araucaria araucana,0.8845153450965881
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(268).png,0,0,Araucaria araucana,Araucaria araucana,0.9249285459518433
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(256).png,0,0,Araucaria araucana,Araucaria araucana,0.8949034810066223
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(286).png,0,0,Araucaria araucana,Araucaria araucana,0.9039293527603149
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(265).png,0,0,Araucaria araucana,Araucaria araucana,0.9077329635620117
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(262).png,0,0,Araucaria araucana,Araucaria araucana,0.9120303392410278
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(295).png,0,0,Araucaria araucana,Araucaria araucana,0.9332543611526489
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(298).png,0,0,Araucaria araucana,Araucaria araucana,0.9347383975982666
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(264).png,0,0,Araucaria araucana,Araucaria araucana,0.9056990146636963
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(280).png,0,0,Araucaria araucana,Araucaria araucana,0.912006676197052
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(277).png,0,0,Araucaria araucana,Araucaria araucana,0.9132041931152344
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(245).png,0,0,Araucaria araucana,Araucaria araucana,0.8886622190475464
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(246).png,0,0,Araucaria araucana,Araucaria araucana,0.8633642792701721
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(292).png,0,0,Araucaria araucana,Araucaria araucana,0.938227117061615
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(255).png,0,0,Araucaria araucana,Araucaria araucana,0.9025418162345886
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(266).png,0,0,Araucaria araucana,Araucaria araucana,0.8682126402854919
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(283).png,0,0,Araucaria araucana,Araucaria araucana,0.877651572227478
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(278).png,0,0,Araucaria araucana,Araucaria araucana,0.8978990316390991
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(293).png,0,0,Araucaria araucana,Araucaria araucana,0.8589369058609009
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(270).png,0,0,Araucaria araucana,Araucaria araucana,0.917751133441925
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(297).png,0,0,Araucaria araucana,Araucaria araucana,0.9032276272773743
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(259).png,0,0,Araucaria araucana,Araucaria araucana,0.9029542803764343
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(251).png,0,0,Araucaria araucana,Araucaria araucana,0.8935405015945435
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(261).png,0,0,Araucaria araucana,Araucaria araucana,0.898497998714447
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(273).png,0,0,Araucaria araucana,Araucaria araucana,0.9124706387519836
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(269).png,0,0,Araucaria araucana,Araucaria araucana,0.9317569732666016
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(260).png,0,0,Araucaria araucana,Araucaria araucana,0.8911361694335938
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(274).png,0,0,Araucaria araucana,Araucaria araucana,0.9336289167404175
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(247).png,0,0,Araucaria araucana,Araucaria araucana,0.8854273557662964
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(285).png,0,0,Araucaria araucana,Araucaria araucana,0.9189738035202026
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(275).png,0,0,Araucaria araucana,Araucaria araucana,0.915421724319458
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(254).png,0,0,Araucaria araucana,Araucaria araucana,0.9062821865081787
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(249).png,0,0,Araucaria araucana,Araucaria araucana,0.9163171648979187
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(257).png,0,0,Araucaria araucana,Araucaria araucana,0.9104894399642944
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(258).png,0,0,Araucaria araucana,Araucaria araucana,0.9143872857093811
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(288).png,0,0,Araucaria araucana,Araucaria araucana,0.910636842250824
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(291).png,0,0,Araucaria araucana,Araucaria araucana,0.9089266061782837
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(248).png,0,0,Araucaria araucana,Araucaria araucana,0.9296793937683105
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(296).png,0,0,Araucaria araucana,Araucaria araucana,0.9354583621025085
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(300).png,0,0,Araucaria araucana,Araucaria araucana,0.879093587398529
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(290).png,0,0,Araucaria araucana,Araucaria araucana,0.8925197124481201
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(252).png,0,0,Araucaria araucana,Araucaria araucana,0.9156057834625244
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(284).png,0,0,Araucaria araucana,Araucaria araucana,0.8647156953811646
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(279).png,0,0,Araucaria araucana,Araucaria araucana,0.8926783204078674
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(267).png,0,0,Araucaria araucana,Araucaria araucana,0.9014471769332886
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(250).png,0,0,Araucaria araucana,Araucaria araucana,0.9149345755577087
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(253).png,0,0,Araucaria araucana,Araucaria araucana,0.899524450302124
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(276).png,0,0,Araucaria araucana,Araucaria araucana,0.9065422415733337
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(287).png,0,0,Araucaria araucana,Araucaria araucana,0.9022297263145447
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.9.(263).png,0,0,Araucaria araucana,Araucaria araucana,0.9037653207778931
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(299).png,0,0,Araucaria araucana,Araucaria araucana,0.8851256966590881
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(281).png,0,0,Araucaria araucana,Araucaria araucana,0.8864461779594421
+data/task-B-group-split-224/val/Araucaria araucana/3351. Araucaria araucana.10.(294).png,0,0,Araucaria araucana,Araucaria araucana,0.8861081004142761
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (54).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8937789797782898
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (244).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.893034040927887
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (240).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8878233432769775
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (242).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8960959911346436
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (31).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.893539309501648
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (43).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8979802131652832
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (57).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8942558169364929
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (225).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8997429013252258
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (235).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8847552537918091
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (234).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8904829621315002
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (52).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8935768604278564
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (59).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8970468640327454
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (237).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8957116007804871
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (45).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.9090356230735779
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (228).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.9048783779144287
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (224).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8859919309616089
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (53).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8978170156478882
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (46).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8914525508880615
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (232).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.892316997051239
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (41).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.9019231796264648
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (231).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8927605152130127
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (247).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8917471170425415
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (39).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.9010446071624756
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (58).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.9029197096824646
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (44).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8842054009437561
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (32).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.891605019569397
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (42).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8953916430473328
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (35).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.9127489924430847
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (48).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8884406089782715
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (233).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8928408622741699
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (49).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8896080255508423
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (55).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8904523849487305
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (249).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.9055501222610474
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (222).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.888982892036438
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (243).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8891448974609375
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (50).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.911989688873291
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (238).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.899911642074585
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (40).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8977956175804138
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (239).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8918547034263611
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (252).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8897674083709717
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (36).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.9170467257499695
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (223).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8988780975341797
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (37).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.909631073474884
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (255).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8906590342521667
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (226).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.884946882724762
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (241).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8881250023841858
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (34).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8981536030769348
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (227).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8943614959716797
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (248).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8634936213493347
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (30).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.886801540851593
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (229).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.895659327507019
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (251).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.9055463075637817
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (253).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8891642689704895
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (250).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.9041335582733154
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (230).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8835558295249939
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (245).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8933146595954895
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (254).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8965045213699341
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (51).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.9047531485557556
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (246).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8821289539337158
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (47).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8929266333580017
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (56).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8838284015655518
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.8 (236).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.882003128528595
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (38).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8918678760528564
+data/task-B-group-split-224/val/Chamaecyparis obtusa/3364. Chamaecyparis obtusa.2 (33).png,2,2,Chamaecyparis obtusa,Chamaecyparis obtusa,0.8816300630569458

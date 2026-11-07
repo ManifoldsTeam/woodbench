@@ -286,3 +286,53 @@ CV v2 25 run ngày 01-11 chỉ mất 1 giờ 08.
    cache mới (phải tạo lại cache + sha256 bằng `scripts/build_resized_cache.py`). Việc này ngoài phạm vi tài liệu này.
 5. Code task 15 không sửa `src/train/trainer.py` (`TrainingEngine.fit`, GitNexus impact HIGH). Final-B dùng vòng lặp
    `train_epoch`/`validate` của `train_kfold.py`, nên CV và Final-B theo cùng một quy tắc.
+
+## 9. Kết quả thực hiện 07-11-2026
+
+Chạy trên Vast, RTX 4090 24 GB (driver 565.57.01, CUDA 12.7), 48 core, repo tại `/root/woodbench`, nhánh
+`feat/supervisor-2026-11-06` (commit `a496be4`). Env `wood` (`/venv/wood`, Python 3.12.16): **torch 2.14.1+cu126,
+torchvision 0.29.1+cu126**, timm 1.0.30; danh sách gói đầy đủ ở `logs/20261107T070619Z/pip_freeze.txt`.
+
+Thời gian: 07:06–08:40 UTC (1 giờ 34 phút cho 22 job, `MAX_PARALLEL=5`); 22/22 job exit 0, 50/50 run có `metrics.json`,
+50 `best.pth` (4,1 GB) khớp `results/checkpoints.sha256`. Mỗi epoch khoảng 10 giây với 5 job song song, nhanh hơn ước
+lượng ở mục 7.
+
+| Yêu cầu | Kết quả (%) | Minh chứng |
+|---|---|---|
+| 6, CV 5 fold | ConvNeXt 99,44 ± 0,31; Swin 99,34 ± 0,26; EfficientNet 97,57 ± 0,93; ResNet 97,12 ± 1,35; MobileNet 95,29 ± 1,34 | `results/cv_summary.csv`, `cv_folds.csv` |
+| 6, so với CV v2 cùng fold | ConvNeXt +0,41; Swin +0,47; EfficientNet +0,09; ResNet +0,23; MobileNet −0,95 điểm | `results/cv_vs_17species.csv` |
+| 6, Final-B test (3 seed) | Swin 99,69 ± 0,13; ConvNeXt 98,92 ± 0,27; MobileNet 98,53 ± 0,27; EfficientNet 97,92 ± 0,46; ResNet 97,53 ± 0,81 | `results/final_b_summary.csv`, `final_b_runs.csv` |
+| 7, ConvNeXt CV 5 fold | RGB 99,44 ± 0,31; grayscale 94,83 ± 2,14; 16px 90,90 ± 0,90 | `results/degraded_summary.csv` |
+
+Mọi đường dẫn tương đối với `artifacts/phase_2/supervisor-feedback/task_15_clean14_runs/`. Bảng đầy đủ:
+`results/summary.md`. Notebook minh chứng (log từng 5 phút, kết quả và file của từng run khi vừa xong):
+`clean14_runs_executed.ipynb`.
+
+**Lệch so với runbook:**
+
+1. **torch 2.14.1+cu126 thay cho 2.15.0+cu132.** Driver của host chỉ hỗ trợ CUDA 12.7; bản cu132 báo "driver too old"
+   và `torch.cuda.is_available()` là `False`. Forward compat không dùng được trên GPU consumer. torch 2.15.0 không có bản
+   CUDA 12, nên dùng 2.14.1 bản cu126 (mục 3.2 cho phép).
+2. **Chạy qua notebook thay cho `nohup bash run_clean14.sh`.** `notebooks/.../task_15_clean14_runs/clean14_runs.ipynb`
+   được chạy bằng papermill; notebook gọi đúng `run_clean14.sh` (session riêng) với `PYTHON=/venv/wood/bin/python`,
+   vì env `wood` không có `bin/activate`. Không bao giờ khởi động launcher thứ hai nếu đã có một launcher đang chạy.
+3. **pytest: 68 passed, 1 skipped** (local: 69 passed). Test bị skip cần ảnh full-res, không có trên Vast (mục 3.3).
+4. Lệnh dry-run CV ở mục 3.4 không truyền cờ chọn checkpoint nên in quy tắc cũ (val acc, patience 10). Với đúng cờ của
+   launcher, dry-run in quy tắc mới. Run thật dùng cờ của launcher.
+
+**Cần lưu ý khi đọc kết quả:**
+
+1. **EfficientNet, MobileNet và một phần ResNet chạm trần 50 epoch.** Ở CV, 5/5 fold EfficientNet, 4/5 fold MobileNet và
+   1/5 fold ResNet chạy đủ 50 epoch với best epoch ≥ 45; ở Final-B, 2/3 seed MobileNet và 2/3 seed ResNet. Val loss vẫn
+   giảm ở epoch cuối, nên số của các model này bị giới hạn bởi số epoch tối đa. ConvNeXt (tối đa 40 epoch) và Swin dừng
+   sớm bình thường. Điều này có thể giải thích MobileNet 14 loài thấp hơn model 17 loài (−0,95).
+2. **Final-B: Swin hơn ConvNeXt 0,77 điểm** (lỗi test mỗi seed: Swin 1/1/2, ConvNeXt 6/4/4 trên 432 ảnh), trong khi trên
+   CV hai model ngang nhau. Chênh khoảng 3 ảnh, sát ngưỡng nhiễu ở mục 8.
+3. **Cặp khó nhất vẫn là *Pinus krempfii* ↔ *P. dalatensis*:** F1 test trung bình qua 5 model 0,931 và 0,932; mọi loài
+   khác ≥ 0,98.
+4. **Grayscale tăng dần theo fold** (91,79 → 97,18), nên SD lớn; 16px ổn định quanh 91%.
+
+**Checkpoint:** **đã backup lên Google Drive** `drive:wood/2026-11-07-clean14-runs/`: `Task-B-clean14-cv.zip`,
+`Task-B-clean14-cv-grayscale.zip`, `Task-B-clean14-cv-px16.zip`, `Task-B-clean14-final.zip`, `clean14-logs.zip` (zip
+`-0`, khoảng 4,2 GB), cùng `task_15_clean14_runs-artifacts.zip` (bản sao thư mục artifacts), `README.txt`, `zip.md5` và
+`checkpoints.sha256`. `rclone check` 0 differences (07-11). Giải nén vào `woodbench/data/experiments/`.

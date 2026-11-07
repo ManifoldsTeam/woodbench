@@ -1,0 +1,48 @@
+Data OK: /root/woodbench/data/task-B-group-split-224
+Logs: /root/woodbench/data/experiments/clean14-logs/20261107T070619Z
+22 jobs, at most 5 at a time
+07:06:19 cv_efficientnet_b3 started
+07:06:19 cv_resnet50 started
+07:06:19 cv_mobilenetv3_large started
+07:06:19 cv_swin_tiny started
+07:06:19 cv_convnext_tiny started
+07:30:41 cv_mobilenetv3_large finished (exit 0)
+07:30:41 cv_grayscale_convnext_tiny started
+07:41:09 cv_convnext_tiny finished (exit 0)
+07:41:09 cv_px16_convnext_tiny started
+07:48:45 cv_resnet50 finished (exit 0)
+07:48:45 final_s42_efficientnet_b3 started
+08:01:13 final_s42_efficientnet_b3 finished (exit 0)
+08:01:13 final_s42_resnet50 started
+08:04:00 cv_swin_tiny finished (exit 0)
+08:04:00 final_s42_mobilenetv3_large started
+08:06:29 cv_efficientnet_b3 finished (exit 0)
+08:06:29 final_s42_swin_tiny started
+08:09:11 final_s42_mobilenetv3_large finished (exit 0)
+08:09:11 final_s42_convnext_tiny started
+08:10:46 final_s42_resnet50 finished (exit 0)
+08:10:46 final_s123_efficientnet_b3 started
+08:17:27 final_s42_convnext_tiny finished (exit 0)
+08:17:27 final_s123_resnet50 started
+08:18:16 cv_grayscale_convnext_tiny finished (exit 0)
+08:18:16 final_s123_mobilenetv3_large started
+08:20:29 final_s42_swin_tiny finished (exit 0)
+08:20:29 final_s123_swin_tiny started
+08:23:31 final_s123_mobilenetv3_large finished (exit 0)
+08:23:31 final_s123_convnext_tiny started
+08:24:14 final_s123_efficientnet_b3 finished (exit 0)
+08:24:14 final_s456_efficientnet_b3 started
+08:27:12 final_s123_resnet50 finished (exit 0)
+08:27:12 final_s456_resnet50 started
+08:32:30 final_s123_convnext_tiny finished (exit 0)
+08:32:30 final_s456_mobilenetv3_large started
+08:33:38 cv_px16_convnext_tiny finished (exit 0)
+08:33:38 final_s456_swin_tiny started
+08:34:46 final_s123_swin_tiny finished (exit 0)
+08:34:46 final_s456_convnext_tiny started
+08:36:41 final_s456_efficientnet_b3 finished (exit 0)
+08:37:01 final_s456_resnet50 finished (exit 0)
+08:37:04 final_s456_mobilenetv3_large finished (exit 0)
+08:38:46 final_s456_convnext_tiny finished (exit 0)
+08:40:16 final_s456_swin_tiny finished (exit 0)
+All jobs done; 0 failed (see *.exit and logs in /root/woodbench/data/experiments/clean14-logs/20261107T070619Z)

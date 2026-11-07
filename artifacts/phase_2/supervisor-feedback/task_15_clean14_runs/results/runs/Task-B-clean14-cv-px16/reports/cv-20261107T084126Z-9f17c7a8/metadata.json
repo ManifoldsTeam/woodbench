@@ -1,0 +1,16 @@
+{
+  "registry": "data/experiments/Task-B-clean14-cv-px16/reports/cv-20261107T084126Z-9f17c7a8/origin-cv-20261107T084126Z-registry.csv",
+  "created_at": "20261107T084126Z",
+  "protocol": "best-val-origin-cv-v2",
+  "std": "sample standard deviation across folds; not CI",
+  "source_run_ids": [
+    "convnext_tiny-s42-f1-3c8139dfd6354400a481c82a1cee0a6c",
+    "convnext_tiny-s42-f2-fa0301fc566b458398240139dc726892",
+    "convnext_tiny-s42-f3-f28e9eb0860e4a44aa3f5565fb2e96c3",
+    "convnext_tiny-s42-f4-64cf2c1d8af44f74aa35a5f45e97f374",
+    "convnext_tiny-s42-f5-1bf247cffbf24f169c6cae49b5330493"
+  ],
+  "validation": "Inner validation of whole origins inside each outer-train fold; checkpoint: lowest inner-val loss, epochs 6+ only (warmup excluded); held-out evaluated once with best.pth",
+  "per_species": "per_species_summary.csv: mean and sample std across folds of per-fold precision/recall/F1",
+  "comparison": "Fixed-split baseline comparison requires explicit baseline_run_id and registry"
+}

@@ -1,0 +1,63 @@
+{
+  "run_id": "swin_tiny-s42-clean14-f62b3136df504e3980b17616bc0558cf",
+  "backbone": "swin_tiny",
+  "seed": 42,
+  "species_set": "clean14",
+  "backbone_lr": 0.0001,
+  "head_lr": 0.0001,
+  "selection": "lowest val loss, epochs 6+ only (warmup excluded); val and test scored once from best.pth",
+  "best_epoch": 44,
+  "best_val_loss_training": 0.5502956807613373,
+  "epochs_trained": 50,
+  "stopped_early": false,
+  "val": {
+    "loss": 0.5503781861712597,
+    "accuracy": 0.9987546699875467,
+    "f1_macro": 0.9987028503157536,
+    "f1_per_class": {
+      "Araucaria araucana": 1.0,
+      "Calocedrus rupestris": 1.0,
+      "Chamaecyparis obtusa": 1.0,
+      "Cryptomeria japonica": 1.0,
+      "Picea glauca": 1.0,
+      "Pinus cernua": 1.0,
+      "Pinus dalatensis": 0.9925925925925926,
+      "Pinus krempfii": 0.989247311827957,
+      "Pinus radiata": 1.0,
+      "Podocarpus pilgeri": 1.0,
+      "Pseudotsuga brevifolia": 1.0,
+      "Taxus wallichiana": 1.0,
+      "Thujopsis dolabrata": 1.0,
+      "Xanthocyparis vietnamensis": 1.0
+    },
+    "n": 803
+  },
+  "test": {
+    "loss": 0.5583599143558078,
+    "accuracy": 0.9976851851851852,
+    "f1_macro": 0.997895062683795,
+    "f1_per_class": {
+      "Araucaria araucana": 1.0,
+      "Calocedrus rupestris": 1.0,
+      "Chamaecyparis obtusa": 1.0,
+      "Cryptomeria japonica": 1.0,
+      "Picea glauca": 1.0,
+      "Pinus cernua": 1.0,
+      "Pinus dalatensis": 0.9846153846153847,
+      "Pinus krempfii": 0.9859154929577465,
+      "Pinus radiata": 1.0,
+      "Podocarpus pilgeri": 1.0,
+      "Pseudotsuga brevifolia": 1.0,
+      "Taxus wallichiana": 1.0,
+      "Thujopsis dolabrata": 1.0,
+      "Xanthocyparis vietnamensis": 1.0
+    },
+    "n": 432
+  },
+  "finished_at": "2026-11-07T08:20:27.087311+00:00",
+  "artifact_sha256": {
+    "best.pth": "3e000d90b991322ffad6a3cd6b12d20f32c00c4467f7e49b506aeb4ecaf49a04",
+    "predictions_val.csv": "f32341cc51a2a0f2af5b11124f072efc3954cb0f4a4fc61042269aba7025972a",
+    "predictions_test.csv": "d120b1bc67fee5fc96d07001b2e588c20f388368a4879a675ea73fc10b19e1ff"
+  }
+}

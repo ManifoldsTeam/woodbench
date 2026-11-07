@@ -76,3 +76,18 @@ example, in the smoke test val acc was 89.04% in the log and 88.92% in
 - Launcher, tested with a fake Python:
   - It starts 22 jobs and never runs more than `MAX_PARALLEL` at once.
   - It exits 1 and reports how many jobs failed.
+
+## Vast run (07-11-2026, RTX 4090)
+
+`clean14_runs.ipynb` is the record of the run. It starts `run_clean14.sh`
+(never a second one while one is running), prints launcher events, the latest
+epoch of each running job and every finished run with its result and files
+every 5 minutes, then runs `summarize_clean14.py` and copies the logs. Run it
+headless with papermill (command in its first cell); the executed copy is
+`artifacts/phase_2/supervisor-feedback/task_15_clean14_runs/clean14_runs_executed.ipynb`.
+
+- 07:06–08:40 UTC, 22/22 jobs exit 0, 50/50 runs; torch 2.14.1+cu126 (the host
+  driver supports CUDA 12.7 only, so the cu132 build of 2.15.0 cannot use the GPU).
+- `pytest`: 68 passed, 1 skipped (needs the full-resolution images).
+- Results, deviations and caveats: handoff section 9 and
+  `docs/timeline/07-11-2026.md`. Checkpoints: `drive:wood/2026-11-07-clean14-runs/`.

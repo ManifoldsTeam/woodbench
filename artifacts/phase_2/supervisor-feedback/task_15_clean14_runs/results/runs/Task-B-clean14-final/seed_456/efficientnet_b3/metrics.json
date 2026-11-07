@@ -1,0 +1,63 @@
+{
+  "run_id": "efficientnet_b3-s456-clean14-a53f57239f9246ebb73208e5dce89cf5",
+  "backbone": "efficientnet_b3",
+  "seed": 456,
+  "species_set": "clean14",
+  "backbone_lr": 0.0001,
+  "head_lr": 0.0001,
+  "selection": "lowest val loss, epochs 6+ only (warmup excluded); val and test scored once from best.pth",
+  "best_epoch": 30,
+  "best_val_loss_training": 0.586661513035114,
+  "epochs_trained": 45,
+  "stopped_early": true,
+  "val": {
+    "loss": 0.5879975738442256,
+    "accuracy": 0.9850560398505604,
+    "f1_macro": 0.9846536455291185,
+    "f1_per_class": {
+      "Araucaria araucana": 1.0,
+      "Calocedrus rupestris": 1.0,
+      "Chamaecyparis obtusa": 1.0,
+      "Cryptomeria japonica": 1.0,
+      "Picea glauca": 1.0,
+      "Pinus cernua": 0.9541284403669725,
+      "Pinus dalatensis": 0.9640287769784173,
+      "Pinus krempfii": 0.989247311827957,
+      "Pinus radiata": 1.0,
+      "Podocarpus pilgeri": 0.95,
+      "Pseudotsuga brevifolia": 0.9777777777777777,
+      "Taxus wallichiana": 0.975609756097561,
+      "Thujopsis dolabrata": 1.0,
+      "Xanthocyparis vietnamensis": 0.9743589743589743
+    },
+    "n": 803
+  },
+  "test": {
+    "loss": 0.6364499860339694,
+    "accuracy": 0.9745370370370371,
+    "f1_macro": 0.9767416591049566,
+    "f1_per_class": {
+      "Araucaria araucana": 1.0,
+      "Calocedrus rupestris": 1.0,
+      "Chamaecyparis obtusa": 0.9705882352941176,
+      "Cryptomeria japonica": 1.0,
+      "Picea glauca": 1.0,
+      "Pinus cernua": 0.9841269841269841,
+      "Pinus dalatensis": 0.8732394366197183,
+      "Pinus krempfii": 0.875,
+      "Pinus radiata": 1.0,
+      "Podocarpus pilgeri": 0.9714285714285714,
+      "Pseudotsuga brevifolia": 1.0,
+      "Taxus wallichiana": 1.0,
+      "Thujopsis dolabrata": 1.0,
+      "Xanthocyparis vietnamensis": 1.0
+    },
+    "n": 432
+  },
+  "finished_at": "2026-11-07T08:36:39.275098+00:00",
+  "artifact_sha256": {
+    "best.pth": "c5c6b0210789d8ab8ed12df27d94645ff9ecc505da73fa0b3d97e121f3284374",
+    "predictions_val.csv": "e0e7fca69229890186c115a3030a540b5ec7a73ad8d77920e9005cef126aa756",
+    "predictions_test.csv": "b0f9210c7ee9b6705ac1da623611138a67477ae0834046e95c17fba554b77eee"
+  }
+}
