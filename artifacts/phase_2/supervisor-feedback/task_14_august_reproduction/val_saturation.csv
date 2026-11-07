@@ -1,0 +1,4 @@
+run,epochs,max_val_acc,epochs_at_max,epochs_within_1_val_image,first_epoch_at_max
+"Run 1: true 1e-5, no warmup (3060)",31,100.0,1,5,21
+Run 2: August code (3060),20,99.66777408637874,4,6,10
+"01-11 true 1e-5, warmup 5 (4090)",20,99.88925802879291,1,4,10

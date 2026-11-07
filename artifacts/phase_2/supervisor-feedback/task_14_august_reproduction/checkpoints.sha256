@@ -1,0 +1,3 @@
+0687c72f0454d067e1532ee1f65c66f2ca05c2dc5d73b67c9e83a348aec62904  data/experiments/Task-B-new/19-08-2026/main/seed_42/convnext_tiny/convnext_tiny_seed42_best.pth
+51b9477bd1d7a0dcaaafad6fd3a98a2812bb03034932f37ff2b337647dccb426  data/experiments/Task-B-august-repro/run2_august_code/data/experiments/Task-B-new/final/main/seed_42/convnext_tiny/convnext_tiny_seed42_best.pth
+f40e62d53ff9b5ea3148d535490c9a790afd4b671cf10a49b4f7192b96a41f63  data/experiments/Task-B-august-repro/run1_true1e-5_nowarmup/bblr_1e-5/seed_42/convnext_tiny/model_best.pth

@@ -1,0 +1,10 @@
+{
+  "date_utc": "2026-11-07T04:17:34+00:00",
+  "git_commit": "8cb56c86c391756ec09b0d0a835a912ddf70d713",
+  "git_dirty": false,
+  "python": "3.12.16",
+  "torch": "2.15.0+cu132",
+  "timm": "1.0.30",
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "data_root": "data/task-B-group-split-224"
+}
